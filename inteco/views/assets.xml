@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Assets Frontend Inteco">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" href="/inteco/static/src/less/intec_color.scss"/>
+        </xpath>
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/inteco/static/src/js/inteco.js" />
+            <script type="text/javascript" src="inteco/static/src/js/signup.js" />
+<!--            <script type="text/javascript" src="/inteco/static/src/js/website_sale.js"/>-->
+        </xpath>
+        <xpath expr="//script[last()]" position="after">
+
+            <script type="text/javascript">
+                odoo.define('module.postTab', function (require) {
+                "use strict";
+
+                // Funcion para desplazarse hasta el panel con la informacion de la certificacion por el bloque de cajas
+                $(document).on('shown.bs.tab', 'a[data-box="yes"]', function (e) {
+
+                var reference = e.target.hash.substr(1);
+                var element = document.getElementById(reference);
+                element.scrollIntoView({block: "end", behavior: "smooth"});
+                });
+                });
+
+                odoo.define('module.goToTab', function (require) {
+                "use strict";
+
+                $(window).on("hashchange",function(){
+                var reference = window.location.hash;
+
+                var element = document.getElementById(reference.substr(1));
+                reference &amp;&amp; $('ul.nav a[href="' + reference + '"]').tab('show');
+
+                var scrollmem = $('body').scrollTop();
+                $('html,body').scrollTop(scrollmem);
+                //element.scrollIntoView({block: "start", behavior: "smooth"});
+                });
+
+                $(window).on("load",function(){
+                var reference = window.location.hash;
+
+                if (reference != 'null') {
+                var element = document.getElementById(reference.substr(1));
+                reference &amp;&amp; $('ul.nav a[href="' + reference + '"]').tab('show');
+
+                var scrollmem = $('body').scrollTop();
+                $('html,body').scrollTop(scrollmem);
+                }
+                });
+
+                /*
+                $(function(){
+
+                var hash = window.location.hash;
+                hash &amp;&amp; $('ul.nav a[href="' + hash + '"]').tab('show');
+
+                $(document).on('click', '.nav-tabs a', function (e) {
+                $(this).tab('show');
+                var scrollmem = $('body').scrollTop();
+                window.location.hash = this.hash;
+                $('html,body').scrollTop(scrollmem);
+                });
+                });*/
+                });
+            </script>
+        </xpath>
+    </template>
+
+    <template id="web_assets_frontend" inherit_id="web.assets_frontend" name="Portal Assets" priority="20">
+        <xpath expr="//link[last()]" position="after">
+            scss File
+            <link href="/inteco/static/src/less/base_modified_t.scss" rel="stylesheet" type="text/scss"/>
+            <link href="/inteco/static/src/less/intec_font.scss" rel="stylesheet" type="text/scss"/>
+        </xpath>
+    </template>
+
+
+    <!--<template id="assets_frontend" inherit_id="website.assets_frontend" name="Assets Frontend Inteco">-->
+    <!--<xpath expr="//link[last()]" position="inside">-->
+    <!--<link rel="stylesheet" href="/inteco/static/src/less/cart.less" />-->
+    <!--<link rel="stylesheet" href="/inteco/static/src/less/product_list.less" />-->
+    <!--</xpath>-->
+    <!--    <xpath expr="." position="inside">-->
+    <!--    <script type="text/javascript" src="/inteco/static/src/js/inteco.js" />-->
+    <!--    <script type="text/javascript" src="/inteco/static/src/js/website_sale.js"/>-->
+    <!--    </xpath>-->
+    <!--</template>-->
+
+    <!--<template id="assets_backend" inherit_id="web.assets_backend" name="Assets Backend Inteco">-->
+    <!--<xpath expr="." position="inside">-->
+    <!--<script type="text/javascript" src="/inteco/static/src/js/inteco_web_client.js" />-->
+    <!--<script type="text/javascript" src="/inteco/static/src/js/chatter_composer.js" />-->
+    <!--</xpath>-->
+    <!--</template>-->
+
+    <!--<template id="inteco_website_tests" inherit_id="web.assets_common" name="Inteco Website Tests">-->
+    <!--<xpath expr="." position="inside">-->
+    <!--<script type="text/javascript" src="/inteco/static/src/js/request_quotation_tour.js"/>-->
+    <!--</xpath>-->
+    <!--</template>-->
+
+    <!--<template id="web_assets_fronted" inherit_id="web.assets_frontend" name="Web Assets Frontend Inteco">-->
+    <!--<xpath expr="." position="inside">-->
+    <!--<script type="text/javascript" src="/inteco/static/src/js/portal_signature.js" />-->
+    <!--</xpath>-->
+    <!--</template>-->
+
+</odoo>

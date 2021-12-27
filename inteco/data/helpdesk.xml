@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="helpdesk_complaint" model="helpdesk.team">
+        <field name="name">Complaints</field>
+        <field name="alias_name">resolusiones</field>
+    </record>
+
+    <record id="stage_SACP" model="helpdesk.stage">
+        <field name="name">SACP</field>
+        <field name="sequence">20</field>
+        <field name="team_ids" eval="[(4, ref('helpdesk_complaint'))]"/>
+        <field name="is_close" eval="False"/>
+    </record>
+    <record id="stage_evaluation" model="helpdesk.stage">
+        <field name="name">Evaluation</field>
+        <field name="sequence">30</field>
+        <field name="team_ids" eval="[(4, ref('helpdesk_complaint'))]"/>
+        <field name="is_close" eval="False"/>
+    </record>
+    <record id="stage_implementation" model="helpdesk.stage">
+        <field name="name">Implementation</field>
+        <field name="sequence">40</field>
+        <field name="team_ids" eval="[(4, ref('helpdesk_complaint'))]"/>
+        <field name="is_close" eval="False"/>
+    </record>
+    <record id="stage_verification" model="helpdesk.stage">
+        <field name="name">Verification</field>
+        <field name="sequence">50</field>
+        <field name="team_ids" eval="[(4, ref('helpdesk_complaint'))]"/>
+        <field name="is_close" eval="False"/>
+    </record>
+    <record id="helpdesk.stage_solved" model="helpdesk.stage">
+        <field name="sequence">60</field>
+        <field name="team_ids" eval="[(6, 0, [
+            ref('helpdesk.helpdesk_team1'),
+            ref('helpdesk_complaint')])]"/>
+    </record>
+    <record id="helpdesk.stage_cancelled" model="helpdesk.stage">
+        <field name="sequence">70</field>
+        <field name="team_ids" eval="[(6, 0, [
+            ref('helpdesk.helpdesk_team1'),
+            ref('helpdesk_complaint')])]"/>
+    </record>
+    <record id="type_complaint" model="helpdesk.ticket.type">
+        <field name="name">Complaint</field>
+        <field name="enabled">True</field>
+    </record>
+    <record id="type_gratefulness" model="helpdesk.ticket.type">
+        <field name="name">Gratefulness</field>
+        <field name="enabled">True</field>
+    </record>
+    <record id="type_suggestion" model="helpdesk.ticket.type">
+        <field name="name">Suggestion</field>
+        <field name="enabled">True</field>
+    </record>
+</odoo>

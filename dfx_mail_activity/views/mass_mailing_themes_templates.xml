@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="assets_mail_themes" inherit_id="mass_mailing.assets_mail_themes">
+    <xpath expr="//link[last()]" position="after">
+      <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_aniversary30.less"/>
+      <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_event.less"/>
+      <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_formacion.less"/>
+      <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_formacion_multiple.less"/>
+      <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_evaluadores.less"/>
+    </xpath>
+  </template>
+
+  <template id="Updated_s_mail_block_footer_social" name="Updated Footer Center" inherit_id="mass_mailing.s_mail_block_footer_social">
+    <xpath expr="//div[1]" position="replace">
+      <div class="o_mail_block_footer_social o_mail_footer_social_center">
+        <div class="o_mail_snippet_general">
+          <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+            <tbody>
+              <tr>
+                <td class="o_mail_footer_links">
+                  <a role="button" href="/unsubscribe_from_list" class="btn btn-link">Unsubscribe</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="o_mail_footer_copy"><span class="fa fa-copyright" role="img" aria-label="Copyright" title="Copyright"/> 2020 All Rights Reserved</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </xpath>
+  </template>
+
+  <template id="Updated_s_mail_block_footer_social_left" name="Updated Footer Left" inherit_id="mass_mailing.s_mail_block_footer_social_left">
+    <xpath expr="//div[1]" position="replace">
+      <div class="o_mail_block_footer_social o_mail_footer_social_left">
+        <div class="o_mail_snippet_general">
+          <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+            <tbody>
+              <tr>
+                <td class="o_mail_footer_description">
+                  <p t-if="res_company" class="o_mail_no_margin">
+                    <strong><t t-esc="res_company.partner_id.name"/></strong>
+                  </p>
+                  <div class="o_mail_footer_links">
+                    <a role="button" href="/unsubscribe_from_list" class="btn btn-link">Unsubscribe</a>
+                  </div>
+                  <div>
+                    <p class="o_mail_footer_copy"><span class="fa fa-copyright" role="img" aria-label="Copyright" title="Copyright"/> 2020 All Rights Reserved</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </xpath>
+  </template>
+
+  <!-- Add themes in editor -->
+  <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
+    <xpath expr="//div[@id='email_designer_themes']" position="inside">
+      <div data-name="+info"
+           data-img="/inteco/static/src/img/theme_imgs/aniversary30_thumb"
+           data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+        <t t-call="dfx_mail_activity.theme_+info_template"/>
+      </div>
+      <div data-name="normative_theme"
+           data-img="/inteco/static/src/img/theme_imgs/aniversary30_thumb"
+           data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+        <t t-call="dfx_mail_activity.info_theme_normative"/>
+      </div>
+    </xpath>
+  </template>
+
+  <!-- Template for theme: info_theme_normative -->
+  <template id="info_theme_normative">
+    <div class="o_mail_block_header_social">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+          <tbody>
+            <tr>
+              <td width="120px" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+              </td>
+              <td width="100%" class="text-right o_mail_no_resize">
+                <div class="o_mail_header_social">
+                  <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                  <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                  <a href="https://wa.me/50689609696"><span class="fa fa-whatsapp text-alpha fa-1x"></span></a>
+                  <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                  <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                  <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="o_mail_block_footer_separator">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+          <tbody>
+            <tr>
+              <td valign="top" style="width:100%;">
+                <div style="width:100%;" class="separator">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div>
+        <table width="100px" align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+          <tbody>
+            <tr>
+              <td class="o_mail_logo_container o_mail_h_padding o_mail_v_padding" style="width:5%;">
+                <div id="toc_container" style="margin-right:45px; width:150px;">
+                  <p class="toc_title">Tabla de Contenidos</p>
+                  <ul class="toc_list">
+                    <li><a href="#First_Point_Header">Titulo 1</a></li>
+                    <li><a href="#Second_Point_Header">Titulo 2</a></li>
+                    <li><a href="#Third_Point_Header">Titulo 3</a></li>
+                  </ul>
+                </div>
+                <div class="o_mail_block_paragraph">
+                  <div class="o_mail_snippet_general">
+                    <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                      <tbody>
+                        <tr>
+                          <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                            <p style="text-align:justify;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum massa a erat convallis lacinia.
+                              Ut quis lacus at nisi accumsan tincidunt.
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div>
+                  <a style="text-decor ation:none;float:left;"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 200px;" alt="" data-original-title="" title=""/></a>
+                  <h6 style="text-align:justify;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum massa a erat convallis lacinia.
+                    Ut quis lacus at nisi accumsan tincidunt.
+                  </h6>
+                </div>
+              </td>
+              <td height="100%" width="85%" class="text-left o_mail_no_resize">
+                <div class="o_mail_block_paragraph">
+                  <div class="o_mail_snippet_general">
+                    <table align="left" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles" style="float:right;">
+                      <tbody>
+                        <tr>
+                          <td width="200px" class="o_mail_h_padding o_mail_v_padding">
+                            <h1 id="First_Point_Header">
+                              Titulo 1
+                            </h1>
+                            <p>
+                              <br/>
+                            </p>
+                            <p style="text-align:justify;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum massa a erat convallis lacinia.
+                              Ut quis lacus at nisi accumsan tincidunt.
+                            </p>
+                            <a style="text-decor ation:none;float:none;"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                            <h1 id="Second_Point_Header">
+                              Titulo 2
+                            </h1>
+                            <p>
+                              <br/>
+                            </p>
+                            <p style="text-align:justify;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum massa a erat convallis lacinia.
+                              Ut quis lacus at nisi accumsan tincidunt.
+                            </p>
+                            <a style="text-decor ation:none;float:none;"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="o_mail_block_footer_social o_mail_footer_social_left">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+          <tbody>
+            <tr>
+              <td class="o_mail_footer_description">
+                <p class="o_mail_no_margin">
+                  <strong class="o_default_snippet_text">INTECO</strong>
+                </p>
+                <div class="o_mail_footer_links o_default_snippet_text">
+                  <!--                                        <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>-->
+                  <!--                                        |-->
+                  <!--                                        <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>-->
+                </div>
+                <div>
+                  <p class="o_mail_footer_copy o_default_snippet_text">
+                    <span class="fa fa-copyright"></span>
+                    2020 Todos los derechos reservados
+                  </p>
+                </div>
+              </td>
+              <td class="o_mail_footer_social">
+                <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                <a href="https://wa.me/50689609696"><span class="fa fa-whatsapp text-alpha fa-1x"></span></a>
+                <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </template>
+
+  <!-- Template for theme: +info -->
+  <template id="theme_+info_template">
+    <div class="o_mail_block_header_social">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+          <tbody>
+            <tr>
+              <td width="70%" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+              </td>
+              <td width="30%" class="text-right o_mail_no_resize">
+                <div class="o_mail_header_social">
+                  <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                  <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                  <a href="https://wa.me/50689609696"><span class="fa fa-whatsapp text-alpha fa-1x"></span></a>
+                  <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                  <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                  <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="o_mail_block_footer_separator">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+          <tbody>
+            <tr>
+              <td valign="top" style="width:100%;">
+                <div style="width:100%;" class="separator">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="o_mail_block_paragraph">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+          <tbody>
+            <tr>
+              <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                <p>
+                  ${object.name},
+                </p>
+                <p>
+                  <br/>
+                </p>
+                <p>
+                  [Aquí puede agregar cualquier contenido]
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="o_mail_block_footer_social o_mail_footer_social_left">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+          <tbody>
+            <tr>
+              <td class="o_mail_footer_description">
+                <p class="o_mail_no_margin">
+                  <a href="mailto:admin@inteco.org?subject=Solicitud+de+Información" class="btn btn-primary"
+                     style="background-color:Orange;color:white;width:90px; height:35px; border-radius:5px">
+                    <strong class="o_default_snippet_text" style="text-align:center">+ INFO</strong> </a><br/><br/>
+                  <strong class="o_default_snippet_text">INTECO</strong>
+                </p>
+                <div class="o_mail_footer_links o_default_snippet_text">
+                  <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                  |
+                  <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                </div>
+                <div>
+                  <p class="o_mail_footer_copy o_default_snippet_text">
+                    <span class="fa fa-copyright"></span>
+                    2020 Todos los derechos reservados
+                  </p>
+                </div>
+              </td>
+              <td class="o_mail_footer_social">
+                <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                <a href="https://wa.me/50689609696"><span class="fa fa-whatsapp text-alpha fa-1x"></span></a>
+                <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </template>
+</odoo>

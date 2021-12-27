@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_quote_template_form_inherit" model="ir.ui.view">
+        <field name="name">view.sale.order.template.form.inherit</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[3]" position="after">
+                <page string="Technical and Economic Conditions">
+<!--                    <field name="conditions"/>-->
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

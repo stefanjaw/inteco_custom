@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="website_sale_address_inherit" inherit_id="website_sale.address">
+        <xpath expr="//label[@for='vat']" position="attributes">
+            <!-- remove classes used in optional fields -->
+            <attribute name="class" remove="label-optional font-weight-normal" separator=" "/>
+        </xpath>
+    </template>
+
+    <template id="website_sale_address_b2b_inherit" inherit_id="website_sale.address_b2b">
+        <xpath expr="//t" position="attributes">
+            <attribute name="t-if">True</attribute>
+        </xpath>
+    </template>
+
+</odoo>

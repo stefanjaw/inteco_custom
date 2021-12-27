@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_mail_themes" inherit_id="mass_mailing.assets_mail_themes">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_aniversary30.less"/>
+            <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_event.less"/>
+            <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_formacion.less"/>
+            <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_formacion_multiple.less"/>
+            <link rel="stylesheet" type="text/less" href="/inteco/static/src/less/themes/theme_evaluadores.less"/>
+        </xpath>
+    </template>
+
+    <!-- Add themes in editor -->
+    <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
+        <xpath expr="//div[@id='email_designer_themes']" position="inside">
+            <div data-name="aniversary30"
+                 data-img="/inteco/static/src/img/theme_imgs/aniversary30_thumb"
+                 data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+                <t t-call="inteco.theme_aniversary30_template"/>
+            </div>
+            <div data-name="event"
+                 data-img="/inteco/static/src/img/theme_imgs/event_thumb"
+                 data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+                <t t-call="inteco.theme_event_template"/>
+            </div>
+            <div data-name="formacion"
+                 data-img="/inteco/static/src/img/theme_imgs/formacion_thumb"
+                 data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+                <t t-call="inteco.theme_formacion_template"/>
+            </div>
+            <div data-name="formacion_multiple"
+                 data-img="/inteco/static/src/img/theme_imgs/formacion_multiple_thumb"
+                 data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+                <t t-call="inteco.theme_formacion_multiple_template"/>
+            </div>
+            <div data-name="evaluadores"
+                 data-img="/inteco/static/src/img/theme_imgs/evaluadores_thumb"
+                 data-images-info='{"logo": {"format": "png"}, "all": {"module": "inteco"}}'>
+                <t t-call="inteco.theme_evaluadores_template"/>
+            </div>
+        </xpath>
+    </template>
+
+
+    <!-- Template for theme: Aniversary30 -->
+    <template id="inteco.theme_aniversary30_template">
+        <div class="o_mail_block_header_social">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="70%" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                    <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                  </td>
+                  <td width="30%" class="text-right o_mail_no_resize">
+                    <div class="o_mail_header_social">
+                      <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                      <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                      <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                      <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                      <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_footer_separator">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+              <tbody>
+                <tr>
+                  <td valign="top" style="width:100%;">
+                    <div style="width:100%;" class="separator">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_paragraph">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                    <p>
+                      ${object.name},
+                    </p>
+                    <p>
+                      <br/>
+                    </p>
+                    <p>
+                      [Aquí puede agregar cualquier contenido]
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_footer_social o_mail_footer_social_left">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+              <tbody>
+                <tr>
+                  <td class="o_mail_footer_description">
+                    <p class="o_mail_no_margin">
+                      <strong class="o_default_snippet_text">INTECO</strong>
+                    </p>
+                    <div class="o_mail_footer_links o_default_snippet_text">
+                      <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                      |
+                      <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                    </div>
+                    <div>
+                      <p class="o_mail_footer_copy o_default_snippet_text">
+                        <span class="fa fa-copyright"></span>
+                        2019 Todos los derechos reservados
+                      </p>
+                    </div>
+                  </td>
+                  <td class="o_mail_footer_social">
+                    <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                    <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                    <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                    <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                    <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </template>
+
+    <!-- Template for theme: Event -->
+    <template id="inteco.theme_event_template">
+        <div class="o_mail_block_header_social">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="70%" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                    <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                  </td>
+                  <td width="30%" class="text-right o_mail_no_resize">
+                    <div class="o_mail_header_social">
+                      <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                      <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                      <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                      <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                      <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_footer_separator">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+              <tbody>
+                <tr>
+                  <td valign="top" style="width:100%;">
+                    <div style="width:100%;" class="separator">
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_title_text">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                    <h1 class="mt0" style="text-align: center; ">
+                      <font class="text-beta">¡Conozca las normas de Aislamiento Térmico!</font>
+                    </h1>
+                    <p class="mt0">
+                      <br/>
+                    </p>
+                    <h3 style="text-align: center;">
+                      Su objetivo es normar la calidad y la aplicación de los materiales aislantes en las edificaciones.
+                    </h3>
+                    <p class="o_default_snippet_text">
+                      <br/>
+                    </p>
+                    <p class="" style="text-align: center;">
+                      Aquí puede agregar más texto
+                    </p>
+                    <p class="" style="text-align: center;">
+                      <br/>
+                    </p>
+                    <h2 style="text-align: center; ">
+                      EVENTO GRATUITO
+                    </h2>
+                    <h3 class="mt0" style="text-align: center;">
+                      Reserve su espacio
+                    </h3>
+                    <div class="o_mail_v_padding text-center">
+                      <center><a href="#" class="btn btn-primary btn-lg" data-original-title="" title="">INSCRÍBASE AQUÍ</a></center>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_banner">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="100%" valign="top" class="o_mail_full_width_padding">
+                    <a href="https://www.inteco.org"><img src="/inteco/static/src/img/theme_imgs/theme_event/s_default_image_block_banner.jpeg" class="center-block" alt="" data-original-title="" title="" width="600" height="450"/></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_paragraph">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+              <tbody>
+                <tr>
+                  <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                    <p class="" style="text-align: center;width:100%">
+                      <font style="font-size: 18px;"><b>Información</b></font>
+                    </p>
+                    <div class="text-center" style="width:100%">
+                      <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                        <div>
+                          <p class="o_mail_no_margin text-center">
+                            <b>Sofía Campos Rojas</b>
+                          </p>
+                          <p class="o_mail_no_margin text-center">
+                            <a href="mailto:scampos@inteco.org"><font class="text-beta-darker" style="">scampos@inteco.org</font></a>
+                          </p>
+                          <p class="o_mail_no_margin text-center">
+                            2283-4522 ext. 126
+                          </p>
+                        </div>
+                      </div>
+                      <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                        <div>
+                          <p class="o_mail_no_margin text-center">
+                            <b>Alejandra Zúñiga Pepper</b>
+                          </p>
+                          <p class="o_mail_no_margin text-center">
+                            <a href="mailto:azuniga@inteco.org"><font class="text-beta-darker" style="">azuniga@inteco.org</font></a>
+                          </p>
+                          <p class="o_mail_no_margin text-center">
+                            2283-4522 ext. 262
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="o_mail_block_footer_social o_mail_footer_social_left">
+          <div class="o_mail_snippet_general">
+            <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+              <tbody>
+                <tr>
+                  <td class="o_mail_footer_description">
+                    <p class="o_mail_no_margin">
+                      <strong class="o_default_snippet_text">INTECO</strong>
+                    </p>
+                    <div class="o_mail_footer_links o_default_snippet_text">
+                      <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                      |
+                      <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                    </div>
+                    <div>
+                      <p class="o_mail_footer_copy o_default_snippet_text">
+                        <span class="fa fa-copyright"></span>
+                        2019 Todos los derechos reservados
+                      </p>
+                    </div>
+                  </td>
+                  <td class="o_mail_footer_social">
+                    <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                    <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                    <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                    <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                    <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </template>
+
+    <!-- Template for theme: Formacion -->
+    <template id="inteco.theme_formacion_template">
+          <div class="o_mail_block_header_social">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="70%" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                      <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                    </td>
+                    <td width="30%" class="text-right o_mail_no_resize">
+                      <div class="o_mail_header_social">
+                        <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                        <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                        <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                        <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                        <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_separator">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="width:100%;">
+                      <div style="width:100%;" class="separator">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_title_text">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                      <h1 class="mt0" style="text-align: center; ">
+                        <font class="text-gamma">¡Oportunidad de Formación!</font>
+                      </h1>
+                      <p class="mt0">
+                        <br/>
+                      </p>
+                      <p class="" style="text-align: center; ">
+                        <b>Tenemos el gusto de invitarle al siguiente curso</b>
+                      </p>
+                      <p class="o_default_snippet_text">
+                        <br/>
+                      </p>
+                      <p class="" style="text-align: center; ">
+                        <font class="text-beta" style="font-size: 18px;">La Norma INTE/ISO 37001:2017 implicaciones.</font>
+                      </p>
+                      <p class="" style="text-align: center; ">
+                        <font class="text-beta" style="font-size: 18px;">Sistemas de Gestión Antisoborno</font>
+                      </p>
+                      <p class="o_default_snippet_text">
+                        <br/>
+                      </p>
+                      <p class="" style="text-align: justify; ">
+                        Esta norma le ayudará a las organizaciones a conocer las medidas para prevenir, detectar y gestionar, si se produjeran, prácticas de soborno, la misma es una herramienta que genera valor competitivo y demuestra las prácticas éticas de la organización.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_banner">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="100%" valign="top" class="o_mail_full_width_padding">
+                      <a href="https://www.inteco.org"><img src="/inteco/static/src/img/theme_imgs/theme_formacion/s_default_image_block_banner.jpeg" class="center-block" alt="" data-original-title="" title="" width="598" height="449"/></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_title_text">
+            <div class="o_mail_snippet_general">
+              <h3 style="text-align: center; " class="o_default_snippet_text">
+                Inversión $390
+              </h3>
+              <h3 class="mt0 o_default_snippet_text" style="text-align: center;">
+                ¡Reserve su espacio!
+              </h3>
+              <div class="o_mail_v_padding text-center">
+                <center><a href="http://www.inteco.org" class="btn btn-primary btn-lg o_default_snippet_text" data-original-title="" title="">INSCRÍBASE AQUÍ</a></center>
+              </div>
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_paragraph">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                      <p class="" style="text-align: center;width:100%">
+                        <font style="font-size: 18px;"><b class="o_default_snippet_text">Información</b></font>
+                      </p>
+                      <div class="text-center" style="width:100%">
+                        <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                          <div>
+                            <p class="o_mail_no_margin text-center">
+                              <b class="o_default_snippet_text">María A. Aguilar Pérez</b>
+                            </p>
+                            <p class="o_mail_no_margin text-center">
+                              <a href="mailto:maguilar@inteco.org"><font class="text-beta-darker o_default_snippet_text">maguilar@inteco.org</font></a>
+                            </p>
+                            <p class="o_mail_no_margin text-center o_default_snippet_text">
+                              2283-4522 ext. 266
+                            </p>
+                          </div>
+                        </div>
+                        <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                          <div>
+                            <p class="o_mail_no_margin text-center">
+                              <b class="o_default_snippet_text">Andrea Camacho Sánchez</b>
+                            </p>
+                            <p class="o_mail_no_margin text-center">
+                              <a href="mailto:acamacho@inteco.org"><font class="text-beta-darker o_default_snippet_text">acamacho@inteco.org</font></a>
+                            </p>
+                            <p class="o_mail_no_margin text-center o_default_snippet_text">
+                              2283-4522 ext. 220
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_social o_mail_footer_social_left">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td class="o_mail_footer_description">
+                      <p class="o_mail_no_margin">
+                        <strong class="o_default_snippet_text">INTECO</strong>
+                      </p>
+                      <div class="o_mail_footer_links o_default_snippet_text">
+                        <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                        |
+                        <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                      </div>
+                      <div>
+                        <p class="o_mail_footer_copy o_default_snippet_text">
+                          <span class="fa fa-copyright"></span>
+                          2019 Todos los derechos reservados
+                        </p>
+                      </div>
+                    </td>
+                    <td class="o_mail_footer_social">
+                      <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                      <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                      <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                      <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                      <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </template>
+
+    <!-- Template for theme: Formacion Multiple Courses -->
+    <template id="inteco.theme_formacion_multiple_template">
+          <div class="o_mail_block_header_social">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="70%" class="o_mail_logo_container o_mail_h_padding o_mail_v_padding">
+                      <a style="text-decor ation:none;float:none;" href="https://www.inteco.org/"><img border="0" src="/web/image/res.company/1/logo" style="max-width:400px; width: 188px;" alt="" data-original-title="" title=""/></a>
+                    </td>
+                    <td width="30%" class="text-right o_mail_no_resize">
+                      <div class="o_mail_header_social">
+                        <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                        <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha fa-1x"></span></a>
+                        <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha fa-1x"></span></a>
+                        <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                        <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_separator">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="width:100%;">
+                      <div style="width:100%;" class="separator">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_title_text">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                      <h1 class="mt0" style="text-align: center; ">
+                        <font class="text-gamma o_default_snippet_text">¡Oportunidad de Formación!</font>
+                      </h1>
+                      <p class="mt0">
+                        <br/>
+                      </p>
+                      <p class="" style="text-align: center; ">
+                        <b class=""><font style="font-size: 18px;">Tenemos el gusto de invitarle a los siguientes cursos</font></b>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_two_cols mt0">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_v_padding o_mail_col_table">
+                <tbody>
+                  <tr>
+                    <td style="width:270px;" class="o_mail_col_mv">
+                      <div class="o_mail_col_container">
+                        <img src="/inteco/static/src/img/theme_imgs/theme_formacion_multiple/s_default_image_block_two_cols_1.png" class="center-block" alt="Tu Foto" data-original-title="" title="" width="259" height="194"/>
+                        <h4 class="text-center">
+                          <font style="font-size: 14px;" class="text-beta">Auditor Interno FSSC 22000 Sistemas de Inocuidad Alimentaria</font>
+                        </h4>
+                        <p class="o_mail_no_margin text-center">
+                          <span lang="ES-MX" style="background-color: transparent; font-size: 14px; text-align: justify;">Aprenda ha aplicar la metodología de Auditorías de un Sistema de Gestión de la Inocuidad, focalizado al programa FSSC 22000 y así desarrolle técnicas de comprensión en la evaluación documental del programa FSSC 22000.</span>
+                          <br/>
+                        </p>
+                        <h3 style="margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>Inversión $350</b></font>
+                        </h3>
+                        <h3 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>¡Reserve su espacio!</b></font>
+                        </h3>
+                        <div class="text-center" style="margin-top:15px;">
+                          <center><a href="http://www.inteco.org" class="btn btn-primary" data-original-title="" title="">INCRÍBASE AQUÍ</a></center>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:270px;" class="o_mail_col_mv">
+                      <div class="o_mail_col_container">
+                        <img src="/inteco/static/src/img/theme_imgs/theme_formacion_multiple/s_default_image_block_two_cols_2.png" class="center-block" alt="Tu Foto" data-original-title="" title="" width="259" height="195"/>
+                        <h4 class="text-center">
+                          <font style="font-size: 14px;" class="text-beta">Auditor Interno FSSC 22000 Sistemas de Inocuidad Alimentaria</font>
+                        </h4>
+                        <h4 class="text-center">
+                        </h4>
+                        <p class="o_mail_no_margin text-center">
+                          <span lang="ES-MX" style="background-color: transparent; font-size: 14px; text-align: justify;">Aprenda ha aplicar la metodología de Auditorías de un Sistema de Gestión de la Inocuidad, focalizado al programa FSSC 22000 y así desarrolle técnicas de comprensión en la evaluación </span>
+                          <br/>
+                        </p>
+                        <h3 style="margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>Inversión $350</b></font>
+                        </h3>
+                        <h3 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>¡Reserve su espacio!</b></font>
+                        </h3>
+                        <div class="text-center" style="margin-top:15px;">
+                          <center><a href="http://www.inteco.org" class="btn btn-primary">INCRÍBASE AQUÍ</a></center>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_separator">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="width:100%;" class="o_mail_v_padding">
+                      <div style="width:100%;" class="separator">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_two_cols">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_v_padding o_mail_col_table">
+                <tbody>
+                  <tr>
+                    <td style="width:270px;" class="o_mail_col_mv">
+                      <div class="o_mail_col_container">
+                        <img src="/inteco/static/src/img/theme_imgs/theme_formacion_multiple/s_default_image_block_two_cols_1.png" class="center-block" alt="Tu Foto" data-original-title="" title="" width="259" height="194"/>
+                        <h4 class="text-center">
+                          <font style="font-size: 14px;" class="text-beta">Auditor Interno FSSC 22000 Sistemas de Inocuidad Alimentaria</font>
+                        </h4>
+                        <h4 class="text-center o_default_snippet_text">
+                        </h4>
+                        <p class="o_mail_no_margin text-center">
+                          <span lang="ES-MX" style="background-color: transparent; font-size: 14px; text-align: justify;">Aprenda ha aplicar la metodología de Auditorías de un Sistema de Gestión de la Inocuidad, focalizado al programa FSSC 22000 y así desarrolle técnicas de comprensión en la evaluación documental del programa FSSC 22000.</span>
+                          <br/>
+                        </p>
+                        <h3 style="margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>Inversión $350</b></font>
+                        </h3>
+                        <h3 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>¡Reserve su espacio!</b></font>
+                        </h3>
+                        <div class="text-center" style="margin-top:15px;">
+                          <center><a href="http://www.inteco.org" class="btn btn-primary" data-original-title="" title="">INSCRÍBASE AQUÍ</a></center>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width:270px;" class="o_mail_col_mv">
+                      <div class="o_mail_col_container">
+                        <img src="/inteco/static/src/img/theme_imgs/theme_formacion_multiple/s_default_image_block_two_cols_2.png" class="center-block" alt="Tu Foto" data-original-title="" title="" width="259" height="195"/>
+                        <h4 class="text-center">
+                          <font style="font-size: 14px;" class="text-beta">Auditor Interno FSSC 22000 Sistemas de Inocuidad Alimentaria</font>
+                        </h4>
+                        <h4 class="text-center">
+                        </h4>
+                        <p class="o_mail_no_margin text-center">
+                          <span lang="ES-MX" style="background-color: transparent; font-size: 14px; text-align: justify;">Aprenda ha aplicar la metodología de Auditorías de un Sistema de Gestión de la Inocuidad, focalizado al programa FSSC 22000 y así desarrolle técnicas de comprensión en la evaluación documental del programa FSSC 22000.</span>
+                          <br/>
+                        </p>
+                        <h3 style="margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>Inversión $350</b></font>
+                        </h3>
+                        <h3 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; text-align: center;">
+                          <font style="font-size: 14px;"><b>¡Reserve su espacio!</b></font>
+                        </h3>
+                        <div class="text-center" style="margin-top:15px;">
+                          <center><a href="http://www.inteco.org" class="btn btn-primary" data-original-title="" title="">INSCRÍBASE AQUÍ</a></center>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_separator">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="width:100%;" class="o_mail_v_padding">
+                      <div style="width:100%;" class="separator">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_paragraph">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+                <tbody>
+                  <tr>
+                    <td width="100%" class="o_mail_h_padding o_mail_v_padding">
+                      <p class="" style="text-align: center;width:100%">
+                        <font style="font-size: 18px;"><b class="o_default_snippet_text">Información</b></font>
+                      </p>
+                      <div class="text-center" style="width:100%">
+                        <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                          <div>
+                            <p class="o_mail_no_margin text-center">
+                              <b class="o_default_snippet_text">María A. Aguilar Pérez</b>
+                            </p>
+                            <p class="o_mail_no_margin text-center">
+                              <a href="mailto:maguilar@inteco.org"><font class="text-beta-darker o_default_snippet_text">maguilar@inteco.org</font></a>
+                            </p>
+                            <p class="o_mail_no_margin text-center o_default_snippet_text">
+                              2283-4522 ext. 266
+                            </p>
+                          </div>
+                        </div>
+                        <div style="width:270px;float:left;margin-top:5px;margin-bottom:5px;">
+                          <div>
+                            <p class="o_mail_no_margin text-center">
+                              <b class="o_default_snippet_text">Andrea Camacho Sánchez</b>
+                            </p>
+                            <p class="o_mail_no_margin text-center">
+                              <a href="mailto:acamacho@inteco.org"><font class="text-beta-darker o_default_snippet_text">acamacho@inteco.org</font></a>
+                            </p>
+                            <p class="o_mail_no_margin text-center o_default_snippet_text">
+                              2283-4522 ext. 220
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="o_mail_block_footer_social o_mail_footer_social_left">
+            <div class="o_mail_snippet_general">
+              <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+                <tbody>
+                  <tr>
+                    <td class="o_mail_footer_description">
+                      <p class="o_mail_no_margin">
+                        <strong class="o_default_snippet_text">INTECO</strong>
+                      </p>
+                      <div class="o_mail_footer_links o_default_snippet_text">
+                        <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                        |
+                        <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                      </div>
+                      <div>
+                        <p class="o_mail_footer_copy o_default_snippet_text">
+                          <span class="fa fa-copyright"></span>
+                          2019 Todos los derechos reservados
+                        </p>
+                      </div>
+                    </td>
+                    <td class="o_mail_footer_social">
+                      <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                      <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                      <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                      <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                      <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </template>
+
+    <!-- Template for theme: Evaluadores -->
+    <template id="inteco.theme_evaluadores_template">
+        <div class="o_mail_block_banner">
+            <div class="o_mail_snippet_general general-div" >
+                <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td width="100%" valign="top" class="o_mail_full_width_padding" style="padding:0px;vertical-align:top;text-align:inherit;">
+                                <a href="#" style="text-decoration:none;font-weight:bold;color:rgb(230, 54, 0);background-color:transparent;">
+                                    <img src="/web/image/356369?access_token=7ed28527-ce4b-4008-9e3f-6c4be1d25b97" class="center-block img-v3" alt="Imagen del banner" width="598" height="228" data-original-title="" title="" />
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_title_sub">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td class="o_mail_h_padding o_mail_v_padding" style="padding:20px;vertical-align:top;text-align:inherit;">
+                                <h2 class="o_mail_no_margin h2-especial">
+                                    <font class="text-gray">EVALUADORES DE INTECO</font>
+                                </h2>
+                                <p class="o_mail_no_margin p-header-tittle">XXXXXXXX</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_title_sub text-center" style="text-align:center;">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td class="o_mail_v_padding" style="padding:20px 0px 20px 0px;vertical-align:top;text-align:center;">
+                                <h4 class="o_mail_no_margin" style="margin:0px;font-size:18px;color:black;line-height:1.6;font-weight:300;font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;">
+                                    <font class="text-alpha" data-original-title="" title="" style="color:rgb(245, 166, 35);">ESTOS SON ALGUNOS DE LOS CURSOS DESTACADOS EN EL MES</font>
+                                </h4>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_paragraph">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td width="100%" class="o_mail_h_padding o_mail_v_padding mt0 mb0" style="padding:0px 20px 0px 20px;margin:auto 0 auto 0;vertical-align:top;text-align:inherit;">
+                                <p class="" style="margin:0px 0px 10px 0px;color:rgb(121, 121, 121);font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size:14px;text-align: center; ">
+                                    <font style="color:rgb(245, 166, 35);font-size: 36px;" class="text-alpha">
+                                        <b style="font-weight:bold;">JULIO</b>
+                                    </font>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_three_cols mb0" style="margin:0 0 0px 0;font-size:small;">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_col_table table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td style="padding:0px;margin:0 0 auto 0;vertical-align:top;text-align:inherit;width:180px;" class="o_mail_col_mv mb0">
+                                <div class="o_mail_col_container text-center" style="padding:20px;text-align:center;">
+                                    <img src="/web/image/356370?access_token=afdedb6c-f197-4108-bc56-f9986780d0ee" class="center-block img-v3" alt="Foto" width="259" height="194" data-original-title="" title="" />
+                                    <h4 style="margin:15px 0 10px 0;font-size:18px;color:black;line-height:1.6;font-weight:300;font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;">
+                                        <b style="font-weight:bold;">
+                                            <font style="font-size: 14px;">Responsabilidad social integrado</font>
+                                        </b>
+                                    </h4>
+                                </div>
+                            </td>
+                            <td style="padding:0px;vertical-align:top;text-align:inherit;width:180px;" class="o_mail_col_mv">
+                                <div class="o_mail_col_container text-center" style="padding:20px;text-align:center;">
+                                    <img src="/web/image/356371?access_token=2e2ad46d-1cc6-415c-8962-d100cfaa66f0" class="center-block img-v3" alt="Foto" width="259" height="194" />
+                                    <h4 style="margin:15px 0 10px 0;font-size:18px;color:black;line-height:1.6;font-weight:300;font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;">
+                                        <strong class="" style="font-weight:bold;">
+                                            <font style="font-size: 14px;"></font>
+                                        </strong>
+                                        <b style="font-weight:bold;">
+                                            <font style="font-size: 14px;">Riesgos para un sistema de gestión en inocuidad alimentaria</font>
+                                        </b>
+                                    </h4>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_two_cols mt0" style="margin:0px 0 0 0;font-size:small;">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_v_padding o_mail_col_table table-content-eval v2" style="">
+                    <tbody>
+                        <tr>
+                            <td style="padding:0px;margin:auto 0 0 0;vertical-align:top;text-align:inherit;width:270px;" class="o_mail_col_mv mt0">
+                                <div class="o_mail_col_container" style="padding:20px;">
+                                    <div class="text-center" style="text-align:center;">
+                                        <a href="#" data-original-title="" title="" class="btn btn-alpha btn-sm" style="text-decoration:none;border-radius:0px;border-style:solid;padding:5px 10px 5px 10px;margin:0 0 0px 0;transform-style:preserve-3d;transition-property:initial;transition-delay:initial;transition-timing-function:initial;transition-duration:0.25s;box-shadow:rgba(51, 51, 51, 0) 0px 3px 3px -2px;z-index:2;user-select:none;line-height:1.5;font-size:12px;white-space:nowrap;border-left-color:rgb(243, 156, 11);border-bottom-color:rgb(243, 156, 11);border-right-color:rgb(243, 156, 11);border-top-color:rgb(243, 156, 11);border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-image:none;cursor:pointer;touch-action:manipulation;vertical-align:middle;text-align:center;font-weight:bold;display:inline-block;color:rgb(230, 54, 0);background-color:rgb(245, 166, 35);">
+                                            <font class="text-epsilon" style="color:rgb(232, 233, 234);">Leer Más</font>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:0px;margin:auto 0 0 0;vertical-align:top;text-align:inherit;width:270px;" class="o_mail_col_mv mt0">
+                                <div class="o_mail_col_container" style="padding:20px;">
+                                    <div class="text-center" style="text-align:center;">
+                                        <a href="#" data-original-title="" title="" class="btn btn-alpha btn-sm" style="text-decoration:none;border-radius:0px;border-style:solid;padding:5px 10px 5px 10px;margin:0 0 0px 0;transform-style:preserve-3d;transition-property:initial;transition-delay:initial;transition-timing-function:initial;transition-duration:0.25s;box-shadow:rgba(51, 51, 51, 0) 0px 3px 3px -2px;z-index:2;user-select:none;line-height:1.5;font-size:12px;white-space:nowrap;border-left-color:rgb(243, 156, 11);border-bottom-color:rgb(243, 156, 11);border-right-color:rgb(243, 156, 11);border-top-color:rgb(243, 156, 11);border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-image:none;cursor:pointer;touch-action:manipulation;vertical-align:middle;text-align:center;font-weight:bold;display:inline-block;color:rgb(230, 54, 0);background-color:rgb(245, 166, 35);">
+                                            <font class="text-epsilon" style="color:rgb(232, 233, 234);">Leer Más</font>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_footer_separator" style="margin:0 20px 0 20px;">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding table-content-eval" >
+                    <tbody>
+                        <tr>
+                            <td valign="top" style="padding:20px 0px 92px 0px;margin:0 0 auto 0;vertical-align:top;text-align:inherit;width:100%;" class="o_mail_v_padding mb92">
+                                <div style="background-color:rgb(245, 245, 245);height:2px;width:100%;" class="separator"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_image_text bg-beta" style="font-size:small;color:white;background-color:rgb(38, 43, 54);">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td style="padding:0px;margin:0 0 auto 0;vertical-align:top;color:rgb(85, 85, 85);background-color:rgb(255, 255, 255);text-align:inherit;width: 317.958px; text-align: center; vertical-align: middle;"
+                                class="o_mail_col_mv o_mail_img_container o_mail_h_padding o_mail_v_padding mb0 bg-white">
+                                <img src="/web/image/356372?access_token=35004039-1896-4028-a80f-1e16bee57270" class="center-block" alt="Foto" data-original-title="" title="" style="margin:0 auto 0 auto;height:auto;max-width:100%;vertical-align:middle;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;width: 337.958px;" width="318" height="239"/>
+                            </td>
+                            <td style="padding:20px;vertical-align:top;text-align:inherit;width: 279.708px; vertical-align: middle;" class="o_mail_col_mv o_mail_h_padding o_mail_v_padding">
+                                <h3 class="text-left mt0" style="margin:0px 0 10px 0;text-align:left;font-size:24px;color:white;line-height:1.1;font-weight:300;font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;">
+                                    <font color="#f5a623">
+                                        <span style="font-size: 18px;">BENEFICIOS DESPUÉS DE LLEVAR ESTE CURSO:</span>
+                                    </font>
+                                  </h3>
+                                <p class="o_mail_no_margin" style="margin:0px;color:rgb(121, 121, 121);font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size:small;text-align: left; ">
+                                    <span lang="ES-MX" style="color:rgb(128, 128, 128);font-size: 12px; text-indent: -18pt;" class="text-gray-light-dark">- Ser calificable como ISO 9001- auditor interno del Sistema de Gestión de la Calidad.</span>
+                                    <br/>
+                                    <span lang="ES-MX" style="color:rgb(128, 128, 128);font-size: 12px; text-indent: -18pt;" class="text-gray-light-dark"> - Entender los principios de auditoría interna</span>
+                                    <br/>
+                                </p>
+                                <span style="text-align: center;">
+                                    <font style="font-size: 12px;"></font>
+                                </span>
+                                <p style="margin:0px 0px 10px 0px;color:rgb(121, 121, 121);font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size:small;">
+                                    <span style="text-align: center;">
+                                        <font style="font-size: 12px;">- Ser capaz de asumir responsabilidades en cualquier actividad de la función de auditoría
+                                            interna.
+                                        </font>
+                                    </span>
+                                </p>
+                                <div class="text-left" style="text-align:left;margin-top:15px;">
+                                    <a href="https://goo.gl/forms/qyZIXSnEHPyWROAb2" class="btn btn-alpha btn-sm" data-original-title="" title="" style="text-decoration:none;border-radius:0px;border-style:solid;padding:5px 10px 5px 10px;margin:0 0 0px 0;transform-style:preserve-3d;transition-property:initial;transition-delay:initial;transition-timing-function:initial;transition-duration:0.25s;box-shadow:rgba(51, 51, 51, 0) 0px 3px 3px -2px;z-index:2;user-select:none;line-height:1.5;font-size:12px;white-space:nowrap;border-left-color:rgb(243, 156, 11);border-bottom-color:rgb(243, 156, 11);border-right-color:rgb(243, 156, 11);border-top-color:rgb(243, 156, 11);border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-image:none;cursor:pointer;touch-action:manipulation;vertical-align:middle;text-align:center;font-weight:bold;display:inline-block;color:rgb(230, 54, 0);background-color:rgb(245, 166, 35);">
+                                        <font class="text-epsilon" style="color:rgb(232, 233, 234);">Leer Más</font>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_title_sub text-center" style="text-align:center;">
+            <div class="o_mail_snippet_general general-div" style="">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td class="o_mail_h_padding o_mail_v_padding" style="padding:20px;vertical-align:top;text-align:center;">
+                              <h4 class="text-center">
+                                <font style="font-size: 14px;" class="text-beta">CONOZCA A NUESTROS INSTRUCTORES</font>
+                              </h4>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_text_image" style="font-size:small;">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles" style="table-content-eval">
+                    <tbody>
+                        <tr>
+                            <td style="padding:20px;width:270px;vertical-align:middle;text-align:center;" class="o_mail_col_mvo_mail_col_mv o_mail_h_padding o_mail_v_padding">
+                                <h3 class="" style="margin:20px 0 10px 0;font-size:24px;color:black;line-height:1.1;font-weight:300;font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;">Cecilia Mora Garita</h3>
+                                <p class="o_mail_no_margin" style="margin:0px;color:rgb(121, 121, 121);font-family:-apple-system, HelveticaNeue, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;font-size:small;">Licenciada en Tecnología de Alimentos, Miembro del Comité Central de Alimentos CTN02 y participante
+                                    activa del comité de revisión de la norma ISO 22000-ISO TC 34 SC 17 WG8, Auditora FSSC calificada,
+                                    más de 13 años de experiencia como consultora y auditora de sistemas de gestión de inocuidad
+                                    de los alimentos.
+                                    <span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif"></span>
+                                </p>
+                            </td>
+                            <td style="padding:0px;width:270px;text-align:center;vertical-align:middle" class="o_mail_img_container o_mail_h_padding o_mail_v_padding">
+                                <img src="/web/image/356375/26219943_10155131150516711_5095561903636635585_n.jpg?access_token=dd0c5306-80b8-4b9d-bb1c-94547db0509a" class="center-block" alt="Su Foto" width="299" height="300" style=""/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="o_mail_block_footer_social o_mail_footer_social_center">
+            <div class="o_mail_snippet_general general-div">
+                <table align="center" cellspacing="0" cellpadding="0" class="o_mail_table_styles o_mail_full_width_padding">
+              <tbody>
+                <tr>
+                  <td class="o_mail_footer_description">
+                    <p class="o_mail_no_margin">
+                      <strong class="o_default_snippet_text">INTECO</strong>
+                    </p>
+                    <div class="o_mail_footer_links o_default_snippet_text">
+                      <a style="margin-left:0px" href="https://www.inteco.org/unsubscribe_from_list" class="btn btn-link o_default_snippet_text" data-original-title="" title="">Anular subscripción</a>
+                      |
+                      <a style="margin-left:0px" href="https://www.inteco.org/contactus?alias=cotizacion" class="btn btn-link o_default_snippet_text">Contacto</a>
+                    </div>
+                    <div>
+                      <p class="o_mail_footer_copy o_default_snippet_text">
+                        <span class="fa fa-copyright"></span>
+                        2019 Todos los derechos reservados
+                      </p>
+                    </div>
+                  </td>
+                  <td class="o_mail_footer_social">
+                    <a href="https://www.facebook.com/intecocr/"><span class="text-alpha fa fa-facebook-f fa-1x"></span></a>
+                    <a href="https://www.linkedin.com/company/intecocr"><span class="fa fa-linkedin text-alpha"></span></a>
+                    <a href="https://twitter.com/INTECOcr"><span class="fa fa-twitter text-alpha"></span></a>
+                    <a href="https://www.instagram.com/intecocr/"><span class="fa fa-instagram text-alpha"></span></a>
+                    <a href="https://www.youtube.com/channel/UCVMjMbLnCzKBOIo9TbtGCng"><span class="fa fa-youtube text-alpha fa-1x"></span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+        </div>
+    </template>
+</odoo>

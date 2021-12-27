@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_suppliers" model="website.page">
+        <field name="name">Suppliers payments</field>
+        <field name="url">/page/inteco.payment_suppliers</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.payment_suppliers</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.payment_suppliers" name="Suppliers payments">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container">
+                            <h1 class="text-beta">Calendario de pago a proveedores</h1>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img class="img img-responsive" src="/web/image/3971494/Calendario%20Pago%20Proveedores%202020.png" alt="Calendario de pago a proveedores" data-original-title="" title="" style="width: 100%;padding-bottom: 25px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

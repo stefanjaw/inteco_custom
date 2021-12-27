@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="food_sector" model="website.page">
+        <field name="name">Sector Food</field>
+        <field name="url">/page/inteco.food_sector</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.food_sector</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.food_sector" name="Food Sector">
+                <t t-set="food_sector" t-value="True"/>
+                <t t-call="website.layout">
+                    <style>
+                        .nav-pills li {
+                        width:25%
+                        }
+                        .nav-pills a {
+                        color: black
+                        }
+
+                    </style>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container" style="margin-top:25px;margin-bottom:35px">
+                            <section class="s_text_block">
+                                <div class="container">
+                                    <h1 class="text-beta mb32 text-beta-intc">Sector alimentos</h1>
+                                </div>
+                            </section>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="row" style="background-color:#eee">
+                                        <ul class="nav nav-pills nav-justified" role="tablist">
+
+                                            <li class="active">
+                                                <a class="" href="/gestion-de-inocuidad-alimentaria" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de Inocuidad Alimentaria</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Alimentarias</span>
+                                                        </div>
+
+                                                        <div class="box-line al">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/esquema-fssc-22000" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Esquema FSSC 22000</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Alimentarias</span>
+                                                        </div>
+
+                                                        <div class="box-line al">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/analisis-de-riesgos-y-control-de-puntos-criticos-y-buenas-practicas-de-manufactura" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Análisis de riesgos y control de puntos críticos y buenas prácticas de manufactura</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Alimentarias</span>
+                                                        </div>
+
+                                                        <div class="box-line al">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/esquema-libre-de-gluten-pronutri-evaluacion-de-proveedores" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Esquema libre de gluten | Evaluación de proveedores</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Alimentarias</span>
+                                                        </div>
+
+                                                        <div class="box-line al">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- row -->
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

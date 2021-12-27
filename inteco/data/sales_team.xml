@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="sales_team.team_sales_department" model="crm.team">
+        <field name="name">Certifications</field>
+        <field name="alias_name">certificaciones</field>
+    </record>
+
+    <record id="team_trainings_department" model="crm.team">
+        <field name="name">Trainings</field>
+        <field name="company_id" eval="False"/>
+        <field name="alias_name">capacitaciones</field>
+        <field name="use_quotations" eval="True"/>
+<!--        <field name="use_invoices" eval="True"/>-->
+<!--        <field name="dashboard_graph_model">sale.report</field>-->
+        <field name="use_opportunities">True</field>
+        <field name="use_leads">True</field>
+    </record>
+
+    <record id="team_standards_department" model="crm.team">
+        <field name="name">Standards</field>
+        <field name="company_id" eval="False"/>
+        <field name="alias_name">normas</field>
+        <field name="use_quotations" eval="True"/>
+<!--        <field name="use_invoices" eval="True"/>-->
+<!--        <field name="dashboard_graph_model">sale.report</field>-->
+        <field name="use_opportunities">True</field>
+        <field name="use_leads">True</field>
+    </record>
+
+    <record id="team_general_department" model="crm.team">
+        <field name="name">General</field>
+        <field name="company_id" eval="False"/>
+        <field name="alias_name">sales</field>
+        <field name="use_quotations" eval="True"/>
+<!--        <field name="use_invoices" eval="True"/>-->
+<!--        <field name="dashboard_graph_model">sale.report</field>-->
+        <field name="use_opportunities">True</field>
+        <field name="use_leads">True</field>
+    </record>
+
+</odoo>

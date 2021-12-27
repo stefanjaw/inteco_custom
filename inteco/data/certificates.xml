@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<field name="datas" type="base64" file="/inteco/static/src/img/reference_name_downloadeable.jpg"/>-->
+
+<odoo noupdate="1">
+    <record id="certificate_001-CP-2001" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_001-CP-2001</field>
+        <field name="datas">001-CP-2001.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/001-CP-2001.pdf</field>
+    </record>
+    <record id="certificate_012-CP-2005" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_012-CP-2005</field>
+        <field name="datas">012-CP-2005.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/012-CP-2005.pdf</field>
+    </record>
+    <record id="certificate_016-CP-2007" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_016-CP-2007</field>
+        <field name="datas">016-CP-2007.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/016-CP-2007.pdf</field>
+    </record>
+    <record id="certificate_017-CP-2007" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_017-CP-2007</field>
+        <field name="datas">017-CP-2007.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/017-CP-2007.pdf</field>
+    </record>
+    <record id="certificate_030-CP-2008" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_030-CP-2008</field>
+        <field name="datas">030-CP-2008.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/030-CP-2008.pdf</field>
+    </record>
+    <record id="certificate_031-CP-2009" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_031-CP-2009</field>
+        <field name="datas">031-CP-2009.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/031-CP-2009.pdf</field>
+    </record>
+    <record id="certificate_037-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_037-CP-2010</field>
+        <field name="datas">037-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/037-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_042-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_042-CP-2010</field>
+        <field name="datas">042-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/042-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_043-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_043-CP-2010</field>
+        <field name="datas">043-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/043-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_045-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_045-CP-2010</field>
+        <field name="datas">045-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/045-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_046-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_046-CP-2010</field>
+        <field name="datas">046-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/046-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_047-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_047-CP-2010</field>
+        <field name="datas">047-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/047-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_048-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_048-CP-2010</field>
+        <field name="datas">048-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/048-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_049-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_049-CP-2010</field>
+        <field name="datas">049-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/049-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_050-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_050-CP-2010</field>
+        <field name="datas">050-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/050-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_051-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_051-CP-2010</field>
+        <field name="datas">051-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/051-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_052-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_052-CP-2010</field>
+        <field name="datas">052-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/052-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_053-CP-2010" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_053-CP-2010</field>
+        <field name="datas">053-CP-2010.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/053-CP-2010.pdf</field>
+    </record>
+    <record id="certificate_056-CP-2011" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_056-CP-2011</field>
+        <field name="datas">056-CP-2011.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/056-CP-2011.pdf</field>
+    </record>
+    <record id="certificate_057-CP-2011" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_057-CP-2011</field>
+        <field name="datas">057-CP-2011.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/057-CP-2011.pdf</field>
+    </record>
+    <record id="certificate_058-CP-2011" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_058-CP-2011</field>
+        <field name="datas">058-CP-2011.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/058-CP-2011.pdf</field>
+    </record>
+    <record id="certificate_059-CP-2011" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_059-CP-2011</field>
+        <field name="datas">059-CP-2011.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/059-CP-2011.pdf</field>
+    </record>
+    <record id="certificate_064-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_064-CP-2013</field>
+        <field name="datas">064-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/064-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_067-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_067-CP-2013</field>
+        <field name="datas">067-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/067-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_069-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_069-CP-2013</field>
+        <field name="datas">069-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/069-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_072-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_072-CP-2013</field>
+        <field name="datas">072-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/072-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_073-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_073-CP-2013</field>
+        <field name="datas">073-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/073-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_076-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_076-CP-2013</field>
+        <field name="datas">076-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/076-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_077-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_077-CP-2013</field>
+        <field name="datas">077-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/077-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_078-CP-2013" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_078-CP-2013</field>
+        <field name="datas">078-CP-2013.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/078-CP-2013.pdf</field>
+    </record>
+    <record id="certificate_089-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_089-CP-2014</field>
+        <field name="datas">089-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/089-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_090-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_090-CP-2014</field>
+        <field name="datas">090-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/090-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_091-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_091-CP-2014</field>
+        <field name="datas">091-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/091-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_095-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_095-CP-2014</field>
+        <field name="datas">095-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/095-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_096-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_096-CP-2014</field>
+        <field name="datas">096-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/096-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_097-CP-2014" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_097-CP-2014</field>
+        <field name="datas">097-CP-2014.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/097-CP-2014.pdf</field>
+    </record>
+    <record id="certificate_118-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_118-CP-2015</field>
+        <field name="datas">118-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/118-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_120-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_120-CP-2015</field>
+        <field name="datas">120-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/120-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_125-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_125-CP-2015</field>
+        <field name="datas">125-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/125-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_126-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_126-CP-2015</field>
+        <field name="datas">126-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/126-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_127-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_127-CP-2015</field>
+        <field name="datas">127-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/127-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_128-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_128-CP-2016</field>
+        <field name="datas">128-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/128-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_129-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_129-CP-2016</field>
+        <field name="datas">129-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/129-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_130-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_130-CP-2016</field>
+        <field name="datas">130-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/130-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_131-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_131-CP-2016</field>
+        <field name="datas">131-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/131-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_132-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_132-CP-2016</field>
+        <field name="datas">132-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/132-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_127-CP-2016" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_127-CP-2016</field>
+        <field name="datas">127-CP-2016.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/127-CP-2016.pdf</field>
+    </record>
+    <record id="certificate_001-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_001-CP-2017</field>
+        <field name="datas">001-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/001-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_131-CP-2015" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_131-CP-2015</field>
+        <field name="datas">131-CP-2015.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/131-CP-2015.pdf</field>
+    </record>
+    <record id="certificate_004-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificate_004-CP-2017</field>
+        <field name="datas">004-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/004-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_002-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">002-CP-2017</field>
+        <field name="datas">002-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/002-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_003-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">003-CP-2017</field>
+        <field name="datas">003-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/003-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_006-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">006-CP-2017</field>
+        <field name="datas">006-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/006-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_005-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">005-CP-2017</field>
+        <field name="datas">005-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/005-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_007-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">007-CP-2017</field>
+        <field name="datas">007-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/007-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_009-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">009-CP-2017</field>
+        <field name="datas">009-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/009-CP-2017.pdf</field>
+    </record>
+    <record id="certificate_010-CP-2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">010-CP-2017</field>
+        <field name="datas">010-CP-2017.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/certificates/010-CP-2017.pdf</field>
+    </record>    
+</odoo>

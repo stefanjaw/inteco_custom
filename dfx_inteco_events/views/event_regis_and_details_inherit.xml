@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="dfx_registration_attendee_inherit" inherit_id="website_event.registration_attendee_details" name="Registration Attendee Inherit">
+        <xpath expr="//div/div/form/div" position="replace">
+            <div class="modal-content">
+                <div class="modal-header align-items-center">
+                    <h4 class="modal-title">Attendees</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span></button>
+                </div>
+                <t t-set="counter_type" t-value="1"/>
+                <t t-set="counter" t-value="0"/>
+                <t t-foreach="tickets" t-as="ticket">
+                    <t t-if="ticket['quantity'] > 1">
+                        <!-- AGREGAR JAVASCRIPT QUE MUESTRE ESTE DIV SI LA CANTIDAD DE ASISTENTES ES MAYOR A 1 EN ALGUNO DE LOS TIPOS DE TICKET. INICIALMENTE VA A VENIR OCULTO -->
+                        <div class="alert alert-danger m-0" role="alert" style="color: white;background-color: red;border-color: red;font-size: 1.3rem;font-weight: 500;">
+                            <h4 class="alert-heading">¡Atención!</h4>
+                            <p>Si requiere <strong>una factura por cada</strong> participante, debe realizar los registros <strong>uno a uno</strong> de los participantes a inscribir. En caso contrario y de continuar con este formulario, se le realizará <strong>una única factura</strong> por los participantes inscritos</p>
+                        </div>
+                    </t>
+                    <t t-else="">
+
+                    </t>
+                </t>
+                <div class="modal-body">
+                    <t t-foreach="tickets" t-as="ticket" t-if="availability_check">
+                        <h4 class="o_page_header mt16">
+                            <strong>
+                                Ticket Type #<t t-raw="counter_type"/>: <span style="color:#f5a623;"><t t-esc="ticket['name']"/></span>
+                                <!--                            <t t-if="ticket['price'] == 0">(Gratuito)</t>-->
+                            </strong>
+                        </h4>
+                        <t t-foreach="range(1, ticket['quantity'] + 1)" t-as="att_counter" name="attendee_loop">
+                            <t t-set="counter" t-value="counter + 1"/>
+                            <div class="col-lg-4 px-0"><h4 style="font-weight:bolder; color:#00A0E3;">Asistente <t t-raw="counter"/></h4></div>
+                            <div class="row mb12">
+                                <t t-set="attendee_placeholder">Asistente #%s</t>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="text" t-attf-name="#{counter}-name" required="Este campo es requerido" placeholder="Nombre (*)"/></div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="text" t-attf-name="#{counter}-firstname" required="Este campo es requerido" placeholder="Apellido 1 (*)"/></div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="text" t-attf-name="#{counter}-lastname" placeholder="Apellido 2"/></div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="email" t-attf-name="#{counter}-email" required="Este campo es requerido" placeholder="Correo Electrónico (*)"/></div>
+                                <!--                                <div class="col-lg-3 pb8"><input class='form-control' value="1" type='text' t-attf-name="#{counter}-types_identification" required="This field is required" placeholder="Tipo de Identificación"/></div>-->
+                                <div class="col-lg-3 pb8">
+                                    <select id="type_id_list" t-attf-name="#{counter}-types_identification" class="form-control o_website_form_input needsclick custom-select" required="True">
+                                        <option value="1">
+                                            Cédula Física
+                                        </option>
+                                        <option value="3">
+                                            DIMEX
+                                        </option>
+                                        <option value="4">
+                                            NITE
+                                        </option>
+                                        <option value="5">
+                                            Extranjero
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="text" t-attf-name="#{counter}-idatt" required="Este campo es requerido" placeholder="Identificación (*)"/></div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="tel" t-attf-name="#{counter}-phone" placeholder="Teléfono"/></div>
+                                <div class="col-lg-3 pb8"><input class="form-control" type="text" t-attf-name="#{counter}-position" required="Este campo es requerido" placeholder="Puesto (*)"/></div>
+                                <input class="d-none" type="text" t-attf-name="#{counter}-ticket_id" t-attf-value="#{ticket['id']}"/>
+                            </div>
+
+                            <div class="row pt16 pb12">
+                                <div class="col-lg-12 pb8"><strong>Seleccione otros temas de su interés para recibir información:</strong></div>
+                                <div class="col-lg-4 pb8" t-foreach="event.env['res.partner.category'].search([('is_interest_topic', '=', True)])" t-as="category">
+                                    <t t-if="category.id in event.interest_topics.ids">
+                                        <input type="checkbox" t-attf-id="id_#{category.id}" t-attf-name="#{counter}-tag_ids#{category.id}" checked="checked" disabled="disabled"/> <span t-esc="category.name+' '"/>
+                                    </t>
+                                    <t t-else="">
+                                        <input type="checkbox" t-attf-id="id_#{category.id}" t-attf-name="#{counter}-tag_ids#{category.id}"/> <span t-esc="category.name+' '"/>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <t t-if="event.specific_question_ids">
+                                <div class="mb16 mt16">
+                                    <t t-set="counter_id" t-value="0"/>
+                                    <div t-foreach="event.specific_question_ids" t-as="question" id="questions_select">
+                                        <div class="row mb4 question_title" id="group_questions">
+                                            <span class="col-lg-2 mt4"><t t-esc="question.title"/></span>
+                                            <div id="select_container" class="row col-lg-8">
+                                                <select t-attf-name="#{counter}-answer_ids-#{question.id}" t-attf-id="answer_select_#{counter_id}" class="col-lg-4 mt4 custom-select o_specific_answer" required="true">
+                                                    <t t-foreach="question.answer_ids" t-as="answer">
+                                                        <option t-esc="answer.name" t-att-value="answer.id" t-att-data-value="answer.valid_event_anw"/>
+                                                    </t>
+
+                                                </select>
+                                                <t t-set="counter_id" t-value="counter_id + 1"/>
+                                                <div t-attf-id="wrong_amswer__#{counter_id}" class="col-lg-6 ml-2 mt-1 py-1 d-none" role="alert" >
+                                                    *La opción seleccionada es incorrecta
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $("#error_ans").hide();
+                                        function validate_questions(){
+                                            var parent = $( "#questions_select div" ).children()
+                                            var state = 'valid';
+                                            var cont = 0
+                                            for (var i=0, max=parent.length; max &gt; i ; i++) {
+                                                if (parent[i].nodeName=="SELECT"){
+                                                var value = $('option:selected',parent[i]).attr('data-value');
+                                                //debugger;
+                                                if(value =="True"){
+                                                    $( parent[i] ).parent( "#select_container" ).parent( "#group_questions" ).css({"color": "red"});
+                                                    cont++;
+                                                    $( parent[i] ).siblings().removeClass('d-none');
+                                                }
+                                            }
+                                        }
+                                        if(cont>0){
+                                            $("#event_continue").prop('disabled', true);
+                                                state = 'invalid';
+                                            }else{
+                                                $("#event_continue").prop('disabled', false);
+                                                state = 'valid';
+                                            }
+                                            return state;
+                                        }
+
+                                        $('.o_specific_answer').change(function() {
+                                            var value = $('option:selected',this).attr( "data-value");
+                                            var sibling =  $(this).siblings();
+                                            
+                                            if(value =="True"){
+                                                $("#event_continue").prop('disabled', true);
+                                                sibling.removeClass('d-none');
+                                            }else{
+                                                $( this ).parent( "#select_container" ).parent( "#group_questions" ).css({"color": "black"});
+                                                $("#event_continue").prop('disabled', false);
+                                                sibling.addClass('d-none');
+                                            }
+                                        });
+                                        
+                                        //Bloqueo de evento del boton para que valide primero las respuestas
+                                        $("#event_continue").click(function(event){
+                                            var val = validate_questions();
+                                            if (val=='invalid'){
+                                                event.preventDefault();
+                                            }
+                                        });
+                                    </script>
+                                </div>
+                            </t>
+
+                        </t>
+                        <t t-set="counter_type" t-value="counter_type + 1"/>
+                    </t>
+                    <t t-if="not availability_check">
+                        <div class="modal-body bg-light border-bottom">
+                            <strong> You ordered more tickets than available seats</strong>
+                        </div>
+                    </t>
+                </div>
+                <div class="modal-footer border-0 justify-content-between">
+                    <button type="button" class="btn btn-secondary js_goto_event" data-dismiss="modal">Cancel</button>
+                    <button id="event_continue" type="submit" class="btn btn-primary" t-if="availability_check">Continue</button>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

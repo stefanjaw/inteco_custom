@@ -1,0 +1,35 @@
+<function>
+    -
+<!--  Configure website language-->
+  !record {model: res.config.settings, id: inteco_default_website_properties}:
+    language_ids: [base.lang_es_CR]
+    default_lang_id: base.lang_es_CR
+  !python {model: res.config.settings}: |
+    self.browse(ref('inteco_default_website_properties')).execute()
+<!--    Show products on a list view-->
+  !python {model: ir.ui.view}: |
+    ctx = dict(self.env.context, active_test=True)
+    self.with_context(ctx).browse(ref('website_sale.products_list_view')).write({'active': True})
+<!--    Show product categories sidebar-->
+  !python {model: ir.ui.view}: |
+    ctx = dict(self.env.context, active_test=True)
+    self.with_context(ctx).browse(ref('website_sale.products_categories')).write({'active': True})
+<!--    Show product categories in collapse mode-->
+  !python {model: ir.ui.view}: |
+    ctx = dict(self.env.context, active_test=True)
+    self.with_context(ctx).browse(ref('website_sale.option_collapse_products_categories')).write({'active': True})
+<!--    Show product attributes filter-->
+  !python {model: ir.ui.view}: |
+    ctx = dict(self.env.context, active_test=True)
+    self.with_context(ctx).browse(ref('website_sale.products_attributes')).write({'active': False})
+<!--    Display author avatar in blogs-->
+  !python {model: ir.ui.view}: |
+    ctx = dict(self.env.context, active_test=True)
+    self.with_context(ctx).browse(ref('website_blog.opt_blog_post_author_avatar_display')).write({'active': True})
+-
+<!--    Disable Help menu-->
+  !python {model: website.menu}: |
+    if self.env['ir.model.data'].search([('module', '=', 'website_helpdesk'), ('name', '=', 'website_menu_helpdesk')]):
+        self.browse(ref('website_helpdesk.website_menu_helpdesk')).unlink()
+</function>
+

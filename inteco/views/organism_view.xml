@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="organism_form_view" model="ir.ui.view">
+        <field name="name">organism.form.view</field>
+        <field name="model">inteco.organism</field>
+        <field name="arch" type="xml">
+            <form string="Organism">
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name" placeholder="e.g. ISO"/></h1>
+                </div>
+                <group>
+                    <field name="website" widget="url" placeholder="e.g. www.inteco.org"/>
+                </group>
+                <notebook>
+                    <page string="Correspondences">
+                        <field name="correspondence_ids" mode="tree">
+                            <form string="Correspondences">
+                                <group>
+                                    <field name="name" string="Code"/>
+                                    <field name="website" widget="url" placeholder="e.g. www.inteco.org"/>
+                                </group>
+                            </form>
+                            <tree>
+                                <field name="name" string="Code"/>
+                                <field name="website" widget="url" placeholder="e.g. www.inteco.org"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="organism_tree_view" model="ir.ui.view">
+        <field name="name">organism.tree.view</field>
+        <field name="model">inteco.organism</field>
+        <field name="arch" type="xml">
+            <tree string="Organism">
+                <field name="name" />
+                <field name="website" widget="url"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="organism_standard_form_view" model="ir.ui.view">
+        <field name="name">organism.standard.form.view</field>
+        <field name="model">inteco.organism.standard</field>
+        <field name="arch" type="xml">
+            <form string="Correspondence">
+                <group>
+                    <field name="name" string="Code" placeholder="e.g. ISO 9000:2015"/>
+                    <field name="organism_id"/>
+                    <field name="website" widget="url" placeholder="e.g. www.inteco.org"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

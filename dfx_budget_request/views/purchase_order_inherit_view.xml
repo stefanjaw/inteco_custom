@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--        action de solicitud de presupuesto-->
+        <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+            <field name="name">Requests for Quotation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('state','in',('draft','sent','bid','cancel', 'confirmed'))]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a request for quotation
+                </p><p>
+                The quotation contains the history of the discussion
+                you had with your vendor.
+            </p>
+            </field>
+        </record>
+        <!--        action de pedido de compra-->
+        <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+            <field name="name">Purchase Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="domain">[('state','not in',('draft','sent','bid','cancel', 'confirmed'))]</field>
+            <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a quotation
+                </p><p>
+                It will be converted into a purchase order.
+            </p>
+            </field>
+        </record>
+        <record id="order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_ref']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <!--  purchase_done_id =  gasto realizado?       -->
+                    <field name="purchase_done_id" attrs="{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}"/>
+                    <!--      company_card =   tarjeta de la empresa    -->
+                    <field name="company_card_id" attrs="{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Proveedor/Funcionario</attribute>
+                    <attribute name="options">{'no_create': False, 'no_create_edit':False}</attribute>
+                    <attribute name="domain"></attribute>
+                    <attribute name="modifiers">{}</attribute>
+                    <attribute name="context"></attribute>
+                    <attribute name="attrs">{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}</attribute>
+                </xpath>
+
+                <!--                <xpath expr="//field[@name='date_order']" position="attributes">-->
+                <!--                    <attribute name="attrs">{'readonly': 1}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='date_order']" position="before">
+                    <!--  requested_by =     solicitante    -->
+                    <field name="requested_by"  style="color:Grey" force_save = "1"/>
+                    <field name="requested_by_mail" invisible="1" force_save = "1" />
+                    <field name="file_check" invisible="1" force_save = "1" />
+                    <field name="depo_val" invisible="1" force_save = "1" />
+                    <field name="depo_values" invisible="1" force_save = "1" />
+
+                    <!--  approved_by =   aprobador      -->
+                    <field name="approved_by" force_save = "1"/>
+                    <field name="approved_by_bk" force_save = "1" invisible="1"/>
+                    <field name="approved_by_result" force_save = "1" attrs="{'invisible':[('approved_by_result','=', False)]}"/>
+                    <field name="approved_by_date" readonly="1" force_save = "1" attrs="{'invisible':[('approved_by_result','=', False)]}"/>
+                    <field name="approved_by_mail" invisible="1" force_save = "1"/>
+                    <field name="approved_by_status" invisible="1" force_save = "1"/>
+                    <field name="approved_by_status_3" invisible="1" force_save = "1" />
+                    <!--  approved_by2 =   aprobador 2     -->
+                    <field name="approved_by2" force_save = "1"/>
+                    <field name="approved_by2_result" force_save = "1" attrs="{'invisible':[('approved_by2_result','=', False)]}"/>
+                    <field name="approved_by2_mail" invisible="1" force_save = "1"/>
+                    <field name="approved_by2_status" invisible="1" force_save = "1"/>
+                    <field name="approved_by2_status_3" invisible="1" force_save = "1"/>
+
+                    <field name="current_user" invisible="1" />
+                    <field name="liq_current_user" invisible="1" />
+                    <field name="req_current_user" invisible="1" />
+                    <field name="doc_quant" invisible="1" force_save = "1"/>
+                </xpath>
+                <xpath expr="//field[@name='requested_by']" position="before">
+                    <field name="number" invisible = "1" />
+                    <label for="number" style="margin-top: -80px;margin-right:-380px;color:red;font-size: 20px;float:right;border: 1px solid red;padding:5px" string="Sin Factura" attrs="{'invisible':['|',('state','in',('draft')),('up_invoice','=',True)]}" />
+                    <label for="number" style="margin-top: -80px;margin-left:10px;color:green;font-size: 20px;float:right;border: 1px solid green;padding:5px" string="Con Factura" attrs="{'invisible':['|',('state','in',('draft')),('up_invoice','=',False)]}" />
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="country_exp" force_save = "1" attrs="{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}"/>
+                    <field name="exp_country" readonly="1" force_save = "1" invisible="1"/>
+                    <field name="up_invoice" string="¿Posee factura?"/>
+                    <field name="del_invoice" string="¿Entrega de la Factura?" attrs="{'invisible':['|',('state','in',('draft')), ('up_invoice','=', True)], 'readonly':[('advance_pur','=',True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('liquidate','done liquidate','doc_liquidate','ready_prov'))]}</attribute>
+                </xpath>
+                <!--                <xpath expr="//field[@name='date_order']" position="attributes">-->
+                <!--                    <attribute name="states"></attribute>-->
+                <!--                    <attribute name="attrs">{'readonly': ['|',('state', 'in', ('purchase'))]}</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                    <attribute name="modifiers">{'invisible':[['origin','=',True]]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='approved_by2_result']" position="after">
+                    <!--  purchase_notes =   notas del correo   aprobado/rechazado  -->
+                    <field name="approved_by2_date" readonly="1" force_save = "1" attrs="{'invisible':[('approved_by2_result','=', False)]}"/>
+                    <field name="purchase_notes" force_save = "1" />
+                    <field name="approv_req" attrs="{'readonly':[('state','in',('liquidate','doc_liquidate','ready_prov'))]}"/>
+
+
+                    <field name="expense_prov" attrs="{'readonly':[('advance_pur','=', True)],'invisible':[('approv_req','=', False)]}"/>
+                    <field name="advance_pur" attrs="{'readonly':[('expense_prov','=', True)],'invisible':[('approv_req','=', False)]}"/>
+
+
+                    <field name="approv_followers" invisible="1"/>
+                    <field name="amount_to_pay" attrs="{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))], 'invisible':[('approv_req','=', False)]}" widget="monetary"/>
+                    <field name="employee_name" invisible="1" force_save = "1"/>
+                    <field name="employees_name" attrs="{'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))], 'invisible':[('approv_req','=', False)]}" force_save = "1"/>
+                    <field name="employee_name_mail" invisible="1" force_save = "1"/>
+                    <field name="emp_amount_to_pay" attrs="{'required': [(True)], 'invisible': ['|', ('state', 'in', ('draft','sent','to approve','final approve','purchase')),('approv_req','=', False)]}" widget="monetary"/>
+                    <field name="amount_to_refund" attrs="{'invisible': ['|','|', ('state', 'in', ('draft','sent','to approve','final approve','purchase')),('expense_prov','=', True),('approv_req','=', False)]}" widget="monetary"/>
+                    <field name="appr_datetime" attrs="{'required': [('approv_req','=', True)] ,'invisible':[('approv_req','=', False)], 'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}" force_save = "1"/>
+                    <field name="end_datetime" attrs="{'required': [('approv_req','=', True)] ,'invisible':[('approv_req','=', False)], 'readonly':[('state','in',('liquidate','done liquidate','doc_liquidate','ready_prov'))]}" force_save = "1"/>
+                    <field name="deposit_date" attrs="{'invisible':[('depo_val','=', False)]}"/>
+                    <field name="payment_ref" attrs="{'invisible':[('depo_val','=', False)]}"/>
+                    <field name="approved_by_datetime" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="approved_by_datetime3" force_save = "1" invisible="1"/>
+                    <field name="approved_by_datetime7" force_save = "1" invisible="1"/>
+                </xpath>
+
+                <field name="date_order" position="replace" />
+                <field name="purchase_notes" position="replace"  />
+                <field name="del_invoice" position="after">
+                    <field name="date_order" readonly="1"/>
+                    <field name="purchase_notes"/>
+                </field>
+
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_liq_cancel" string="Cancelar" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ('final approve','cancel','purchase','to approve','draft','done','done liquidate','ready_prov'))]}"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_accept_liq" string="Validar liquidación" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|',('liq_current_user','=',False), ('state', 'in', ('final approve','cancel','purchase','to approve','draft','done','done liquidate','ready_prov','doc_liquidate'))]}"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_appr_pur" string="Aprobado" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('invoice_status','in',('approved','rejected','docs_pending')), ('state', 'in', ('final approve','cancel','sent','to approve','draft','done','ready_prov','liquidate'))]}"
+                            groups="dfx_budget_request.CxP_group"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_dep_pur" string="depositado" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('invoice_status','not in',('approved')),('state', 'in', ('final approve','cancel','sent','liquidate','done liquidate','to approve','draft','done','purchase','doc_liquidate','ready_prov')), ('depo_values','=', False)]}"
+                            groups="dfx_budget_request.CxP_group"/>
+                    <button name="button_fix_pur_invoice" string="Fix Invoice" type="object" class="oe_highlight" invisible="1"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_pending_pur" string="Pendiente" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('invoice_status','in',('approved','rejected','docs_pending')), ('state', 'in', ('final approve','cancel','sent','to approve','draft','done','liquidate'))]}"
+                            groups="dfx_budget_request.CxP_group"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_confirm_pur" string="Confirmar" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'not in', ('pending docs'))]}"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_reject_pur" string="Rechazado" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('invoice_status','in',('approved','rejected','docs_pending')), ('state', 'in', ('final approve','cancel','sent','to approve','draft','done','approved','liquidate'))]}"
+                            groups="dfx_budget_request.CxP_group"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="before">
+                    <button name="button_validate" string="Validar" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ('final approve','cancel','purchase','to approve','liquidate','done','done liquidate','doc_liquidate'))]}"
+                            groups="dfx_budget_request.group_user"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_confirm']" position="before">
+                    <button name="button_cancel_first" string="Cancelar" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ('cancel','draft','liquidate','done liquidate','doc_liquidate'))]}"
+                            groups="dfx_budget_request.group_manager,dfx_budget_request.group_user"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="after">
+                    <button name="button_acc_dep" string="Aceptar" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('invoice_status','not in',('docs_pending','deposit')),('depo_val','=',False)]}"
+                            groups="dfx_budget_request.CxP_group"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='print_quotation']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('final approve','cancel','purchase','to approve','liquidate','done','done liquidate','draft','doc_liquidate'))]}</attribute>
+                    <attribute name="groups">dfx_budget_request.group_manager</attribute>
+                    <attribute name="class">oe_highlight</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_confirm']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': ['|',('current_user','=',True) ,('state', 'not in', ('final approve'))]}</attribute>
+                    <attribute name="groups">dfx_budget_request.group_manager</attribute>
+                    <attribute name="class">oe_highlight</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@id='draft_confirm']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('draft','final approve','to approve','sent','purchase','cancel','liquidate','done liquidate','done','doc_liquidate'))]}</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_approve']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': ['|',('req_current_user','=',True), ('state', 'not in', ('to approve'))]}</attribute>
+                    <attribute name="groups">dfx_budget_request.group_manager</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_cancel']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_done']" position="attributes">
+                    <!--                    <attribute name="states"></attribute>-->
+                    <!--                    <attribute name="attrs">{'invisible': ['|',('state', 'in', ('final approve','cancel','purchase','to approve','liquidate','done','done liquidate','draft'))]}</attribute>-->
+                    <attribute name="groups">purchase.group_purchase_manager</attribute>
+                    <attribute name="class">oe_highlight</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='button_unlock']" position="attributes">
+                    <!--                    <attribute name="states"></attribute>-->
+                    <!--                    <attribute name="attrs">{'invisible': ['|',('state', 'in', ('final approve','cancel','purchase','to approve','liquidate','done','done liquidate','draft'))]}</attribute>-->
+                    <attribute name="groups">purchase.group_purchase_manager</attribute>
+                    <attribute name="class">oe_highlight</attribute>
+                </xpath>
+                <xpath expr="/form/header/field[@name='state']" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,purchase" readonly="1"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='action_rfq_send']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('draft','final approve','to approve','sent','purchase','cancel','liquidate','done liquidate','done','doc_liquidate'))]}</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='currency_id']" position="after">
+                    <!--     Registro       -->
+                    <field name="purchase_record" invisible="1" />
+                    <!--     Número de versión    -->
+                    <field name="purchase_version" invisible="1" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_user_purchase_dbr" model="ir.ui.view">
+            <field name="name">purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom']" position="attributes">
+                    <attribute name="string">Unidad de medida</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="cost_center" invisible="1"/>
+                    <field name="budget_account" invisible="1"/>
+
+                    <field name="new_cost_center" options="{'no_create': True, 'no_edit': True}"/>
+                    <field name="new_budget_account" options="{'no_create': True, 'no_edit': True}"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="product_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_country_purchase_dbr" model="ir.ui.view">
+            <field name="name">country.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='date_planned']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='date_planned']" position="before">
+                    <field name="exp_country"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='invoice_status']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="string">Estado de CXP</attribute>
+                </xpath>
+                <xpath expr="//tree/field[@name='invoice_status']" position="before">
+                    <field name="state" string="Estado de usuario"/>
+                </xpath>
+                <xpath expr="//tree/field[@name='state']" position="attributes">
+                    <attribute name="string">Estado de usuario</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Add departments                   dbr = dfx_budget_request-->
+        <record id="user_depart_action_dbr" model="ir.actions.act_window">
+            <field name="name">Tipos de Departamentos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">user.depart</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Departamentos
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_user_depart" name="Departamentos" parent="purchase.menu_purchase_config"
+                  action="user_depart_action_dbr" sequence="1" groups="dfx_budget_request.group_manager"/>
+
+        <!--                    dbr = dfx_budget_request-->
+        <record id="user_approval_action_dbr" model="ir.actions.act_window">
+            <field name="name">Personas que aprueban</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">user.approval</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Personas que aprueban
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_user_aprov" name="Personas que aprueban" parent="purchase.menu_purchase_config"
+                  action="user_approval_action_dbr" sequence="2" groups="dfx_budget_request.group_manager"/>
+
+        <!-- Menu item para sobreescribir el permiso de mostrar Configuracion con cualquiera de los 2 usuarios en Compras(Gerente/Usuario) -->
+        <menuitem id="purchase.menu_purchase_config" name="Configuration" parent="purchase.menu_purchase_root"
+                  sequence="100" groups="purchase.group_purchase_manager,purchase.group_purchase_user"/>
+
+        <record id="purchase_email_template" model="mail.template">
+            <field name="name">Example e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Solicitud de presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${(object.name)} requiere de su aprobación, <br/>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="latest_purchase_email_template" model="mail.template">
+            <field name="name">Example latest e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Solicitud de presupuesto ${object.get_latest_po_name()}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_latest_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${object.get_latest_po_name()} requiere de su aprobación, <br/>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="cancel_purchase_email_template" model="mail.template">
+            <field name="name">Cancel e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Cancelación de Solicitud de presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${(object.name)} ha sido cancelada,<br/><br/></p>
+          <p>Motivo de cancelación: ${(object.motive)} </p><br/>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="liqui_approved_email_template" model="mail.template">
+            <field name="name">Liqui Approved Example e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>El presupuesto con el identificador: <strong> ${(object.name)} </strong>, detalla la siguiente liquidación:<br/></p>
+               <p>Monto: ${(object.currency_id.symbol)} <strong> ${(object.amount_to_pay)} </strong></p>
+               <p>Moneda: ${(object.currency_id.name)}</p><br/>
+               <p>No conteste este correo</p>
+              <p>Saludos,</p>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="accept_email_template" model="mail.template">
+            <field name="name">Accept Example e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Solicitud de presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${(object.name)} ha sido aprobada,<br/></p>
+          <p>Importante:</p>
+          <p>Recuerde que si solicitó la aprobación para una compra, tiene como pendiente subir
+          la factura al sistema según el identificador de esta solicitud.</p>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+              <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="approve_email_template" model="mail.template">
+            <field name="name">Approved Example e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${(object.name)} ha sido aprobada,<br/></p>
+          <p>Importante:</p>
+          <p>Recuerde que si solicitó la aprobación para una compra, tiene como pendiente subir
+          la factura al sistema según el identificador de esta solicitud.</p>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+              <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="rejected_purchase_email_template" model="mail.template">
+            <field name="name">Rejected e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Rechazo de Presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>El presupuesto con el identificador ${(object.name)} ha sido rechazada,<br/><br/></p>
+          <p>Motivo del rechazo: ${(object.motive)} </p><br/>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="pending_purchase_email_template" model="mail.template">
+            <field name="name">Pending e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Presupuesto ${object.name} Pendiente</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>El presupuesto con el identificador ${(object.name)} está pendiente,<br/><br/></p>
+          <p>Motivo: ${(object.motive)} </p><br/>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="reminder_invoice_email_template" model="mail.template">
+            <field name="name">Reminder e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Recordatorio Presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>El presupuesto con el identificador ${(object.name)} aún requiere de una o varias facturas adjuntas.<br/><br/></p>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+                <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="app_deposit_email_template" model="mail.template">
+            <field name="name">Deposit Approved Example e-mail template</field>
+            <field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+            <field name="subject">Presupuesto ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_budget_request.model_purchase_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>La solicitud de presupuesto con el identificador ${(object.name)} se le ha realizado el depósito con la fecha de depósito: ${(object.deposit_date)} y la
+          referencia de depósito: ${(object.payment_ref)}<br/></p>
+          <p>Importante:</p>
+          <p>Recuerde que si solicitó la aprobación para una compra, tiene como pendiente subir
+          la factura al sistema según el identificador de esta solicitud.</p>
+                <p><a style="padding: 8px 30px 8px 30px;border-radius: 6px;border: 1px solid #CCCCCC;background-color:
+                #875A7B;margin-left:
+                2px;text-decoration: none;color:#FFFFFF; " href="${access_url}">Ingresar a la solicitud</a><br/>
+              <p>No conteste este correo</p>
+              <p>Saludos,</p><br/>
+              ${(object.company_id.name)}
+        ]]>
+            </field>
+        </record>
+
+        <record id="my_cancel_email_wizard" model="ir.ui.view">
+            <field name="name">Cancel Email Wizard</field>
+            <field name="model">purchase1.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <span>La siguiente solicitud de presupuesto procedera a ser cancelada:</span>
+                    </group>
+                    <group>
+                        <field name="mail_info"/>
+                    </group>
+                    <footer>
+                        <button name="cancel_button_email" string="Finalizar" type="object" class="oe_highlight" />
+                        <button string="Cancelar" special="cancel" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_reject_email_wizard" model="ir.ui.view">
+            <field name="name">Reject Email Wizard</field>
+            <field name="model">reject.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <span>La siguiente solicitud de presupuesto procederá a ser rechazada:</span>
+                    </group>
+                    <group>
+                        <field name="mail_info"/>
+                    </group>
+                    <footer>
+                        <button name="reject_button_email" string="Finalizar" type="object" class="oe_highlight" />
+                        <button string="Cancelar" special="cancel" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_pending_email_wizard" model="ir.ui.view">
+            <field name="name">Pending Email Wizard</field>
+            <field name="model">pending.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <span>La siguiente solicitud de presupuesto procederá a estar pendiente:</span>
+                    </group>
+                    <group>
+                        <field name="mail_info"/>
+                    </group>
+                    <footer>
+                        <button name="pending_button_email" string="Finalizar" type="object" class="oe_highlight" />
+                        <button string="Cancelar" special="cancel" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="emp_amount_pay_wizard" model="ir.ui.view">
+            <field name="name">Exceeded Amount to Pay Wizard</field>
+            <field name="model">exceed.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <span>¿El gasto fué mayor?</span>
+                    </group>
+                    <footer>
+                        <button name="exceed_button_email" string="Si" type="object" class="oe_highlight" />
+                        <button string="No" special="cancel" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="emp_deposit_wizard" model="ir.ui.view">
+            <field name="name">Deposit Wizard</field>
+            <field name="model">deposit.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <span>Indique si el empleado entregó los documentos originales de facturas</span>
+                    </group>
+                    <footer>
+                        <button name="yes_dep_button" string="Si" type="object" class="oe_highlight" />
+                        <button name="no_dep_button" string="No" type="object" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="check_date_notapp_v1" model="ir.cron">
+            <field name="name">Revisión de solicitudes en espera de aprobar</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">3</field>
+            <field ref="model_purchase_order" name="model_id" />
+            <field name="state">code</field>
+            <field name="code">model.check_date_notapp()</field>
+            <field eval="False" name="doall"/>
+            <!--            <field name="function">True</field>-->
+        </record>
+
+        <record id="invoice_reminder_cron" model="ir.cron">
+            <field name="name">Revisión de facturas por subir</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">1</field>
+            <field ref="model_purchase_order" name="model_id" />
+            <field name="state">code</field>
+            <field name="code">model.invoice_reminder()</field>
+            <field eval="False" name="doall"/>
+            <!--            <field name="function">True</field>-->
+        </record>
+
+    </data>
+</odoo>

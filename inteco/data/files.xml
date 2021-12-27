@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="example_image_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">This is the example Image 01</field>
+<!--        <field name="datas">reference_name_downloadeable.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/reference_name_downloadeable.jpg</field>
+    </record>
+
+    <record id="home_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-1</field>
+<!--        <field name="datas">Home-Slider-1-20170818.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-1-20170818.jpg</field>
+    </record>
+    <record id="home_hero_1_iqnet" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home Slider 1 - IQNET</field>
+<!--        <field name="datas">Home-Slider-1-IQNET.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-1-IQNET.jpg</field>
+    </record>
+    <record id="home_hero_2_capacitacion_2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home Slider 2 - Capacitacion 2017</field>
+<!--        <field name="datas">Home-Slider-2-Capacitacion-2017.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-2-Capacitacion-2017.jpg</field>
+    </record>
+    <record id="home_hero_3_asamblea_2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home Slider 3 - Asamblea 2017</field>
+<!--        <field name="datas">Home-Slider-3-Asamblea-2017.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-3-Asamblea-2017.jpg</field>
+    </record>
+    <record id="home_hero_4_memoria" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home Slider - Memoria</field>
+<!--        <field name="datas">Home-Slider-Memoria.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Memoria.jpg</field>
+    </record>
+    <record id="home_hero_dispositivos-medicos" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Dispositivos-Medicos</field>
+<!--        <field name="datas">Home-Slider-Dispositivos-Medicos.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Dispositivos-Medicos.jpg</field>
+    </record>
+    <record id="home_hero_antisoborno" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Antisoborno</field>
+<!--        <field name="datas">Home-Slider-Antisoborno.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Antisoborno.jpg</field>
+    </record>
+    <record id="home_hero_reset" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-RESET</field>
+<!--        <field name="datas">Home-Slider-RESET.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-RESET.jpg</field>
+    </record>
+    <record id="home_hero_aislamiento_termico" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Aislamiento-Termico2</field>
+<!--        <field name="datas">Home-Slider-Aislamiento-Termico2.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Aislamiento-Termico2.jpg</field>
+    </record>
+    <record id="home_hero_nuevo_codigo" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Nuevo-Codigo</field>
+<!--        <field name="datas">Home-Slider-Nuevo-Codigo.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Nuevo-Codigo.jpg</field>
+    </record>
+    <record id="home_hero_pronutri" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Pronutri</field>
+<!--        <field name="datas">Home-Slider-Pronutri.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Pronutri.jpg</field>
+    </record>
+    <record id="home_hero_igualdad" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Home-Slider-Igualdad2</field>
+<!--        <field name="datas">Home-Slider-Igualdad2.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/Home-Slider-Igualdad2.jpg</field>
+    </record>
+    <record id="normas_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Normas</field>
+<!--        <field name="datas">normas_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_hero.jpg</field>
+    </record>
+    <record id="normas_isotipo_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Isotipo de Normas</field>
+<!--        <field name="datas">normas_isotipo.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_isotipo.jpg</field>
+    </record>
+    <record id="normas_isotipo_blanco_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Isotipo blanco de Normas</field>
+<!--        <field name="datas">normas_isotipo_blanco.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_isotipo_blanco.png</field>
+    </record>
+    <record id="normas_en_proceso_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Normas en Proceso</field>
+<!--        <field name="datas">normas_en_proceso_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_en_proceso_hero.jpg</field>
+    </record>
+    <record id="normas_consulta_publica_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Normas en Consulta Publica</field>
+<!--        <field name="datas">normas_consulta_publica_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_consulta_publica_hero.jpg</field>
+    </record>
+    <record id="normas_comite_tecnico_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Normas en Comite Tecnico</field>
+<!--        <field name="datas">normas_comite_tecnico_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_comite_tecnico_hero.jpg</field>
+    </record>
+    <record id="normas_para_negocio_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Normas para su Negocio</field>
+<!--        <field name="datas">normas_para_negocio.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_para_negocio.jpg</field>
+    </record>
+    <record id="normas_para_sociedad_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Normas para la Sociedad</field>
+<!--        <field name="datas">normas_para_sociedad.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_para_sociedad.jpg</field>
+    </record>
+    <record id="normas_para_gobierno_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Normas para el Gobierno</field>
+<!--        <field name="datas">normas_para_gobierno.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/normas_para_gobierno.jpg</field>
+    </record>
+    <record id="certificaciones_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Certificaciones</field>
+<!--        <field name="datas">certificaciones_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_hero.jpg</field>
+    </record>
+    <record id="certificaciones_logo_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificacion a Bimbo CR</field>
+<!--        <field name="datas">certificaciones_logo_grupo_bimbo.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_logo_grupo_bimbo.jpg</field>
+    </record>
+    <record id="certificaciones_logo_2" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificacion a FIFCO</field>
+<!--        <field name="datas">certificaciones_logo_florida_bebidas.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_logo_florida_bebidas.jpg</field>
+    </record>
+    <record id="certificaciones_logo_3" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificacion a INOLASA</field>
+<!--        <field name="datas">certificaciones_logo_inolasa.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_logo_inolasa.jpg</field>
+    </record>
+    <record id="certificaciones_gestion_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de Sistemas de Gestion</field>
+<!--        <field name="datas">certificaciones_gestion.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_gestion.jpg</field>
+    </record>
+    <record id="certificaciones_gestion_ambiental_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de Gestion Ambiental</field>
+<!--        <field name="datas">certificaciones_gestion_ambiental.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_gestion_ambiental.jpg</field>
+    </record>
+    <record id="certificaciones_inocuidad" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">certificaciones_inocuidad</field>
+<!--        <field name="datas">certificaciones_inocuidad.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_inocuidad.jpg</field>
+    </record>
+    <record id="certificaciones_gestion_seguridad_ocupacional_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de Gestion de Seguridad Ocupacional</field>
+<!--        <field name="datas">certificaciones_gestion_seguridad_ocupacional.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_gestion_seguridad_ocupacional.jpg</field>
+    </record>
+    <record id="certificaciones_productos_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de productos</field>
+<!--        <field name="datas">certificaciones_productos.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_productos.jpg</field>
+    </record>
+    <record id="certificaciones_procesos_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de procesos</field>
+<!--        <field name="datas">certificaciones_procesos.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_procesos.jpg</field>
+    </record>
+    <record id="certificaciones_personas_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de personas</field>
+<!--        <field name="datas">certificaciones_personas.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/certificaciones_personas.jpg</field>
+    </record>
+    <record id="certificaciones_personas_image_floating" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen de Certificaciones de personas</field>
+<!--        <field name="datas">s_image_floating_default_image.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/s_image_floating_default_image.png</field>
+    </record>
+    <record id="capacitaciones_hero_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Imagen principal de Capacitaciones</field>
+<!--        <field name="datas">capacitaciones_hero.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitaciones_hero.jpg</field>
+    </record>
+    <record id="capacitacion_calidad" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-calidad</field>
+<!--        <field name="datas">capacitacion-calidad.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-calidad.jpg</field>
+    </record>
+    <record id="capacitacion_inocuidad_alimentos" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-inocuidad-alimentos</field>
+<!--        <field name="datas">capacitacion-inocuidad-alimentos.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-inocuidad-alimentos.jpg</field>
+    </record>
+    <record id="capacitacion_ambiente" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-ambiente</field>
+<!--        <field name="datas">capacitacion-ambiente.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-ambiente.jpg</field>
+    </record>
+    <record id="capacitacion_SySO" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-SySO</field>
+<!--        <field name="datas">capacitacion-SySO.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-SySO.jpg</field>
+    </record>
+    <record id="capacitacion_responsabilidad_social" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-responsabilidad-social</field>
+<!--        <field name="datas">capacitacion-responsabilidad-social.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-responsabilidad-social.jpg</field>
+    </record>
+    <record id="capacitacion_auditor_lider_iqnet_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-auditor-lider-iqnet-1</field>
+<!--        <field name="datas">capacitacion-auditor-lider-iqnet-1.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-auditor-lider-iqnet-1.jpg</field>
+    </record>
+    <record id="capacitacion_auditor_lider_iqnet_2" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-auditor-lider-iqnet-2</field>
+<!--        <field name="datas">capacitacion-auditor-lider-iqnet-2.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-auditor-lider-iqnet-2.jpg</field>
+    </record>
+    <record id="capacitacion_auditor_lider_sist_integrados" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">capacitacion-auditor-lider-sist-integrados</field>
+<!--        <field name="datas">capacitacion-auditor-lider-sist-integrados.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/capacitacion-auditor-lider-sist-integrados.jpg</field>
+    </record>
+    <record id="iso_logo_icon" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">ISO - Logo Pequeno</field>
+<!--        <field name="datas">iso_logo_icon.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/iso_logo_icon.jpg</field>
+    </record>
+    <record id="iqnet_logo_icon" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">IQNet Logo Pequeno</field>
+<!--        <field name="datas">iqnet_logo_icon.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/iqnet_logo_icon.jpg</field>
+    </record>
+    <record id="eca_logo_icon" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">ECA Logo Pequeno</field>
+<!--        <field name="datas">eca_logo_icon.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/eca_logo_icon.png</field>
+    </record>
+    <record id="astm_logo_icon" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">ASTM Logo Pequeno</field>
+<!--        <field name="datas">astm_logo_icon.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/astm_logo_icon.png</field>
+    </record>
+
+    <record id="example_doc_pdf_1" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">And what if it is a DOC</field>
+<!--        <field name="datas">DOC_CODE.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/DOC_CODE.pdf</field>
+    </record>
+    <record id="doc_IGDC_01_01_12" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">IGDC-01-01.12-Proceso-Certificacion-Sistemas-Gestion</field>
+<!--        <field name="datas">IGDC-01-01.12-Proceso-Certificacion-Sistemas-Gestion.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/IGDC-01-01.12-Proceso-Certificacion-Sistemas-Gestion.pdf</field>
+    </record>
+    <record id="doc_IGDP_01_01_06" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">IGDP-01-01.06-Proceso-Certificacion-Producto</field>
+<!--        <field name="datas">IGDP-01-01.06-Proceso-Certificacion-Producto.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/IGDP-01-01.06-Proceso-Certificacion-Producto.pdf</field>
+    </record>
+    <record id="doc_IGUV_01_03_05" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">IGUV-01-03.05-Proceso-Certificacion-GEI</field>
+<!--        <field name="datas">IGUV-01-03.05-Proceso-Certificacion-GEI.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/IGUV-01-03.05-Proceso-Certificacion-GEI.pdf</field>
+    </record>
+    <record id="doc_IGCP_01_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">IGCP-01-01-Proceso-Certificacion-Personas</field>
+<!--        <field name="datas">IGCP-01-01-Proceso-Certificacion-Personas.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/IGCP-01-01-Proceso-Certificacion-Personas.pdf</field>
+    </record>
+    <record id="doc_Normas_Aprobadas_Mes" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Normas-Aprobadas-Mes</field>
+<!--        <field name="datas">Normas-Aprobadas-Mes.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">https://drive.google.com/file/d/0BxyO051BWck8MmlHMzdFWUJOb1E/view</field>
+    </record>
+    <record id="doc_Normas_Consulta_Publica" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Normas-Consulta-Publica</field>
+<!--        <field name="datas">Normas-Consulta-Publica.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">https://drive.google.com/file/d/0BxyO051BWck8d1BsWGJWR0xzWUk/view</field>
+    </record>
+    <record id="doc_Normas_Derogadas_Acumuladas" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Normas-Derogadas-Acumuladas</field>
+<!--        <field name="datas">Normas-Derogadas-Acumuladas.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">https://drive.google.com/file/d/0BxyO051BWck8WkZnbUFMYVg4aXc/view</field>
+    </record>
+    <record id="doc_PGDE_03_02" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">PGDE-03.02-Declaracion-de-Imparcialidad</field>
+<!--        <field name="datas">PGDE-03.02-Declaracion-de-Imparcialidad.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/PGDE-03.02-Declaracion-de-Imparcialidad.pdf</field>
+    </record>
+    <record id="doc_R01_PGCC02" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGCC02-Programa-de-Formacion</field>
+<!--        <field name="datas">R01-PGCC02-Programa-de-Formacion.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGCC02-Programa-de-Formacion.pdf</field>
+    </record>
+    <record id="doc_R01_PGUV_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGUV-01-Solicitud-Evaluaciones-Ambientales</field>
+<!--        <field name="datas">R01-PGUV-01-Solicitud-Evaluaciones-Ambientales.xlsm</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGUV-01-Solicitud-Evaluaciones-Ambientales.xlsm</field>
+    </record>
+    <record id="doc_R01_PGDP_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGDP-01-Informacion-Preliminar-Marca-Conformidad</field>
+<!--        <field name="datas">R01-PGDP-01-Informacion-Preliminar-Marca-Conformidad.docx</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGDP-01-Informacion-Preliminar-Marca-Conformidad.docx</field>
+    </record>
+    <record id="doc_R01_PGCP_01_04" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGCP-01.04-Solicitud-Certificacion-Personas</field>
+<!--        <field name="datas">R01-PGCP-01.04-Solicitud-Certificacion-Personas.doc</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGCP-01.04-Solicitud-Certificacion-Personas.doc</field>
+    </record>
+    <record id="doc_R11_PGDP_01_04" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R11-PGDP-01.04-Informacion-Preliminar-Lotes-Muestras</field>
+<!--        <field name="datas">R11-PGDP-01.04-Informacion-Preliminar-Lotes-Muestras.docx</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R11-PGDP-01.04-Informacion-Preliminar-Lotes-Muestras.docx</field>
+    </record>
+    <record id="doc_R25_PGDP_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R25-PGDP-01-Informacion-Preliminar-Proyecto-Vivienda.DOC</field>
+<!--        <field name="datas">R25-PGDP-01-Informacion-Preliminar-Proyecto-Vivienda.DOC</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R25-PGDP-01-Informacion-Preliminar-Proyecto-Vivienda.DOC</field>
+    </record>
+    <record id="doc_R29_PGDP_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R29-PGDP-01-Informacion-Preliminar-Entidades-Reg-SUPEN</field>
+<!--        <field name="datas">R29-PGDP-01-Informacion-Preliminar-Entidades-Reg-SUPEN.doc</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R29-PGDP-01-Informacion-Preliminar-Entidades-Reg-SUPEN.doc</field>
+    </record>
+    <record id="doc_R16_PGDP_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R16-PGDP-01-Informacion-Preliminar-ENERGICE</field>
+<!--        <field name="datas">R16-PGDP-01-Informacion-Preliminar-ENERGICE.doc</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R16-PGDP-01-Informacion-Preliminar-ENERGICE.doc</field>
+    </record>
+    <record id="doc_R02_PGDN_01" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R02-PGDN-01-Plan-Nacional-de-Normalizacion</field>
+<!--        <field name="datas">R02-PGDN-01-Plan-Nacional-de-Normalizacion.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">https://drive.google.com/file/d/0BxyO051BWck8VFhwb2d5YVBjNUk/view</field>
+    </record>
+    <record id="doc_Solicitudes_Aprobadas_Nuevos_Proyectos" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Solicitudes-Aprobadas-Nuevos-Proyectos</field>
+<!--        <field name="datas">Solicitudes-Aprobadas-Nuevos-Proyectos.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">https://drive.google.com/file/d/0BxyO051BWck8S3VOU1ZBNkNnR3M/view</field>
+    </record>
+    <record id="doc_Lista_de_codigos" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Lista-de-codigos</field>
+<!--        <field name="datas">Lista-de-codigos.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/Lista-de-codigos.pdf</field>
+    </record>
+    <record id="doc_INTECO-Asamblea-Informe-Fiscalia" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">INTECO-Asamblea-Informe-Fiscalia.pdf</field>
+<!--        <field name="datas">INTECO-Asamblea-Informe-Fiscalia.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/INTECO-Asamblea-Informe-Fiscalia.pdf</field>
+    </record>
+    <record id="doc_INTECO-Asamblea-Informe-Presidencia" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">INTECO-Asamblea-Informe-Presidencia</field>
+<!--        <field name="datas">INTECO-Asamblea-Informe-Presidencia.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/INTECO-Asamblea-Informe-Presidencia.pdf</field>
+    </record>
+    <record id="doc_INTECO-Asamblea-Informe-Tesoreria" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">INTECO-Asamblea-Informe-Tesoreria</field>
+<!--        <field name="datas">INTECO-Asamblea-Informe-Tesoreria.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/INTECO-Asamblea-Informe-Tesoreria.pdf</field>
+    </record>
+    <record id="doc_PGGS-05-16-Procedimiento-Quejas-Apelaciones-Sugerencias" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">PGGS-05-16-Procedimiento-Quejas-Apelaciones-Sugerencias</field>
+<!--        <field name="datas">PGGS-05-16-Procedimiento-Tramite-Quejas-Apelaciones-Sugerencias.pdf</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/PGGS-05-16-Procedimiento-Tramite-Quejas-Apelaciones-Sugerencias.pdf</field>
+    </record>
+    <record id="doc_R01-PGGS-05-03-Formulario-Quejas-Apelaciones-Sugerencias" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGGS-05-03-Formulario-Quejas-Apelaciones-Sugerencias</field>
+<!--        <field name="datas">R01-PGGS-05-03-Formulario-Quejas-Apelaciones-Sugerencias.docx</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGGS-05-03-Formulario-Quejas-Apelaciones-Sugerencias.docx</field>
+    </record>
+    <record id="doc_R01-PGDC-01-Cuestionario-evaluacion-preliminar" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">R01-PGDC-01-Cuestionario-evaluacion-preliminar</field>
+<!--        <field name="datas">R01-PGDC-01-Cuestionario-evaluacion-preliminar.docx</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/doc/R01-PGDC-01-Cuestionario-evaluacion-preliminar.docx</field>
+    </record>
+
+    <!-- Events -->
+    <record id="event_asamblea_2017" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">INTECO - Asamblea General 2017</field>
+<!--        <field name="datas">event-asamblea-general.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/event-asamblea-general.png</field>
+    </record>
+    <record id="event_gluten_free" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Esquema Gluten Free</field>
+<!--        <field name="datas">event-gluten-free.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/event-gluten-free.png</field>
+    </record>
+    <record id="event_antisoborno" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Divulgacion Antisoborno</field>
+<!--        <field name="datas">event-antisoborno.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/event-antisoborno.png</field>
+    </record>
+    <record id="blog_placeholder" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">Blog Placeholder</field>
+<!--        <field name="datas">blog_placeholder.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/blog_placeholder.png</field>
+    </record>
+
+    <!-- Membership & Alliances -->
+
+    <record id="membership_aenor" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">aenor</field>
+<!--        <field name="datas">membership_aenor.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_aenor.jpg</field>
+    </record>
+
+    <record id="membership_astm" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">astm</field>
+<!--        <field name="datas">membership_astm.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_astm.jpg</field>
+    </record>
+
+    <record id="membership_canena" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">canena</field>
+<!--        <field name="datas">membership_canena.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_canena.png</field>
+    </record>
+
+    <record id="membership_copant" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">copant</field>
+<!--        <field name="datas">membership_copant.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_copant.png</field>
+    </record>
+
+    <record id="membership_iec" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">iec</field>
+<!--        <field name="datas">membership_iec.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_iec.png</field>
+    </record>
+
+    <record id="membership_iqnet" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">iqnet</field>
+<!--        <field name="datas">membership_iqnet.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_iqnet.jpg</field>
+    </record>
+
+    <record id="membership_iram" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">iram</field>
+<!--        <field name="datas">maembership_iram.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_iram.jpg</field>
+    </record>
+
+    <record id="membership_iso" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">iso</field>
+<!--        <field name="datas">membership_iso.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_iso.png</field>
+    </record>
+
+    <record id="membership_nfpa" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">nfpa</field>
+<!--        <field name="datas">membership_npa.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_nfpa.png</field>
+    </record>
+
+    <record id="membership_ul" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">ul</field>
+<!--        <field name="datas">membership_ul.png</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_ul.png</field>
+    </record>
+
+    <record id="membership_nema" model="ir.attachment">
+        <field name="public" eval="True"/>
+        <field name="name">nema</field>
+<!--        <field name="datas">membership_nema.jpg</field>-->
+<!--        <field name="res_model">ir.ui.view</field>-->
+        <field name="type">url</field>
+        <field name="url">/inteco/static/src/img/membership_nema.jpg</field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Attachment -->
+    <record id="view_attachment_form_inherit" model="ir.ui.view">
+        <field name="name">ir.attachment.form.inherit</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/group[2]" position="inside">
+                <field name="frequently"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_attachment_simplified" model="ir.actions.act_window">
+        <field name="name">File Storage</field>
+        <field name="res_model">ir.attachment</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="domain">[('frequently','=',True)]</field>-->
+        <field name="context" eval="{'default_type': 'binary', 'default_frequently': True}"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to upload documents.
+            </p>
+            <p>
+                Also you will find here all the related documents and download it by clicking on any individual document.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        name="File Storagesssss"
+        id="menu_attachment_simplified"
+        sequence="40"
+        action="action_attachment_simplified"
+        groups="inteco.res_group_attachment_simplified"
+        web_icon="inteco,static/src/img/icon/icon.png"/>
+
+</odoo>

@@ -1,0 +1,16 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_inteco_sector,access_inteco_sector,model_inteco_sector,,1,1,1,1
+access_inteco_organism,access_inteco_organism,model_inteco_organism,,1,0,0,0
+access_inteco_organism_standard,access_inteco_organism_standard,model_inteco_organism_standard,,1,0,0,0
+access_inteco_committee,access_inteco_committee,model_inteco_committee,,1,0,0,0
+access_inteco_prefix,access_inteco_prefix,model_inteco_prefix,,1,0,0,0
+access_inteco_ics,access_inteco_ics,model_inteco_ics,,1,0,0,0
+access_inteco_importer,access_inteco_importer,model_inteco_importer,inteco.inteco_importer_manager,1,1,1,1
+access_inteco_sector_manager,access_inteco_sector_manager,model_inteco_sector,inteco.group_standards_manager,1,1,1,1
+access_inteco_organism_manager,access_inteco_organism_manager,model_inteco_organism,inteco.group_standards_manager,1,1,1,1
+access_inteco_organism_standard_manager,access_inteco_organism_standard_manager,model_inteco_organism_standard,inteco.group_standards_manager,1,1,1,1
+access_inteco_committee_manager,access_inteco_committee_manager,model_inteco_committee,inteco.group_standards_manager,1,1,1,1
+access_inteco_prefix_manager,access_inteco_prefix_manager,model_inteco_prefix,inteco.group_standards_manager,1,1,1,1
+access_inteco_ics_manager,access_inteco_ics_manager,model_inteco_ics,inteco.group_standards_manager,1,1,1,1
+access_inteco_normalizer_product,access_inteco_normalizer_product,product.model_product_template,inteco.group_normalizer_user,1,1,0,0
+

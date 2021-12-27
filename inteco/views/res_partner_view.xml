@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_type']" position="after">
+                <div class="o_row" style="font-size:26px;">
+                    <field name="contact_name" placeholder="Name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')], 'required': [('company_type', '!=', 'company')]}"/>
+                    <field name="contact_last_name" placeholder="First last name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')], 'required': [('company_type', '!=', 'company')]}"/>
+                    <field name="second_last_name" class="label-optional" placeholder="Second Last Name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')]}"/>
+                </div><br/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{'invisible': [('company_type', '!=', 'company')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="legal_name" attrs="{'invisible': [('company_type', '!=', 'company')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="attributes">
+                <attribute name="widget">email_validator</attribute>
+                <attribute name="attrs">{'required': ['|', ('user_ids', '!=', []), ('company_type', '=', 'person')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_simple_form_lead" model="ir.ui.view">
+        <field name="name">res.partner.simplified.form.lead</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_simple_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_type']" position="after">
+                <div class="o_row" style="font-size:26px;">
+                    <field name="contact_name" placeholder="Name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')], 'required': [('company_type', '!=', 'company')]}"/>
+                    <field name="contact_last_name" placeholder="First last name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')], 'required': [('company_type', '!=', 'company')]}"/>
+                    <field name="second_last_name" placeholder="Second Last Name" nolabel="1" attrs="{'invisible': [('company_type', '!=', 'person')]}"/>
+                </div><br/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{'invisible': [('company_type', '!=', 'company')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="attributes">
+                <attribute name="widget">email_validator</attribute>
+                <attribute name="attrs">{'required': ['|', ('user_ids', '!=', []), ('company_type', '=', 'person')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="after">
+                <field name="street" placeholder="Street..." class="o_address_street"/>
+                <field name="street2" placeholder="Street 2..."
+                    class="o_address_street"/>
+                <field name="city" placeholder="City" class="o_address_city"/>
+                <field name="state_id" class="o_address_state" placeholder="State"
+                    options="{'no_open': True}"/>
+                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                <field name="country_id" placeholder="Country"
+                    class="o_address_country"
+                    options="{'no_open': True, 'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

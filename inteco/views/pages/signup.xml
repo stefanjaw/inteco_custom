@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="signup_fields_inherit" inherit_id="auth_signup.fields">
+        <xpath expr="//input[@name='name']" position="attributes">
+            <attribute name="pattern">[^\d]*</attribute>
+        </xpath>
+        <xpath expr="//input[@name='login']" position="attributes">
+            <attribute name="type">email</attribute>
+        </xpath>
+    </template>
+</odoo>

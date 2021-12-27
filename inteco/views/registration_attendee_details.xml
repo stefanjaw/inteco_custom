@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="custom_attendee_details" inherit_id="website_event.registration_attendee_details" name="Inteco Registration Attendee Details" priority="2">
+        <xpath expr="//div[hasclass('container')]/t[3]/div/div/span" position="replace"/>
+        <xpath expr="//div[hasclass('container')]/t[3]/t/div/div[3]" position="replace">
+            <div class="col-md-3"><input class="form-control" type="tel" t-attf-name="#{counter}-phone" required="This field is required"/></div>
+        </xpath>
+    </template>
+</odoo>

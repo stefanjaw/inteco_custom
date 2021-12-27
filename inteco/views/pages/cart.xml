@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--This feature will be available once the necessary adjustments are made in the e-commerce module-->
+    <template id="website_cart" inherit_id="website_sale.product" name="Shopping cart" active="False" customize_show="True">
+        <xpath expr="//div[./h3/t[@t-esc='product.name']]" position="after">
+            <div class="col-sm-2 mt8 mb8"><t t-call="website_sale.product_price"/></div>
+            <div class="col-sm-1 mt8 mb8">
+                <form action="/shop/cart/update" class="js_add_cart_variants" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="js_product" t-if="product.product_variant_ids">
+                        <t t-placeholder="select">
+                            <input type="hidden" class="product_id" name="product_id" t-att-value="product.product_variant_id.id if len(product.product_variant_ids) == 1 else '0'" />
+                            <t t-call="website_sale.variants">
+                                <t t-set="ul_class" t-value="'nav-stacked'" />
+                            </t>
+                        </t>
+                        <p t-if="len(product.product_variant_ids) &gt; 1" class="css_not_available_msg bg-danger" style="padding: 15px;">This combination does not exist.</p>
+                        <a id="add_to_cart" class="btn btn-info btn-small mt8 js_check_product a-submit" href="#"><i class="fa fa-shopping-cart"/> Buy</a>
+                    </div>
+                </form>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

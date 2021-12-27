@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_case_form_lead_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="priority" eval="110"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(crm.action_crm_lead2opportunity_partner)d']" position="attributes">
+                <attribute name="type">object</attribute>
+                <attribute name="name">lead_to_opportunity</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="string">Customer (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='contact_name']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//label[@for='contact_name']" position="before">
+                <field name="first_name" string="Name (*)" placeholder="Name" required="1"/>
+                <field name="last_name" string="First last name (*)" placeholder="First last name" required="1"/>
+                <field name="second_last_name" placeholder="Second Last Name"/>
+            </xpath>
+            <xpath expr="//label[@for='contact_name']" position="replace">
+                <label for="title"/>
+            </xpath>
+            <xpath expr="//field[@name='email_from']" position="attributes">
+                <attribute name="string">Email (*)</attribute>
+                <attribute name="widget">email_validator</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="replace"/>
+            <xpath expr="//field[@name='website']" position="before">
+                <field name="country_id" string="Country (*)" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+            </xpath>
+            <xpath expr="//group[@name='categorization']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='campaign_id']" position="attributes">
+                <attribute name="string">Campaign (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='medium_id']" position="attributes">
+                <attribute name="string">Medium (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='source_id']" position="attributes">
+                <attribute name="string">Source (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="subservice_id" domain="[('crm_team_id', '=', team_id)]"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.opportunity.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_from']" position="attributes">
+                <attribute name="string">Email (*)</attribute>
+                <attribute name="widget">email_validator</attribute>
+            </xpath>
+            <xpath expr="//label[@for='planned_revenue']" position="attributes">
+                <attribute name="string">Expected Revenue (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_deadline']" position="attributes">
+                <attribute name="string">Expected Closing (*)</attribute>
+            </xpath>
+            <xpath expr="//page[@name='lead']/group/group/field[@name='partner_name']" position="attributes">
+                <attribute name="string">Company</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="replace"/>
+            <xpath expr="//field[@name='website']" position="before">
+                <field name="country_id" string="Country (*)" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+            </xpath>
+            <xpath expr="//field[@name='contact_name']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//page[@name='lead']/group/group/label[@for='contact_name']" position="replace">
+                <label for="title"/>
+            </xpath>
+            <xpath expr="//page[@name='lead']/group/group/field[@name='campaign_id']" position="attributes">
+                <attribute name="string">Campaign (*)</attribute>
+            </xpath>
+            <xpath expr="//page[@name='lead']/group/group/field[@name='medium_id']" position="attributes">
+                <attribute name="string">Medium (*)</attribute>
+            </xpath>
+            <xpath expr="//page[@name='lead']/group/group/field[@name='source_id']" position="attributes">
+                <attribute name="string">Source (*)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lost_reason']" position="after">
+                <field name="lost_company_name" attrs="{'invisible': [('active', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//button[@name='%(sale_crm.sale_action_quotations_new)d']" position="attributes">
+                <attribute name="context">{
+                    'search_default_partner_id': partner_id,
+                    'default_partner_id': partner_id,
+                    'default_team_id': team_id,
+                    'default_campaign_id': campaign_id,
+                    'default_medium_id': medium_id,
+                    'default_source_id': source_id,
+                    'add_followers': True,
+                    }
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="subservice_id" domain="[('crm_team_id', '=', team_id)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

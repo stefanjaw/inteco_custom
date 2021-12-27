@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Form View -->
+    <record id="subservice_view_form" model="ir.ui.view">
+        <field name="name">subservice.form</field>
+        <field name="model">crm.subservice</field>
+        <field name="arch" type="xml">
+            <form string="Subservice">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="website_publish_button" type="object" icon="fa-globe">
+                            <field name="website_published" widget="website_button"/>
+                        </button>
+                        <button name="action_view_products" type="object" class="oe_stat_button" icon="fa-files-o">
+                            <field name="product_ids" widget="statinfo" string="Products"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Subservice"/>
+                        <h1>
+                            <field name="name" placeholder="Subservice name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="left">
+                            <field name="responsible_id"/>
+                            <field name="crm_team_id"/>
+                            <field name="description"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group name="right">
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Tree View -->
+    <record id="subservice_view_tree" model="ir.ui.view">
+        <field name="name">subservice.tree</field>
+        <field name="model">crm.subservice</field>
+        <field name="arch" type="xml">
+            <tree string="Subservices">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="responsible_id"/>
+                <field name="crm_team_id"/>
+            </tree>
+        </field>
+    </record>
+    <!--Action-->
+    <record model="ir.actions.act_window" id="subservice_config_action">
+        <field name="name">Subservice</field>
+        <field name="res_model">crm.subservice</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <!--Menu-->
+    <menuitem id="crm_subservice_config"
+              name="Subservices"
+              parent="crm.crm_menu_config"
+              action="subservice_config_action"
+              sequence="8"/>
+
+</odoo>

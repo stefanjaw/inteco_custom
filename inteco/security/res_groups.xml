@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_group_attachment_simplified" model="res.groups">
+        <field name="name">File Storage</field>
+        <field name="comment">
+            - This group can see the File Storage menu to load files
+            that require update frequently.
+        </field>
+    </record>
+
+    <record id="inteco_importer_manager" model="res.groups">
+        <field name="name">Importer Manager</field>
+    </record>
+
+    <record id="group_standards_manager" model="res.groups">
+        <field name="name">Standards Manager</field>
+        <field name="comment">
+            - This group have a total access to modify any model related to
+            standards: organism, ics, sector, committe &amp; prefix.
+        </field>
+    </record>
+
+    <record id="group_export_data" model="res.groups">
+        <field name="name">Exporting Permissions</field>
+        <field name="comment">
+            - This group grants access to export data from contacts
+        </field>
+    </record>
+
+    <record id="group_normalizer_user" model="res.groups">
+        <field name="name">Normalizer User</field>
+        <field name="comment">
+            - This group grants access to export and edit data from norms
+        </field>
+        <!-- TODO add to implied_ids the group export -->
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</odoo>

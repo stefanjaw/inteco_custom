@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="subservice_form_view" model="ir.ui.view">
+        <field name="name">inteco.subservice.form.inherit</field>
+        <field name="model">crm.team</field>
+        <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='members']" position="after">
+                <page string="Subservices" name="subservices">
+                    <field name="subservice_ids">
+                        <tree string="Subservices lines" editable="bottom">
+                            <field name="name"/>
+                            <field name="responsible_id"/>
+                            <field name="description"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_res_partner_category_inherit" model="ir.ui.view">
+            <field name="name">res.partner.category.inherit</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="is_interest_topic" />
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="dfx_view_event_question_inherit" model="ir.ui.view">
+            <field name="name">dfx.event.question.inherit</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="website_event_questions.event_event_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet/notebook/page/field[@name='answer_ids']/tree/field[@name='name']" position="after">
+                    <field name="valid_event_anw"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="dfx_online_view_res_event_inherit" model="ir.ui.view">
+            <field name="name">event.online.inherit</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="website_event.event_event_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[hasclass('oe_title')]" position="after">
+                    <label for="is_event_online" string="En línea"/>
+                    <field name="is_event_online"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_res_event_event_inherit" model="ir.ui.view">
+            <field name="name">event.event.inherit</field>
+            <field name="model">event.event</field>
+            <field name="inherit_id" ref="event.view_event_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet/group/group/field[@name='tag_ids']" position="after">
+                    <label for="social_hashtags"/>
+                    <div>
+                        <span class="oe_inline"> </span>
+                        <field name="social_hashtags" nolabel="1" class="oe_inline"/>
+                    </div>
+
+                </xpath>
+                <xpath expr="//form/sheet/group/group[2]/field[@name='auto_confirm']" position="after">
+                    <field name="interest_topics" widget="many2many_tags"
+                           options="{'no_create': True, 'no_create_edit':True}"
+                           attrs="{'readonly':[('has_event_group','=', False)]}" domain="[('is_interest_topic', '=', True)]"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[2]/field[@name='address_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group[2]/field[@name='address_id']" position="after">
+                    <field name="event_location" attrs="{'invisible':[('is_event_online','=', True)],'required':[('is_event_online','=', False)]}"/>
+                    <field name="event_google_maps" attrs="{'invisible':[('is_event_online','=', True)], 'required':[('is_event_online','=', False)]}"/>
+                    <field name="event_organizers" string="Co Organiza" widget="many2many_tags"/>
+                    <field name="event_co_organizers" string="Patrocina" widget="many2many_tags"/>
+                    <field name="event_invite" string="Invita" widget="many2many_tags"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/group/group/field[@name='event_type_id']" position="after">
+                    <field name="event_platform" required="1"
+                           attrs="{'invisible':[('is_event_online','=', False)]}"
+                           options="{'no_create': True, 'no_create_edit':True}"
+                           groups="event.group_event_manager"/>
+                    <!--                    'invisible':[('is_event_online','=', False)]-->
+                    <field name="has_event_group" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='organizer_id']" position="replace">
+                    <field name="organizer_id2" required="True" string="Organiza"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="dfx_view_res_event_registration_inherit" model="ir.ui.view">
+            <field name="name">event.registration.inherit</field>
+            <field name="model">event.registration</field>
+            <field name="inherit_id" ref="event.view_event_registration_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="att_id_type" force_save = "1"
+                           options="{'no_create': True, 'no_create_edit':True}"/>
+                    <field name="att_ident"/>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="att_position" />
+                    <field name="att_interest_topics" widget="many2many_tags"
+                           options="{'no_create': True, 'no_create_edit':True}"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="att_name" invisible="0"/>
+                    <field name="att_firstname" invisible="0"/>
+                    <field name="att_lastname" invisible="0"/>
+                </xpath>
+                <xpath expr="//field[@name='visitor_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='mobile']" position="after">
+                    <field name="contact_id" attrs="{'invisible':[('contact_id','=',False)]}"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id="event_platform_action" model="ir.actions.act_window">
+            <field name="name">Plataforma</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">event.platform</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Plataforma
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_event_platform" name="Plataforma" parent="event.menu_event_configuration"
+                  action="event_platform_action" sequence="12" groups="event.group_event_manager"/>
+
+        <record id="dfx_event_organizer_form_view" model="ir.ui.view">
+            <field name="name">Organizadores</field>
+            <field name="model">event.organizer</field>
+            <field name="arch" type="xml">
+                <form string="Organizador">
+                    <sheet>
+                        <group col="2">
+                            <group col="2">
+                                <field name="org_name"/>
+                                <field name="site_name" placeholder="http://www.google.com"/>
+                                <field name="site_logo" widget="image" options="{'preview_image': 'site_logo'}" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="event_org_action" model="ir.actions.act_window">
+            <field name="name">Organizadores</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">event.organizer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Organizadores
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_event_org" name="Organizadores" parent="event.menu_event_configuration"
+                  action="event_org_action" sequence="5" groups="event.group_event_manager"/>
+
+        <record id="event_comer_action" model="ir.actions.act_window">
+            <field name="name">Comercial para eventos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">event.comertial</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Comercial para eventos
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_event_com" name="Comercial para eventos" parent="event.menu_event_configuration"
+                  action="event_comer_action" sequence="8" groups="event.group_event_manager"/>
+
+    </data>
+</odoo>

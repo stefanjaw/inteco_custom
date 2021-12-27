@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="inteco.template" xml:space="preserve">
+    <t t-name="Manuals">
+        <!-- TODO: The URL must be updated by the real reference -->
+        <li><a href="inteco/static/src/doc/DOC_CODE.pdf" target="_blank">User manuals</a></li>
+    </t>
+    <!--    <t t-extend="UserMenu">-->
+    <!--        <t t-jquery=".dropdown-menu dropdown-menu-right" t-operation="prepend">-->
+    <!--            <t t-call="UserMenu.Manuals"/>-->
+    <!--        </t>-->
+    <!--    </t>-->
+    <t t-extend="UserMenu.Actions">
+    <t t-jquery=".dropdown-divider" t-operation="before">
+<!--        <a role="menuitem" href="#" target="_blank" data-menu="Manuals" class="dropdown-item">User manuals</a>-->
+        <a href="inteco/static/src/doc/DOC_CODE.pdf" target="_blank" class="dropdown-item">User manuals</a>
+    </t>
+</t>
+</templates>

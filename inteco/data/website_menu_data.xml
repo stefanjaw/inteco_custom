@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Noticias y Eventos -->
+
+    <record id="menu_news_events" model="website.menu">
+        <field name="name">News &amp; Events</field>
+        <field name="url"></field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+<!--    <record id="menu_recent_news" model="website.menu">-->
+<!--        <field name="name">Recent News</field>-->
+<!--        <field name="url" eval="'/blog/'+str(ref('inteco.recent_news'))"/>-->
+<!--        <field name="parent_id" ref="menu_news_events"/>-->
+<!--        <field name="sequence" type="int">10</field>-->
+<!--        <field name="website_id" ref="website.default_website"/>-->
+<!--    </record>-->
+
+    <!-- Ocultos -->
+
+    <record id="website_sale.menu_shop" model="website.menu">
+        <field name="parent_id"></field>
+    </record>
+
+    <record id="website_event.menu_events" model="website.menu">
+        <field name="parent_id"></field>
+    </record>
+
+    <record id="website.menu_contactus" model="website.menu">
+        <field name="parent_id"></field>
+    </record>
+
+    <record id="website.default_website" model="website">
+        <field name="favicon" type="base64" file="inteco/static/src/img/favicon.ico"/>
+    </record>
+
+</odoo>

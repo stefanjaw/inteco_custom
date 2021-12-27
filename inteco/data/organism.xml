@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="organism_aashto" model="inteco.organism">
+        <field name="name">AASHTO</field>
+    </record>
+    <record id="organism_abnt" model="inteco.organism">
+        <field name="name">ABNT</field>
+    </record>
+    <record id="organism_acgih" model="inteco.organism">
+        <field name="name">ACGIH</field>
+    </record>
+    <record id="organism_aenor" model="inteco.organism">
+        <field name="name">AENOR</field>
+    </record>
+    <record id="organism_ansi" model="inteco.organism">
+        <field name="name">ANSI</field>
+    </record>
+    <record id="organism_ansi_asse" model="inteco.organism">
+        <field name="name">ANSI/ASSE</field>
+    </record>
+    <record id="organism_ansi_awwa" model="inteco.organism">
+        <field name="name">ANSI/AWWA</field>
+    </record>
+    <record id="organism_ashrae" model="inteco.organism">
+        <field name="name">ASHRAE</field>
+    </record>
+    <record id="organism_asme" model="inteco.organism">
+        <field name="name">ASME</field>
+    </record>
+    <record id="organism_astm" model="inteco.organism">
+        <field name="name">ASTM</field>
+    </record>
+    <record id="organism_atsm" model="inteco.organism">
+        <field name="name">ATSM</field>
+    </record>
+    <record id="organism_awwa" model="inteco.organism">
+        <field name="name">AWWA</field>
+    </record>
+    <record id="organism_bs" model="inteco.organism">
+        <field name="name">BS</field>
+    </record>
+    <record id="organism_bsi" model="inteco.organism">
+        <field name="name">BSI</field>
+    </record>
+    <record id="organism_cac_rcp" model="inteco.organism">
+        <field name="name">CAC/RCP</field>
+    </record>
+    <record id="organism_ccsa" model="inteco.organism">
+        <field name="name">CCSA</field>
+    </record>
+    <record id="organism_cen" model="inteco.organism">
+        <field name="name">CEN</field>
+    </record>
+    <record id="organism_cepat" model="inteco.organism">
+        <field name="name">CEPAT</field>
+    </record>
+    <record id="organism_codex" model="inteco.organism">
+        <field name="name">CODEX</field>
+    </record>
+    <record id="organism_convenin" model="inteco.organism">
+        <field name="name">CONVENIN</field>
+    </record>
+    <record id="organism_copant" model="inteco.organism">
+        <field name="name">COPANT</field>
+    </record>
+    <record id="organism_covenin" model="inteco.organism">
+        <field name="name">COVENIN</field>
+    </record>
+    <record id="organism_csa" model="inteco.organism">
+        <field name="name">CSA</field>
+    </record>
+    <record id="organism_din" model="inteco.organism">
+        <field name="name">DIN</field>
+    </record>
+    <record id="organism_etrto" model="inteco.organism">
+        <field name="name">ETRTO</field>
+    </record>
+    <record id="organism_fda" model="inteco.organism">
+        <field name="name">FDA</field>
+    </record>
+    <record id="organism_gtc" model="inteco.organism">
+        <field name="name">GTC</field>
+    </record>
+    <record id="organism_ibnorca" model="inteco.organism">
+        <field name="name">IBNORCA</field>
+    </record>
+    <record id="organism_icaiti" model="inteco.organism">
+        <field name="name">ICAITI</field>
+    </record>
+    <record id="organism_icea" model="inteco.organism">
+        <field name="name">ICEA</field>
+    </record>
+    <record id="organism_icontec" model="inteco.organism">
+        <field name="name">ICONTEC</field>
+    </record>
+    <record id="organism_iec" model="inteco.organism">
+        <field name="name">IEC</field>
+    </record>
+    <record id="organism_ies" model="inteco.organism">
+        <field name="name">IES</field>
+    </record>
+    <record id="organism_iesna" model="inteco.organism">
+        <field name="name">IESNA</field>
+    </record>
+    <record id="organism_indecopi" model="inteco.organism">
+        <field name="name">INDECOPI</field>
+    </record>
+    <record id="organism_indocal" model="inteco.organism">
+        <field name="name">INDOCAL</field>
+    </record>
+    <record id="organism_inn" model="inteco.organism">
+        <field name="name">INN</field>
+    </record>
+    <record id="organism_inta" model="inteco.organism">
+        <field name="name">INTA</field>
+    </record>
+    <record id="organism_inteco" model="inteco.organism">
+        <field name="name">INTECO</field>
+    </record>
+    <record id="organism_inte_iso" model="inteco.organism">
+        <field name="name">INTECO/ISO</field>
+    </record>
+    <record id="organism_inte_iec" model="inteco.organism">
+        <field name="name">INTECO/IEC</field>
+    </record>
+    <record id="organism_iram" model="inteco.organism">
+        <field name="name">IRAM</field>
+    </record>
+    <record id="organism_iso" model="inteco.organism">
+        <field name="name">ISO</field>
+    </record>
+    <record id="organism_lm" model="inteco.organism">
+        <field name="name">LM</field>
+    </record>
+    <record id="organism_mt" model="inteco.organism">
+        <field name="name">MT</field>
+    </record>
+    <record id="organism_nbr" model="inteco.organism">
+        <field name="name">NBR</field>
+    </record>
+    <record id="organism_nema" model="inteco.organism">
+        <field name="name">NEMA</field>
+    </record>
+    <record id="organism_nfpa" model="inteco.organism">
+        <field name="name">NFPA</field>
+    </record>
+    <record id="organism_nmx" model="inteco.organism">
+        <field name="name">NMX</field>
+    </record>
+    <record id="organism_nom" model="inteco.organism">
+        <field name="name">NOM</field>
+    </record>
+    <record id="organism_nom_stos" model="inteco.organism">
+        <field name="name">NOM-STOS</field>
+    </record>
+    <record id="organism_nom_stps" model="inteco.organism">
+        <field name="name">NOM/STPS</field>
+    </record>
+    <record id="organism_ntc" model="inteco.organism">
+        <field name="name">NTC</field>
+    </record>
+    <record id="organism_ohsas" model="inteco.organism">
+        <field name="name">OHSAS</field>
+    </record>
+    <record id="organism_oiml" model="inteco.organism">
+        <field name="name">OIML</field>
+    </record>
+    <record id="organism_osha" model="inteco.organism">
+        <field name="name">OSHA</field>
+    </record>
+    <record id="organism_pas" model="inteco.organism">
+        <field name="name">PAS</field>
+    </record>
+    <record id="organism_rtca" model="inteco.organism">
+        <field name="name">RTCA</field>
+    </record>
+    <record id="organism_sa" model="inteco.organism">
+        <field name="name">SA</field>
+    </record>
+    <record id="organism_tappi" model="inteco.organism">
+        <field name="name">TAPPI</field>
+    </record>
+    <record id="organism_ul" model="inteco.organism">
+        <field name="name">UL</field>
+    </record>
+    <record id="organism_une" model="inteco.organism">
+        <field name="name">UNE</field>
+    </record>
+    <record id="organism_une_en" model="inteco.organism">
+        <field name="name">UNE-EN</field>
+    </record>
+    <record id="organism_uni" model="inteco.organism">
+        <field name="name">UNI</field>
+    </record>
+    <record id="organism_unit" model="inteco.organism">
+        <field name="name">UNIT</field>
+    </record>
+    <record id="organism_n" model="inteco.organism">
+        <field name="name">N</field>
+    </record>
+    <record id="organism_ieee" model="inteco.organism">
+        <field name="name">IEEE</field>
+    </record>
+    <record id="organism_cie" model="inteco.organism">
+        <field name="name">CIE</field>
+    </record>
+    <record id="organism_tt" model="inteco.organism">
+        <field name="name">TT-P</field>
+    </record>
+</odoo>

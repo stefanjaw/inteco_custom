@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_cxp_req">
+            <field name="name">Cuentas por Pagar</field>
+            <field name="description">User access level for this module</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="CxP_group" model="res.groups">
+            <field name="name">Revisar Liquidaciones</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="dfx_budget_request.module_cxp_req"/>
+        </record>
+
+        <record model="ir.module.category" id="module_management">
+            <field name="name">Tipo de Usuario de Compra</field>
+            <field name="description">User access level for this module</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <record id="group_user" model="res.groups">
+            <field name="name">Usuario Solicitante</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="dfx_budget_request.module_management"/>
+        </record>
+
+        <record id="group_manager" model="res.groups">
+            <field name="name">Usuario Aprobador</field>
+            <field name="implied_ids" eval="[(4, ref('dfx_budget_request.group_user'))]"/>
+            <field name="category_id" ref="dfx_budget_request.module_management"/>
+        </record>
+
+        <record id="approv_purchase_filter_access" model="ir.rule">
+            <field name="name">Regla de acceso para aprobadores</field>
+            <field name="model_id" ref="model_purchase_order"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(6,0, [ref('dfx_budget_request.group_manager')])]"/>
+            <!--            <field name="perm_read" eval="True"/>-->
+            <!--            <field name="perm_write" eval="False"/>-->
+            <!--            <field name="perm_create" eval="False"/>-->
+            <!--            <field name="perm_unlink" eval="False"/>-->
+        </record>
+
+        <record id="purchase_requisition_request_filter_access" model="ir.rule">
+            <field name="name">Regla de acceso para usuarios en "Pendiente por liquidar"</field>
+            <field name="model_id" ref="model_purchase_order"/>
+            <field name="domain_force">[('employees_name','=',user.partner_id.id)]</field>
+            <field name="groups" eval="[(6,0, [ref('dfx_budget_request.group_user')])]"/>
+            <!--            <field name="perm_read" eval="True"/>-->
+            <!--            <field name="perm_write" eval="False"/>-->
+            <!--            <field name="perm_create" eval="False"/>-->
+            <!--            <field name="perm_unlink" eval="False"/>-->
+        </record>
+
+        <record id="request_purchase_filter_access" model="ir.rule">
+            <field name="name">Regla de acceso para solicitadores</field>
+            <field name="model_id" ref="model_purchase_order"/>
+            <field name="domain_force">[('requested_by','=',user.id)]</field>
+            <field name="groups" eval="[(6,0, [ref('dfx_budget_request.group_user')])]"/>
+            <!--            <field name="perm_read" eval="True"/>-->
+            <!--            <field name="perm_write" eval="False"/>-->
+            <!--            <field name="perm_create" eval="False"/>-->
+            <!--            <field name="perm_unlink" eval="False"/>-->
+        </record>
+
+    </data>
+</odoo>

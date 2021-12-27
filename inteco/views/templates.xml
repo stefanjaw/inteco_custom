@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <template id="dfx_custom_address" inherit_id="website_sale.address">
+        <xpath expr="//form/div/div[1]/.." position="before">
+            <div class="form-group">
+                <input id="is_company" type="checkbox" name="type_is_company"/>
+                <label for="is_company" class="control-label font-weight-normal label-optional" style="display: inline;">Soy Empresa</label>
+                <input id="text_company_type" type="text" name="text_company_type" class="d-none"
+                       t-att-value="'company_type' in checkout and checkout['company_type']"
+                />
+            </div>
+        </xpath>
+        
+        <xpath expr="//form/div/div[1]" position="replace">
+    
+            <div id="company_name" t-attf-class="form-group #{error.get('name') and 'o_has_error' or ''} col-lg-12 div_name">
+                <label class="col-form-label" for="name">Name</label>
+                <input type="text" name="name" t-attf-class="form-control #{error.get('name') and 'is-invalid' or ''}" t-att-value="'name' in checkout and checkout['name']" />
+            </div>
+            
+            <div id="name_contact" class="form-group col-lg-4">
+                <label for="contact_name" class="control-label">Name</label>
+                <input type="text" name="contact_name" id="contact_name" class="form-control"
+                       t-att-readonly="'readonly' if only_passwords else None"
+                       t-att-autofocus="'autofocus' if login and not only_passwords else None"
+                       t-att-value="'contact_name' in checkout and checkout['contact_name']"
+                />
+            </div>
+        
+            <div id="last_name" class="form-group  col-lg-4">
+                <label for="contact_last_name" class="control-label">First Last Name</label>
+                <input type="text" name="contact_last_name" id="contact_last_name" class="form-control"
+                       t-att-readonly="'readonly' if only_passwords else None"
+                       t-att-autofocus="'autofocus' if login and not only_passwords else None"
+                       t-att-value="'contact_last_name' in checkout and checkout['contact_last_name']"
+                />
+            </div>
+            <div id="second_last_name_contact" class="form-group  col-lg-4">
+                <label for="second_last_name" class="control-label font-weight-normal label-optional">Second Last Name</label>
+                <input type="text" name="second_last_name" id="second_last_name" class="form-control"
+                       t-att-readonly="'readonly' if only_passwords else None"
+                       t-att-autofocus="'autofocus' if login and not only_passwords else None"
+                       t-att-value="'second_last_name' in checkout and checkout['second_last_name']"
+                />
+            </div>
+    
+        </xpath>
+        
+    </template>
+    
+    <template id="dfx_products_item"  inherit_id="website_sale.products_item" name="Products item DFX"  active="True" customize_show="True" >
+        <xpath expr="//form[1]" position="replace">
+            <tr>
+                <td style="width:10%;">
+                    <a t-att-href="'/shop/product/%s?' % (slug(product))"><small class="mt8" t-esc="product.default_code"/></a><br/>
+                </td>
+                <td style="width:40%;">
+                    <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name"/>
+                    <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                </td>
+                <td style="width:20%;">
+                    <t t-foreach="product.correspondence_ids" t-as="correspondence">
+                        <small><t t-esc="correspondence.name"/></small><br/>
+                    </t>
+                </td>
+                <td style="width:10%;">
+                    <img t-att-src="'/inteco/static/src/img/state_%s.png' % product.state"/>
+                </td>
+                <td style="width:20%;">
+                    
+                    <t t-set="product_href" t-value="keep(product.website_url, page=(pager['page']['num'] if pager['page']['num'] > 1 else None))" />
+                    <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
+                    
+                    <form action="/shop/cart/update" method="post" class="card oe_product_cart"
+                          t-att-data-publish="product.website_published and 'on' or 'off'"
+                          itemscope="itemscope" itemtype="http://schema.org/Product">
+                        <div class="card-body p-1 oe_product_image d-none">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                            <a t-att-href="product_href" class="d-block h-100" itemprop="url">
+                                <t t-set="image_holder" t-value="product._get_image_holder()"/>
+                                <span t-field="image_holder.image_1920"
+                                      t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                                      class="d-flex h-100 justify-content-center align-items-center"/>
+                            </a>
+                        </div>
+                        
+                        <div class="card-body p-0 text-center o_wsale_product_information">
+                            <div class="p-2 o_wsale_product_information_text">
+                                <h6 class="o_wsale_products_item_title d-none">
+                                    <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" />
+                                    <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                                </h6>
+                                <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                                    <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                    <t t-if="combination_info['price'] != 0.00">
+                                        <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'Gratis'+' '"/>
+                                    </t>
+                                    <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                                    <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                                </div>
+                            </div>
+                            <div class="o_wsale_product_btn"/>
+                        </div>
+                        
+                        <t t-set="bg_color" t-value="td_product['ribbon']['bg_color'] or ''"/>
+                        <t t-set="text_color" t-value="td_product['ribbon']['text_color']"/>
+                        <t t-set="bg_class" t-value="td_product['ribbon']['html_class']"/>
+                        <span t-attf-class="o_ribbon #{bg_class}" t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color}" t-raw="td_product['ribbon']['html'] or ''"/>
+                    </form>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+    
+    <template id="home_shopping_cart" inherit_id="website_sale.products_item" name="Home shopping cart" customize_show="True" active="False">
+        <xpath expr="//div[@id='shopping_card_holder']//b" position="inside">
+            <input type="hidden" name="product_id" t-att-value="product.product_variant_id.id"/>
+            <a id="add_to_cart" class="pull-right btn btn-primary btn-xs mt16 mr8" href="#">Add to Cart</a>
+        </xpath>
+    </template>
+    
+    <!--standard information-->
+    <template id="product" inherit_id="website_sale.product" name="Inteco Product">
+        
+        <xpath expr="//div[hasclass('row')][1]" position="after">
+            <t t-if="product.state != 'C'">
+                <div class="alert alert-info" role="alert">
+                    <strong>Attention!</strong> The current standard is:
+                    
+                    <a t-att-href="'/shop/product/%s?product=%s' % (slug(product.new_replaced_by), product.new_replaced_by.id)" class="alert-link">
+                        <small t-esc="product.new_replaced_by.default_code"/>
+                    </a>
+                </div>
+            </t>
+        </xpath>
+        
+        <xpath expr="//div[hasclass('col-md-6')]" position="replace">
+            
+            <div class="col-sm-12">
+                <t t-if="'Accesibilidad' in product.committee_id.name or 'accesibilidad' in product.committee_id.name">
+                    <a href="https://drive.google.com/drive/folders/1wUJ9ADHaZNMxUSJ3Sl0tc5g-T8ArNah8?usp=sharing" target="_blank">
+                        <img style="padding-bottom: 10px;" src="https://www.inteco.org/web/image/1601837"/>
+                    </a>
+                </t>
+            </div>
+            
+            <div class="col-sm-12">
+                <div class="col-sm-10 mt8 mb8 page-header"><h2><strong><t t-esc="product.default_code"/></strong></h2></div>
+                
+                <!-- Iconos de descarga Normas gratuitas -->
+                <!-- Norma INTE/DN 05:2015 -->
+                <t t-if="'CNE-NA-INTE-DN 1:2015' in product.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895588" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""></span>
+                        </a>
+                    </div>
+                </t>
+                
+                <!-- Norma INTE/DN 03:2016 -->
+                <t t-if="'INTE/DN 03:2016' in product.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895676" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""></span>
+                        </a>
+                    </div>
+                </t>
+                
+                <!-- Norma INTE/DN 05:2017 -->
+                <t t-if="'INTE/DN 05:2017' in product.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895677" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""></span>
+                        </a>
+                    </div>
+                </t>
+                
+                <!-- Fin de Iconos de descarga Normas gratuitas -->
+                
+                <div class="col-sm-12 mt8 mb8 main-text text-justify color-orange-intc"><h3><t t-esc="product.name"/></h3></div>
+            </div>
+            <div class="col-sm-12">
+                <t t-if="product.confirmation_date">
+                    <div class="alert alert-info" role="alert">
+                        <span class="fa fa-check-square-o fa-2x"/> <strong>This standard was last reviewed and confirmed in <span t-field="variant.confirmation_date" t-field-options="{&quot;format&quot;: &quot;Y&quot;}"/>. Therefore this version remains current.</strong>
+                    </div>
+                </t>
+                <div class="col-sm-12 mt8 mb8"><h4><strong>Object and field of application</strong></h4></div>
+                <div class="col-sm-12 mt8 mb8 text-justify"><t t-esc="product.application_field"/></div>
+            </div>
+            <hr class="col-sm-12"/>
+            <div class="col-sm-12">
+                <div class="col-sm-12 mt8 mb8"><h4><strong>General information</strong></h4></div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Committee Code</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.committee_id.complete_name"/></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Committee Name</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.committee_id.name"/></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Sector</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.sector_id.name"/></div>
+                </div>
+                <t t-if="product.ics_ids">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>ICS</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.ics_ids" t-as="ics"><t t-esc="ics.complete_name"/><t t-if="not ics_last">,</t> </t></div>
+                    </div>
+                </t>
+                <t t-if="product.correspondence_ids">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Correspondences</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.correspondence_ids" t-as="correspondence"><t t-esc="correspondence.name"/><t t-if="not correspondence_last">,</t> </t></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Organism</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.organism_ids" t-as="organism"><t t-esc="organism.name"/><t t-if="not organism_last">,</t> </t></div>
+                    </div>
+                </t>
+                <t t-if="product.edition">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Edition</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.edition"/></div>
+                    </div>
+                </t>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Approval Date</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.approval"/></div>
+                </div>
+                <t t-if="product.pages">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Number of Pages</strong></div>
+                        <div class="col-sm-6 mt8 mb8"><t t-esc="product.pages"/></div>
+                    </div>
+                </t>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>State</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="dict(product._fields['state']._description_selection(product.env)).get(product.state)"/></div>
+                </div>
+                <t t-if="product.replaced_by">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Replaced by</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><a t-att-href="'/shop/product/%s?product=%s' % (slug(product), product.replaced_by.id)" class="alert-link"><small t-esc="variant.replaced_by.default_code"/></a></div>
+                    </div>
+                </t>
+                <t t-if="product.previous_code">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Previous Code</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.previous_code"/></div>
+                    </div>
+                </t>
+            </div>
+            <t t-if="product.standards_ref">
+                <hr class="col-sm-12"/>
+                <div class="col-sm-12">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2 mt8 mb8 pull-left"><strong>Standards Reference</strong></div>
+                        <div class="col-sm-10 mt8 mb8 pull-right"><t t-esc="product.standards_ref"/></div>
+                    </div>
+                </div>
+            </t>
+            <t t-if="product.history_norm">
+                <hr class="col-sm-12"/>
+                <div class="col-sm-12 mt16 mb8">
+                    <div class="col-sm-12">
+                        <p>
+                            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
+                                View revision history <span class="caret"/>
+                            </button>
+                        </p>
+                        <div class="collapse" id="history">
+                            <div class="card card-body">
+                                <t t-foreach="product.history_norm" t-as="variant">
+                                    <a t-att-href="'/shop/product/%s?variant=%s' % (slug(variant), variant.id)">
+                                        <span class="fa fa-caret-right"/> <small class="mt8" t-esc="variant.default_code"/>
+                                    </a>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+        
+        <xpath expr="//div[hasclass('col-md-6', 'col-xl-4')]" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        
+        <xpath expr="//ol/li/span[@t-field='product.name']" position="replace">
+            <span t-field="variant.default_code"/>
+        </xpath>
+    </template>
+    
+    <template id="delete_search" inherit_id="website_sale.products" name="Delete Search">
+        <xpath expr="//t[@t-call='website_sale.search']" position="replace">
+        </xpath>
+        <xpath expr="//div[@id='products_grid_before']" position="inside">
+            <div><strong>Search</strong></div>
+            <t t-call="website_sale.search" />
+        </xpath>
+    </template>
+    
+    <template id="products_custom_search" inherit_id="website_sale.products" active="True" customize_show="True" name="Custom Inteco Filter">
+        <xpath expr="//div[@id='products_grid_before']" position="inside">
+            <t t-set="sectors" t-value="env['inteco.sector'].sudo().search([]).sorted('name')"/>
+            <t t-set="committees" t-value="env['inteco.committee'].sudo().search([]).sorted('name')"/>
+            <t t-set="organisms" t-value="env['inteco.organism'].sudo().search([]).sorted('name')"/>
+            <t t-set="states" t-value="env['product.product']._fields['state']._description_selection(env)"/>
+            <t t-set="Keyword" t-value="env['prod.key.words'].sudo().search([]).sorted('key_words')"/>
+            <form class="js_attributes" method="get">
+                <input type="hidden" name="search" t-att-value="search"/>
+                <br/>
+                <div>
+                    <strong>Filtros</strong>
+                </div>
+                
+                <div>Sectores</div>
+                <select class="form-control" name="sector">
+                    <option value=""/>
+                    <t t-foreach="sectors" t-as="sector">
+                        <option t-att-value="'%s' % (sector.id)" t-esc="sector.name" t-att-selected="sector_set and sector.id == int(sector_set)"/>
+                    </t>
+                </select>
+                
+                
+                <div>Comités</div>
+                <t t-set="committees" t-value="env['inteco.committee'].sudo().search([]).sorted('complete_name')"/>
+                <select class="form-control" name="committee">
+                    <option value=""/>
+                    <t t-foreach="committees" t-as="committee">
+                        <option t-att-value="'%s' % (committee.id)" t-esc="'%s - %s' % (committee.complete_name, committee.name)" t-att-selected="committee_set and committee.id == int(committee_set)"/>
+                    </t>
+                </select>
+                
+                <div>Organismo de correspondencia</div>
+                <select class="form-control" name="organism">
+                    <option value=""/>
+                    <t t-foreach="organisms" t-as="organism">
+                        <option t-att-value="'%s' % (organism.id)" t-esc="organism.name" t-att-selected="organism_set and organism.id == int(organism_set)"/>
+                    </t>
+                </select>
+                
+                <div>Tipo de norma</div>
+                <t t-set="categories" t-value="env['product.public.category'].sudo().search([]).sorted('name')"/>
+                <select class="form-control" id="category" name="category">
+                    <option value=""/>
+                    <t t-foreach="categories" t-as="categ">
+                        <option t-att-value="keep('/shop/category/' + slug(categ), category=0)" t-esc="categ.name" t-att-selected="category_set and categ.id == int(category_set)"/>
+                    </t>
+                </select><br/>
+                
+                <div>Palabras Clave</div>
+                <!--                <t t-set="categories" t-value="env['product.public.category'].sudo().search([]).sorted('name')"/>-->
+                <select class="form-control" name="KeyWords">
+                    <option value=""/>
+                    <t t-foreach="Keyword" t-as="KeyWords">
+                        <option t-att-value="'%s' % (KeyWords.id)" t-esc="KeyWords.key_words" t-att-selected="KeyWords_set and KeyWords.id == int(KeyWords_set)"/>
+                    </t>
+                </select><br/>
+                
+                <div>Estado</div>
+                <t t-foreach="states" t-as="state">
+                    <!--'Public Consultation' and 'In Development' states will be considered as filters
+                    in the future, at this moment they are disabled by user request.-->
+                    <t t-if="state[0] not in ['P', 'V']">
+                        <input type="checkbox" t-att-name="'state_%s' % (state[0])" t-att-value="'%s' % (state[0])" t-att-checked="'checked' if states_set and state[0] in states_set else None"/>
+                        <t t-esc="state[1]"/><br/>
+                    </t>
+                </t>
+                
+                <!-- Imagen de precios sin IVA -->
+                <div style="margin-top:15px;"><img style="width:100%" src="https://www.inteco.org/web/image/1964006/IVA-01.png"/></div>
+            
+            </form>
+        </xpath>
+        
+        <xpath expr="//div[@id='products_grid_before']" position="attributes">
+            <attribute name="class">col-md-3</attribute>
+        </xpath>
+        
+        <!--        <xpath expr="//div[@id='products_grid']" position="attributes">-->
+        <!--            <attribute name="class">col-md-9</attribute>-->
+        <!--        </xpath>-->
+    
+    </template>
+    <template id="option_collapse_categories_recursive_inherit" inherit_id="website_sale.option_collapse_categories_recursive" name="Custom Category Display">
+        <xpath expr="//li" position="replace"></xpath>
+    </template>
+    
+    <template id="option_collapse_products_categories_inherit" inherit_id="website_sale.option_collapse_products_categories" name="Remove All Products">
+        <xpath expr="//div[@id='wsale_products_categories_collapse']/ul" position="replace"/>
+    </template>
+    
+    <template id="product_price_inherit" inherit_id="website_sale.product_price" name="Custom Product Price">
+        <xpath expr="//div/h4/b" position="replace">
+            <p>Price: <b class="oe_price" style="white-space: nowrap;" t-esc="product.website_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/></p>
+        </xpath>
+    </template>
+    
+    <template id="website_pricing_inherit" inherit_id="website_sale.pricelist_list">
+        <xpath expr="//div[@class='dropdown-menu']" position="after">
+            <br/>
+            <br/>
+            <t t-if="digital_attachments">
+                <t t-set="attachments" t-value="digital_attachments.get(line.product_id.id)"/>
+                <t t-if="attachments">
+                    <span class="dropdown">
+                        <button class="btn btn-info" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            Download file<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <t t-foreach="attachments" t-as="a">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           t-att-href="'/my/download?attachment_id=%i&amp;sale_id=%i' % (a['id'], (line and line.order_id) and line.order_id.id or False)"><t t-esc="a['name']"/></a></li>
+                            </t>
+                        </ul>
+                    </span>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

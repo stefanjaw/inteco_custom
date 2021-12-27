@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="committee_form_view" model="ir.ui.view">
+        <field name="name">committee.form.view</field>
+        <field name="model">inteco.committee</field>
+        <field name="arch" type="xml">
+            <form string="Committees">
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name"/></h1>
+                </div>
+                <group>
+                    <group>
+                        <field name="identifier"/>
+                        <field name="type"/>
+                        <field name="parent_id"/>
+                        <field name="sector_id"/>
+                    </group>
+                    <group>
+                        <field name="international"/>
+                        <field name="international_committe" attrs="{'invisible': [('international', '=', False)], 'required': [('international','=',True)]}"/>
+                        <field name="international_participation" attrs="{'invisible': [('international', '=', False)], 'required': [('international','=',True)]}"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="committee_tree_view" model="ir.ui.view">
+        <field name="name">committee.tree.view</field>
+        <field name="model">inteco.committee</field>
+        <field name="arch" type="xml">
+            <tree string="Committees">
+                <field name="complete_name" string="Code"/>
+                <field name="name"/>
+                <field name="sector_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="committee_view_filter" model="ir.ui.view">
+        <field name="name">committee.code.select</field>
+        <field name="model">inteco.committee</field>
+        <field name="arch" type="xml">
+            <search string="Search Committee">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="complete_name" string="Code" filter_domain="[('complete_name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,48 @@
+// lessc@1.4.2
+
+// ==================================
+// Mass Mailing "Theme Aniversary 30"
+// ==================================
+
+@o_mm_a30_color_alpha: #E8E9EA;
+@o_mm_a30_color_beta: #FFFFFF;
+@o_mm_a30_color_gamma: #F5A623;
+@o_mm_a30_color_delta: #000000;
+@o_mm_a30_color_epsilon: darken(@o_mm_a30_color_gamma, 5%);
+@o_mm_a30_color_zeta: #00A0E3;
+@o_mm_a30_color_eta: #393939;
+
+.o_aniversary30_theme {
+    // ===== Colors =====
+    .bg-beta {
+        background-color: @o_mm_a30_color_zeta;
+        color:  @o_mm_a30_color_beta;
+    }
+    .text-beta {
+        color: @o_mm_a30_color_zeta;
+    }
+    .bg-delta {
+        background-color: @o_mm_a30_color_eta;
+    }
+
+    // ===== Snippets (general) =====
+    .o_mail_snippet_general {
+        .btn.btn-primary {
+            color: @o_mm_a30_color_beta;
+            background-color: @o_mm_a30_color_gamma;
+        }
+        a, .btn.btn-link {
+            color: @o_mm_a30_color_epsilon;
+        }
+
+        .bg-delta {
+            .btn.btn-primary {
+                color: @o_mm_a30_color_beta;
+                background-color:  @o_mm_a30_color_zeta;
+            }
+            a, .btn.btn-link {
+                color: @o_mm_a30_color_zeta;
+            }
+        }
+    }
+}

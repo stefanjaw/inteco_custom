@@ -1,0 +1,134 @@
+<section class="oe_container">
+   <div class="oe_row oe_spaced">
+           <h2 class="oe_slogan" style="color:olive;"><b>Import Product Images from Excel <br>(File Path and Web URL)</h2>
+           <p class="oe_mt32" style="color:olive;">
+This module allow you to import images from excel using URL and Path.<br> This module gives wizard which allow you to choose whether you want to create product template or product in Odoo and also it allow you to choose whether you want to create new product or you want to modify existing product on wizard.
+<br>
+Sample for all types of option are avialable inside module sample direcotry.
+        </p>
+        <p style="color:CRIMSON;"> <b>Main Features:</b><p style="color:olive;">
+            - Allow to import *.jpg or .png or .jpeg ... files types.<br>
+            - Allow you to create new product or product template based on you choise and selected on wizard.<br>
+            - Allow you to modify existing product or product template baesd on your choise and selected on wizard.<br>
+            - Allow you to have image file path of your directory and Website URL where you keep your image. (Both option can work together with single import.)<br>
+            - Allow you to give http or https as website URL to import image using Excel.<br>
+
+            <p style="color:CRIMSON;"> <b>Create Product Template Image
+            <p style="color:olive;">   - For Create Product Template you should select on wizard model as Product Template and operation as Create Product on wizard.<br/>
+                - You can add columns like Product Name, Product Reference Code, Image Path on your .xls file<br/>
+            </p>
+            <p style="color:CRIMSON;"> <b>Create Product Image
+            <p style="color:olive;">   - For Create Product you should select  on wizard model as Product and operation as Create Product on wizard.<br/>
+                - You can add columns like Product Name, Product Reference Code, Image Path on your .xls file<br/>
+            </p>
+            
+            <p style="color:CRIMSON;"> <b>Update Product Template Image
+            <p style="color:olive;">   - For Update Product Template you should select  on wizard model as Product Template and operation as Update Product on wizard.<br/>
+                - You have add values as Product Name or Product Reference Code and Image Path on .xls file<br/>
+            </p>
+            <p style="color:CRIMSON;"> <b>Update Product Image
+            <p style="color:olive;">   - For Update Product you should select  on wizard model as Product and operation as Update Product on wizard.<br/>
+                - You have add values as Product Name or Product Reference Code and Image Path on .xls file<br/>
+            </p>
+            
+          <p style="color:CRIMSON;"><b>Menus Available:</b>
+            <ul><i>
+              <li style="color:olive;">Import Products
+                <ul> <li style="color:olive;">import Products & Images</li> </ul>
+              </li>
+             </ul></p>
+            <p style="color:green;"> File must be in .xls or .xlsx file.</p>
+            <p style="color:green;"> Make sure you have xlwt Python library installed.</p>
+   </div>
+</section>
+<section class="oe_container">
+   <div class="oe_row oe_spaced">
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">1. Import Product Template from Wizard</b></h3>
+<p style="color:olive;"> Select Model as Product Template and operation as Create for create product template.
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_1.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Sample of Import Product Template</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_2.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Created Product Template in Odoo</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_3.png">
+       </div>
+   </div>
+</section>
+
+<section class="oe_container">
+   <div class="oe_row oe_spaced">
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">2. Update Existing Product Template from Wizard</b></h3>
+<p style="color:olive;"> Select Model as Product Template and operation as Update Product for update product template.
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_5.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Sample of Update Product Template - Existing Product in Odoo</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_4.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Updated Product Template</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_6.png">
+       </div>
+   </div>
+</section>
+
+<section class="oe_container">
+   <div class="oe_row oe_spaced">
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">3. Import Product from Wizard</b></h3>
+<p style="color:olive;"> Select Model as Product and operation as Create for create product.
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_8.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Sample of Import Product</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_7.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Created Product</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_9.png">
+       </div>
+   </div>
+</section>
+
+<section class="oe_container">
+   <div class="oe_row oe_spaced">
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">4. Update Existing Product from Wizard</b></h3>
+<p style="color:olive;"> Select Model as Product and operation as <b>Update Product</b> for update product.
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_11.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Sample of Update Product</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_10.png">
+       </div>
+       <h3 class="oe_slogan"><b style="color:CRIMSON;">Updated Product</b></h3>
+       <div class="oe_demo oe_screenshot">
+           <img src="imp_img_12.png">
+       </div>
+   </div>
+</section>
+
+<section class="oe_container" >
+   <div class="oe_row oe_spaced">
+       <div class="oe_span6">
+           <div class="oe_picture" style="margin: 25px 10%;">
+               <a href="http://www.probuse.com/">
+                   <img src="logo.png">
+               </a>
+           </div>
+       </div>
+       <div class="oe_span6">
+           <p class="oe_mt32">
+               If you need any help or want more additional features,<br/> you may contact us through:<br/>
+               Email: <a href="contact@probuse.com">contact@probuse.com</a> <br/>
+               Website: <a href="http://www.probuse.com/" target='new'><u>www.probuse.com</u></a> <br/>
+               Skype: mustufa_probuse<br/>
+           </p>
+       </div>
+   </div>
+</section>

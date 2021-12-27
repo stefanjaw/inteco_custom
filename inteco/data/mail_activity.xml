@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="mail_activity_data_register" model="mail.activity.type">
+        <field name="name">Data register</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">1</field>
+    </record>
+    <record id="mail_activity_seller_assignment" model="mail.activity.type">
+        <field name="name">Seller Assignment</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">1</field>
+    </record>
+    <record id="mail_activity_adjustment_amount_sale" model="mail.activity.type">
+        <field name="name">Adjustment amount of sale</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">2</field>
+    </record>
+    <record id="mail_activity_initial_followup_1" model="mail.activity.type">
+        <field name="name">Initial follow-up 1</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">2</field>
+    </record>
+    <record id="mail_activity_initial_followup_2" model="mail.activity.type">
+        <field name="name">Initial follow-up 2</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">7</field>
+    </record>
+    <record id="mail_activity_information_reg" model="mail.activity.type">
+        <field name="name">Preliminary information registration</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">5</field>
+    </record>
+    <record id="mail_activity_preparation_offer" model="mail.activity.type">
+        <field name="name">Preparation of the offer</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">2</field>
+    </record>
+    <record id="mail_activity_internal_approval" model="mail.activity.type">
+        <field name="name">Internal approval of the offer</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">2</field>
+    </record>
+    <record id="mail_activity_presentation" model="mail.activity.type">
+        <field name="name">Presentation of the offer</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">2</field>
+    </record>
+    <record id="mail_activity_followup_offer_1" model="mail.activity.type">
+        <field name="name">Follow-up offer 1</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">7</field>
+    </record>
+    <record id="mail_activity_followup_offer_2" model="mail.activity.type">
+        <field name="name">Follow-up offer 2</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">14</field>
+    </record>
+    <record id="mail_activity_signature" model="mail.activity.type">
+        <field name="name">Signature of the agreement</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">1</field>
+    </record>
+    <record id="mail_activity_opening" model="mail.activity.type">
+        <field name="name">Opening of file</field>
+        <field name="icon">fa-file-text-o</field>
+        <field name="res_model_id" ref="crm.model_crm_lead"/>
+        <field name="delay_count">1</field>
+    </record>
+</odoo>

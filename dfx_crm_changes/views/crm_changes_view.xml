@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Add Form dcc=dfx_crm_changes-->
+        <record id="crm_form_dcc" model="ir.actions.act_window">
+            <field name="name">Formularios</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.forms</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Formularios
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <record id="crm_lead_form_inherit" model="ir.ui.view">
+            <field name="name">crm.lead.form.lead.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="crm_forms_id" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem id="ID_crm__form_config" name="Formularios" parent="crm.crm_menu_config"
+                  action="crm_form_dcc" sequence="1"/>
+
+         <record id="dfx_crm_lead_key_words" model="ir.actions.act_window">
+            <field name="name">Palabras Clave</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.key.words</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Palabras Clave
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="crm_key_words_ID" name="Palabras Clave" parent="crm.crm_menu_config"
+                  action="dfx_crm_lead_key_words" sequence="9"/>
+
+
+        <record id="restric_crm_lead_autoreply" model="base.automation">
+            <field name="name">DFX Restringir creacion de leads por palabras clave</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="trigger">on_create</field>
+            <field name="active" eval="True"/>
+            <field name="state">code</field>
+            <field name="filter_domain">[('type', '=', 'lead')]</field>
+            <field name="code">
+                if record:
+                record.validate_start_key_word()
+            </field>
+        </record>
+
+        <record id="dfx_crm_form_lead_inherit" model="ir.ui.view">
+            <field name="name">dfx.crm.lead.form.lead.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="priority" eval="110"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_name']" position="after">
+                    <field name="contact_tags" string="Etiquetas del contacto"
+                           widget="many2many_tags"
+                           options="{'no_create': False, 'no_edit': False}"
+                           attrs="{'required': [('type', '=', 'lead')]}"/>
+
+                    <field name="contact_bool" string="Check grupo categorias" readonly="0" invisible="1" />
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

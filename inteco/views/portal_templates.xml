@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_layout_inherit" inherit_id="portal.portal_layout" name="Inteco Portal Layout">
+        <xpath expr="//div[hasclass('o_portal_my_details')]/h4" position="replace">
+            <h3 class="page-header">My Profile <a href="/my/account" class="btn btn-default btn-xs">Modify</a></h3>
+        </xpath>
+    </template>
+    <template id="portal_my_home_inherit" inherit_id="portal.portal_my_home" name="Inteco My Portal">
+        <xpath expr="//div[hasclass('o_portal_my_home')]/h3" position="replace">
+            <h3 class="page-header">My Documents</h3>
+        </xpath>
+    </template>
+    <template id="portal_my_details_inherit" inherit_id="portal.portal_my_details" name="Inteco My Details">
+        <xpath expr="//div[hasclass('o_portal_details')]/div/div" position="replace">
+            <div class="row">
+                <div class="col-md-12">
+                    <div t-if="error_message" class="alert alert-danger">
+                        <t t-foreach="error_message" t-as="err"><t t-esc="err"/><br/></t>
+                    </div>
+                </div>
+                <!--The name field must remain in the form for validation purposes, even when it
+                was divided into three different fields-->
+                <div t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-12" style="display:none">
+                    <label class="control-label" for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control" t-att-value="name or partner.name"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('contact_name') and 'has-error' or ''} col-lg-4">
+                    <label class="control-label" for="name">Name</label>
+                    <input type="text" name="contact_name" class="form-control" t-att-value="partner.contact_name" pattern="[^\d]*"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('contact_last_name') and 'has-error' or ''} col-lg-4">
+                    <label class="control-label" for="name">First Last Name</label>
+                    <input type="text" name="contact_last_name" class="form-control" t-att-value="partner.contact_last_name" pattern="[^\d]*"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('second_last_name') and 'has-error' or ''} col-lg-4">
+                    <label class="control-label" for="name">Second Last Name</label>
+                    <input type="text" name="second_last_name" class="form-control" t-att-value="partner.second_last_name" pattern="[^\d]*"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-lg-12">
+                    <label class="control-label" for="email">Email</label>
+                    <input type="email" name="email" class="form-control" t-att-value="email or partner.email"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''} col-lg-12">
+                    <label class="control-label" for="phone">Phone</label>
+                    <input type="tel" name="phone" class="form-control" t-att-value="phone or partner.phone"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('company_name') and 'has-error' or ''} col-lg-12">
+                    <label class="control-label label-optional" for="company_name">Company Name</label>
+                    <p t-if="partner.commercial_partner_id.is_company" class="form-control" t-esc="partner.commercial_company_name"/>
+                    <input t-else="" type="text" name="company_name" class="form-control" t-att-value="company_name or partner.company_name"/>
+                </div>
+                <div t-if="has_check_vat" t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-lg-12">
+                    <label class="control-label label-optional" for="vat">VAT Number</label>
+                    <input type="text" name="vat" class="form-control" t-att-value="vat or partner.vat"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-12">
+                    <label class="control-label" for="street">Street</label>
+                    <input type="text" name="street" class="form-control" t-att-value="street or partner.street"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label" for="city">City</label>
+                    <input type="text" name="city" class="form-control" t-att-value="city or partner.city"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label" for="zipcode">Zip / Postal Code</label>
+                    <input type="text" name="zipcode" class="form-control" t-att-value="zipcode or partner.zip"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label" for="country_id">Country</label>
+                    <select name="country_id" class="form-control">
+                        <option value="">Country...</option>
+                        <t t-foreach="countries or []" t-as="country">
+                            <option t-att-value="country.id" t-att-selected="country.id == int(country_id) if country_id else country.id == partner.country_id.id">
+                                <t t-esc="country.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label label-optional" for="state_id">State / Province</label>
+                    <select name="state_id" class="form-control">
+                        <option value="">select...</option>
+                        <t t-foreach="states or []" t-as="state">
+                            <option t-att-value="state.id" style="display:none;" t-att-data-country_id="state.country_id.id" t-att-selected="state.id == partner.state_id.id">
+                                <t t-esc="state.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <input type="hidden" name="redirect" t-att-value="redirect"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

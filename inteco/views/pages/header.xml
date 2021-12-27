@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="search" name="Search Box">
+        <form t-att-action="keep('/shop'+ ('/category/'+slug(category)) if category else None, search=0) if keep else '/shop'" method="get" t-att-class="search_class">
+            <t t-if="attrib_values">
+                <t t-foreach="attrib_values" t-as="a">
+                    <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
+                </t>
+            </t>
+            <t t-call="website.website_search_box" />
+        </form>
+    </template>
+    
+    <!-- Customize header  -->
+    <template id="hatband_development" name="Hatband Development Standars">
+        <div class="collapse navbar-collapse nav-hatband bg-beta">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if develop else 'nav-link'" href="/page/inteco.standards_development">DEVELOPMENT OF STANDARDS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if dev_process else 'nav-link'" href="/page/inteco.standards_process">STANDARDS IN PROCESS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if dev_public else 'nav-link'" href="/page/inteco.standards_public">STANDARDS IN PUBLIC CONSULTATION</a>
+                </li>
+            </ul>
+        </div>
+    </template>
+    
+    <template id="hatband_certifications" name="Hatband Certifications">
+        <div class="collapse navbar-collapse nav-hatband bg-beta">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs else 'nav-link'" href="/page/inteco.certifications">CERTIFICATIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_process else 'nav-link'" href="/page/inteco.certifications_process">CERTIFICATION PROCESS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_system else 'nav-link'" href="/page/inteco.certifications_system">MANAGEMENT SYSTEMS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_greenhouse else 'nav-link'" href="/page/inteco.certifications_greenhouse">GREENHOUSE GAS VERIFICATION</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_products else 'nav-link'" href="/page/inteco.certifications_products">PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_people else 'nav-link'" href="/page/inteco.certifications_people">PEOPLE</a>
+                </li>
+                <li class="nav-item">
+                    <a t-att-class="'nav-link active' if certs_list else 'nav-link'" href="/page/inteco.certifications_list">CERTIFICATION LIST</a>
+                </li>
+            </ul>
+        </div>
+    </template>
+    
+    <template id="header" name="Hatband Development Standars">
+        <t t-if="hatband_development" t-call="inteco.hatband_development"/>
+        <t t-if="hatband_certifications" t-call="inteco.hatband_certifications"/>
+    </template>
+
+<!--    <template id="layout" inherit_id="website.layout" name="Inteco Header">-->
+<!--        <xpath expr="//div[@id='wrapwrap']" position="inside">-->
+<!--            <t t-call="inteco.header"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+    <template id="graphene_header" inherit_id="website.layout" name="Graphene Header">
+        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+            <attribute name="id">graph_header</attribute>
+        </xpath>
+    </template>
+
+    <!-- Graphene's options -->
+    <template id="graph_affix_top_menu" inherit_id="website.layout" customize_show="True" name="Affix top menu">
+        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+            <attribute name="class">top_menu_affix</attribute>
+        </xpath>
+    </template>
+
+</odoo>

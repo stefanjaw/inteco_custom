@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="prefix_cne_na_inte_dn" model="inteco.prefix">
+        <field name="name">CNE-NA-INTE-DN</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte" model="inteco.prefix">
+        <field name="name">INTE</field>
+        <field name="type">I</field>
+    </record>
+    <record id="prefix_inte_dn" model="inteco.prefix">
+        <field name="name">INTE/DN</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_en" model="inteco.prefix">
+        <field name="name">INTE/EN</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_hd" model="inteco.prefix">
+        <field name="name">INTE/HD</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iec" model="inteco.prefix">
+        <field name="name">INTE/IEC</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iec_ts" model="inteco.prefix">
+        <field name="name">INTE/IEC/TS</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso" model="inteco.prefix">
+        <field name="name">INTE/ISO</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_guia" model="inteco.prefix">
+        <field name="name">INTE/ISO Guía</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_hl7" model="inteco.prefix">
+        <field name="name">INTE/ISO/HL7</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_iec" model="inteco.prefix">
+        <field name="name">INTE/ISO/IEC</field>
+        <field name="type">E</field>
+    </record>
+<!--    <record id="prefix_inte_iso_iec_guia" model="inteco.prefix">-->
+<!--        <field name="name">INTE/ISO/IEC Guía</field>-->
+<!--        <field name="type">E</field>-->
+<!--    </record>-->
+    <record id="prefix_inte_iso_iec_tr" model="inteco.prefix">
+        <field name="name">INTE/ISO/IEC/TR</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_iec_ts" model="inteco.prefix">
+        <field name="name">INTE/ISO/IEC/TS</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_iwa" model="inteco.prefix">
+        <field name="name">INTE/ISO/IWA</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_pas" model="inteco.prefix">
+        <field name="name">INTE/ISO/PAS</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_tr" model="inteco.prefix">
+        <field name="name">INTE/ISO/TR</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_ts" model="inteco.prefix">
+        <field name="name">INTE/ISO/TS</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_iso_ctn" model="inteco.prefix">
+        <field name="name">INTE/ISO/CTN</field>
+        <field name="type">E</field>
+    </record>
+    <record id="prefix_inte_ohsas" model="inteco.prefix">
+        <field name="name">INTE/OHSAS</field>
+        <field name="type">E</field>
+    </record>
+</odoo>

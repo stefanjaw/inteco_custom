@@ -1,0 +1,2191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="certifications_list" model="website.page">
+        <field name="name">Certifications List</field>
+        <field name="url">/page/inteco.certifications_list</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.certifications_list</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.certifications_list" name="Certifications List">
+                <t t-set="certs_list" t-value="True"/>
+                <t t-set="hatband_certifications" t-value="True"/>
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container" style="margin-bottom:25px">
+                            <section class="s_text_block">
+                                <div class="container">
+                                    <h1 class="text-beta mb32 text-beta-intc">Listado de Certificaciones</h1>
+                                </div>
+                            </section>
+                            <p>En caso de requerir mayor detalles sobre las certificaciones otorgadas, suspendidas o retiradas favor solicitarlo a <a href="mailto:operaciones@inteco.org">operaciones@inteco.org</a>.</p><br/>
+                            <ul class="nav nav-pills nav-justified sub_menu_o">
+                                <li class="col-md-4">
+                                    <a href="#systems" class="active" aria-controls="systems" role="tab" data-toggle="tab" aria-expanded="true">Empresas</a>
+                                </li>
+                                <li class="col-md-4">
+                                    <a href="#products" aria-controls="products" role="tab" data-toggle="tab" aria-expanded="false">Productos</a>
+                                </li>
+                                <li class="col-md-4">
+                                    <a href="#people" aria-controls="people" role="tab" data-toggle="tab" aria-expanded="false">Personas</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="systems">
+                                    <div class="container">
+                                        <div class="row">
+                                            <section class="s_text_block col-md-12 mt32 mb16">
+                                                <div class="container">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Organización</th>
+                                                                <th>Norma/Esquema</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>DORIKUK GOURMET</td>
+                                                                <td>BPM</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>A.V.BLANDINO &amp;amp; CIA.(FUNERARIA BLANDINO)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ABBOTT VASCULAR LIMITADA</td>
+                                                                <td>INTE/ISO 50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ADMINISTRADORA DE SUBSIDIOS SOCIALES (ADESS) DEL GCPS DE LA VICEPRESIDENCIA DE LA REPUBLICA DOMINICANA</td>
+                                                                <td>INTE/ISO 9001:2015, INTE-G38: 2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ADN SOLUTIONS, S.R.L. (ADN DATACENTERS)</td>
+                                                                <td>ISO/IEC 27001:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ADT SECURITY SERVICES S.A./ TYCO SECURITY SERVICES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGENCIA ADUANAL S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGENCIA VALVERDE HUERTAS, SERVICIOS DE MONITOREO SERMO S.A,SEGURIDAD AVAHUER S.A,SERVICIOS MAVA S.A,SERVICIOS DE LIMPIEZA A SU MEDIDA,SELIME S.A</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGENCIA VALVERDE HUERTAS, SERVICIOS DE MONITOREO SERMO S.A,SEGURIDAD AVAHUER S.A,SERVICIOS MAVA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGRIBIOTECNOLOGÍA DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Agrícola El Cántaro S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGRÍCOLA INDUSTRIAL QUIRÓS MURILLO S.A. (AGRIQUIMSA)</td>
+                                                                <td>INTE A1:2013, INTE A2:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGROINDUSTRIAL PROAVE S.A.</td>
+                                                                <td>INTE/ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGROSUPERIOR S.A.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ALIMENTOS BERMÚDEZ S.A.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Alimentos del Norte S.A</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ALIMENTOS PROSALUD, S.A.</td>
+                                                                <td>INTE/ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ALZA INVESTMENTS, LLC</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AMERICAN BRANDS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ANC CAR S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE G34:2010</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ANODIZADOS INTERNACIONALES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ANPHORA S.A</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AquaCorporación Internacional S.A</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ARGOS DOMINICANA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ARTES PARA LA INDUSTRIA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACION DEPORTIVA SAN CARLOS</td>
+                                                                <td>14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACIÓN DOMINICANA DE EXPORTADORES (ADOEXPO)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Asociación Hogar de Ancianos San Vicente de Paul San Carlos</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ATEMISA PRECISIÓN S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AVÍCOLA PAINE S.A..</td>
+                                                                <td>INTE/ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AZUCARERA AL PALMAR</td>
+                                                                <td>INTE A1:2013 e INTE A2:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BAC CREDOMATIC COSTA RICA</td>
+                                                                <td>INTE/ISO 14001:2015, INTE/OHSAS 18001:2009, INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BAC CREDOMATIC PANAMÁ</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BANCO CENTROAMERICANO DE INTEGRACION ECONOMICA (BCIE)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BANCO GUAYAQUIL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BANCO NACIONAL DE COSTA RICA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016, INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Banco Promerica de Costa Rica S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BCR VALORES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BD CONSULTORES</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BIOECO NATURAL S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BIORGANIC S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BN SOCIEDAD DE ADMINISTRADORA DE FONDOS DE INVERSIÓN S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BN SOCIEDAD ADMINISTRADORA DE FONDOS DE INVERSIÓN (BN FONDOS)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE G38:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BN VALORES PUESTO DE BOLSA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BN VITAL OPERADORA DE PENSIONES COMPLEMENTARIAS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BRIDGESTONE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14001:2015, INTE/ISO 45001:2018, INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CAPRIS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CARMIOL INDUSTRIAL S. A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMEX COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMEX NICARAGUA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CENTRAL DE SERVICIOS PC S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CENTRO DE CONTROL DE ENERGÍA (CCE) EMPRESA DE TRANSMISIÓN ELÉCTRICA DOMINICANA (ETED)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CENTROS TECNOLÓGICOS COMUNITARIOS (CTC)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE-G38: 2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CH OPERACIÓN DE INVERSIONES HOTELERAS SA (CHOIH)</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CIAMESA S.A. </td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CLINICA DENTAL LUIS KAVER</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CLUB NAUTICO DE SANTO DOMINGO</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COCA COLA FEMSA COSTA RICA</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COLEGIO DE LICENCIADOS Y PROFESORES, EN LETRAS, FILOSOFÍA, CIENCIAS Y ARTES</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COLINAS DE ALTA VISTA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑIA ARROCERA INDUSTRIAL S.A</td>
+                                                                <td>INTE A1:2013 e INTE A2:2015 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA DE GALLETAS POZUELO DCR S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, RS-SE-129 Certificación Esquema Pronutri- INTE-ISO: 45001:2018, INTE/ISO 50001:2018, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA FLEXTECH S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA NACIONAL DE CHOCOLATES DCR S.A.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPONENTES EL ORBE DE PANAMÁ S.A., COMPONENTES EL ORBE S.A.(COSTA RICA), SISTEMAS CONVERGENTES S.A., ATI CAPITAL SOLUTIONS SOCIEDAD ANÓNIMA, COMPONENTES EL ORBE S.A.(HONDURAS), COMPONENTES EL ORBE S.A.(GUATEMALA), COMPONENTES EL ORBE S.A. DE C.V. (EL SALVADOR), CORPORACIÓN EL ORBE S.A. (NICARAGUA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPONENTES EL ORBE S.A. (COSTA RICA), SISTEMAS CONVERGENTES S.A.,ATI CAPITAL SOLUTIONS SOCIEDAD ANÓNIMA</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CONCREPAL DEL PACÍFICO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CONDUCEN SRL</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CONGELASA S.R.L</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPE-ANDE N°1 R.L.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPERATIVA AGROPECUARIA INDUSTRIAL Y DE SERVICIOS MÚLTIPLES DE ATENAS (COOPEATENAS R.L.)</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPERATIVA DE ELECTRIFICACIÓN RURAL DE GUANACASTE, R.L.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPERATIVA DE SERVICIOS MULTIPLES DE PRODUCTORES DE PALMA ACEITERA – COOPEAGROPAL R.L.</td>
+                                                                <td>FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPERATIVA NACIONAL DE SERVICIOS MÚLTIPLES DE LOS MAESTROS (COOPNAMA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPESERVIDORES R.L.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Coriport S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN ARROCERA COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN CAFSA S.A</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Corporación de Compañías Agroindustriales CCA, S.R.L. (ICI-PC)</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Corporación de Compañías Agroindustriales CCA S.R.L. Industria Avícola</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN DEL ACUEDUCTO Y ALCANTARILLADO DE SANTIAGO (CORAASAN)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN FDC TÉCNICA INDUSTRIAL S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN MONTELIMAR S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN SASEVI CSA S.A. (SERTEX)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORRUGADOS BELÉN S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORRUGADOS DEL ATLÁNTICO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORRUGADOS DEL GUARCO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CREATIVA RAAL INDUSTRIAL S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DATASYS GROUP S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE G46:2016, INTE-ISO 45001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DEPARTAMENTO DE ACREDITACIÓN DEL PATRONATO NACIONAL DE LA INFANCIA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DEPARTAMENTO DE PROTECCIÓN DEL PATRONATO NACIONAL DE LA INFANCIA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DIRECCIÓN ADMINISTRATIVA Y FINANCIERA(DAF) Y DIRECCIÓN TÉCNICA (DT) DEL GABINETE DE COORDINACIÓN DE POLÍTICAS SOCIALES (GCPS) DE LA VICEPRESIDENCIA DE LA REPÚBLICA</td>
+                                                                <td>INTE/ISO 9001:2015, INTE-G38: 2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DIRECCION GENERAL DE AVIACION CIVIL -DGAC -</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DIRECCIÓN PROVEEDURÍA INSTITUCIONAL-DIVISIÓN CORPORATIVA CADENA DE ABASTECIMIENTO</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DIRECCIÓN SISTEMA CENTRALIZADO DE RECAUDACIÓN DE LA CAJA COSTARRICENSE DEL SEGURO SOCIAL</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISEÑO DEL PROYECTO AUTOBANCO BAC SAN JOSÉ ESCAZÚ</td>
+                                                                <td>INTE C170:2014/Enm 1:2017</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISTRIBUIDA Y ENVASADORA DE QUÍMICOS S.A. (DEQUISA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISTRIBUIDORA LA FLORIDA S.A.</td>
+                                                                <td>INTE/ISO 14001:2015, RS-SE-129 Certificación Esquema Pronutri<span style="color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-size: small; background-color: rgb(255, 255, 255);">&amp;nbsp;</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Distribuidora La Florida S.A. en Costa Rica e Industrias Alimenticias Kern's en Guatemala</td>
+                                                                <td>INTE-ISO 14046:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISTRIBUIDORA LA FLORIDA, S.A. (PLANTAS CRISTAL, PEPSI, CERVEZA Y CEDIS GAM)</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DOMICEM S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>E GLOBAL SYSTEMS LATAM S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EDICA LTDA.</td>
+                                                                <td>INTE/ISO 14001:2015, INTE/OHSAS 18001:2009, INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ELECTROPLAST S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EMERSON ELECTRIC COSTA RICA LTDA.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EMPRESA DE SERVICIOS PÚBLICOS DE HEREDIA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009,  INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Empresas Berthier EBI de Costa Rica S.A.</td>
+                                                                <td>14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Envases Comeca, S.A (División Plástico)</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Envases COMECA Technoends S.A.</td>
+                                                                <td>INTE/ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ENVASES COMERCIALES (ENVASA) S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ENVASES COMERCIALES (ENVASA) S.A. (PLANTA HEREDIA)</td>
+                                                                <td>INTE/ISO 9001:2015, FSSC 22000 v 3.2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ENVASES COMERCIALES (ENVASA) S.A. (PLANTA TIBÁS)</td>
+                                                                <td>INTE/ISO 9001:2015, FSSC 22000 v 3.2</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EQUITRON S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14064-1:2006, INTE B5:2019</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ESCUELA AUTÓNOMA DE CIENCIAS MÉDICAS DE CENTROAMÉRICA (UCIMED)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ETIQUETAS IMPRESAS ETIPRES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EUROCIENCIA COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EVENTOS PEDREGAL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CENTRO DE PINTURAS PINTUCO S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Fábrica de Harinas de Centroamérica S.A</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FIRESTONE INDUSTRIAL PRODUCTS DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/ISO 50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FLOREX PRODUCTOS DE LIMPIEZA S.A., SERVICIOS DE CONSULTORÍA DE OCCIDENTE S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FLORIDA BEBIDAS S.A. (PLANTAS CRISTAL, PEPSI, CERVEZA Y CEDIS GAM)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Florida Bebidas Barra Imperial</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FORMULACIONES QUÍMICAS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FREDERIC SCHAD S.A.S</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Frutilight S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FTZ COCA-COLA SERVICE COMPANY LTDA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GABINETE DE COORDINACIÓN DE POLÍTICAS SOCIALES DE LA VICEPRESIDENCIA DE LA REPUBLICA(PROSOLI / ADESS/ CTC / SUIBEN / DAF-DT)</td>
+                                                                <td>INTE G35: 2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GERDAU METALDOM</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GESTIÓN Y CONSULTORÍA INTEGRADA GCI S.A., GCI INGENIERÍA PANAMÁ S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GESTIONES SANITARIAS &amp;amp; AMBIENTALES (GSA-LAB)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grupo Agroindustrial Numar S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO CESA, CONTROL ELECTRÓNICO S.A., CESA DE GUATEMALA S.A., CESA DE HONDURAS S.A., CESA DE PANAMÁ S.A., CESA DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO FINANCIERO MERCADO DE VALORES DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO INTERNACIONAL TECHNOVET DEL ESTE S.A</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO LOGÍSTICO ADUANAL S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grupo Mutual Alajuela la Vivienda de Ahorro y Préstamo S.A (Sede Central Alajuela)</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO PROPAGAS,PROPANOS Y DERIVADOS S.A.,COASTAL PETROLEUM DOMINICANA S.A.,DISTRIBUIDORES INTERNACIONALES DE PETRÓLEO S.A.,FUNDACIÓN PROPAGAS,TRANSGAS</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009, INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO SERVICA COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grupo TLA S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO VARGAS GV S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE A1:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GUTIS LIMITADA</td>
+                                                                <td>INTE-ISO 14001:2015, INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GYH STEINVORTH LIMITADA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HOLCIM COSTA RICA S.A.</td>
+                                                                <td>PAS 2050:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HONDUPALMA/ECARA (PALMAS ACEITERAS DE HONDURAS)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE-ISO 45001:2018, FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HP INC COSTA RICA LIMITADA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HUMBERTO ÁLVAREZ SUCS S.A., H.A LOGÍSTICA DE CARGA S.A, SMCA SERVICIOS MARÍTIMOS DE CENTRO AMÉRICA S.A, TRANSPORTES LOGÍSTICOS H.A S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IDEAS GLORIS S.A. (CODISA DATA CENTER)</td>
+                                                                <td>INTE/ISO 50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ILEANA AGUILAR INGENIERÍA Y ADMINISTRACIÓN S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ILG LOGISTICS, S.A. (ESTIBADORA SERVINAVE S.A., ALMACEN FISCAL FLOGAR S.A. Y AGENCIA ADUANAL SERVICIOS NEPTUNO S.A.)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Impresora DELTA S.A.</td>
+                                                                <td>INTE-ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Industrial de Oleaginosas Americanas S.A</td>
+                                                                <td>FSSC 22000 V5</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>INDUSTRIAS MAFAM S.A.</td>
+                                                                <td>RS-SE-129 Certificación Esquema Pronutri</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INDUSTRIAS VICTORIA S.A</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Ingeniería y Tecnología Aplicada, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INJECTION MOULDING AND TOOLING SERVICES, S.A. (IMATS)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INNOVAPLANT DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INS SERVICIOS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO CLODOMIRO PICADO UNIVERSIDAD DE COSTA RICA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO COSTARRICENSE DE ELECTRICIDAD</td>
+                                                                <td>INTE/ISO/IEC 27001:2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Instituto Costarricense de Electricidad – Edificio Torre de Telecomunicaciones</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Instituto Costarricense de Electricidad (ICE): Negocio Generación - Región Huetar</td>
+                                                                <td>14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO COSTARRICENSE DE ELECTRICIDAD (NEGOCIO TRANSMISIÓN)</td>
+                                                                <td>INTE-ISO 9001:2015, INTE-ISO 14001:2015, INTE-ISO 45001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO NACIONAL DE APRENDIZAJE</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IREX DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LABORATORIOS INTERNACIONALES LABIN S.A.</td>
+                                                                <td>RTCA 71.03.49</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LABORATORIOS ZEPOL S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LAFARGE HOLCIM COSTA RICA S.A, SERVICIOS AMBIENTALES GEOCYCLE S.A.G. S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LATIN AMERICAN FREE ZONE INVESTMENTS DOMINICANA, INC.(PIISA)</td>
+                                                                <td>INTE/ISO 28000:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LEGADMI CONSULTING AND SYSTEM, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LEGADO ROMASO S.A.</td>
+                                                                <td>INTE A1:2013 e INTE A2:2015, RTCA 65.05.63:13</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LGC INGENIERÍA DE PAVIMENTOS S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LINK LOGISTICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LOGISTICA INTEGRADA CENTROAMERICANA LINC S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LOGITSA CARGO SERVICE S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MACROTECH FARMACEUTICA S.R.L, MACROTECH FARMACEUTICA S.R.L (MACROMIX)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MALTA TEXO DE MEXICO S.A. DE C.V. (PLANTA MÉRIDA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MALTA TEXO DE MEXICO S.A. DE C.V. (PLANTA MORELOS)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MALTA TEXO DE MEXICO S.A. DE C.V. (PLANTA TEXCOCO)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MALTA TEXO DE MEXICO S.A. DE C.V. (PLANTA TLAXCALA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MALTA TEXO DE MEXICO S.A. DE C.V. (PLANTA WISIUM)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MANUFACTURA CENTROAMERICANA DE SACOS S.A. (MACSA)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MASTER LITHO S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MC LOGÍSTICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MEGACENTRO (CENTROS DEL CARIBE, SAS Y OPERADORA CENTROS DEL CARIBE,SAS)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>METALCO S.A</td>
+                                                                <td>INTE/ISO 50001:2011, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>METALES FLIX</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MEXICHEM COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MEXICHEM EL SALVADOR S.A DE C.V</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MEXICHEM GUATEMALA S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MEXICHEM HONDURAS S.A DE C.V</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MICROVENTION S.R.L.</td>
+                                                                <td>INTE/ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MINISTERIO DE SALUD PÚBLICA LABORATORIO NACIONAL DE SALUD PÚBLICA "DR. DEFILLÓ"</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MOLINOS DE GUADALUPE S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MONTACARGAS ODIO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MUDANZAS MUNDIALES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MULTIFRIO S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MYV SOLUCIONES GEOTÉCNICAS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NATIONAL BUILDING MAINTENANCE CO, LTD</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NEWREST COSTA RICA (CASA PROVEEDORA PHILLIPS S.A.)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NORTEC CONSULTING S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NT CENTROAMERICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OFICINA DE SERVICIOS GENERALES DE LA UNIVERSIDAD DE COSTA RICA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OFICINAS BRUNO STAGNO ARQUITECTO Y ASOCIADOS, S.A.</td>
+                                                                <td>INTE C170:2014/Enm 1:2017</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Okay Industries Costa Rica S.R.L</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OLYMPIC PRECISION S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERADORA DE PENSIONES COMPLEMENTARIAS Y DE CAPITALIZACIÓN LABORAL DE LA CAJA COSTARRICENSE DE SEGURO SOCIAL</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PANASONIC CENTROAMERICANA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PANIFRESH COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PARADISE INGREDIENTS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, IINTE-ISO 45001:2018, FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PAZOS Y PÉREZ ESPEJOS EL MUNDO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Philips de Costa Rica SRL</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PINTUCO COSTA RICA PCR, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLASTICOS DE CARTAGO, PLASTICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLÁSTICOS MODERNOS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009, INTE/ISO 50001:2011, FSSC 22000 V 5</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLASTITECH S.R.L</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLATER INVESTMENT, S.A. (PLATER GROUP).</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLYCEM CONSTRUSISTEMAS COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLYCEM CONSTRUSISTEMAS EL SALVADOR S.A. DE C.V.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POLIART IMPRESORES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POLY RAFIA S.A. DE C.V</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 22000:2005</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POLYMER S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POPULAR PENSIONES S.A.</td>
+                                                                <td>INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRECISIÓN INTERNACIONAL PREINSA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRECISION &amp; MEDICAL COMPONENTS PRMC LTDA</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Precisión Meteoro S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PREMEZCLAS INDUSTRIALES PARA PANADERÍA S.A.</td>
+                                                                <td>INTE/ISO 14001:2015, INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRODUCTORA LA FLORIDA (PLANTA CERVEZA)</td>
+                                                                <td>FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRODUCTORA LA FLORIDA S.A.</td>
+                                                                <td>INTE/ISO TS 14067:2015, INTE/ISO 14046:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRODUCTOS DE ESPUMA S.A., PRODEX COMERCIAL S.A., PRODEX PANAMÁ S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROEQUIPOS PHI SOCIEDAD ANÓNIMA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Profesionales en Seguridad (PROSEG) S.A DE C.V.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROGRAMA INTEGRAL DE MERCADEO AGROPECUARIO (PIMA) RED DE FRÍO</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROGRAMA PROGRESANDO CON SOLIDARIDAD (PROSOLI) DE LA VICEPRESIDENCIA DE REPUBLICA DOMINICANA</td>
+                                                                <td>INTE/ISO 9001:2015, INTE-G38: 2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROPACE INGENIERÍA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROREPUESTOS PHI SOCIEDAD ANÓNIMA</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROURSA PRODUCTOS DE URETANO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRÓXIMA COMUNICACIÓN Y RELACIONES PÚBLICAS S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PUMA LOGISTICS SRL</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PUNTO DE VENTAS LOGOSOFT S.A</td>
+                                                                <td>ISO/IEC 20000-1:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PURDY MOTOR S.A.</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>QUALITY GLOBAL LOGISTICS, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>RAFYTICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>REFINADORA COSTARRICENSE DE PETRÓLEO S.A. (RECOPE S.A) – Plantel Moín y Muelle Portuario.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>REGISTRO DE PERSONAS JURÍDICAS DEL REGISTRO NACIONAL</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>RELAXTECH INTERNATIONAL S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Rente un Auto Esmeralda S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>RESINTECH S.A</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>RESOCO COSTA RICA S.A., RESOCO GUATEMALA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROCHE SERVICIOS S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>RODEMSA S.R.L</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 28000:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROMA PRINCE S.A.</td>
+                                                                <td>FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROSSMON RM, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SACOS AGROINDUSTRIALES S.A. (PLANTA ANTIGUA GUATEMALA)</td>
+                                                                <td>FSSC 22000 v 4.1, INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SACOS AGROINDUSTRIALES S.A. (PLANTA PERIFÉRICO)</td>
+                                                                <td>FSSC 22000 v 4.1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SCHAD FREE ZONE LOGISTICS</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Seguridad Alfa, S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVIARCHIVO S.A.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICIO DE VIAJEROS SUIZA SOCIEDAD ANONIMA (Swiss Travel)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SF Hotelera Costa Rica S.A y PRHORESA Costa Rica S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Servicios de Consultoría Ambiental</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICIOS DE PINTURA Y METALMECÁNICA S.A.(SERPIMETAL)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICIOS DE ULTRASONIDO Y RADIOLOGÍA ALFER S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICIOS NACIONALES DE SEGURIDAD INTEGRAL (SENASE)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICIOS NUTRESA COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SISTEMA ÚNICO DE BENEFICIARIOS (SIUBEN)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO/IEC 27001:2014, INTE-G38: 2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOCIEDAD DE SEGUROS DE VIDA DEL MAGISTERIO NACIONAL</td>
+                                                                <td>INTE/ISO 9001:2015, INTE G35:2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOGO AMARILLO</td>
+                                                                <td>INTE/ISO 9001:2015 - INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOLCARIBE S.A.</td>
+                                                                <td>INTE 02-01-04:2015, INTE A1:2013, INTE A2:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOLUCIONES EN GAS NATURAL SGN S.A.</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015, INTE/OHSAS 18001:2009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SONDA TECNOLOGÍAS DE INFORMACIÓN DE COSTA RICA, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOPORTE CRÍTICO S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ST. JUDE MEDICAL LIMITADA (ABBOTT B44)</td>
+                                                                <td>INTE/ISO 50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SUPER BATERIAS OC, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SUPERINTENDENCIA DE PENSIONES</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SUPERINTENDENCIA GENERAL DE ENTIDADES FINANCIERAS (SUGEF)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SYKES LATIN AMERICA S.A.</td>
+                                                                <td>INTE/ISO 50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SYNCRO LOGISTICS</td>
+                                                                <td>INTE/ISO 28000:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TALLER GONZALES</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TD BONDED WAREHOUSE S.A.S.</td>
+                                                                <td>INTE/ISO 28000:2013</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TECNO DIGANÓSTICA S.A., TECNO DIAGNÓSTICA EL SALVADOR S.A. DE C.V., TECNO DIAGNÓSTICA NICARAGUA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TERADYNE DE COSTA RICA S.A</td>
+                                                                <td>INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TERMINALES SANTAMARÍA S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Terrapez S.A</td>
+                                                                <td>INTE/ISO 50001:2019</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TICOPLANT TSA, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Transportes Refrigerados HL S.R.L</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TRI DM S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TRISAN S.A.,CP CIENCIAS PECUARIAS S.A.,BIO ENGINEERING S.A. Y AGRIMAX S.A.,(GRUPO TRISAN)</td>
+                                                                <td>INTE/ISO 9001:2015, INTE/ISO 14001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TYCO SERVICES S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VEINSA MOTORS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2020</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VIDRIERA CENTROAMERICANA S.A. (DIVISIÓN TAPAS CATASA)</td>
+                                                                <td>INTE A1:2013 e INTE A2:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VIDRIERA CENTROAMERICANA S.A. (DIVISIÓN TAPAS PLÁSTICAS), VIDRIERA CENTROAMERICANA S.A. (DIVISIÓN VIDRIO)</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VIDRIERA CENTROAMERICANA S.A. (DIVISIÓN TAPAS PLÁSTICAS), VIDRIERA CENTROAMERICANA S.A. (DIVISIÓN VIDRIO)</td>
+                                                                <td>FSSC 22000:2005</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VITEC PRODUCTION SOLUTIONS S.R.L.</td>
+                                                                <td>INTE-ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VMA SERVICIOS INTEGRALES DE LIMPIEZA, S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>YELLOIW INGENIEROS &amp;amp; ARQUITECTOS S.R.L.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ZGS PLASTIC SOLUTIONS S.A.</td>
+                                                                <td>INTE/ISO 9001:2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3-101-517929 S.A. Y CAMPOSANTO SILENCIO Y PAZ S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ACCENTURE</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ADEP</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGRICENTER S.A. (TRANSARENAL S.A.)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AGRONEGOCIOS COSTA RICA PARA EL MUNDO S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ALAMO RENT A CAR/NATIONAL CAR RENTAL/ ENTERPRISE RENT A CAR</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ANC CAR S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ARA AGENCIA DE VIAJES INTERNACIONAL S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AROMAS Y SABORES TÉCNICOS S.A. (ASTEK)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACIÓN DE EDUCADORES PENSIONADOS DE COSTA RICA, ADEP</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACIÓN DE MUJERES AMAZILIA DEL CARIBE, COMUNIDAD DE PUEBLO NUEVO</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACIÓN DE PRODUCTORES DE DÁTIL ASENTAMIENTO CAMURO</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASOCIACIÓN COALISIÓN COSTARRICENSE DE INICIATIVAS DE DESARROLLO (CINDE)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ASUAIRE TRAVEL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ATEMISA PRECISION</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AUTO MERCADO S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>AUTOCAMIONES DE COSTA RICA AUTOCORI S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BAC CREDOMATIC COSTA RICA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BALATANA S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BANANOS ECOLÓGICOS DE LA LÍNEA NOROESTE BANELINO</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BIORGANIC S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BLP ABOGADOS S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BN SOCIEDAD ADMINISTRADORA DE FONDOS DE INVERSIÓN (BN FONDOS)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BOSTON SCIENTIFIC DE COSTA RICA S.R.L. (PLANTA COYOL)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016- INTE-ISO:50001:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BOSTON SCIENTIFIC DE COSTA RICA S.R.L. (PLANTA HEREDIA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016, INTE-ISO:50001:2011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BRIDGESTONE DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CAJA DE ANDE</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CASA CONDE BEACH FRONT HOTEL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMEX COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COLEGIO DE ABOGADOS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COLEGIO SAINT FRANCIS (FRAILES MENORES CONVENTUALES)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMAPAN S.A. (PUNTOS DE VENTA SABANA ESTADIO, TREJOS MONTEALEGRE, AMISTAD, PAVAS, CENTRO COLÓN)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMERCIAL DE POTENCIA Y MAQUINARIA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA BANADOSMIL S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA INTERNACIONAL DE BANANO S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA NACIONAL DE CHOCOLATES DCR S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016, INTE A1:2013 BPM</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COMPAÑÍA NACIONAL DE FUERZA Y LUZ S.A. (CNFL)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CONELECTRICAS R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CONTRALORÍA GENERAL DE LA REPÚBLICA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPE-ANDE N°1 R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPELESCA R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPELIBERIA R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPERATIVA DE AHORRO Y CRÉDITO DE LOS EMPLEADOS DEL MINISTERIO DE EDUCACIÓN PÚBLICA R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPESANTOS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>COOPESERVIDORES R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACIÓN BANANERA NACIONAL SOCIEDAD ANÓNIMA (CORBANA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORPORACION SASEVI CSA S.A.</td>
+                                                                <td>NTE B5:2016/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DATASYS GROUP S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISTRIBUIDA Y ENVASADORA DE QUÍMICOS S.A. (DEQUISA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DISTRIBUIDORA MARUCO S.A.</td>
+                                                                <td>NTE B5:2016/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DORIKUK GOURMET</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EMBAJADA DE ESPAÑA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EMBAJADA REAL DE LOS PAÍSES BAJOS EN COSTA RICA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EMPRESA DE SERVICIOS PÚBLICOS DE HEREDIA</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Empresas Profesionales Modernos de Costa Rica S.A. (EPROM)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EQUITRON S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ESTABLISMENT</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ESTADIO NACIONAL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ETIQUETAS IMPRESAS ETIPRES S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EUROMOBILIA S.A. (PLANTA BARRIO CUBA Y PLANTA SAN FRANCISCO)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FABRICA DE HARINAS DE CENTROAMERICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FARMAGRO S.A.</td>
+                                                                <td>INTE/ISO 12-01-06:2011/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FINCA DON FERNANDO (CARNES VIRREY COLONIAL S.A.)</td>
+                                                                <td>INTE/ISO 12-01-06:2011/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FLORIDA BEBIDAS S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FOMENTO URBANO S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>FONDO NACIONAL DE FINANCIAMIENTO FORESTAL (FONAFIFO)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GANADERA DON FERNANDO (INDUSTRIAS BUENOS AIRES S.A)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gensler Costa Rica S.R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GESTIÓN Y CONSULTORÍA INTEGRADA GCI S.A. (GCI INGENIERÍA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO BABEL S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO COMPUTACIONAL MODULAR AVANZADA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO DANISSA (CORPORACIÓN D, S.A / AGENCIA DATSUN, S.A. / CORPORACIÓN MOTORTEC, S.A. / DANISSA, S.A.)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GRUPO DCC (DATA CENTER CONSULTORES S.A., DATA CENTER SUMMIT, INTELLIGENCE CARBON ZERO)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GUTIS LTDA.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>GWW INTERNACIONAL S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HOLCIM COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hospimédica S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IBM BUSINESS TRANSFORMATION CENTER S.R.L. (IBM COSTA RICA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IDEAS GLORIS S.A. (CODISA DATA CENTER)</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IDG CONSULTORES INTEGRADOS S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IN VITRO DIAGNOSTICS CENTROAMERICANA S.A. (WIENER LAB GROUP)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO COSTARRICENSE DE ELECTRICIDAD (ICE) (NEGOCIO GENERACIÓN - REGIÓN CHOROTEGA).</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO COSTARRICENSE DE TURISMO (SEDE CENTRAL Y OFICINAS REGIONALES)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO NACIONAL DE APRENDIZAJE INA, UNIDAD REGIONAL HUETAR CARIBE</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO NACIONAL DE SEGUROS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INSTITUTO TECNOLÓGICO DE COSTA RICA</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>INVERSIONES EN BIENES BELMAR S.A.(HOTEL BELMAR),FINCA PRONATURA S.A.(FINCA MADRE TIERRA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IREX DE COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LABORATORIOS STEIN S.A.</td>
+                                                                <td>INTE/ISO 12-01-06:2011/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LAFARGE HOLCIM COSTA RICA S.A, SERVICIOS AMBIENTALES GEOCYCLE S.A.G. S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LOS ARALLANES S.A. (ZONA FRANCA AMÉRICA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MAQUINARIA Y TRACTORES LIMITADA (MATRA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MATADERO DEL VALLE</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MERCADEO DE ARTÍCULOS DE CONSUMO S.A (MERCASA)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MESOAMERICA PARTNERS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MINISTERIO DE VIVIENDA Y ASENTAMIENTOS HUMANOS (MIVAH)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MOOG MDG S.RL.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MUNICIPALIDAD DE CARTAGO</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MUTUAL CARTAGO DE AHORRO Y PRÉSTAMO (MUCAP)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016, INTE B5:2017</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>NA'LAKALÚ SOLUTIONS S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OSD CONSULTORÍA INGTEGRAL S.A.</td>
+                                                                <td>INTE/ISO 12-01-06:2011/Cor.2:2013, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PANDUIT DE COSTA RICA LTDA.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PERTEC GLOBAL SERVICES S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PINTUCO COSTA RICA PCR, S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLATANERA RÍO SIXAOLA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLYCEM CONSTRUSISTEMAS COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PLYCEM CONSTRUSISTEMAS EL SALVADOR S.A. DE C.V.</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POPULAR PENSIONES S.A</td>
+                                                                <td>INTE/ISO 12-01-06:2011/Cor.2:2013, INTE/ISO 14064-1:2006,INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>POPULAR VALORES, PUESTO DE BOLSA, S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PREMEZCLAS INDUSTRIALES PARA PANADERÍA S.A.</td>
+                                                                <td>INTE B5:20166, INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROCOMER</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROCTER &amp;amp; GAMBLE INTERNATIONAL OPERATIONS S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Productos Ujarras S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2018</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PROQUINAL COSTA RICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Grupo Purdy Motor (Purdy Motor S.A. y Purdy Auto S.A.)</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SBM MANAGEMENT DE COSTA RICA Y SBMCR, S.R.L.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SERVICENTRO SHEYZA, S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sysco Consultores de Sistemas S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SOCIEDAD DE SEGUROS DE VIDA DEL MAGISTERIO NACIONAL</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>STT GROUP COSTA RICA S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SYKES LATIN AMERICA S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TECNIFIBRAS</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TMF AGRO S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TRANSPORTES ARGUEDAS</td>
+                                                                <td>INTE/ISO 14064-1:2006</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TRAVEL EXCELLENCE S.A.</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>VIETO Y ASOCIADOS S.A</td>
+                                                                <td>INTE/ISO 14064-1:2006, INTE B5:2016</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="products">
+                                    <div class="container">
+                                        <div class="row">
+                                            <section class="col-md-12 mt32 mb16 s_text_block">
+                                                <div class="container">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <th style="min-width: 110px;">Organización</th>
+                                                            <th style="min-width: 110px;">Número de Certificado</th>
+                                                            <th>Alcance</th>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Plycem Construsistemas Costa Rica, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/5215237" target="_blank" data-original-title="" title="">001-CP-2001</a>
+                                                                </td>
+                                                                <td>Producción de láminas Planas de fibrocemento, Categoría A y B, Clase 1, Nivel 1, las cuales son para aplicaciones internas sin protección cuando no están afectadas por la acción directa del sol, la lluvia y/o la nieve y externas cuando se usan en aplicaciones donde están directamente expuestas a la intemperie pero con protección.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMEX COSTA RICA S.A</td>
+                                                                <td>
+                                                                    <a href="/web/content/14878244/RS-SE-154 (V02) Lista de productos certificados.pdf" target="_blank" data-original-title="" title="">012-CP-2005</a>
+                                                                </td>
+                                                                <td>“Cumple con los requisitos del Esquema 5 de Certificación de la ISO, basado en la Guía Internacional INTE-ISO/IEC 17067:2013, para la producción de cemento según los requisitos del Reglamento Nacional RTCR 479:2015 “Materiales de Construcción. Cementos Hidráulicos. Especificaciones”. Establecido en el certificado N° 012-CP-2005. Producción de cemento hidráulico" </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Mexichem Costa Rica, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/15073672" target="_blank" data-original-title="" title="">015-CP-2006</a>
+                                                                </td>
+                                                                <td>La producción de tubos y accesorios para tuberías plásticas de PVC y tuberías de polietileno de alta densidad para acueductos.</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Bridgestone</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2523154" target="_blank" data-original-title="" title="">016-CP-2007</a>
+                                                                </td>
+                                                                <td>Producción de llantas para vehiculos de pasajeros</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bridgestone</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2523624" target="_blank" data-original-title="" title="">017-CP-2007</a>
+                                                                </td>
+                                                                <td>Producción de llantas para vehículos excepto de pasajeros.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>TERRAMIX, S.A.</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/030-CP-2008_TERRAMIX_SA..pdf" target="_blank" data-original-title="" title="">030-CP-2008</a>
+                                                                </td>
+                                                                <td>Producción por Extrusión e Inyección de Aros de Caucho para Juntas de Tubería.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BRIDGESTONE</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/031-CP-2009.pdf" target="_blank" data-original-title="" title="">031-CP-2009</a>
+                                                                </td>
+                                                                <td>Producción de llantas para vehículos excepto de pasajero.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Holcim Costa Rica S.A.</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/037-CP-2010_HOLCIM_CR_SA.pdf" target="_blank" data-original-title="" title="">037-CP-2010</a>
+                                                                </td>
+                                                                <td>Cumple con los requisitos del Esquema 5 de Certificación de la ISO, basado en la Guía Internacional INTE-ISO/IEC 17067:2013, para la producción de cemento según los requisitos del Reglamento Nacional RTCR 479:2015 “Materiales de Construcción. Cementos Hidráulicos. Especificaciones”.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EXTRUSIONES DE ALUMINIO, S.A.</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/043-CP-2010_ EXTRALUM.pdf" target="_blank" data-original-title="" title="">043-CP-2010</a>
+                                                                </td>
+                                                                <td>Producción de vidrio Templado, vidrio laminado y vidrio antibala, establecido en el certificado.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Régimen De Pensión Complementaria Del Fondo De Garantías Y Ahorro Del Instituto Costarricense De Electricidad.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7636967/047-CP-20.pdf" target="_blank" data-original-title="" title="">047-CP-2010</a>
+                                                                </td>
+                                                                <td>Proceso de inversión y administración de riesgos operativos y financieros del Régimen de Pensión Complementaria: Cartera de Pensiones en Curso de Pago (PCP) y Cartera de Reserva de Afiliados (RF)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>BCR Pensiones Operadora De Planes de Pensiones Complementarias</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/3213890" target="_blank" data-original-title="" title="">049-CP-2010</a>
+                                                                </td>
+                                                                <td>Proceso de inversión y administración de riesgos operativos y financieros de los fondos: Fondo de Capitalización Laboral (FCL), Régimen de Obligatorio de Pensiones (ROP), Fondo Voluntario A Colones, Fondo Voluntario B Colones, Fondo Voluntario A Dólares, Fondo Voluntario B Dólares establecido en el certificado N° 049-CP-2010</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Durman Esquivel, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103012" target="_blank" data-original-title="" title="">056-CP-2011</a>
+                                                                </td>
+                                                                <td>La producción de tubería tipo TDP, accesorios de PVC, Tubería Corrugada DurmanFlex, Tubería Flexible de Pared estructurada, Tubería y accesorios conduit tipo A.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Arcelor Mittal Costa Rica, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/15073674" target="_blank" data-original-title="" title="">064-CP-2013</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gerdau Metaldom, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/11428495" target="_blank" data-original-title="" title="">067-CP-2013</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación lisas y corrugadas para refuerzo de concreto. Producción de alambre de acero al carbono corrugado para refuerzo de concreto y producción de malla electrosoldada corrugada para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Plycem Construsistemas El Salvador, S.A. de C.V.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103013" target="_blank" data-original-title="" title="">069-CP-2013</a>
+                                                                </td>
+                                                                <td>Producción de láminas Planas de fibrocemento, Categoría A y B, Clase 1, Nivel 1, las cuales son para aplicaciones internas sin protección cuando no están afectadas por la acción directa del sol, la lluvia y/o la nieve y externas cuando se usan en aplicaciones donde están directamente expuestas a la intemperie pero con protección”, lo anterior en cumplimiento con la norma INTE-ISO 8336:2011.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CORINCA S.A. de C.V.</td>
+                                                                <td>
+                                                                    <a href="/web/content/2379663" target="_blank" data-original-title="" title="">072-CP-2013</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono, barras de acero de baja aleación corrugadas y alambre grafilado para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gerdau Metaldom, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/2823463" target="_blank" data-original-title="" title="">073-CP-2013</a>
+                                                                </td>
+                                                                <td>Producción de barras de acero lisas y corrugadas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>HABAS SINAI VE TIBBI GAZLAR ISTIHSAL ENDUSTRISI A.S.</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2351088" target="_blank" data-original-title="" title="">077-CP-2013</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Galvanizadora Industrial Salvadoreña S.A. de C.V.</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2823465" target="_blank" data-original-title="" title="">078-CP-2013</a>
+                                                                </td>
+                                                                <td>Producción de Alambre de Acero Grafilado</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>BIA ALAMBRES COSTA RICA, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7888787/091-CP-2014_1 BIA ALAMBRES.pdf" target="_blank" data-original-title="" title="">091-CP-2014</a>
+                                                                </td>
+                                                                <td>La producción de Alambre de acero al carbono grafilado para refuerzo de concreto, y producción de malla electrosoldada corrugada para refuerzo de concreto.</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Kaptan Demir Ҫelik End. Ve Tic. A. Ş.</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/1964227" target="_blank" data-original-title="" title="">097-CP-2014</a>
+                                                                </td>
+                                                                <td>Producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <!--
+                                                            <tr>
+                                                                <td>MEXICHEM Costa Rica, S.A.</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/107-CP-2014_3 Mexichem_CR_SE.pdf" target="_blank" data-original-title="" title="">107-CP-2014</a>
+                                                                </td>
+                                                                <td>La producción de uniones, conectores, cajas y sus respectivas tapas eléctricas.</td>
+                                                            </tr>
+                                                            -->
+                                                            <tr>
+                                                                <td>Durman Esquivel, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103011" target="_blank" data-original-title="" title="">108-CP- 2014</a>
+                                                                </td>
+                                                                <td>La producción de tubería corrugada DurmanFlex, cajas conduit eléctricas, tubería y accesorios conduit tipo A. </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MIPSA</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/1534161" target="_blank" data-original-title="" title="">118-CP-2015</a>
+                                                                </td>
+                                                                <td>Producción de Tubería Conduit Tipo A</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ÇOLAKOGLU METALURJI A.Ş.</td>
+                                                                <td>
+                                                                    <a href="/inteco/static/src/doc/certificates/120-CP-2015_OLAKOGLU_METALURJI.pdf" target="_blank" data-original-title="" title="">120-CP-2015</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mexichem Guatemala </td>
+                                                                <td>
+                                                                    <a href="/web/content/7636968/128-CP-2016_154_02.pdf" target="_blank" data-original-title="" title="">128-CP-2016</a>
+                                                                </td>
+                                                                <td>Producción de Tuberías de PVC de pared estructurada con interior liso para alcantarillado</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jingye Iron and Steel Co.,Ltd.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103010" target="_blank" data-original-title="" title="">129-CP-2016</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de baja aleación corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cemex México S.A. DE C.V.</td>
+                                                                <td>
+                                                                    <a href="/web/content/9331760" target="_blank" data-original-title="" title="">130-CP-2016</a>
+                                                                </td>
+                                                                <td>La producción de cemento portland ordinario Tipo I – AR- BL.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Aceros de Guatemala, S.A</td>
+                                                                <td>
+                                                                    <a href="/web/content/2351087" target="_blank" data-original-title="" title="">131-CP-2016</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de baja aleación corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>JIANGSU SHAGANG GROUP CO, LTD.</td>
+                                                                <td>
+                                                                    <a href="/web/content/3502082" target="_blank" data-original-title="" title="">132-CP-2016</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ArcelorMittal</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103008" target="_blank" data-original-title="" title="">127-CP-2016</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de baja aleación corrugadas para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>İÇDAŞ Çelik Enerji Tersane ve Ulaşım Sanayi A.Ş.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103009" target="_blank" data-original-title="" title="">131-CP-2015</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono y barras de acero de baja aleación corrugadas para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Holcim El Salvador S.A. de C.V</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2775239" target="_blank" data-original-title="" title="">011-CP-2017</a>
+                                                                </td>
+                                                                <td>La producción de cemento Hidráulico mezclado "FUERTE".</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CIMSA CIMENTO SAN VE TIC. AS.</td>
+                                                                <td>
+                                                                    <a href="/web/content/9331759/004-CP-2018 CIMSA PDF.pdf" target="_blank" data-original-title="" title="">004-CP-2018</a>
+                                                                </td>
+                                                                <td>La producción de cemento tipo portland I-28-BL.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>JIANGSU PROVINCE BINXIN STEEL GROUP CO.,LTD</td>
+                                                                <td>
+                                                                    <a href="/web/content/5820557" target="_blank" data-original-title="" title="">003-CP-2018</a>
+                                                                </td>
+                                                                <td>La producción de barras de acero al carbono corrugadas para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMEX NICARAGUA, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103014" target="_blank" data-original-title="" title="">002-CP-2018</a>
+                                                                </td>
+                                                                <td>Producción de cemento hidráulico de uso general Tipo GU y de alta resistencia inicial Tipo HE, según los requisitos del reglamento NTON 12-006-11 “Fabricación, Uso, y Manejo del Cemento.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CEMENTO BAYANO, S.A. (CEMEX PANAMÁ)</td>
+                                                                <td>
+                                                                    <a href="/web/content/14878244" target="_blank" data-original-title="" title="">001-CP-2018</a>
+                                                                </td>
+                                                                <td>La producción de cemento hidráulico.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MAYACERO DE NICARAGUA, S.A.</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/2450831" target="_blank" data-original-title="" title="">004-CP-2017</a>
+                                                                </td>
+                                                                <td>Producción de alambre de acero al carbono corrugado para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DESARROLLOS INDUSTRIALES REVOLUCIÓN DIR S.A. CEMENTOS FORTALEZA (BY PLYCEM)</td>
+                                                                <td>
+                                                                    <a href="/web/content/9331762" target="_blank" data-original-title="" title="">005-CP-2018</a>
+                                                                </td>
+                                                                <td>Producción de cemento Tipo MC/A-AR y Tipo MM/B (P-C)-28.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MONOLIT GUATEMALA</td>
+                                                                <td>
+                                                                    <a href="/web/content/11622932" target="_blank" data-original-title="" title="">003-CP-2019</a>
+                                                                </td>
+                                                                <td>Producción de alambre de acero al carbono corrugado para refuerzo de concreto y Producción de malla electrosoldada corrugada para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>EUROBAU, S.A</td>
+                                                                <td>
+                                                                    <a href="https://www.inteco.org/web/content/3501979" target="_blank" data-original-title="" title="">004-CP-2019</a>
+                                                                </td>
+                                                                <td>Producción de elementos prefabricados de concreto para la construcción de viviendas unifamiliares de un nivel e infraestructura educativa, mediante el sistema de baldosas horizontales y columnas (con y sin previstas eléctrica y para ducha).</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Anhui Conch Venture New Energy-Saving Building Material Company Limited</td>
+                                                                <td>
+                                                                    <a href="/web/content/7103006" target="_blank" data-original-title="" title="">003-CP-2020</a>
+                                                                </td>
+                                                                <td>RTCR 491:2017 “Materiales de Construcción. Láminas de Fibrocemento. Especificaciones” INTE/ISO 8336:2018 MOD ”Láminas planas de fibrocemento- Especificaciones y métodos de ensayo”</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mueble Industria del Plástico, S.A. (MIPSA)</td>
+                                                                <td>
+                                                                    <a href="/web/content/7636969/RS-SE-154 (V02) 118-CP-2015 MIPSA_v2.pdf" target="_blank" data-original-title="" title="">118-CP-2015</a>
+                                                                </td>
+                                                                <td>Producción de Tubería Conduit Tipo A.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MONOLIT DE EL SALVADOR, S.A. DE C.V.</td>
+                                                                <td>
+                                                                    <a href="/web/content/11622933" target="_blank" data-original-title="" title="">095-CP-2014</a>
+                                                                </td>
+                                                                <td>Producción de alambre de acero al carbono corrugado para refuerzo de concreto</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>MAYACERO DE NICARAGUA S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/12269973" target="_blank" data-original-title="" title="">004-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de alambre de acero al carbono corrugado para refuerzo de concreto y Producción de malla electrosoldada corrugada para refuerzo de concreto.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bridgestone S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/13587882" target="_blank" data-original-title="" title="">005-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de llantas neumáticas para vehículos de pasajeros incluidos los camperos (llantas tipo II y tipo III)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>PRECASA, S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/14048786" target="_blank" data-original-title="" title="">007-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de elementos prefabricados de concreto para la construcción de viviendas unifamiliares de un nivel e infraestructura educativa, mediante el sistema de baldosas horizontales y columnas con y sin previstas eléctricas.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bridgestone S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/13587882" target="_blank" data-original-title="" title="">005-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de llantas neumáticas para vehículos de pasajeros incluidos los camperos (llantas tipo II y tipo III)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bridgestone S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/13587882" target="_blank" data-original-title="" title="">005-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de llantas neumáticas para vehículos de pasajeros incluidos los camperos (llantas tipo II y tipo III)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Armaduras Gerguz S.A.</td>
+                                                                <td>
+                                                                    <a href="/web/content/15073673" target="_blank" data-original-title="" title="">006-CP-2020</a>
+                                                                </td>
+                                                                <td>Producción de malla electro-soldada corrugada para refuerzo de concreto</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="people">
+                                    <div class="container">
+                                        <div class="row">
+                                            <section class="col-md-12 mt32 mb16 s_text_block">
+                                                <div class="container">
+                                                    <p>A continuación se muestra el detalle de las personas que actualmente cuentan con la certificación vigente y valida</p>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nombre y apellido</th>
+                                                                <th>Alcance de certificación</th>
+                                                                <th>Número de Certificado</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Roy Paniagua Monge</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-002</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Andrey Campos González</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-009</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sergio Arias Leitón</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-004</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hubert Cordero Vargas</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-011</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Gerardo Porras Garita</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-021</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Viviana Fernandez Serracín </td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-028</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Moisés Mata Astorga</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-029</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Guiselle Meneses Rojas</td>
+                                                                <td>Evaluador del Protocolo Marca País</td>
+                                                                <td>CP-EMP-030</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

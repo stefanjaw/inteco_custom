@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sector_form_view" model="ir.ui.view">
+        <field name="name">sector.form.view</field>
+        <field name="model">inteco.sector</field>
+        <field name="arch" type="xml">
+            <form string="Industry Sectors">
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name" placeholder="e.g. Information and communication"/></h1>
+                </div>
+                <group>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="sector_tree_view" model="ir.ui.view">
+        <field name="name">sector.tree.view</field>
+        <field name="model">inteco.sector</field>
+        <field name="arch" type="xml">
+            <tree string="Industry Sectors">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

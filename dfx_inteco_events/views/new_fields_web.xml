@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="dfx_event_description_full" inherit_id="website_event.event_description_full" active="True" customize_show="True" name="DFX New fields" priority="20">
+            <!-- Reescritura de Locación para usar nuestros campos -->
+            <xpath expr="//div[@t-if='event.address_id']" position="replace">
+                <t t-if="not event.is_event_online">
+                    <div t-if="event.address_id" class="o_wevent_sidebar_block">
+                        <h6 class="o_wevent_sidebar_title">Lugar</h6>
+                        <h4 t-field="event.event_location"/>
+                        <t t-if="event.event_google_maps">
+                            <i class="fa fa-map-marker"/>
+                            <a t-att-href="event.event_google_maps" target="_blank">
+                                Abrir en Google Maps</a>
+                        </t>
+                    </div>
+                </t>
+                <div t-if="event.is_event_online" class="o_wevent_sidebar_block">
+                    <h6 class="o_wevent_sidebar_title">Plataforma</h6>
+                    <h4 t-if="event.event_platform" t-esc="event.event_platform.platform_name"/>
+                </div>
+            </xpath>
+
+            <!-- Organizadores y Co organizadores -->
+            <xpath expr="//div[@t-if='event.organizer_id']" position="replace">
+                <div t-if="event.organizer_id" class="o_wevent_sidebar_block">
+                    <h6 class="o_wevent_sidebar_title">Organiza</h6>
+                    <!--                    <h4 t-field="event.organizer_id"/>-->
+                    <!--                    <div itemprop="location" t-field="event.organizer_id" t-options="{'widget': 'contact', 'fields': ['phone', 'mobile', 'email']}"/>-->
+                    <a class="col-sm-6" t-attf-href="#{event.organizer_id2.site_name}" target="_new">
+                        <t t-if="event.organizer_id2.site_logo">
+                            <img class="logo" t-att-src="image_data_uri(event.organizer_id2.site_logo)" style="width:100%;"/>
+                            <!--
+                            <div class="w-100"/>
+                            <span t-esc="organizer.org_name"/>
+                            -->
+                        </t>
+                    </a>
+                    <t t-if="event.event_organizers">
+                        <h6 class="o_wevent_sidebar_title pt16">Co Organiza</h6>
+                        <!-- Ciclo que se trae cada uno de los co organizadores del Evento -->
+                        <t t-set="organizers" t-value="event.event_organizers"/>
+                        <div class="row pb16 organizador">
+                            <t t-foreach="organizers" t-as="organizer">
+                                <a class="col-sm-6" t-attf-href="#{organizer.site_name}" target="_new">
+                                    <img class="logo" t-att-src="image_data_uri(organizer.site_logo)" style="width:40%;"/>
+                                    <!--
+                                    <div class="w-100"/>
+                                    <span t-esc="organizer.org_name"/>
+                                    -->
+                                </a>
+
+                            </t>
+                        </div>
+                    </t>
+                    <!-- Sección de Patrocina -->
+                    <t t-if="event.event_co_organizers">
+                        <h6 class="o_wevent_sidebar_title pt8">Patrocina</h6>
+                        <t t-set="organizers" t-value="event.event_co_organizers"/>
+                        <div class="row organizador">
+                            <t t-foreach="organizers" t-as="organizer">
+                                <a class="col-sm-12" t-attf-href="#{organizer.site_name}" target="_blank">
+                                    <img class="logo" t-att-src="image_data_uri(organizer.site_logo)" style="width:40%;"/>
+                                    <div class="w-100"/>
+                                    <!--                                    <span t-esc="organizer.org_name"/>-->
+                                </a>
+                            </t>
+                        </div>
+                    </t>
+                    <!-- Sección de Co organiza -->
+                    <t t-if="event.event_invite">
+                        <h6 class="o_wevent_sidebar_title pt8">Invita</h6>
+                        <t t-set="organizers" t-value="event.event_invite"/>
+                        <div class="row organizador">
+                            <t t-foreach="organizers" t-as="organizer">
+                                <a class="col-sm-12" t-attf-href="#{organizer.site_name}" target="_blank">
+                                    <img class="logo" t-att-src="image_data_uri(organizer.site_logo)" style="width:40%;"/>
+                                    <div class="w-100"/>
+                                    <!--                                    <span t-esc="organizer.org_name"/>-->
+                                </a>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </xpath>
+
+            <!-- Flujo social -->
+            <xpath expr="//div[@t-if='event.organizer_id']" position="after">
+                <t t-if="event.social_hashtags" class="o_wevent_sidebar_block">
+                    <div t-if="event.organizer_id" class="o_wevent_sidebar_block">
+                        <h6 class="o_wevent_sidebar_title">¡Sigue la conversación!</h6>
+                        <p class="mb-2">
+                            Utiliza los hashtags
+                            <strong><span><span t-esc="event.social_hashtags"/></span></strong>
+                        </p>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

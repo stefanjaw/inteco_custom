@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="website_form_watermark" name="Watermark">
+        <t t-set="no_footer">1</t>
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container oe_website_sale py-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <t t-call="website_sale.wizard_checkout">
+                                <t t-set="step" t-value="10" />
+                            </t>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-xl-auto order-xl-2 d-none d-xl-block">
+                            <t t-call="website_sale.cart_summary"/>
+                        </div>
+                        <div class="col-12 col-xl order-xl-1 oe_cart">
+                            <div>
+                                <h2 class="o_page_header mt8">Marca de Agua (Sellado del documento)</h2>
+                                <div class="js_cart_lines alert alert-info" data-oe-model="ir.ui.view" data-oe-id="1378" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]">
+                                    Las normas y documentos técnicos que usted está comprando cuentan con protección derechos de autor de INTECO y de las fuentes que fueron tomadas como
+                                    base para su desarrollo, por ello los documentos que usted va a adquirir incluirán una marca de agua. La persona u organización acá indicada será quien cuente
+                                    con autorización para el uso exclusivo del(los) documento(s).
+                                </div>
+                                <form action="/shop/watermark" method="post">
+                                    <div class="form-row">
+
+                                        <div t-attf-class="form-group #{error.get('authorize_document') and 'o_has_error' or ''} col-lg-6" id="div_authorize_document">
+                                            <label class="col-form-label" for="authorize_document">AUTORIZA EL USO DE ESTE DOCUMENTO A</label>
+                                            <input type="text" name="authorize_document" t-attf-class="form-control #{error.get('authorize_document') and 'is-invalid' or ''}" t-att-value="website_sale_order.authorize_document or ''" />
+                                        </div>
+
+                                        <div t-attf-class="form-group #{error.get('watermark_email') and 'o_has_error' or ''} col-lg-6" id="div_watermark_email">
+                                            <label class="col-form-label" for="watermark_email">CORREO ELECTRONICO</label>
+                                            <input type="text" name="watermark_email" t-attf-class="form-control #{error.get('watermark_email') and 'is-invalid' or ''}" t-att-value="website_sale_order.watermark_email or ''" />
+                                        </div>
+
+                                    </div>
+
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+
+                                    <div class="d-flex justify-content-between">
+                                        <a role="button" t-att-href="'/shop/cart'" class="btn btn-secondary mb32">
+                                            <i class="fa fa-chevron-left"/>
+                                            <span>Volver al carrito</span>
+                                        </a>
+                                        <a role="button" href="#" class="btn btn-primary mb32 a-submit a-submit-disable a-submit-loading">
+                                            <span>Siguiente</span>
+                                            <i class="fa fa-chevron-right"/>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!--    <template id="payment_terms_condi_payment_inherit" inherit_id="payment_credomatic.credomatic_s2s_form">-->
+    <!--        <xpath expr="//input[@name='cc_cvc']" position="after">-->
+    <!--            <div class="custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button">-->
+    <!--                <input type="checkbox" id="checkbox_cgv" class="custom-control-input"/>-->
+    <!--                <label for="checkbox_cgv" class="custom-control-label">-->
+    <!--                    <a class="text-orange"> Aceptar nuestros términos y condiciones</a>-->
+    <!--                </label>-->
+    <!--            </div>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+    <!--  revisar inteco.website_sale_link_terms_inherit-->
+    <!--    <template id="website_terms_condi_payment_inherit" inherit_id="website_sale.payment">-->
+    <!--        <xpath expr="//div[@id='payment_method']" position="after">-->
+    <!--            <div style="bottom:29px;right:280px;" class="custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button" t-if="(acquirers or tokens) and website_sale_order.amount_total">-->
+    <!--                <input type="checkbox" id="checkbox_cgv" class="custom-control-input"/>-->
+    <!--                <label for="checkbox_cgv" class="custom-control-label">-->
+    <!--                    <a href="/page/inteco.terms_conditions_public" target="_blank" class="text-orange"> Aceptar nuestros términos y condiciones</a>-->
+    <!--                </label>-->
+    <!--            </div>-->
+    <!--            <div style="bottom:23px;right:410px;" class="custom-control custom-checkbox float-right mt-2 oe_accept_cgv_button" t-else="">-->
+    <!--                <input type="checkbox" id="checkbox_cgv" class="custom-control-input"/>-->
+    <!--                <label for="checkbox_cgv" class="custom-control-label">-->
+    <!--                    <a href="/page/inteco.terms_conditions_public" target="_blank" class="text-orange"> Aceptar nuestros términos y condiciones</a>-->
+    <!--                </label>-->
+    <!--            </div>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <!--    <template id="website_shop_price_inherit" inherit_id="website_sale.products_item">-->
+    <!--        <xpath expr="//form/div/section/table/tr/td[5]/div/b/span[1]" position="replace">-->
+    <!--            <t t-if="combination_info['price'] != 0.00">-->
+    <!--                <span t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+    <!--            </t>-->
+    <!--            <t t-else="">-->
+    <!--                <t t-esc="'Gratis'+' '"/>-->
+    <!--            </t>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <template id="website_shop_button_color_inherit" inherit_id="website_sale.sort">
+        <xpath expr="//div/a" position="replace">
+            <a role="button" href="#" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown" style="background-color:#f5a623 !important;border-color: #f5a623 !important;">
+                <t t-if="len(website_sale_sortable_current)">
+                    <span>Sorting by : <t t-raw="website_sale_sortable_current[0][0]"/></span>
+                </t>
+                <t t-else="1">
+                    <span>Sort by</span>
+                </t>
+            </a>
+        </xpath>
+    </template>
+
+    <template id="website_shop_car_column_inherit" inherit_id="website_sale.cart_lines">
+        <xpath expr="//table/thead" position="replace">
+            <thead>
+                <tr>
+                    <th class="td-img">Código</th>
+                    <th class="td-img">Producto</th>
+                    <th class="text-center td-qty">Cantidad</th>
+                    <th class="text-center td-price">Precio</th>
+                    <th class="text-center td-action"/>
+                </tr>
+            </thead>
+        </xpath>
+        <xpath expr="//table/tbody" position="replace">
+            <tbody>
+                <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                    <tr t-att-class="'optional_product info' if line.linked_line_id else None">
+                        <td colspan="2" t-if="not line.product_id.product_tmpl_id" class="td-img"/>
+                        <td align="center" t-if="line.product_id.product_tmpl_id" class="td-img">
+                            <span t-field="line.product_id.image_1920" t-options="{'widget': 'image', 'class': 'rounded'}"/>
+                        </td>
+                        <td>
+                            <strong t-field="line.product_id.default_code"/>
+                        </td>
+                        <td t-if="line.product_id.product_tmpl_id" class="td-product_name">
+                            <div>
+                                <t t-call="website_sale.cart_line_product_link">
+                                    <strong t-field="line.name_short"/>
+                                </t>
+                            </div>
+                            <t t-call="website_sale.cart_line_description_following_lines">
+                                <t t-set="div_class" t-value="'d-none d-md-block'"/>
+                            </t>
+                        </td>
+                        <td class="text-center td-qty">
+                            <div t-if="not line.linked_line_id" class="css_quantity input-group mx-auto oe_website_spinner">
+                                <div class="input-group-prepend">
+                                    <a t-attf-href="#" class="btn btn-link js_add_cart_json d-none d-md-inline-block" aria-label="Remove one" title="Remove one">
+                                        <i class="fa fa-minus"/>
+                                    </a>
+                                </div>
+                                <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty"/>
+                                <div class="input-group-append">
+                                    <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json d-none d-md-inline-block" aria-label="Add one" title="Add one">
+                                        <i class="fa fa-plus"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <t t-if="line.linked_line_id">
+                                <span class="js_quantity text-muted" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-esc="int(line.product_uom_qty)"/>
+                            </t>
+                        </td>
+                        <td class="text-center td-price" name="price">
+                            <t t-set="combination" t-value="line.product_id.product_template_attribute_value_ids + line.product_no_variant_attribute_value_ids"/>
+                            <t t-set="combination_info" t-value="line.product_id.product_tmpl_id._get_combination_info(combination)"/>
+
+                            <t t-set="list_price_converted" t-value="website.currency_id._convert(combination_info['list_price'], website_sale_order.currency_id, website_sale_order.company_id, date)"/>
+                            <t groups="account.group_show_line_subtotals_tax_excluded" t-if="(website_sale_order.pricelist_id.discount_policy == 'without_discount' and website_sale_order.currency_id.compare_amounts(list_price_converted, line.price_reduce_taxexcl) == 1) or website_sale_order.currency_id.compare_amounts(line.price_unit, line.price_reduce) == 1" name="order_line_discount">
+                                <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;" t-esc="list_price_converted" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                            </t>
+                            <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t groups="account.group_show_line_subtotals_tax_included" t-if="(website_sale_order.pricelist_id.discount_policy == 'without_discount' and website_sale_order.currency_id.compare_amounts(list_price_converted, line.price_reduce_taxinc) == 1) or website_sale_order.currency_id.compare_amounts(line.price_unit, line.price_reduce) == 1" name="order_line_discount">
+                                <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;" t-esc="list_price_converted" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                            </t>
+                            <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_included"/>
+                        </td>
+                        <td class="td-action">
+                            <a href="#" aria-label="Remove from cart" title="Remove from cart" class="js_delete_product no-decoration"> <small><i class="fa fa-trash-o"/></small></a>
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </xpath>
+    </template>
+
+    <template id="website_shop_summary_column_inherit" inherit_id="website_sale.cart_summary">
+        <xpath expr="//table/thead" position="replace">
+            <thead class="bg-secondary">
+                <tr>
+                    <th/>
+                    <th class="td-img">Código</th>
+                    <th class="td-img">Norma/Item</th>
+                    <th class="text-center td-action"/>
+                    <th></th>
+                </tr>
+            </thead>
+        </xpath>
+        <xpath expr="//table/tbody" position="replace">
+            <tbody>
+                <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                    <tr>
+                        <td class="" colspan="2" t-if="not line.product_id.product_tmpl_id"/>
+                        <td/>
+                        <!--<td class="td-img" t-if="line.product_id.product_tmpl_id">-->
+                        <!--    <span t-field="line.product_id.image_small" t-options="{'widget': 'image', 'class': 'rounded'}"/>-->
+                        <!--</td>-->
+                        <td>
+                            <strong t-field="line.product_id.default_code"/>
+                        </td>
+                        <td class="td-product_name" t-if="line.product_id.product_tmpl_id">
+                            <div>
+                                <strong t-field="line.name_short"/>
+                            </div>
+                        </td>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="td-qty">
+                            <div t-esc="line.product_uom_qty"/>
+                        </td>
+                        <td class="td-price">
+                            <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}" groups="account.group_show_line_subtotals_tax_included"/>
+                        </td>
+                    </tr>
+                </t>
+            </tbody>
+        </xpath>
+    </template>
+
+    <!--    <template id="website_shop_button_addtoCar_color_inherit" inherit_id="website_sale.products_add_to_cart">-->
+    <!--        <xpath expr="//t/a[@class='btn btn-secondary btn-sm a-submit']" position="replace">-->
+    <!--    <a href="#" role="button" class="btn btn-secondary btn-sm a-submit" aria-label="Shopping cart" title="Shopping cart" style="background-color:#f5a623 !important;border-color: #f5a623 !important;">-->
+    <!--        <span class="fa fa-shopping-cart" />-->
+    <!--    </a>-->
+
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <template id="website_shop_checkout_inherit" inherit_id="website_sale.checkout">
+        <xpath expr="//div/div/div/div[3]/t" position="replace">
+            <t>
+
+            </t>
+        </xpath>
+    </template>
+
+    <template id="website_shop_cart_popover_inherit" inherit_id="website_sale.cart_popover">
+        <xpath expr="//t/t/div/div[2]/div" position="before">
+            <div>
+                <span class="h6" t-esc="line.product_id.default_code" />
+            </div>
+        </xpath>
+    </template>
+    <!--Cambiar el color del boton de agregar al carrito   vista name= Add to Cart    products_item  inteco.address-->
+    <template id="dfx_website_shop_product_inherit" inherit_id="website_sale.product">
+        <xpath expr="//section/div/div[2]" position="after">
+            <!--        <xpath expr="//div[@id='product_details']" position="before">-->
+            <t t-if="'Accesibilidad' in product.committee_id.name or 'accesibilidad' in product.committee_id.name">
+                <div class="col-md-4 d-none d-md-block"></div>
+                <form class="col-xs-6 col-md-8" t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST" >
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="js_product js_main_product">
+                        <t t-placeholder="select">
+                            <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                            <t t-if="first_possible_combination" t-call="sale.variants">
+                                <t t-set="ul_class" t-value="'flex-column'" />
+                                <t t-set="parent_combination" t-value="None" /></t>
+                            <t t-else="">
+                                <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                            </t>
+                        </t>
+                        <div class="col-sm-8" style="float: right;">
+                            <div class="col-sm-14 texto-ajustable">
+                                <p class="col-sm-7 mb10 pull-left d-none d-md-block">
+                                </p>
+                                <t t-call="website_sale.product_price" />
+                                <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                <a role="button" id="add_to_cart" class="btn btn-primary btn-lg js_check_product a-submit col-sm-16 mb16 pull-right bgbeta-intc" href="#">Añadir al Carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </t>
+            <t t-else="">
+                <div class="col-md-4 d-none d-md-block"></div>
+                <form class="col-xs-6 col-md-8 mobile-special" t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST" >
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <div class="js_product js_main_product">
+                        <t t-placeholder="select">
+                            <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                            <t t-if="first_possible_combination" t-call="sale.variants">
+                                <t t-set="ul_class" t-value="'flex-column'" />
+                                <t t-set="parent_combination" t-value="None" /></t>
+                            <t t-else="">
+                                <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                            </t>
+                        </t>
+                        <div class="col-sm-8" style="float: right;">
+                            <div class="col-sm-12 texto-ajustable">
+                                <p class="col-sm-7 mb10 pull-left d-none d-md-block">
+
+                                </p>
+                                <t t-call="website_sale.product_price" />
+                                <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                <!--<a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit col-sm-16 mt8 mb8 pull-right" href="#"><i class="fa fa-shopping-cart"/> Añadir al Carrito</a>
+                                -->
+                            </div>
+                            <div class="col-sm-12">
+                                <a role="button" id="add_to_cart" class="btn btn-primary btn-lg js_check_product a-submit col-sm-16 mb8 pull-right bgbeta-intc" href="#"><i class="fa fa-shopping-cart"/> Añadir al Carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="website_portal_detail_inherit" inherit_id="inteco.portal_my_details_inherit">
+        <xpath expr="//div/div[8]" position="replace">
+            <div style="display: none" t-attf-class="form-group #{error.get('company_name') and 'has-error' or ''} col-lg-12">
+                <label class="control-label label-optional" for="company_name">Company Name</label>
+                <p t-if="partner.commercial_partner_id.is_company" class="form-control" t-esc="partner.commercial_company_name"/>
+                <input t-else="" type="text" name="company_name" class="form-control" t-att-value="company_name or partner.company_name"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

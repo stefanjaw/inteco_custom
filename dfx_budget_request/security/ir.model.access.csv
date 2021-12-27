@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_admin_purchase_order,Solicitud de Presupuesto,model_purchase_order,dfx_budget_request.group_manager,1,1,1,1
+access_valid_purchase_order,Solicitud de Presupuesto,model_purchase_order,dfx_budget_request.group_user,1,0,0,0
+access_user_approval_manager,Solicitar o aprobar Presupuesto,model_user_approval,dfx_budget_request.group_manager,1,1,1,1
+access_user_approval_user,Solicitar o aprobar Presupuesto,model_user_approval,dfx_budget_request.group_user,1,0,0,0
+access_user_depart_manager,Departamento,model_user_depart,dfx_budget_request.group_manager,1,1,1,1
+access_user_depart_user,Departamento,model_user_depart,dfx_budget_request.group_user,1,0,0,0
+access_pen_manager,pendiente,model_pending_wizard,dfx_budget_request.group_manager,1,1,1,1
+access_pen_user,pendiente,model_pending_wizard,dfx_budget_request.group_user,1,0,0,0
+access_can_manager,pendiente,model_purchase1_wizard,dfx_budget_request.group_manager,1,1,1,1
+access_can_user,pendiente,model_purchase1_wizard,dfx_budget_request.group_user,1,0,0,0
+
+access_cost_manager,Centro de Costos M,model_cost_center,account.group_account_manager,1,1,1,1
+access_cost_user,Centro de Costos U,model_cost_center,base.group_user,1,0,0,0
+
+access_budget_manager,Cuentas Presu M,model_budget_account,account.group_account_manager,1,1,1,1
+access_budget_user,Cuentas Presu U,model_budget_account,base.group_user,1,0,0,0

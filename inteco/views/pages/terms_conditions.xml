@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="termsconditions_public" model="website.page">
+        <field name="name">Terms and Conditions</field>
+        <field name="url">/page/inteco.terms_conditions_public</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.terms_conditions_public</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.termsConditions_public" name="Terms and Conditions">
+                <t t-set="dev_public" t-value="True"/>
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h3>Acuerdo de licencia del cliente</h3>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p class="text-justify">Cuando solicita una o varias normas INTECO, usted acepta estos Términos y condiciones de venta ("Acuerdo de venta") y el Acuerdo de Licencia del cliente, por lo que debe leer todos estos términos antes de finalizar su compra. Si tiene alguna pregunta sobre este Acuerdo de Ventas, póngase en contacto con nosotros.</p>
+                            <ul>
+                                <li>1.	Derechos de autor de las normas INTECO. Las normas INTECO que usted solicita están protegidas por derechos de autor por la Asociación Instituto de Normas Técnicas de Costa Rica. Usted reconoce y acepta respetar los derechos de autor de INTECO en sus normas comprando, descargando, copiando o utilizándolas de cualquier otra forma la norma INTECO. Excepto como se estipula en este Contrato de Licencia, no podrá prestar, arrendar, reproducir, distribuir o explotar de otra manera comercialmente las normas INTECO. En el caso de normas conjuntas (como las normas INTE/ISO/IEC, INTE/ISO, INTE/IEC), esta cláusula se aplicará a la propiedad conjunta del derecho de autor.</li> 
+                                <li>2.	Marca de agua. Las copias electrónicas de las normas INTECO están marcadas con el nombre de la empresa o el nombre de la persona, con el fin de identificar al titular legítimo del documento.</li> 
+                                <li>3.	Licencia de Usuario Único. Las normas INTECO sólo se pueden comprar para su uso personal y no pueden ser transferidas a otro usuario. Si desea comprar una o varias normas INTECO para varios usuarios (por ejemplo, para sus colegas o publicar en la intranet de su empresa) o desea obtener derechos más amplios que no sean su uso personal, póngase en contacto con el Centro de Documentación de INTECO para explorar sus opciones.</li> 
+                                <li>4.	Copias electrónicas. Puede hacer copias electrónicas de las normas INTECO que haya comprado en todos sus dispositivos personales (computadora de escritorio, portátil, tableta, lector electrónico, smartphone, etc.). La impresión está permitida para su uso personal solamente. No está permitido compartir o publicar las normas INTECO en la página web de su empresa.</li> 
+                                <li>5.	Copias en papel. Si ha ordenado una o más de una norma INTECO en papel, no podrá fotocopiarla ni reproducirla de ninguna manera. Las copias en papel adicionales sólo se pueden hacer con el permiso por escrito de nosotros. Si se obtiene una norma con la finalidad de reproducirla y brindarla a otras personas, le agradecemos ponerse en contacto con el Centro de Documentación de INTECO.</li> 
+                                <li>6.	Terminación. Sin perjuicio de otros derechos, INTECO podrán rescindir este Acuerdo de Licencia con usted en cualquier momento mediante notificación por escrito, si no cumple con las condiciones de este Contrato de Licencia. En caso de terminación, debe eliminar cualquier copia electrónica o en papel de la norma INTECO sujetas a este Acuerdo de Licencia.</li> 
+                                <li>7.	Limitaciones. Las normas INTECO se proporcionan sin ninguna garantía, incluyendo exactitud y corrección, o para ser apto para cualquier necesidad individual. Nuestra responsabilidad por los daños causados se limita a negligencia grave o comportamiento intencional.</li> 
+                                <li>8.	Ley aplicable. En el caso de cualquier disputa entre usted y nosotros en relación con este Acuerdo de Licencia, el derecho exclusivamente suizo es aplicable con la exclusión de su elección de disposiciones legales. Cualquier controversia se resolverá mediante arbitraje de conformidad con las Reglas Suizas de Arbitraje Internacional de las Cámaras de Comercio Suizas vigentes en la fecha en que se presente la notificación de arbitraje. El número de árbitros será uno, sede del arbitraje Ginebra, Suiza, y el procedimiento arbitral se llevará a cabo únicamente en inglés.</li> 
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h3>Términos y condiciones de venta</h3>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <ul>
+                               <li>1.	Impuestos. Las normas INTECO no poseen impuestos de ventas. En caso de ventas fuera de Costa Rica los derechos de aduana puede aplicarse a las órdenes y son responsabilidad del cliente.</li>
+                               <li>2.	Pago. Los pedidos se pueden pagar con tarjeta de crédito o transferencia bancaria. Aceptamos MasterCard, Visa y American Express. Los pagos por transferencia bancaria deben realizarse en colones e incluir su número de cotización. Todos los gastos bancarios por remesas son sufragados por el comprador. Su información de pago será procesada inmediatamente y confidencialmente.</li>
+                               <li>3.	Factura. Después de realizar su pedido y haya sido tramitado el pago, automáticamente se efectuara una factura, la cual se entrega en las oficinas de INTECO, o bien, podrá ser escaneada y enviada vía correo electrónico. Asegúrese de que durante el proceso de compras ha indicado su información completa de facturación. </li>
+                               <li>4.	Envío. Todos los pedidos de documentos en formato CD-ROM o vía correo electrónico. Los CD-ROM se retiran de las oficinas de INTECO.</li>
+                               <li>5.	Política de devoluciones. No aceptamos devoluciones por compras de documentos electrónicos. </li>
+                               <li>6.	Protección de datos. Consulte la Política de Privacidad, que se incluye en este Acuerdo de Ventas.</li>
+                               <li>7.	Terminación, limitaciones y ley aplicable. Véanse las Cláusulas 6, 7 y 8 del Contrato de Licencia, las cuales se incorporan en este Contrato de Ventas.</li>
+                           </ul>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h3>Privacidad y Derechos de Autor</h3>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p>Política de privacidad</p>
+                            <p>INTECO se compromete a proteger su privacidad. Cualquier información que elija proporcionar en el sitio Web sólo se utilizará para proporcionar o mejorar los servicios que ofrecemos.</p>
+                            
+                            <p>Aceptación</p>
+                            
+                            <p>Al navegar por este sitio web, comunicarse electrónicamente con nosotros y / o enviar sus datos personales a este sitio Web, usted reconoce y acepta los términos de esta Política de Privacidad y el procesamiento de datos personales por INTECO como se describe a continuación.</p>
+                            
+                            <p>Información personal</p>
+                            
+                            <p>Recopilaremos información personal sobre usted solo con su consentimiento, por ejemplo, cuando:</p>
+                            <p>• Utilice el Webstore para comprar Estándares Internacionales o publicaciones relacionadas</p>
+                            
+                            <p>• Solicite información o productos específicos.</p>
+                            
+                            <p>La información de identificación personal que usted proporcione mediante correos electrónicos o formularios Web se utilizará únicamente para los fines que se describen en el punto de recopilación, como enviar información o productos a usted, actualizar su registro de afiliación o responder a su solicitud.</p>
+                            <p>Se utilizaran estos datos de identificación personal sólo para fines comerciales dentro de INTECO. Los datos proporcionados no serán compartidos con terceros excepto en los siguientes casos:</p>
+                            <p>• Podemos transferir sus datos personales a nuestras agencias asociadas (proveedores de servicios) que nos ayudan a administrar la tienda web. Estas agencias asociadas están obligadas por un acuerdo contractual para mantener sus datos privados y seguros.</p>
+                            <p>• Podemos revelar datos personales si la ley nos exige hacerlo o si dicha acción es razonablemente necesaria para cumplir con un proceso legal, para responder a cualquier demanda o para proteger nuestros derechos, sus clientes y el público.</p>
+                            <p>De vez en cuando, podemos pedir a nuestros visitantes del sitio que respondan a las preguntas de la encuesta. Las encuestas generalmente tratan con el sitio, nuestros productos o categorías de productos y no solicitarán ningún dato personalmente identificable.</p>
+                            <p>Enlaces a otros sitios</p>
+                            <p>La Webstore contiene enlaces a otros sitios. Si accede a otros sitios utilizando los vínculos proporcionados, los operadores de dichos sitios pueden recopilar información de usted que será utilizada por ellos de acuerdo con sus propias políticas de privacidad. No somos responsables de las prácticas de privacidad de otros sitios. Le animamos a familiarizarse con las políticas de privacidad de cualquier otro sitio que visite, incluidos los sitios enlazados desde la Webstore.</p>
+                            <p>Revisiones</p>
+                            <p>Nos reservamos el derecho de cambiar o modificar esta Política de Privacidad en cualquier momento. Si revisamos nuestra política de privacidad, publicaremos los cambios en el sitio para garantizar la transparencia de qué información recopilamos, cómo la usamos y bajo qué circunstancias, si la hay, la divulgamos.</p>
+                            <p>Ley que rige</p>
+                            <p>Todo el contenido del Webstore está protegido por derechos de autor. El copyright es propiedad de INTECO. Cualquier uso del contenido, incluida la copia total o parcial de éste, por ejemplo a otro sitio de Internet, está prohibido y requerirá permiso por escrito de INTECO. <br/>Todas las normas INTECO están protegidas por derechos de autor. La propiedad de los derechos de autor de INTECO está claramente indicada en todas las normas de INTECO. Está prohibido cualquier uso no autorizado, como copiar, escanear o distribuir. <br/> En el caso de normas conjuntas (como las normas INTE/ISO/IEC, INTE/ISO, INTE/IEC), se aplicará a la propiedad en conjunta del derecho de autor de estos documentos.<br/>Las solicitudes de autorización deben dirigirse al Centro de Documentación de INTECO.</p>
+                          </div>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </t>
+            </t>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ccertifications_people" model="website.page">
+        <field name="name">People Certifications</field>
+        <field name="url">/page/inteco.certifications_people</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.certifications_people</field>
+        <field name="arch" type="xml">
+            <t t-name="certifications_people" name="People Certifications">
+                <t t-set="certs_people" t-value="True"/>
+                <t t-set="hatband_certifications" t-value="True"/>
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_text_block">
+                            <div class="container" style="margin-top:25px;margin-bottom:25px">
+                                <section style="margin-bottom:20px">
+                                    <ul class="nav nav-pills nav-justified bgbeta-intc">
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs else 'nav-link'" href="/page/inteco.certifications">¿QUÉ ES LA CERTIFICACIÓN?</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_process else 'nav-link'" href="/page/inteco.certifications_process">PROCESO DE CERTIFICACIÓN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_people else 'nav-link'" href="/page/inteco.certifications_people">RECONOCIMIENTO IQNET</a>
+                                        </li>
+                                        <!--
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_system else 'nav-link'" href="/page/inteco.certifications_system">SISTEMAS DE GESTIÓN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_greenhouse else 'nav-link'" href="/page/inteco.certifications_greenhouse">VERIFICACIÓN DE INVENTARIOS DE GASES EFECTO INVERNADERO</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_products else 'nav-link'" href="/page/inteco.certifications_products">PRODUCTOS, PROCESOS Y PERSONAS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_list else 'nav-link'" href="/page/inteco.certifications_list">LISTADO DE CERTIFICACIONES</a>
+                                        </li>
+                                        -->
+                                    </ul>
+                                </section>
+                                <h1 class="text-beta-intc">Expertos locales, reconocimiento global</h1>
+                            </div>
+                        </section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 offset-4 mt32 mb32">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <a href="https://www.iqnet-certification.com/" target="_blank">
+                                                <img class="img img-rounded img-responsive" src="/web/image/inteco.membership_iqnet" alt="Certificacion de Personas" data-original-title="" title="" style="width: 90%;"/>
+                                            </a>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col-md-12 mt32 mb32" style="text-align:justify">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <p>Somos miembros de IQNet, la red mundial de los principales organismos de certificación, con socios que abarcan cientos de oficinas y filiales en todo el mundo.</p>
+                                            <p>INTECO garantiza la confianza de sus certificaciones mediante las acreditaciones y el respaldo de los 150 miembros de la red IQNET.</p>
+                                            <p>Gracias a esto, los certificados emitidos por INTECO tienen validez internacional. *</p>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col-md-12 mt32 mb32">
+                                    <section class="s_text_block">
+                                        <h1 class="text-beta-intc">Red de certificación internacional</h1>
+                                    </section>
+                                </div>
+                                <div class="col-md-12 mt32 mb32">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <img class="img img-rounded img-responsive" src="https://www.inteco.org/web/image/3521112" alt="Certificacion de Personas" data-original-title="" title="" style="width: 100%;"/>
+
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- Eliminado por Página 13
+                                <div class="col-md-6 mt32 mb16">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <h3>Los beneficios</h3>
+                                            <ul>
+                                                <li>Una ventaja competitiva para mantenerse en procesos de actualización y obteniendo un reconocimiento y validación de sus conocimientos, mediante una certificación de tercera parte.</li>
+                                                <li>El incremento de la productividad y competitividad de las organizaciones mediante el mejoramiento permanente y continuo de la competencia de las personas certificadas.</li>
+                                                <li>Proporcionar elementos fundamentales para la gestión del recurso humano, la optimización de los procesos de contratación, concentración de recursos financieros para el desarrollo personal y técnico, y para el desarrollo de políticas laborales y salariales.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

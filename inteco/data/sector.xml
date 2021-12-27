@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="sector_code_a" model="inteco.sector">
+        <field name="name">Alimentos y agricultura</field>
+        <field name="code">A</field>
+    </record>
+    <record id="sector_code_b" model="inteco.sector">
+        <field name="name">Ambiente</field>
+        <field name="code">B</field>
+    </record>
+    <record id="sector_code_c" model="inteco.sector">
+        <field name="name">Construcción</field>
+        <field name="code">C</field>
+    </record>
+    <record id="sector_code_d" model="inteco.sector">
+        <field name="name">Educación</field>
+        <field name="code">D</field>
+    </record>
+    <record id="sector_code_e" model="inteco.sector">
+        <field name="name">Energía</field>
+        <field name="code">E</field>
+    </record>
+    <record id="sector_code_g" model="inteco.sector">
+        <field name="name">Gestión y Calidad</field>
+        <field name="code">G</field>
+    </record>
+    <record id="sector_code_i" model="inteco.sector">
+        <field name="name">Protección contra incendios</field>
+        <field name="code">I</field>
+    </record>
+    <record id="sector_code_k" model="inteco.sector">
+        <field name="name">Tecnologías de la información y comunicación</field>
+        <field name="code">K</field>
+    </record>
+    <record id="sector_code_m" model="inteco.sector">
+        <field name="name">Metrología</field>
+        <field name="code">M</field>
+    </record>
+    <record id="sector_code_n" model="inteco.sector">
+        <field name="name">Electrotecnia</field>
+        <field name="code">N</field>
+    </record>
+    <record id="sector_code_q" model="inteco.sector">
+        <field name="name">Materiales e industria química</field>
+        <field name="code">Q</field>
+    </record>
+    <record id="sector_code_s" model="inteco.sector">
+        <field name="name">Salud</field>
+        <field name="code">S</field>
+    </record>
+    <record id="sector_code_t" model="inteco.sector">
+        <field name="name">Salud y seguridad en el trabajo</field>
+        <field name="code">T</field>
+    </record>
+    <record id="sector_code_w" model="inteco.sector">
+        <field name="name">Diseño e ingeniería</field>
+        <field name="code">W</field>
+    </record>
+    <record id="sector_code_z" model="inteco.sector">
+        <field name="name">Estadística</field>
+        <field name="code">Z</field>
+    </record>
+</odoo>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="new_view_product_use_variant_form_wizard" model="ir.ui.view">
+        <field name="name">new.view.product.use.variant.form.wizard</field>
+        <field name="model">new.product.use.variant</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="state" string="Estado" readonly="1"/>
+                    <field name="pages" string="Páginas"/>
+                    <field name="approval_date" string="Fecha de Aprobación" required="1"/>
+                    <field name="standards_ref" string="Referencia en Normas"/>
+                </group>
+                <footer>
+                    <button name="new_action_create_new_variant" type="object" string="Crear" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="new_view_product_Enm_variant_form_wizard" model="ir.ui.view">
+        <field name="name">new.view.product.enm.variant.form.wizard</field>
+        <field name="model">new.product.enm.variant</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="state" string="Estado" readonly="1"/>
+                    <field name="pages" string="Páginas"/>
+                    <field name="approval_date" string="Fecha de Aprobación" required="1"/>
+                    <field name="standards_ref" string="Referencia en Normas"/>
+                </group>
+                <footer>
+                    <button name="new_action_create_new_variant" type="object" string="Crear" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="new_action_product_use_variant_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Product Information</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">new.product.use.variant</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="new_view_product_use_variant_form_wizard"/>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+
+    <record id="new_view_product_new_edition_form_wizard" model="ir.ui.view">
+        <field name="name">new.view.product.new.edition.form.wizard</field>
+        <field name="model">new.product.new.edition</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="state" string="Estado" readonly="1"/>
+                    <field name="pages" string="Páginas"/>
+                    <field name="approval_date" string="Fecha de Aprobación" required="1"/>
+                    <field name="standards_ref" string="Referencia en Normas"/>
+                    <field name="lst_price" string="Precio"/>
+                    <field name="mod_type" string="Tipo de modificación"/>
+                    <field name="edition" string="Edición"/>
+                </group>
+                <footer>
+                    <button name="new_action_create_edition" type="object" string="Crear" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+<!--    <record id="action_product_new_edition_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Product Information</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">product.new.edition</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="view_product_new_edition_form_wizard"/>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+
+    <record id="new_view_product_confirm_form_wizard" model="ir.ui.view">
+        <field name="name">new.view.product.confirm.form.wizard</field>
+        <field name="model">new.product.confirm</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="confirmation_date" string="Fecha de Confirmación"/>
+                </group>
+                <footer>
+                    <button name="new_action_confirm_product" type="object" string="Confirmar" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="action_product_confirm_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Product Confirmation</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">product.confirm</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="view_product_confirm_form_wizard"/>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+
+</odoo>

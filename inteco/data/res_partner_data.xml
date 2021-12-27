@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo noupdate="1">
+    <record id="inteco_partner_001" model="res.partner">
+        <field name="name">Felipe Calvo</field>
+        <field name="parent_id" eval="ref('base.main_partner')"/>
+        <field name="country_id" eval="ref('base.cr')"/>
+        <field name="email">fcalvo@inteco.org</field>
+    </record>
+
+    <record id="inteco_partner_002" model="res.partner">
+        <field name="name">Alexandra Rodríguez</field>
+        <field name="parent_id" eval="ref('base.main_partner')"/>
+        <field name="country_id" eval="ref('base.cr')"/>
+        <field name="email">arodriguez@inteco.org</field>
+    </record>
+</odoo>

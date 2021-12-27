@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="standards_public" model="website.page">
+    <field name="name">Standards in Public Consultation</field>
+    <field name="url">/page/inteco.standards_public</field>
+    <field name="website_published">True</field>
+    <field name="type">qweb</field>
+    <field name="key">inteco.standards_public</field>
+    <field name="arch" type="xml">
+      <t t-name="inteco.standards_public" name="Standards in Public Consultation">
+        <t t-set="dev_public" t-value="True"/>
+        <t t-set="hatband_development" t-value="True"/>
+        <t t-call="website.layout">
+          <div id="wrap" class="oe_structure oe_empty">
+            <div class="container" style="margin-top:25px;margin-bottom:25px">
+              <section style="margin-bottom:20px">
+                <ul class="nav nav-pills nav-justified bgbeta-intc">
+                  <li class="nav-item">
+                    <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if develop else 'nav-link'" href="/page/inteco.standards_development">¿QUÉ ES UNA NORMA?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if dev_process else 'nav-link'" href="/page/inteco.standards_process">¿QUÉ ES LA NORMALIZACIÓN?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if dev_public else 'nav-link'" href="/page/inteco.standards_public">NORMALIZACIÓN NACIONAL</a>
+                  </li>
+                </ul>
+              </section>
+              <div class="row">
+                <div class="col-md-12">
+                  <section class="s_text_block" style="text-align:justify">
+                    <div class="container">
+                      <h2>
+                        <font class="text-beta-intc" style="">Normalización nacional</font>
+                      </h2>
+                      <div class="row">
+                        <div class="col-md-12 mt16 mb0">
+                          <h4>
+                            <strong>INTECO como Ente Nacional de Normalización</strong>
+                          </h4>
+                          <p>Contamos con la declaratoria de utilidad pública. Desde hace más de 30 años, Costa Rica dispone del Instituto de Normas Técnicas de Costa Rica; el cual, como Ente Nacional de Normalización, le ha aportado al país más de 1800 normas técnicas y tiene las condiciones para aportar todas las certificaciones necesarias para que la nación mejore su competitividad.</p>
+                          <p>Somos ISO en Costa Rica. Desde 1994, formamos parte de esta importante organización y en nuestra condición de miembros plenos influimos en el desarrollo y la estrategia de las normas ISO al participar y votar en las reuniones técnicas y políticas de la ISO. Esta condición nos permite adoptar y vender las normas ISO de forma exclusiva.</p>
+                          <p>Actualmente, participamos en diversos comités internacionales de esta organización; el detalle está disponible <strong><a href="https://www.iso.org/member/1667.html" target="_blank">aquí</a></strong>.</p>
+                          <h4>
+                            <strong>Consejo Directivo de la ISO</strong>
+                          </h4>
+                          <p>Desde 2018, INTECO ocupa uno de los 20 puestos del Consejo Directivo de la ISO.</p>
+                          <p>Esto beneficia al país mediante el fortalecimiento del organismo nacional de normalización, el desarrollo de su conocimiento y su imagen, así como la generación de mayores oportunidades y herramientas que las diferentes partes interesadas pueden aprovechar.</p>
+                          <h4>
+                            <strong>Normas en consulta pública</strong>
+                          </h4>
+                          <p>La consulta pública es una actividad clave para la creación de una norma nacional; por lo que acceder a los proyectos de norma en su etapa de borrador, así como contar con la posibilidad de presentar sus comentarios y sugerencias, es fundamental para asegurar que la posición del país se recopile en la norma.</p>
+                          <p>Los proyectos de norma, por lo general, tienen un periodo de consulta de 60 días naturales. Para acceder a los borradores y emitir sus observaciones, solo debe escribir al correo normas@inteco.org y presentar los comentarios en el formulario que se facilita.</p>
+                          <p>Conozca las normas que actualmente se encuentran en consulta pública <a href="/web/content/447" target="_blank">aquí</a></p>
+                          <p>INTECO cuenta con convenios para la adopción y/o venta de normas técnicas con: BSI, NEMA, IEEE, ISO, IEC, ICONTEC, ISTM, UL.</p>
+                          <p>Conozca los <strong><a href="/web/image/inteco.doc_Solicitudes_Aprobadas_Nuevos_Proyectos" target="_blank">nuevos proyectos</a></strong> así como las <strong><a href="/web/image/inteco.doc_Normas_Derogadas_Acumuladas" target="_blank">normas derogadas</a></strong>.</p>
+                          <br/>
+                          <div class="well s_well clearfix">
+                            <p>INTECO informa a sus asociados y público en general la publicación de las normas mensualmente. Para cualquier consulta acerca del proceso de desarrollo y venta de normas puede dejar un mensaje <a href="/contactus?alias=normas">aquí</a> o comunicarse al correo <a href="mailto:normas@inteco.org">normas@inteco.org</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+</odoo>

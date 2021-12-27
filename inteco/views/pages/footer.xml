@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- customize footer  -->
+    <template id="inteco_footer" inherit_id="website.layout" name="Footer">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div class="oe_structure" id="footer" style="background-color: #393939;">
+                <section class="s_text_block pt16 pb8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <h4 class="mt32 bggamma-intg">Sobre nosotros</h4>
+                                <p>
+                                    <b>
+                                        <a href="/page/inteco.about_us" class="text-white">INTECO</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <font class="text-white">Nuestros servicios</font>
+                                    </b>
+                                </p>
+                                <p class="mb8">
+                                    <small style="margin-left: 1.5em;">
+                                        <b>
+                                            <a href="/shop" class="text-white">Compra de normas</a>
+                                        </b>
+                                    </small>
+                                </p>
+                                <p class="mb8">
+                                    <small style="margin-left: 1.5em;">
+                                        <b>
+                                            <a href="/page/inteco.standards_development" class="text-white">Desarrollo de normas</a>
+                                        </b>
+                                    </small>
+                                </p>
+                                <p class="mb8">
+                                    <small style="margin-left: 1.5em;">
+                                        <b>
+                                            <a href="/page/inteco.trainings" class="text-white">Capacitaciones</a>
+                                        </b>
+                                    </small>
+                                </p>
+                                <p class="mb8">
+                                    <small style="margin-left: 1.5em;">
+                                        <b>
+                                            <a href="/page/inteco.certifications" class="text-white">Certificaciones</a>
+                                        </b>
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <h4 class="mt32 bggamma-intg">Normas</h4>
+                                <p>
+                                    <b>
+                                        <a href="/shop" target="_blank" class="text-white">Catálogo nacional</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <a href="https://inteco.isolutions.iso.org/es_CR/sites/inteco-nws/home.html" target="_blank" class="text-white">Catálogo internacional</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <a href="/web/content/447" target="_blank" class="text-white">Consulta pública</a>
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="col-sm-6 col-md-4 o_colored_level">
+                                <h4 class="mt32 bggamma-intg">Contáctenos</h4>
+                                <p>
+                                    <b>
+                                        <a href="/contactus?alias=cotizacion" class="text-white">Solicitar cotización</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <a href="/contactus?alias=general" class="text-white">Consulta general</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <a href="/page/inteco.faq" class="text-white">Preguntas frecuentes</a>
+                                    </b>
+                                </p>
+                                <p>
+                                    <b>
+                                        <a href="/helpdesk/support-2/" class="text-white">Percepción del servicio</a>
+                                    </b>
+                                </p>
+                                <!--
+                                <p>
+                                  <b>
+                                    <a href="/page/inteco.payment_suppliers" class="text-white" data-original-title="" title="" aria-describedby="tooltip864615">Pago a proveedores</a>
+                                  </b>
+                                </p>
+                                -->
+                            </div>
+                            <t t-call="website.language_selector"/>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- customize footer copyright  -->
+    <template id="inteco_footer_copyright" inherit_id="website.layout" name="Footer Copyright">
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
+            <div class="o_footer_copyright" style="background-color: #000000;">
+                <div class="container">
+                    <div class="row pt16 pb16">
+                        <div class="col-md-3 footer_logo">
+                            <img class="img img-rounded img-responsive" src="/inteco/static/src/img/white_logo.png" data-original-title="" title="" style="width: 65%;"/>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-center" style="color: #ffff !important"><b><a href="/contactus" class="text-white">Contáctenos</a></b>&amp;emsp;Tel. <a class="text-white" href="tel:+506 2283 45 22">+506 2283 45 22</a>&amp;emsp;Correo: <a class="text-white" href="mailto:info@inteco.org">info@inteco.org</a></p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="text-center">
+                                <a target="_blank" t-att-href="website.social_instagram" t-if="website.social_instagram">
+                                    <i class="fa fa-instagram" style="color: #fff; margin: 0 .5em; font-size: 1.75em;"/>
+                                </a>
+                                <a target="_blank" t-att-href="website.social_facebook" t-if="website.social_facebook">
+                                    <i class="fa fa-facebook-square" style="color: #fff; margin: 0 .5em; font-size: 1.75em;"/>
+                                </a>
+                                <a target="_blank" t-att-href="website.social_twitter" t-if="website.social_twitter">
+                                    <i class="fa fa-twitter" style="color: #fff; margin: 0 .5em; font-size: 1.75em;"/>
+                                </a>
+                                <a target="_blank" t-att-href="website.social_linkedin" t-if="website.social_linkedin">
+                                    <i class="fa fa-linkedin" style="color: #fff; margin: 0 .5em; font-size: 1.75em;"/>
+                                </a>
+                                <a target="_blank" href="https://wa.me/50689609696" class="">
+                                    <i class="fa fa-whatsapp" style="color: #fff; margin: 0 .5em; font-size: 1.75em;"/>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

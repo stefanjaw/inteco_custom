@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="dfx_budget_account_menu" model="ir.actions.act_window">
+            <field name="name">Cuentas Presupuestarias</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">budget.account</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Cuentas Presupuestarias
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_budget_account" name="Cuentas Presupuestarias" parent="purchase.menu_purchase_config"
+                  action="dfx_budget_account_menu" sequence="4" groups="account.group_account_manager"/>
+
+
+
+        <record id="dfx_cost_center_menu" model="ir.actions.act_window">
+            <field name="name">Centro de Costos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cost.center</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Centro de Costos
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_cost_center" name="Centro de Costos" parent="purchase.menu_purchase_config"
+                  action="dfx_cost_center_menu" sequence="5" groups="account.group_account_manager"/>
+
+
+        <record id="budget_account_auto" model="ir.cron">
+            <field name="name">DFX Crear cuentas y centro de costos</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">1</field>
+            <field ref="model_purchase_order" name="model_id" />
+            <field name="state">code</field>
+            <field name="code">model.reassing_all()</field>
+            <field eval="False" name="doall"/>
+<!--            <field name="function">True</field>-->
+        </record>
+
+        <record id="budget_account_reassign" model="ir.cron">
+            <field name="name">DFX Reasignar presupuestos y cuentas de costos</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">1</field>
+            <field ref="model_purchase_order" name="model_id" />
+            <field name="state">code</field>
+            <field name="code">model.reassing_cost_budget()</field>
+            <field eval="False" name="doall"/>
+<!--            <field name="function">True</field>-->
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="inteco.base" xml:space="preserve">
+    <t t-extend="HomeMenu.Content">
+        <t t-jquery=".o_home_menu_footer" t-operation="replace">
+            <div class="o_home_menu_footer">
+                <img src="/inteco/static/src/img/white_logo.png"/>
+            </div>
+        </t>
+    </t>
+</templates>

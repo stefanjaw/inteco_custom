@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inteco_contactus" inherit_id="website_form.contactus_form" name="Contact Us">
+        <xpath expr="//div[@id='wrap']/div[2]/div/div[1]/div" position="inside">
+            <p>The staff of INTECO is available to answer any enquiry from 8:00 am to 5:00 pm.</p>
+            <!--El personal de INTECO se encuentra disponible para cualquier consulta de 8:00 am a 5:00 pm, jornada  continua.-->
+        </xpath>
+        <xpath expr="//div[hasclass('form-group')][1]" position="before">
+            <div class="form-group col-12 s_website_form_field form-field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="type_of_request">Type of Request:</label>
+                    <div class="col-sm">
+                        <select type="text" class="form-control" name="type_of_request">
+                            <option t-att-selected="type_request == 'cotizacion'" value="request">Request for Quotation</option>
+                            <option t-att-selected="type_request == 'general'" value="consult">General Consult</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-12 s_website_form_field form-field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="team_id">About:</label>
+                    <div class="col-sm">
+                        <t t-set="sales_teams" t-value="env['crm.team'].sudo().search([])"/>
+                        <select class="form-control o_website_form_input" name="team_id" id="team_id" required="">
+                            <option/>
+                            <t t-foreach="sales_teams" t-as="team">
+                                <option t-att-value="team.id"><t t-esc="team.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-12 s_website_form_field form-field" id="subservice_div">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="subservices">Subservices:</label>
+                    <div class="col-sm">
+                        <select type="text" class="form-control" name="subservices" id="subservices" required="">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//input[@name='phone']" position="attributes">
+            <attribute name="type">tel</attribute>
+            <attribute name="pattern">^[+]{0,1}[0-9]{1,4}[)]{0,1}[\s\./0-9]*$</attribute>
+            <attribute name="placeholder">22834522</attribute>
+        </xpath>
+        <xpath expr="//form/div/div[4]" position="replace">
+            <div class="form-group col-12 s_website_form_field form-field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="first_name">Name</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control o_website_form_input" name="first_name" t-att-value="request.params.get('first_name', '')" required="" pattern="[^\d]*"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-12 s_website_form_field form-field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="last_name">First last name</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control o_website_form_input" name="last_name" t-att-value="request.params.get('last_name', '')" required="" pattern="[^\d]*"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-12 s_website_form_field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="second_last_name">Second Last Name</label>
+                    <div class="col-sm">
+                        <input type="text" class="form-control o_website_form_input" name="second_last_name" t-att-value="request.params.get('second_last_name', '')" pattern="[^\d]*"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-12 s_website_form_field form-field">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <t t-set="countries" t-value="env['res.country'].search([])"/>
+                    <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="country_id">Country</label>
+                    <div class="col-sm">
+                        <select class="form-control o_website_form_input" name="country_id" id="country_id" required="">
+                            <option/>
+                            <t t-foreach="countries" t-as="country">
+                                <!--Costa Rica selected as default country-->
+                                <option t-att-value="country.id" t-att-selected="country.code == 'CR'"><t t-esc="country.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//input[@name='email_from']" position="attributes">
+            <attribute name="type">email</attribute>
+            <attribute name="placeholder">john@example.com</attribute>
+        </xpath>
+    </template>
+
+    <template id="company_description_2" name="Company Description">
+        <!-- TODO: When the instance will be multi-company this values
+             must be link to res_company2.partner_id -->
+        <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+
+            <div>
+                <span itemprop="name">INTECO República Dominicana</span>
+            </div>
+
+            <div class="text-justify">
+                <i class="fa fa-map-marker fa-fw::before">
+                </i>
+                <span itemprop="streetAddress">
+                    Plaza Naco, Av.Tiradentes, Esq. Fantino Falco, 2do Nivel
+                    Local 110 Apartado 11. Santo Domingo, República
+                    Dominicana
+                </span>
+            </div>
+
+            <div>
+                <i class="fa fa-phone fa-fw::before">
+                </i>
+                <span itemprop="telephone">809 987 6115</span>
+            </div>
+
+            <br/>
+            <div t-field="res_company.partner_id" t-options='{
+                    "widget": "contact",
+                    "fields": ["email"]}'/>
+        </address>
+    </template>
+
+    <template id="inteco_contactus2" inherit_id="website.contactus">
+        <xpath expr="//div[@id='wrap']/div[2]/div/div[2]" position="inside">
+            <a href="/inteco/static/src/img/Mapa-INTECO-01.png"
+                target="_blank"
+                data-original-title=""
+                title=""
+                style="position: relative; overflow: hidden;">
+                <img class="img img-responsive"
+                    src="inteco/static/src/img/Mapa-INTECO-01.png"
+                    style="margin: 0 auto;"
+                    alt="Mapa INTECO"
+                    target="_blank"
+                    data-original-title=""
+                    title=""/>
+            </a>
+        </xpath>
+        <xpath expr="//div[@id='wrap']/div[2]/div/div[2]/t" position="after">
+            <t t-call="inteco.company_description_2"/>
+        </xpath>
+    </template>
+
+    <template id="website.company_description" name="Company Description">
+        <!-- TODO: When the instance will be multi-company this values
+             must be link to res_company.partner_id again in name and email,
+             Check the original template in Odoo-->
+
+        <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+            <!-- TODO widget contact must add itemprop attributes -->
+            <div>
+                <span itemprop="name" class="::before">INTECO Costa Rica</span>
+                <t t-if="not res_company.google_map_img()">
+                    <a t-att-href="res_company.google_map_link()" target="_BLANK"> Google Maps</a>
+                </t>
+            </div>
+            <!-- This is for justify the address in the website -->
+            <div class="text-justify">
+                <i class="fa fa-map-marker fa-fw::before">
+                </i>
+                <span>
+                    <t t-esc="res_company.partner_id._display_address(True)"/>
+                </span>
+            </div>
+            <div t-field="res_company.partner_id" t-options='{
+                    "widget": "contact",
+                    "fields": ["phone"]}'/>
+        </address>
+        <t t-if="res_company.google_map_img()">
+            <a t-att-href="res_company.google_map_link()" target="_BLANK">
+               <img class="thumbnail img-responsive" t-att-src="res_company.google_map_img()" />
+            </a>
+        </t>
+    </template>
+
+</odoo>

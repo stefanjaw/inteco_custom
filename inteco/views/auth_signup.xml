@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="fields" inherit_id="auth_signup.fields">
+        <xpath expr="//div[hasclass('field-login')]" position="after">
+            
+            <div class="form-group">
+                <input id="is_company" type="checkbox" name="type_is_company"  />
+                <label for="is_company" class="control-label font-weight-normal label-optional" style="display: inline;">Soy Empresa</label>
+                <input id="login_hide" type="text" class="d-none" />
+            </div>
+            
+            <div id="name_contact" class="form-group">
+                <label for="contact_name" class="control-label">Name</label>
+                <input type="text" name="contact_name" t-att-value="contact_name" id="contact_name" class="form-control"
+                    t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+            </div>
+            
+            <div id="last_name" class="form-group">
+                <label for="contact_last_name" class="control-label">First Last Name</label>
+                <input type="text" name="contact_last_name" t-att-value="contact_last_name" id="contact_last_name" class="form-control"
+                    t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+            </div>
+            <div id="second_last_name_contact" class="form-group">
+                <label for="second_last_name" class="control-label font-weight-normal label-optional">Second Last Name</label>
+                <input type="text" name="second_last_name" t-att-value="second_last_name" id="second_last_name" class="form-control"
+                    t-att-readonly="'readonly' if only_passwords else None"
+                    t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('field-name')]" position="replace">
+            <div id="company_name" class="form-group field-name">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" t-att-value="name" id="name" class="form-control form-control-sm" placeholder="e.g. John Doe"
+                       t-att-readonly="'readonly' if only_passwords else None"
+                       t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

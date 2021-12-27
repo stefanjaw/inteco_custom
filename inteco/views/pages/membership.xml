@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="membership_alliance" model="website.page">
+        <field name="name">Membership &#38; Alliances</field>
+        <field name="url">/page/inteco.membership_alliance</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.membership_alliance</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.membership_alliance" name="Membership &#38; Alliances">
+              <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                  <div class="container">
+                    <h1 class="text-beta-intc">Membresías y Alianzas</h1>
+                    <div class="row">
+                      <div class="col-md-12 mt16 mb0">
+                          <p>Desde el mismo año de su creación, en 1987, INTECO se integra a la Comisión Panamericana de Normalización Técnica (COPANT), organismo continental que reúne a los entes nacionales de normalización. </p>
+                          <p>Años después, en 1994, INTECO entra a formar parte como miembro P de la Organización Internacional para la Normalización (ISO). Con seguridad es el organismo de normalización más reconocido en el mundo.</p>
+                          <p>También INTECO forma parte de la Comisión Electrotécnica Internacional (IEC), organización de normalización internacional que funciona en gran colaboración con ISO. En este caso, INTECO mantiene la categoría de Miembro Asociado.</p>
+                          <p>Por otra parte, INTECO ha establecido convenios con diferentes organismos "pares". Es el caso del convenio suscrito con la Asociación Española de Normalización y Certificación (AENOR), con el propósito primario de desarrollar en conjunto actividades de certificación de sistemas de gestión.</p>
+                          <p>Un acuerdo similar fue firmado con el IRAM, el organismo nacional de normalización argentino, con cuya colaboración se desarrolla actividades de certificación de EUREP GAP.</p>
+                          <p>En el año 2004, INTECO se integró al Consejo de Armonización de Normas Electrotécnicas de las Naciones de las Américas (CANENA). </p>
+                          <p>Entre los años 2005-2007 INTECO ha establecido convenio con el American Society for Testing of Materials (ASTM), con el National Fire Protection Association (NFPA) y con Underwriters Laboratories Inc. (UL).</p>
+                      </div>
+                    </div>
+                    <div class="s_animated_boxes row mb32">
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_iqnet" class="v-align preserve3d center-block" style="width: 90%;"/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.iqnet-certification.com/" data-original-title="" title="">The International Certification Network (IQNet)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_iso" class="v-align preserve3d center-block" style="width: 50%;"/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.iso.org" data-original-title="" title="">Organización Internacional para la Normalización (ISO)</a>
+                              <br/>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_iec" class="v-align preserve3d center-block" style="width: 50%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.iec.ch/" data-original-title="" title="">Comisión Electrotécnica Internacional (IEC)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_copant" class="v-align preserve3d center-block" style="width: 60%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.copant.org/" data-original-title="" title="">Comisión Panamericana de Normalización Técnica (COPANT)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_canena" class="v-align preserve3d center-block" style="width: 75%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.canena.org/" data-original-title="" title="">Consejo de Armonización de Normas Electrotécnicas de las Naciones de las Américas (CANENA)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_astm" class="v-align preserve3d center-block" style="width: 65%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.astm.org" data-original-title="" title="">American Society for Testing of Materials (ASTM International)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_iram" class="v-align preserve3d center-block" style="width: 50%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.iram.com.ar/" data-original-title="" title="">Instituto Argentino de Normalización y Certificación (IRAM)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_aenor" class="v-align preserve3d center-block" style="width: 70%;"/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.aenor.es/" data-original-title="" title="">Asociación Española de Normalización y Certificación (AENOR)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_ul" class="v-align preserve3d center-block" style="width: 50%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.ul.com/" data-original-title="" title="">Underwriters Laboratories Inc. (UL)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_nfpa" class="v-align preserve3d center-block" style="width: 55%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.nfpa.org/" data-original-title="" title="">National Fire Protection Association (NFPA)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-4 col-md-3 item" data-name="Box item" style="height: 200px;">
+                        <img src="/web/image/inteco.membership_nema" class="v-align preserve3d center-block" style="width: 55%;" data-original-title="" title=""/>
+                        <div class="slide bgbeta-intc" data-name="Inner Slide">
+                          <div class="v-align">
+                            <h4>
+                              <a class="text-white" href="http://www.nema.org/" data-original-title="" title="">National Electrical Manufacturers Association (NEMA)</a>
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </t>
+            </t>
+        </field>
+    </record>
+</odoo>

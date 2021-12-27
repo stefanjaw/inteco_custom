@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_intern_category_purchase_dbr" model="ir.ui.view">
+            <field name="name">product.intern.category.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <!--                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='type']" position="replace">-->
+                <!--                    &lt;!&ndash; Add new fields here &ndash;&gt;-->
+                <!--                    <field name="type"/>-->
+                <!--                </xpath>-->
+                <xpath expr="//header/button" position="before">
+                    <button string="crear cor" type="object" name="new_action_product_use_variant_wizard"
+                            class="oe_highlight" context="{'modifier': %(inteco.attribute_modifier_cor)d}"
+                            attrs="{'invisible': [('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                    <button string="crear enm" type="object" name="new_action_product_enm_variant_wizard"
+                            class="oe_highlight" context="{'modifier': %(inteco.attribute_modifier_enm)d}"
+                            attrs="{'invisible': [('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                    <button string="Nueva Edi" type="object" name="new_action_product_new_edition_wizard"
+                            class="oe_highlight" attrs="{'invisible': ['|', ('is_cor', '=', True), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                    <button string="confirmar" type="object" name="new_action_product_confirm_wizard"
+                            class="oe_highlight" attrs="{'invisible': ['|', ('confirmation_date', '!=', False), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='default_code']" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group[@name='group_general']/field[@name='categ_id']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="categ_id" options="{'no_create': True, 'no_create_edit':True}" readonly="0"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group[@name='group_general']/field[@name='subservice_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Subservicio</attribute>
+                </xpath>
+                <xpath expr="//field[@name='list_price']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="attrs">{'invisible': 0}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='type']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>
+                    <!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='uom_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='uom_po_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='taxes_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='property_account_income_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="readonly">1</attribute>-->
+                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='general_information']/group[2]/group" position="after">
+                    <group attrs="{'invisible': [('categ_id','!=', 3)]}">
+                        <field name="priority" widget="priority" string="Prioridad"/>
+                        <field name="state" string="Estado"/>
+                        <field name="pages"/>
+                        <field name="previous_code"/>
+                        <field name="replaced_by" invisible="1" string="Sustituido por"/>
+                        <field name="new_replaced_by" string="Nuevo Sustituido por"/>
+                        <field name="standards_ref" string="Referencias en Normas"/>
+                        <field name="modifier_date" />
+                        <field name="confirmation_date" attrs="{'invisible': [('confirmation_date', '=', False)]}"/>
+                        <field name="latest_date" attrs="{'invisible': [('latest_date', '=', False)]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='committee_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Comité</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='prefix_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Prefijo</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='short_code']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Código corto</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='process']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Proceso</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_one']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte I</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_two']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte II</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_three']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte III</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='organism_ids']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Organismos</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='correspondence_ids']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Correspondencias</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='default_code']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="default_type" invisible="1" force_save = "1"/>
+                    <field name="edition_con" invisible="1" force_save = "1"/>
+                    <field name="key_words" string="Palabras Clave" widget="many2many_tags"/>
+                    <field name="product_analytic_account" string="Cuenta Analítica"/>
+                    <field name="attribute_value_ids" widget="many2many_tags" invisible="1"/>
+                    <field name="history_norm" widget="many2many_tags" invisible="0"/>
+                    <field name="norm_processed" invisible="1"/>
+                    <field name="order_processed" invisible="1"/>
+                    <field name="product_tp" invisible="1"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='barcode']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="course_duration" string="Duración del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
+                    <field name="course_req" string="Requisitos del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='edition']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Edición</attribute>
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='year']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="year" string="Año" readonly="0"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='approval']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Fecha de Aprobación</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='correspondence_ids']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="mod_type" widget="selection"/>
+                    <field name="is_cor" invisible="1" force_save = "1"/>
+                    <field name="is_enm" invisible="1" force_save = "1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record id="dfx_view_product_cr_electronic_invoice" model="ir.ui.view">-->
+        <!--            <field name="name">product.electronic.invoice</field>-->
+        <!--            <field name="model">product.template</field>-->
+        <!--            <field name="inherit_id" ref="cr_electronic_invoice.product_template_only_form_view_inherit"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//field[@name='cabys_code']" position="attributes">-->
+        <!--                    &lt;!&ndash; Add new fields here &ndash;&gt;-->
+        <!--&lt;!&ndash;                    <attribute name="readonly">1</attribute>&ndash;&gt;-->
+        <!--                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>-->
+        <!--                    <attribute name="force_save">1</attribute>-->
+        <!--                </xpath>-->
+        <!--                <xpath expr="//field[@name='code_type_id']" position="attributes">-->
+        <!--                    &lt;!&ndash; Add new fields here &ndash;&gt;-->
+        <!--&lt;!&ndash;                    <attribute name="readonly">1</attribute>&ndash;&gt;-->
+        <!--                    <attribute name="attrs">{'readonly':[('is_enm','=', True)]}</attribute>-->
+        <!--                    <attribute name="force_save">1</attribute>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="view_product_category_purchase_dbr" model="ir.ui.view">
+            <field name="name">purchase.order.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/field[@name='removal_strategy_id']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="valid_product"/>
+                    <field name="group_valid"/>
+                    <field name="analytic_account_def"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="key_words_action_dbr" model="ir.actions.act_window">
+            <field name="name">Palabras Clave</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prod.key.words</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Palabras Clave
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_key_words" name="Palabras Clave" parent="sale.menu_sale_config"
+                  action="key_words_action_dbr" sequence="2"/>
+
+        <record id="view_sale_norm_cat_dbr" model="ir.ui.view">
+            <field name="name">sale.norm.cat.view.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='correspondence_ids']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="mod_type" widget="selection"/>
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="attributes">
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group[@name='group_general']/field[@name='subservice_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Subservicio</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='committee_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Comité</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='prefix_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Prefijo</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='short_code']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Código corto</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='process']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Proceso</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='default_code']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="key_words" string="Palabras Clave" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_one']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte I</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_two']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte II</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='part_three']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Parte III</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='organism_ids']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Organismos</attribute>
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='correspondence_ids']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Correspondencias</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='edition']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Edición</attribute>
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='year']" position="replace">
+                    <!-- Add new fields here -->
+                    <field name="year" readonly="0"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='year']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Año</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='approval']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Fecha de Aprobación</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='priority']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Prioridad</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='state']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Estado</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='pages']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Páginas</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='previous_code']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Códigos Anteriores</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='replaced_by']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Sustituido por</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='standards_ref']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Referencias en Normas</attribute>
+                </xpath>
+                <!--                <xpath expr="//notebook/page[@name='general_information']/group/group[@name='group_standard_price']/field[@name='list_price']" position="replace">-->
+                <!--                    &lt;!&ndash; Add new fields here &ndash;&gt;-->
+                <!--                    <field name="lst_price" widget="monetary" />-->
+                <!--                </xpath>-->
+                <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='barcode']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="course_duration" string="Duración del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
+                    <field name="course_req" string="Requisitos del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_user_product_sale_variant_dbr" model="ir.ui.view">
+            <field name="name">product.sale.variant.view.form</field>
+            <field name="model">product.use.variant</field>
+            <field name="inherit_id" ref="inteco.view_product_use_variant_form_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/field[@name='pages']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Páginas</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_user_product_sale_new_edition_dbr" model="ir.ui.view">
+            <field name="name">product.sale.new.edition.view.form</field>
+            <field name="model">product.new.edition</field>
+            <field name="inherit_id" ref="inteco.view_product_new_edition_form_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/field[@name='pages']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="string">Páginas</attribute>
+                </xpath>
+                <xpath expr="//form/group/field[@name='standards_ref']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="lst_price"/>
+                    <field name="mod_type"/>
+                    <field name="edition"/>
+                </xpath>
+            </field>
+        </record>
+
+        <template id="dpc_website_cart" inherit_id="website_sale.cart" name="Shopping cart" active="True" customize_show="True">
+            <xpath expr="//t/div//div/div/div[2]" position="before">
+                <div class="alert alert-info" data-oe-model="ir.ui.view" data-oe-id="1378" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]">
+                    Si requiere comprar una norma y es afiliado a INTECO,  miembro de comité técnico o
+                    es una empresa u organización exonerada, comuníquese al Centro Documental para aplicar el descuento correspondiente a su compra.
+                    Centro Documental: <a href="normas@inteco.org">normas@inteco.org</a>
+                    <!--                    /<a href="normas@inteco.org">normas@inteco.org</a>-->
+                    <!--                    Centro Documental: Contiene hipervínculo al correo normas@inteco.org-->
+                </div>
+            </xpath>
+
+            <xpath expr="//t/div/div/div/div/div/div/a[@class='btn btn-primary float-right d-none d-xl-inline-block']" position="replace">
+                <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right d-none d-xl-inline-block" href="/shop/checkout?express=1">
+                    <span class="">Siguiente</span>
+                    <span class="fa fa-chevron-right" />
+                </a>
+            </xpath>
+        </template>
+
+        <record id="action_set_price_adjust" model="ir.actions.server">
+            <field name="name">Prueba de Precios</field>
+            <field name="model_id" ref="model_product_product"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.update_price_prod()
+            </field>
+        </record>
+
+        <record id="action_set_price_adjust_temp" model="ir.actions.server">
+            <field name="name">Actualizar precios de productos por cantidad de páginas</field>
+            <field name="model_id" ref="model_product_template"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                action = records.update_price_prod_temp()
+            </field>
+        </record>
+
+        <template id="dfx_products_add_to_cart" inherit_id="website_sale.products_item" active="False" customize_show="True" name="Add to Cart Inteco">
+            <xpath expr="//div[hasclass('product_price')]" position="inside">
+                <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                <t t-if="product_variant_id">
+                    <a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                        <span class="fa fa-shopping-cart"/>
+                    </a>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="dfx_products_active_list_view_by_default" inherit_id="website_sale.products" active="True" customize_show="True" name="Products DFX">
+            <xpath expr="//t/div/div/div/div[2]" position="attributes">
+                <attribute name="t-attf-class">col o_wsale_layout_list</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

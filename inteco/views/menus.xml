@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="sectors_menu_action">
+        <field name="name">Sectors</field>
+        <field name="res_model">inteco.sector</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new sector
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="organisms_menu_action">
+        <field name="name">Organisms</field>
+        <field name="res_model">inteco.organism</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new organism
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="standards_menu_action">
+        <field name="name">Standards</field>
+        <field name="res_model">inteco.organism.standard</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new standard
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="committees_menu_action">
+        <field name="name">Committees</field>
+        <field name="res_model">inteco.committee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new committee
+            </p>
+            <p>
+                The committees are INTECO organisms in charge of normalization
+                work in a defined field of activity.
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="prefixes_menu_action">
+        <field name="name">Prefixes</field>
+        <field name="res_model">inteco.prefix</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new prefix
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ics_menu_action">
+        <field name="name">ICS</field>
+        <field name="res_model">inteco.ics</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new ics
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="estimated_income_action">
+        <field name="name">Estimated Income</field>
+        <field name="res_model">sale.order.line</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'graph', 'view_id': ref('estimated_income_graph')}),
+                      (0, 0, {'view_mode': 'pivot', 'view_id': ref('estimated_income_pivot')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="estimated_income_category_action">
+        <field name="name">Estimated Income by Category</field>
+        <field name="res_model">sale.order.line</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'graph', 'view_id': ref('estimated_income_category_graph')}),
+                      (0, 0, {'view_mode': 'pivot', 'view_id': ref('estimated_income_category_pivot')})]"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="estimated_income_reference_action">
+        <field name="name">Estimated Income by Intern Reference</field>
+        <field name="res_model">sale.order.line</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'graph', 'view_id': ref('estimated_income_reference_graph')}),
+                      (0, 0, {'view_mode': 'pivot', 'view_id': ref('estimated_income_reference_pivot')})]"/>
+    </record>
+
+    <menuitem id="main_inteco_menu" name="Inteco"
+        parent="sale.menu_sale_config" sequence="6"/>
+
+    <menuitem id="sectors_menu" name="Sectors"
+        parent="main_inteco_menu" action="sectors_menu_action"/>
+
+    <menuitem id="organisms_menu" name="Organisms"
+        parent="main_inteco_menu" action="organisms_menu_action"/>
+
+    <menuitem id="committees_menu" name="Committees"
+        parent="main_inteco_menu" action="committees_menu_action"/>
+
+    <menuitem id="prefixes_menu" name="Prefixes"
+        parent="main_inteco_menu" action="prefixes_menu_action"/>
+
+    <menuitem id="ics_menu" name="ICS"
+        parent="main_inteco_menu" action="ics_menu_action"/>
+
+    <menuitem id="estimated_income_menu" name="Estimated Income"
+        parent="sale.menu_sale_report" action="estimated_income_action" sequence="4"/>
+
+    <menuitem id="estimated_income_category_menu" name="Estimated Income by Category"
+        parent="sale.menu_sale_report" action="estimated_income_category_action" sequence="5"/>
+
+    <menuitem id="estimated_income_reference_menu" name="Estimated Income by Intern Reference"
+        parent="sale.menu_sale_report" action="estimated_income_reference_action" sequence="6"/>
+
+</odoo>

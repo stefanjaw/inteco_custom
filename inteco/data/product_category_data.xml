@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_category_1_1" model="product.category">
+            <field name="name">Standards</field>
+            <field name="parent_id" ref="product.product_category_1"/>
+        </record>
+    </data>
+
+    <data noupdate="0">
+        <record id="product_public_category_1" model="product.public.category">
+            <field name="name">Standards</field>
+        </record>
+        <record id="public_category_normative" model="product.public.category">
+            <field name="name">Normative Document</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+        <record id="public_category_guide" model="product.public.category">
+            <field name="name">Guide</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+        <record id="public_category_testing" model="product.public.category">
+            <field name="name">Testing method</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+        <record id="public_category_product" model="product.public.category">
+            <field name="name">Product</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+        <record id="public_category_management" model="product.public.category">
+            <field name="name">Management system</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+        <record id="public_category_vocabulary" model="product.public.category">
+            <field name="name">Vocabulary</field>
+            <field name="parent_id" ref="product_public_category_1"/>
+        </record>
+    </data>
+</odoo>

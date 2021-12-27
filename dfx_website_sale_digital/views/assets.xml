@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Assets Frontend Inteco JQ">
+        <xpath expr="." position="inside">
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        </xpath>
+    </template>
+</odoo>

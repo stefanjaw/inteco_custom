@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="certifications_system" model="website.page">
+        <field name="name">Management Systems</field>
+        <field name="url">/page/inteco.certifications_system</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.certifications_system</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.certifications_system" name="Management Systems">
+                <t t-set="certs_system" t-value="True"/>
+                <t t-set="hatband_certifications" t-value="True"/>
+                <t t-call="website.layout">
+                    <style>
+                        .nav-pills li {
+                        width:25%
+                        }
+                        .nav-pills a {
+                        color: black
+                        }
+
+                    </style>
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container" style="margin-bottom: 35px;">
+                            <section class="s_text_block">
+                                <div class="container">
+                                    <h1 class="text-beta mb32 text-beta-intc">Sistemas de Gestión</h1>
+                                </div>
+                            </section>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="row" style="background-color:#eee">
+                                        <ul class="nav nav-pills nav-justified" role="tablist">
+
+                                            <li>
+                                                <a href="/gestion-de-la-calidad" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la Calidad</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-ambiental" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión Ambiental</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-la-seguridad-y-salud-en-el-trabajo" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la seguridad y salud en el trabajo</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-la-energia" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la Energía</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-tecnologia-de-informacion" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de Tecnología de Información</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/sistema-de-gestion-de-la-calidad-de-dispositivos-medicos" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la Calidad de Dispositivos Médicos</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-la-seguridad-para-la-cadena-de-suministro" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la Seguridad para la Cadena de Suministro</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-responsabilidad-social" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de Responsabilidad Social</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="/gestion-de-la-igualdad-de-genero" style="cursor:pointer">
+                                                    <div class="box-part text-center">
+
+                                                        <div class="box-title">
+                                                            <span>Gestión de la Igualdad de Género</span>
+                                                        </div>
+
+                                                        <div class="box-text">
+                                                            <span>Sistemas de Gestión</span>
+                                                        </div>
+
+                                                        <div class="box-line sg">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                            <!--
+                                            <li>
+
+                                              <a href="#energy" aria-controls="energy" data-toggle="tab" role="tab" style="cursor:pointer">
+                                                <div class="box-part text-center">
+
+                                                    <div class="box-title">
+                                                        <span>Marca de conformidad</span>
+                                                        <span><br/></span>
+                                                    </div>
+
+                                                    <div class="box-text">
+                                                        <span>Productos, procesos y servicios<br/></span>
+                                                    </div>
+
+                                                    <div class="box-line pps">
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            -->
+
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- row -->
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

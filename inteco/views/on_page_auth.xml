@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="login" name="Only form login">
+        <form class="ml0 mt24 oe_login_form" role="form" t-attf-action="/web/login?redirect=/shop/checkout" method="post" onsubmit="this.action = this.action + location.hash">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div class="form-group field-login">
+                <label for="login" class="control-label">Email</label>
+                <input type="email" name="login" t-att-value="login" id="login" class="form-control" required="required" autofocus="autofocus" autocapitalize="off"/>
+            </div>
+            <div class="form-group field-password">
+                <label for="password" class="control-label">Password</label>
+                <input type="password" name="password" id="password" class="form-control" required="required" autocomplete="current-password" t-att-autofocus="'autofocus' if login else None" maxlength="4096"/>
+            </div>
+            <div class="clearfix oe_login_buttons mt16">
+                <button type="submit" class="btn btn-primary">Log in</button>
+                <a href="/web/signup?redirect=/shop/checkout" class="btn btn-secondary">Registrarse</a>
+            </div>
+        </form>
+    </template>
+    <template id="signup" name="Only form signup">
+        <form name="/shop/checkout" method="post" class="checkout_autoformat singup_form" action="/inteco/signup?redirect=/shop/checkout" role="form">
+            <div class="row">
+                <t t-call="auth_signup.fields">
+                    <t t-set="only_passwords" t-value="bool(token and not invalid_token)"/>
+                    <t t-set="extend" t-value="True"/>
+                </t>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12" id="div_phone">
+                    <label class="control-label" for="phone">Phone</label>
+                    <input type="tel" name="phone" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label font-weight-normal label-optional" for="company_name">Company Name</label>
+                    <input type="text" name="company_name" class="form-control" />
+                </div>
+                <div class="form-group col-md-6 div_vat">
+                    <label class="control-label" for="vat">TIN / VAT </label>
+                    <input type="text" name="vat" required="required" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12 div_street">
+                    <label class="control-label" for="street">Street <span class="hidden-xs"> and Number</span></label>
+                    <input type="text" name="street" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <t t-set='zip_city' t-value='country and [x for x in country.get_address_fields() if x in ["zip", "city"]] or ["city", "zip"]'/>
+                <t t-if="'zip' in zip_city and zip_city.index('zip') &lt; zip_city.index('city')">
+                    <div class="form-group col-sm-4 div_zip">
+                        <label class="control-label label-optional" for="zip">Zip Code</label>
+                        <input type="text" name="zip" class="form-control" />
+                    </div>
+                </t>
+                <div class="form-group col-sm-6 div_city">
+                    <label class="control-label" for="city">City</label>
+                    <input type="text" name="city" class="form-control" />
+                </div>
+                <t t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
+                    <div class="form-group col-sm-6 div_zip">
+                        <label class="control-label label-optional" for="zip">Zip Code</label>
+                        <input type="text" name="zip" class="form-control" />
+                    </div>
+                </t>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 div_country">
+                    <label class="control-label" for="country_id">Country</label>
+                    <select id="country_id" name="country_id" class="form-control">
+                        <option value="">Country...</option>
+                        <t t-foreach="countries" t-as="c">
+                            <option t-att-value="c.id">
+                                <t t-esc="c.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6" id="province">
+                    <label class="control-label font-weight-normal label-optional" for="state_id">State / Province</label>
+                    <t t-call="inteco.state_per_country">
+                        <t t-set="country_states" t-value="states" />
+                    </t>
+                </div>
+            </div>
+            
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+            <input type="hidden" name="submitted" value="1" />
+            <input type="hidden" name="partner_id" t-att-value="partner_id or '0'" />
+            <input type="hidden" name="callback" t-att-value="callback" />
+            <!-- Example -->
+            <input type="hidden" name="field_required" t-att-value="'phone,name'" />
+            <div class="col-xs-12">
+                <div class="js_errors alert alert-danger hidden" />
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="pull-right mt24 mb24 btn btn-primary">Sign up</button>
+            </div>
+        </form>
+    </template>
+    <template id="state_per_country" name="State per contry">
+        <select name="state_id" class="form-control">
+            <option value="">State / Province...</option>
+            <t t-foreach="country_states" t-as="s">
+                <option t-att-value="s.id">
+                    <t t-esc="s.name" />
+                </option>
+            </t>
+        </select>
+    </template>
+</odoo>

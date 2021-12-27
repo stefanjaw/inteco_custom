@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model ="ir.ui.view" id="import_product_image_excel_form_view">
+            <field name="name">import.product.template.form</field>
+           <field name="model">import.product.template</field>
+           <field name="arch" type="xml">
+               <form string="import wizard">
+                   <group>
+                        <group>
+                            <field  name="data_obj"/>
+                            <field  name="files"/>
+                        </group>
+                        <group>
+                            <field  name="operation"/>
+                        </group>
+                   </group>
+                   <footer>
+                        <button string="Import" name="import_product_file" type="object" class="oe_highlight"/> or 
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                   </footer>
+               </form>
+           </field>
+       </record>
+       
+       <record model="ir.actions.act_window" id="import_product_template_action">
+           <field name="name">Import Product Templates / Products</field>
+           <field name="res_model">import.product.template</field>
+           <field name="view_id" ref="import_product_image_excel_form_view"/>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+       </record>
+       
+    </data>
+</odoo>

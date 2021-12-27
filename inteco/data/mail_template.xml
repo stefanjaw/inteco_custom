@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!--Default Notification Email template in inteco-->
+    <record id="mail_template_data_notification_email_default" model="mail.template">
+        <field name="name">Inteco: Notification Email</field>
+        <field name="subject">${object.subject or (object.record_name and 'Re: %s' % object.record_name) or (object.parent_id and object.parent_id.subject and 'Re: %s' % object.parent_id.subject) or (object.parent_id and object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}</field>
+        <field name="model_id" ref="mail.model_mail_message"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html"><![CDATA[
+% set company = ctx.get('company', user.company_id)
+<div>
+% if ctx.get('has_button_access'):
+<div itemscope itemtype="http://schema.org/EmailMessage">
+    <div itemprop="potentialAction" itemscope itemtype="http://schema.org/ViewAction">
+        <link itemprop="target" href="${ctx['button_access']['url']}"/>
+        <link itemprop="url" href="${ctx['button_access']['url']}"/>
+        <meta itemprop="name" content="View ${ctx['model_name']}"/>
+    </div>
+</div>
+% endif
+% if not ctx['is_discussion'] or not len(ctx['actions']) == 0 or ctx.get('has_button_access'):
+<div summary="o_mail_notification" style="padding: 0px; width:600px;">
+<table cellspacing="0" cellpadding="0" border="0" style="width: 600px; margin-top: 5px;">
+<tbody><tr>
+    <td valign="center">
+        % if ctx.get('has_button_access'):
+        <a href="${ctx['button_access']['url']}" style="padding: 8px 12px; font-size: 12px; color: #FFFFFF; text-decoration: none !important; font-weight: 400; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">${ctx['button_access']['title']}</a>
+        % endif
+        % if ctx.get('has_button_follow'):
+        % if ctx.get('has_button_access'):
+           |
+        % endif
+        <a href="${ctx['button_follow']['url']}" style="color: #875A7B; text-decoration: none !important;">${ctx['button_follow']['title']}</a>
+        % elif ctx.get('has_button_unfollow'):
+        % if ctx.get('has_button_access'):
+           |
+        % endif
+        <a href="${ctx['button_unfollow']['url']}" style="color: #875A7B; text-decoration: none !important;">${ctx['button_unfollow']['title']}</a>
+        % endif
+        % if ctx.get('actions'):
+        % for action in ctx['actions']:
+        |
+        <a href="${action['url']}" style="color: #875A7B; text-decoration:none !important;">${action['title']}</a>
+        % endfor
+        % endif
+    </td>
+    <td valign="center" align="right">
+        <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; max-width: 80px; max-height: 40px;" alt="${company.name}">
+    </td>
+</tr>
+<tr>
+    <td colspan="2" style="text-align:center;">
+        <hr width="100%"
+            style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:10px 0;">
+        % if ctx.get('subtype') and ctx.get('subtype').internal:
+        <p style="background-color: #f2dede; padding: 5px; margin-bottom: 16px;">
+            <strong>Internal communication</strong>: Replying will post an internal note. Followers won't receive any email notification.
+        </p>
+        % endif
+    </td>
+</tr>
+</tbody></table>
+</div>
+% endif
+<div>
+    ${object.body | safe}
+</div>
+% if ctx.get('tracking'):
+    <ul>
+    % for tracking in ctx['tracking']
+        <li>${tracking[0]} : ${tracking[1]} -&gt; ${tracking[2]}</li>
+    % endfor
+    </ul>
+% endif
+% if ctx.get('signature'):
+    ${ctx['signature'] | safe}
+% endif
+<br/>
+<p style="color: #555555;">
+    Sent by
+    % if ctx.get('website_url'):
+    <a href="${ctx['website_url']}" style="text-decoration:none; color: #875A7B;">
+    % endif
+    ${ctx.get('company_name')}
+    % if ctx.get('website_url'):
+    </a>
+    % endif
+</p>
+</div>]]></field>
+    </record>
+    
+    <!--Default Notification Email template for sales in inteco-->
+    <record id="mail_template_data_notification_email_sale_order_2" model="mail.template">
+        <field name="name">Inteco: Sales Order Notification Email2</field>
+        <field name="subject">${object.subject}</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or user.company_id
+                ${company.website}
+                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
+                    <tbody>
+                        <!-- HEADER -->
+                        <tr>
+                            <td align="center" style="min-width: 590px;">
+                                <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px;">
+                                    <tr>
+                                        <td valign="middle">
+                                            <span style="font-size:20px; color:white; font-weight: bold;">
+                                                ${object.record_name}
+<!--                                                ${object.name}-->
+                                            </span>
+                                        </td>
+                                        <td valign="middle" align="right">
+                                            <img src="/logo.png?company=${object.company_id.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${object.company_id.name}"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- CONTENT -->
+                        <tr>
+                            <td align="center" style="min-width: 590px;">
+                                <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
+                                    <tbody>
+                                        <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
+                                            ${object.body | safe}
+                                        </td>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- FOOTER -->
+                        <tr>
+                            <td align="center" style="min-width: 590px;">
+                                <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px;">
+                                    <tr>
+                                        <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                            ${company.name}<br/>
+                                            ${company.phone or ''}
+                                        </td>
+                                        <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                            % if company.email:
+                                            <a href="mailto:${company.email}" style="text-decoration:none; color: white;">${company.email}</a><br/>
+                                            % endif
+                                            % if company.website:
+                                            <a href="${company.website}" style="text-decoration:none; color: white;">
+                                                ${company.website}
+                                            </a>
+                                            % endif
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </field>
+    </record>
+    
+    <!--Default Notification Email template for invoices in inteco-->
+    <record id="mail_template_data_notification_email_account_invoice" model="mail.template">
+        <field name="name">Inteco: Invoice notification header</field>
+        <field name="subject">${object.subject}</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html"><![CDATA[<html>
+<head></head>
+% set record = ctx.get('record')
+% set company = record and record.company_id or user.company_id
+<body style="margin: 0; padding: 0;">
+    <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed; border-collapse:separate;" summary="o_mail_notification">
+    <tbody>
+        <!-- HEADER -->
+        <tr>
+            <td align="center" style="min-width: 590px;">
+                <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;">
+                    <tr>
+                        <td valign="middle">
+                            <span style="font-size:20px; color:white; font-weight: bold;">
+                                Invoice ${object.record_name}
+                            </span>
+                        </td>
+                        <td valign="middle" align="right">
+                            <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}"/>
+                        </td>
+                    </tr>
+              </table>
+            </td>
+        </tr>
+        <!-- CONTENT -->
+        <tr>
+            <td align="center" style="min-width: 590px;">
+                <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;">
+                    <tbody>
+                        <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
+                            ${object.body | safe}
+                        </td>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <!-- FOOTER -->
+        <tr>
+            <td align="center" style="min-width: 590px;">
+                <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;">
+                    <tr>
+                        <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                            ${company.name}<br/>
+                            ${company.phone or ''}
+                        </td>
+                        <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                            % if company.email:
+                            <a href="mailto:${company.email}" style="text-decoration:none; color: white;">${company.email}</a><br/>
+                            % endif
+                            % if company.website:
+                            <a href="${company.website}" style="text-decoration:none; color: white;">
+                            ${company.website}
+                            </a>
+                            % endif
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
+]]></field>
+    </record>
+    
+    <record id="new_lead_received_email_template" model="mail.template">
+        <field name="name">New Lead Received</field>
+        <field name="email_from">${object.user_id.email_formatted | safe}</field>
+        <field name="subject">${object.name}</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="email_to">${(object.partner_id.email or object.email_from | safe)}</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html" type="xml">
+            <div class="or-email" style="font-family: sans-serif; font-size: 15px; color: #4A4A4A; padding: 10px; margin: 0 auto; min-width: 224px; max-width: 600px;">
+                <div class="or-header" style="margin: 0; padding: 0;">
+                    % set record = ctx.get('record')
+                    % set company = object.sudo().company_id or (record and record.sudo().company_id) or user.sudo().company_id
+                    <div class="or-logo" style="margin: 0; padding: 10px; text-align: center;">
+                        % set image = company.name.replace(' ', '').lower()
+                        <img src="/inteco/static/src/img/${image}.png" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}"/>
+                    </div>
+                </div>
+                <div class="or-content" style="margin: 0; padding: 10px; border-radius: 5px;">
+                    <p class="or-title or-text-big" style="margin: 10px 0; padding: 5px; border-radius: 5px; font-weight: 600; text-align: center; color: #171717; font-size: 22.5px;">
+                        Hello, ${object.sudo().partner_id.name or object.contact_name or 'Madam/Sir'}
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        Your request
+                        ${object.sudo().name}
+                        has been received and is being reviewed by our ${object.team_id.name or ''} team.
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        To add additional comments, reply to this email.
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        Thank you,
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        - ${object.team_id.name or 'Helpdesk'} Team.
+                    </p>
+                </div>
+                <div class="or-footer" style="margin: 0; padding: 0; font-size: 11.25px; color: #979797; margin-top: 15px;">
+                    <div class="or-separator" style="padding: 0; height: 1px; background-color: #979797; margin: 15px 0; border-radius: 5px; margin-top: 0;"></div>
+                    <table style="padding: 0; border: 0; width: 100%; margin: 10px 0; border-spacing: 0; font-size: 11.25px; color: #979797;" width="100%">
+                        <tbody style="margin: 0; padding: 0;">
+                            <tr style="margin: 0; padding: 0;">
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: left;" align="left">${company.name}</td>
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: right;" align="right">${company.phone or ''}</td>
+                            </tr>
+                            <tr style="margin: 0; padding: 0;">
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: left;" align="left">${company.email or ''}</td>
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: right;" align="right">${company.website or ''}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </field>
+    </record>
+    
+    <record id="new_complaint_received_email_template" model="mail.template">
+        <field name="name">New Complaint Received</field>
+        <field name="email_from">${object.user_id.email_formatted | safe}</field>
+        <field name="subject">${object.display_name}</field>
+        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+        <field name="email_to">${('' if object.partner_id and object.sudo().partner_id.email and object.sudo().partner_id.email==object.partner_email else object.partner_email|safe)}</field>
+        <field name="partner_to">${object.partner_id and object.sudo().partner_id.email and object.sudo().partner_id.email==object.partner_email and object.sudo().partner_id.id or False}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html" type="xml">
+            <div class="or-email" style="font-family: sans-serif; font-size: 15px; color: #4A4A4A; padding: 10px; margin: 0 auto; min-width: 224px; max-width: 600px;">
+                <div class="or-header" style="margin: 0; padding: 0;">
+                    % set record = ctx.get('record')
+                    % set company = object.sudo().company_id or (record and record.sudo().company_id) or user.sudo().company_id
+                    <div class="or-logo" style="margin: 0; padding: 10px; text-align: center;">
+                        % set image = company.name.replace(' ', '').lower()
+                        <img src="/inteco/static/src/img/${image}.png" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}"/>
+                    </div>
+                </div>
+                <div class="or-content" style="margin: 0; padding: 10px; border-radius: 5px;">
+                    <p class="or-title or-text-big" style="margin: 10px 0; padding: 5px; border-radius: 5px; font-weight: 600; text-align: center; color: #171717; font-size: 22.5px;">
+                        Hello, ${object.sudo().partner_id.name or object.contact_name or 'Madam/Sir'}
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        Your request
+                        % if object.access_token:
+                        <a href="/helpdesk/ticket/${object.id}/${object.access_token}">${object.name}</a>
+                        % endif
+                        has been received and is being reviewed by our ${object.team_id.name or ''} team.
+                        The reference of your ticket is ${object.id}.
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        To add additional comments, reply to this email.
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        Thank you,
+                    </p>
+                    <p class="or-text" style="padding: 0; margin: 15px 0;">
+                        - ${object.team_id.name or 'Helpdesk'} Team.
+                    </p>
+                </div>
+                <div class="or-footer" style="margin: 0; padding: 0; font-size: 11.25px; color: #979797; margin-top: 15px;">
+                    <div class="or-separator" style="padding: 0; height: 1px; background-color: #979797; margin: 15px 0; border-radius: 5px; margin-top: 0;"></div>
+                    <table style="padding: 0; border: 0; width: 100%; margin: 10px 0; border-spacing: 0; font-size: 11.25px; color: #979797;" width="100%">
+                        <tbody style="margin: 0; padding: 0;">
+                            <tr style="margin: 0; padding: 0;">
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: left;" align="left">${company.name}</td>
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: right;" align="right">${company.phone or ''}</td>
+                            </tr>
+                            <tr style="margin: 0; padding: 0;">
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: left;" align="left">${company.email or ''}</td>
+                                <td style="margin: 0; padding: 5px 0; border: 0; text-align: right;" align="right">${company.website or ''}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>

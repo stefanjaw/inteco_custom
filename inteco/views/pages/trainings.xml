@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="ctrainings" model="website.page">
+    <field name="name">Trainings</field>
+    <field name="url">/page/inteco.trainings</field>
+    <field name="website_published">True</field>
+    <field name="type">qweb</field>
+    <field name="key">inteco.trainings</field>
+    <field name="arch" type="xml">
+      <t t-name="inteco.trainings" name="Trainings">
+        <t t-call="website.layout">
+          <div id="wrap" class="oe_structure oe_empty">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <section class="s_text_block" style="text-align:justify">
+                    <div class="container">
+                      <h1>
+                        <font class="text-beta-intc" style="">Capacitaciones</font>
+                      </h1>
+                      <div class="row">
+                        <div class="col-md-12 mb16">
+                          <p>Fortalecimiento técnico y capacitación de recursos humanos que contribuyen a la mejora de la competitividad de las organizaciones, a través de la transferencia de conocimiento.</p>
+                          <h2>¿Por qué capacitarse con INTECO?</h2>
+                          <ul>
+                            <li>Más de 25 años de experiencia impartiendo cursos en la región sobre temas relacionados con la normalización técnica</li>
+                            <li>Conocimiento desde la fuente directa al ser miembros de ISO, lo que agrega valor a los conocimientos y las competencias de las personas participantes</li>
+                            <li>Personal altamente calificado y sometido a rigurosos criterios y evaluaciones</li>
+                            <li>Respaldo y seriedad del Instituto de Normalización Técnica</li>
+                            <li>Cursos reconocidos mundialmente</li>
+                          </ul>
+                          <p/>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 mb16">
+                          <h2>Tipos de capacitaciones</h2>
+                          <br/>
+                          <h4>Cursos Abiertos</h4>
+                          <p>Todos los cursos del Programa de Formación se imparten en modalidad presencial y se realizan en el lugar, las fechas y los horarios planificados. Además, a lo largo del año, se incorporan nuevas fechas y otras actividades de capacitación. Las fechas y los costos propuestos en el formulario pueden variar, recuerde consultar con anticipación la información de cada curso.</p>
+                          <p>
+                            <a href="/web/content/3502014" target="_blank" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                              <span class="graph-ripple" style="height: 213px; width: 213px; top: -88.5625px; left: 65px;"/>
+                              <span class="fa fa-download fa-1x" style=""/>
+                              <b>Catálogo de capacitaciones</b>
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 mb16" id="iqnet-academy">
+                          <h4>Capacitaciones en empresa (inhouse)</h4>
+                          <p>Todos nuestros cursos se pueden impartir en grupos exclusivos para su empresa, con la conveniencia de fechas y horarios que más se ajusten a sus operaciones. También, podemos complementar los temas según las necesidades de su organización.</p>
+                          <p>
+                            <a href="/contactus?alias=capacitaciones" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                              <span class="graph-ripple" style="height: 197px; width: 197px; top: -81.5625px; left: -56.3281px;"/>
+                              <b>Solicitar una capacitación</b>
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </t>
+
+    </field>
+  </record>
+</odoo>

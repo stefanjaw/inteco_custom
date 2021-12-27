@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inteco_product" inherit_id="website_sale.product" name="Inteco Product">
+        <xpath expr="//div[hasclass('row')][1]" position="after">
+            <t t-if="product.state != 'C'">
+                <t t-if="product.new_replaced_by">
+                    <div class="alert alert-info" role="alert">
+                        <strong>Attention!</strong> The current standard is:
+                        <a t-att-href="'/shop/product/%s?product=%s' % (slug(product.new_replaced_by), product.new_replaced_by.id)" class="alert-link">
+                            <small t-esc="product.new_replaced_by.default_code"/>
+                        </a>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[hasclass('col-md-6')]" position="replace">
+
+            <div class="col-sm-12">
+                <t t-if="'Accesibilidad' in product.committee_id.name or 'accesibilidad' in product.committee_id.name">
+                    <a href="https://drive.google.com/drive/folders/1wUJ9ADHaZNMxUSJ3Sl0tc5g-T8ArNah8?usp=sharing" target="_blank">
+                        <img style="padding-bottom: 10px;" src="https://www.inteco.org/web/image/1601837"/>
+                    </a>
+                </t>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="col-sm-10 mt8 mb8 page-header"><h2><strong><t t-esc="variant.default_code"/></strong></h2></div>
+
+                <!-- Iconos de descarga Normas gratuitas -->
+                <!-- Norma INTE/DN 05:2015 -->
+                <t t-if="'CNE-NA-INTE-DN 1:2015' in variant.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895588" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""/>
+                        </a>
+                    </div>
+                </t>
+
+                <!-- Norma INTE/DN 03:2016 -->
+                <t t-if="'INTE/DN 03:2016' in variant.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895676" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""/>
+                        </a>
+                    </div>
+                </t>
+
+                <!-- Norma INTE/DN 05:2017 -->
+                <t t-if="'INTE/DN 05:2017' in variant.default_code">
+                    <div class="col-sm-2">
+                        <a href="/web/content/2895677" target="_blank">
+                            <span class="pull-left mb16 fa fa-download fa-4x" style="" data-original-title="" title=""/>
+                        </a>
+                    </div>
+                </t>
+
+                <!-- Fin de Iconos de descarga Normas gratuitas -->
+
+                <div class="col-sm-12 mt8 mb8 main-text text-justify color-orange-intc"><h3><t t-esc="product.name"/></h3></div>
+            </div>
+            <div class="col-sm-12">
+                <t t-if="variant.confirmation_date">
+                    <div class="alert alert-info" role="alert">
+                        <span class="fa fa-check-square-o fa-2x"/> <strong>This standard was last reviewed and confirmed in <span t-field="variant.confirmation_date" t-field-options="{&quot;format&quot;: &quot;Y&quot;}"/>. Therefore this version remains current.</strong>
+                    </div>
+                </t>
+                <div class="col-sm-12 mt8 mb8"><h4><strong>Object and field of application</strong></h4></div>
+                <div class="col-sm-12 mt8 mb8 text-justify"><t t-esc="product.application_field"/></div>
+            </div>
+            <hr class="col-sm-12"/>
+            <div class="col-sm-12">
+                <div class="col-sm-12 mt8 mb8"><h4><strong>General information</strong></h4></div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Committee Code</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.committee_id.complete_name"/>&amp;nbsp;</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Committee Name</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.committee_id.name"/>&amp;nbsp;</div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Sector</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.sector_id.name"/>&amp;nbsp;</div>
+                </div>
+                <t t-if="product.ics_ids">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>ICS</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.ics_ids" t-as="ics"><t t-esc="ics.complete_name"/><t t-if="not ics_last">,</t> </t>&amp;nbsp;</div>
+                    </div>
+                </t>
+                <t t-if="product.correspondence_ids">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Correspondences</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.correspondence_ids" t-as="correspondence"><t t-esc="correspondence.name"/><t t-if="not correspondence_last">,</t> </t>&amp;nbsp;</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Organism</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-foreach="product.organism_ids" t-as="organism"><t t-esc="organism.name"/><t t-if="not organism_last">,</t> </t>&amp;nbsp;</div>
+                    </div>
+                </t>
+                <t t-if="product.edition">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Edition</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="product.edition"/>&amp;nbsp;</div>
+                    </div>
+                </t>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>Approval Date</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="variant.approval"/>&amp;nbsp;</div>
+                </div>
+                <t t-if="variant.pages">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Number of Pages</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="variant.pages"/>&amp;nbsp;</div>
+                    </div>
+                </t>
+                <div class="col-sm-6">
+                    <div class="col-sm-6 mt8 mb8 pull-left"><strong>State</strong></div>
+                    <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="dict(variant._fields['state']._description_selection(variant.env)).get(variant.state)"/>&amp;nbsp;</div>
+                </div>
+                <t t-if="variant.replaced_by">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Replaced by</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><a t-att-href="'/shop/product/%s?variant=%s' % (slug(product), variant.replaced_by.id)" class="alert-link"><small t-esc="variant.replaced_by.default_code"/></a>&amp;nbsp;</div>
+                    </div>
+                </t>
+                <t t-if="variant.previous_code">
+                    <div class="col-sm-6">
+                        <div class="col-sm-6 mt8 mb8 pull-left"><strong>Previous Code</strong></div>
+                        <div class="col-sm-6 mt8 mb8 pull-right"><t t-esc="variant.previous_code"/>&amp;nbsp;</div>
+                    </div>
+                </t>
+            </div>
+            <t t-if="variant.standards_ref">
+                <hr class="col-sm-12"/>
+                <div class="col-sm-12">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2 mt8 mb8 pull-left"><strong>Standards Reference</strong></div>
+                        <div class="col-sm-10 mt8 mb8 pull-right"><t t-esc="variant.standards_ref"/></div>
+                    </div>
+                </div>
+            </t>
+            <t t-if="product.history_norm">
+                <hr class="col-sm-12"/>
+                <div class="col-sm-12 mt16 mb8">
+                    <div class="col-sm-12">
+                        <p>
+                            <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#history" aria-expanded="false" aria-controls="history">
+                                View revision history <span class="caret"/>
+                            </button>
+                        </p>
+                        <div class="collapse" id="history">
+                            <div class="card card-body">
+                                <t t-foreach="product.history_norm" t-as="variant">
+                                    <a t-att-href="'/shop/product/%s?variant=%s' % (slug(variant), variant.id)">
+                                        <span class="fa fa-caret-right"/> <small class="mt8" t-esc="variant.default_code"/>
+                                    </a>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+
+        <!--        <xpath expr="//div[hasclass('col-md-6', 'col-xl-4', 'offset-xl-2')]" position="attributes">-->
+        <!--            <attribute name="style">display: none;</attribute>-->
+        <!--        </xpath>-->
+
+        <xpath expr="//ol/li/span[@t-field='product.name']" position="replace">
+            <span t-field="variant.default_code"/>
+        </xpath>
+
+        <xpath expr="//t/div/section/div[2]/div[@id='product_details']" position="replace">
+            <div></div>
+        </xpath>
+    </template>
+
+</odoo>

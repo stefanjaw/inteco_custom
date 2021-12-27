@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="pricing_inherited" inherit_id="sale.sale_order_portal_content" name="Inteco Custom Price">
+        <xpath expr="//h3[@id='details']" position="replace">
+            <h1 class="page-header">Ofert</h1>
+        </xpath>
+        <xpath expr="//table/thead/tr/th[5]" position="replace">
+            <th class="text-right"><span t-if="sale_order.order_line.filtered('payment_date')">Estimated payment date</span></th>
+        </xpath>
+        <xpath expr="//table/tbody/t[2]/tr/t/td[5]" position="replace">
+            <td class="text-right">
+                <t t-if="sale_order.order_line.filtered('payment_date') and not line.payment_date">N/A</t>
+                <span t-field="line.payment_date" t-field-options='{"format": "MMMM Y"}'/>
+            </td>
+        </xpath>
+        <xpath expr="//section[@id='terms']" position="before">
+            <section id="terms" class="container" t-if="sale_order.conditions">
+                <h2 class="page-header">Acceptance of technical and economic conditions</h2>
+                <span t-field="sale_order.conditions"/>
+            </section>
+        </xpath>
+    </template>
+    <template id="so_quotation_inherited" inherit_id="sale.sale_order_portal_template" name="Inteco Custom Product Quotation">
+        <xpath expr="//div[@id='quote_content']/div[@id='modalaccept']/div/form/header/h4" position="replace">
+            <img src="/inteco/static/src/img/white_logo.png" alt="Inteco Logo" width="30%"/>
+        </xpath>
+        <xpath expr="//div[@id='quote_content']/div[@id='modaldecline']/div/form/header/h4" position="replace">
+            <img src="/inteco/static/src/img/white_logo.png" alt="Inteco Logo" width="30%"/>
+        </xpath>
+    </template>
+</odoo>

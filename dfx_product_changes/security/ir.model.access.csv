@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_key_words,Palabras Clave,model_prod_key_words,base.group_user,1,1,1,1
+access_new_edition_manager,Nueva Edicion,model_new_product_new_edition,stock.group_stock_manager,1,1,1,1
+access_new_edition_user,Nueva Edicion,model_new_product_new_edition,stock.group_stock_user,1,0,0,0
+access_new_enm_manager,Nueva ENM,model_new_product_enm_variant,stock.group_stock_manager,1,1,1,1
+access_new_enm_user,Nueva ENM,model_new_product_enm_variant,stock.group_stock_user,1,0,0,0
+access_new_confirm_manager,Nueva Confirm,model_new_product_confirm,stock.group_stock_manager,1,1,1,1
+access_new_confirm_user,Nueva Confirm,model_new_product_confirm,stock.group_stock_user,1,0,0,0
+access_new_cor_manager,Nueva Cor,model_new_product_use_variant,stock.group_stock_manager,1,1,1,1
+access_new_cor_user,Nueva Cor,model_new_product_use_variant,stock.group_stock_user,1,0,0,0

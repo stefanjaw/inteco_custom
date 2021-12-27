@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="ccertifications_products" model="website.page">
+    <field name="name">Products Certifications</field>
+    <field name="url">/page/inteco.certifications_products</field>
+    <field name="website_published">True</field>
+    <field name="type">qweb</field>
+    <field name="key">inteco.certifications_products</field>
+    <field name="arch" type="xml">
+      <t t-name="inteco.certifications_products" name="Products Certifications">
+        <t t-set="certs_products" t-value="True"/>
+        <t t-set="hatband_certifications" t-value="True"/>
+        <t t-call="website.layout">
+          <style>
+            .nav-pills li {
+            width:25%
+            }
+            .nav-pills a {
+            color: black
+            }
+          </style>
+          <div id="wrap" class="oe_structure oe_empty">
+            <section class="s_text_block">
+              <div class="container">
+                <h1 class="text-beta-intc">Certificación de Productos, Procesos y Servicios</h1>
+              </div>
+            </section>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 mt32 mb16">
+                  <section class="s_text_block">
+                    <div class="container">
+                      <!--<img class="img img-rounded img-responsive" src="/inteco/static/src/img/certificaciones_productos.jpg" alt="Certificacion de Productos" data-original-title="" title="" style="width: 90%;"/><br/>-->
+                      <p style="text-align:justify">Debido a la necesidad de las empresas por validar y verificar la conformidad de sus productos, estimuladas por los tratados de libre comercio, la globalización y la creciente exigencia de los consumidores, es que INTECO —como un organismo de tercera parte— brinda el servicio de certificación de productos, procesos o servicios, por medio de una evaluación que contempla los métodos de ensayo previamente establecidos. Esto nos permite dar constancia de que se cumple con los requisitos establecidos en normas de referencia, especificaciones técnicas, reglamentos u otros documentos normativos o contractuales.</p>
+                      <br></br>
+                      <h3>Beneficios de la certificación</h3>
+                      <ul>
+                        <li>Brinda confianza a los clientes.</li>
+                        <li>Representa una mayor confianza y valor agregado para el cliente.</li>
+                        <li>Facilita la comercialización de los productos.</li>
+                        <li>Obtiene una optimización de recursos al contar con un mayor control del proceso mediante el sistema de trazabilidad puesto en funcionamiento.</li>
+                        <li>Normaliza la calidad del producto.</li>
+                        <li>Instrumento de mercadeo y difusión.</li>
+                      </ul>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+
+                  <div class="row" style="background-color:#eee">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+
+                      <li class="active">
+                        <a class="active show" href="#muestras" aria-controls="muestras" data-toggle="tab" role="tab" style="cursor:pointer">
+                          <div class="box-part text-center">
+
+                            <div class="box-title" style="height: 115px;max-height: 115px;">
+                              <span>Certificación de Muestras</span>
+                            </div>
+
+                            <div class="box-text">
+                              <span>Producto, procesos y servicios</span>
+                            </div>
+
+                            <div class="box-line pps">
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#lotes" aria-controls="lotes" data-toggle="tab" role="tab" style="cursor:pointer">
+                          <div class="box-part text-center">
+
+                            <div class="box-title" style="height: 115px;max-height: 115px;">
+                              <span>Certificación de Lotes</span>
+                            </div>
+
+                            <div class="box-text">
+                              <span>Producto, procesos y servicios</span>
+                            </div>
+
+                            <div class="box-line pps">
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#conformidad" aria-controls="conformidad" data-toggle="tab" role="tab" style="cursor:pointer">
+                          <div class="box-part text-center">
+
+                            <div class="box-title" style="height: 115px;max-height: 115px;">
+                              <span>Certificación de Marcas de Conformidad en Calidad, Eficiencia Energética, Seguridad Eléctrica, entre otras</span>
+                            </div>
+
+                            <div class="box-text">
+                              <span>Producto, procesos y servicios</span>
+                            </div>
+
+                            <div class="box-line pps">
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#reset" aria-controls="reset" data-toggle="tab" role="tab" style="cursor:pointer">
+                          <div class="box-part text-center">
+
+                            <div class="box-title" style="height: 115px;max-height: 115px;">
+                              <span>Construcción sostenible RESET</span>
+                            </div>
+
+                            <div class="box-text">
+                              <span>Producto, procesos y servicios</span>
+                            </div>
+
+                            <div class="box-line pps">
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="muestras">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mt32 mb16">
+                      <section class="s_text_block">
+                        <div class="container">
+                          <h3>Certificación de Muestras</h3>
+                          <p>Se certifica, mediante la ejecución de ensayos, el cumplimiento de una muestra de producto con respecto a documentos normativos o especificaciones previamente pactadas entre el proveedor y el cliente.</p>
+                          <p>Los resultados obtenidos no implican juicio sobre muestras diferentes a las analizadas, ni tampoco sobre lotes del mismo producto que posteriormente fabrique la empresa.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="lotes">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mt32 mb16">
+                      <section class="s_text_block">
+                        <div class="container">
+                          <h3>Certificación de Lotes</h3>
+                          <p>Se certifica, mediante la ejecución de ensayos realizados sobre muestras extraídas del lote a inspeccionar, el cumplimiento de uno o varios lotes de producto con respecto a normas técnicas o especificaciones previamente pactadas entre el proveedor y el cliente, de acuerdo con un plan de muestreo establecido.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="conformidad">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mt32 mb16">
+                      <section class="s_text_block">
+                        <div class="container">
+                          <h3>Certificación de Marcas de Conformidad en Calidad, Eficiencia Energética, Seguridad Eléctrica, entre otras</h3>
+                          <p>Corresponde a una evaluación paralela del producto y del sistema de calidad, mediante la ejecución de métodos de ensayo y auditorías que verifican la conformidad del sistema periódicamente para satisfacer los procedimientos respectivos.</p>
+                          <p>Este modelo de certificación le permite al beneficiario colocar sobre sus productos la marca (logo) otorgada por la entidad de certificación.</p>
+
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="reset">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mt32 mb16">
+                      <section class="s_text_block">
+                        <div class="container">
+                          <h3>Construcción sostenible RESET</h3>
+                          <p>Esta certificación busca que las nuevas edificaciones que se construyan en las zonas del trópico sean declaradas como sostenibles tomando en cuenta requisitos ambientales, sociales y económicos, para así impulsar la unión entre la naturaleza y el desarrollo sostenible.</p>
+                          <p>Entre los requisitos que se deben cumplir para obtener la certificación está tener una cobertura de inclusión social, trato justo y seguridad a los trabajadores y ocupantes del edificio; seguir criterios para la minimización de riesgos, aprovechamiento y explotación de la infraestructura existente. Además, evalúa la conservación del patrimonio cultural y biológico del medioambiente en donde se construirá el inmueble.</p>
+                          <p>RESET analiza elementos del lugar del proyecto, tales como información genética, biodiversidad existente y medidas propuestas para su conservación y desarrollo. Así mismo, se privilegia el uso de materiales de construcción de la zona, la optimización de los recursos a través de un diseño eficiente y la escogencia de materiales de baja huella ecológica, así como estrategias de recuperación de materiales existentes en el sitio y el adecuado manejo de los residuos producidos en la construcción, entre otros.</p>
+                          <p>La certificación abarca el diseño de las obras, así como los procesos de construcción, operación, mantenimiento y remodelación del proyecto constructivo.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!--
+            <section class="s_text_block mt32 mb4">
+              <div class="container">
+                <h2 class="text-center">Propósitos fundamentales de la certificación de producto</h2>
+                <div class="row">
+                  <br/>
+                </div>
+              </div>
+            </section>
+            <section class="s_features mt0 mb8">
+              <div class="container">
+                <div class="row mt16 mb16">
+                  <div class="col-md-4 text-center">
+                    <span class="fa fa-heart fa-5x" data-original-title="" title="" style=""/>
+                    <h3 class="mt8 mb16">Confianza</h3>
+                    <p class="text-muted">Poner fin a las preocupaciones de los consumidores, usuarios y, en forma más general, a todas las partes interesadas, infundiendo confianza por el cumplimiento de requisitos.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <span class="fa fa-flag fa-5x" style=""/>
+                    <h3 class="mb16 mt8">Mercadeo</h3>
+                    <p class="text-muted">Ser utilizada por los proveedores para demostrar al mercado la participación de la tercera parte.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <span class="fa fa-leaf fa-5x" data-original-title="" title="" style=""/>
+                    <h3 class="mb16 mt8">Optimización de recursos<br/></h3>
+                    <p class="text-muted">No requerir recursos excesivos que resulten en costos de producto más elevados de los que las partes interesadas están dispuestas a pagar.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="s_text_block mb8">
+              <div class="container">
+                <h2 class="text-center">Servicios</h2>
+                <div class="row">
+                  <br/>
+                </div>
+              </div>
+            </section>
+            <section class="s_feature_grid mb64">
+              <div class="container">
+                <div class="row mb16">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc" data-original-title="" title=""/>
+                      <h4 class="col-md-10 mb16 mt0">Certificación de muestras (Sistema Nº 1 de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>Servicio por medio del cual INTECO certifica mediante ejecución de ensayos el cumplimiento de una muestra de producto con respecto a documentos normativos o especificaciones previamente pactadas entre el proveedor y el cliente. Los resultados obtenidos no implican juicio sobre muestras diferentes a las analizadas, ni tampoco sobre lotes del mismo producto que posteriormente fabrique la empresa.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc" data-original-title="" title=""/>
+                      <h4 class="col-md-10 mt0 mb16">La Marca de Conformidad de INTECO (Sistema Nº 5 de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>A diferencia de la certificación de muestra y lotes, la Marca de Conformidad corresponde a una evaluación paralela del producto y del sistema de calidad, mediante la ejecución de métodos de ensayo y auditorías que verifican la conformidad del sistema periódicamente para satisfacer los procedimientos respectivos. Este modelo de certificación le permite al beneficiario colocar sobre sus productos la Marca (logo) otorgada por la entidad de certificación. La Marca de Conformidad de INTECO también representa una excelente herramienta de preparación, para aquellas empresas que estén dispuestas a una certificación de su Sistema de Gestión de la calidad –ISO 9001-.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb16">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc"/>
+                      <h4 class="col-md-10 mt0 mb16">Certificación del Proceso Constructivo de Proyectos de Vivienda (Sistema Nº 6 de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>Este tipo de Certificación es aplicado para Procesos Constructivos de Proyectos de Vivienda, mayores a 5 unidades, siempre y cuando se cumplan los requisitos establecidos en el documento normativo R24-PGDP-01. Los Proyectos se dividen dos categorías: *Urbanísticos (Obras de infraestructura), correspondiente al Sello del Proceso de Construcción Urbanística. *Residencias, correspondiente al Sello de Proceso de Construcción de Residencias. Lo anterior también aplica para conjuntos residenciales, condominios horizontales o urbanizaciones. Los Sellos de Calidad serán otorgados por categoría y por proyecto según cumplan con los requisitos contenidos en el presente documento.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc" data-original-title="" title=""/>
+                      <h4 class="col-md-10 mt0 mb16">Certificación del Proceso de Inversión y Administración de Riesgos Operativos y Financieros de los Fondos Administrados por las Entidades Reguladas por SUPEN: (Sistema Nº 6 de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>Este tipo de Certificación podrá ser aplicada únicamente para las Entidades reguladas por la SUPEN y que demuestren la aplicación de la norma INTE 30-01-01-08. El objetivo de esta certificación es garantizar la transparencia y disminuir el riesgo de las inversiones realizadas por las Entidades reguladas por la SUPEN. El principal beneficio para las organizaciones que obtengan la certificación, es el otorgar confianza a sus clientes y usuarios sobre sus procesos de inversión.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb16">
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc" data-original-title="" title=""/>
+                      <h4 class="col-md-10 mt0 mb16">Certificación de Lámparas Fluorescentes Compactas (Sistema Nº 2 de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>Servicio en el que aplica el ensayo/prueba y la vigilancia en el mercado. Este servicio se utiliza para la certificación de Eficiencia Energética en los productos y le permite al beneficiario colocar en los productos certificados una marca de conformidad de Producto.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-12">
+                      <span style="min-width: 45px" class="col-md-1 pull-left mt8 mb32 fa fa-bookmark fa-2x text-alpha color-orange-intc" data-original-title="" title=""/>
+                      <h4 class="col-md-10 mt0 mb16">Certificación de lote (Sistema otros de la ISO)</h4>
+                    </div>
+                    <div class="col-md-12">
+                      <p>Servicio por medio del cual INTECO certifica mediante ejecución de ensayos realizados sobre muestras extraídas del lote a inspeccionar, el cumplimiento de uno o varios lotes de producto con respecto a una(s) norma(s) técnica(s) o especificaciones previamente pactadas entre el proveedor y el cliente, de acuerdo a un plan de muestreo establecido.</p>
+                      <p class="text-center">
+                        <a href="https://www.inteco.org/contactus?alias=cotizacion" target="_parent" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                          <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                          <b data-original-title="" title="">Solicitar una certificación</b>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            -->
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+</odoo>

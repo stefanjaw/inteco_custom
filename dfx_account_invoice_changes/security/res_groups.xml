@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="make_nc_nd" model="res.groups">
+        <field name="name">Realizar NC/ND</field>
+        <field name="implied_ids" eval="[(4, ref('account.group_account_invoice'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+    
+    <record model="ir.module.category" id="module_cxc_fac">
+        <field name="name">Cuentas por Cobrar</field>
+        <field name="description">User access level for this module</field>
+        <field name="sequence">20</field>
+    </record>
+    
+    <record id="CxP_group" model="res.groups">
+        <field name="name">Revisar Estado de facturas</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="dfx_account_invoice_changes.module_cxc_fac"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+</odoo>

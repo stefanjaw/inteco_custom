@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.module.category" id="module_categ_prod">
+		<field name="name">PRODUCTOS, INVENTARIOS, ENTRE OTROS</field>
+		<field name="description">User access level for this module</field>
+		<field name="sequence">8</field>
+	</record>
+
+	<record id="norm_group" model="res.groups">
+		<field name="name">Normalización</field>
+		<field name="comment">Categoría visible: All / Saleable / Standards y All / Saleable / Standardization</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+
+    <record id="serv_evac_group" model="res.groups">
+		<field name="name">Servicios de Evaluación</field>
+		<field name="comment">Categoría visible: All / Saleable / Certifications</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+
+	<record id="afil_group" model="res.groups">
+		<field name="name">Afiliados</field>
+		<field name="comment">Categoría visible: All / Saleable / Afiliación</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+
+    <record id="event_group" model="res.groups">
+		<field name="name">Eventos</field>
+		<field name="comment">Categoría visible: All / Saleable / Events</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+
+    <record id="formac_group" model="res.groups">
+		<field name="name">Formación</field>
+		<field name="comment">Categoría visible: All / Saleable / Trainings</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+
+    <record id="idl_group" model="res.groups">
+		<field name="name">i+d+l</field>
+		<field name="comment">Categoría visible: All/Saleable/i+d+i</field>
+		<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		<field name="category_id" ref="dfx_product_changes.module_categ_prod"/>
+	</record>
+</odoo>

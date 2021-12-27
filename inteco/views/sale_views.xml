@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Form View -->
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority" eval="110"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook/page/field/form/group/group[2]/label[@for='customer_lead']" position="replace">
+                <label for="payment_date"/>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page/field/form/group/group[2]/div" position="replace">
+                <div>
+                    <field name="payment_date" class="oe_inline"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='note']" position="after">
+                <field name="conditions"/>
+            </xpath>
+        </field>
+    </record>
+
+<!--    <record id="norm_product_action" model="ir.actions.act_window">-->
+<!--        <field name="name">Norms Catalog</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">product.template</field>-->
+<!--        <field name="view_mode">kanban,tree,form</field>-->
+<!--        <field name="view_type">form</field>-->
+<!--        <field name="view_id" ref="product.product_template_kanban_view"/>-->
+<!--        <field name="domain" eval="[('categ_id', '=', ref('inteco.product_category_1_1'))]"/>-->
+<!--        <field name="context" eval="'{\'default_categ_id\':'+str(ref('inteco.product_category_1_1'))+'}'"/>-->
+<!--    </record>-->
+
+<!--    <menuitem id="menu_norm_catalog"-->
+<!--        name="Norms Catalog"-->
+<!--        action="norm_product_action"-->
+<!--        parent="sale.sale_menu_root"-->
+<!--        sequence="4"-->
+<!--        groups="inteco.group_normalizer_user"/>-->
+
+    <record model="ir.ui.view" id="estimated_income_graph">
+        <field name="name">estimated.income.graph</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <graph string="Estimated Income">
+                <field name="payment_date" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="estimated_income_category_graph">
+        <field name="name">estimated.income.category.graph</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <graph string="Estimated Income">
+                <field name="category_name" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="estimated_income_reference_graph">
+        <field name="name">estimated.income.reference.graph</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <graph string="Estimated Income">
+                <field name="product_default_code" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="estimated_income_pivot">
+        <field name="name">estimated.income.pivot</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Estimated Income" disable_linking="True">
+                <field name="payment_date" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="estimated_income_category_pivot">
+        <field name="name">estimated.income.category.pivot</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Estimated Income" disable_linking="True">
+                <field name="category_name" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="estimated_income_reference_pivot">
+        <field name="name">estimated.income.reference.pivot</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Estimated Income" disable_linking="True">
+                <field name="product_default_code" type="row"/>
+                <field name="price_subtotal" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+</odoo>

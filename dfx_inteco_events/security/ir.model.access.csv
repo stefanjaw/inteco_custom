@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_platf_manager,event.platform,model_event_platform,event.group_event_manager,1,1,1,1
+access_plat,event.platform,model_event_platform,event.group_event_user,1,0,0,0
+access_org_manager,event.organizer,model_event_organizer,event.group_event_manager,1,1,1,1
+access_org,event.organizer,model_event_organizer,event.group_event_user,1,0,0,0
+access_org_event,event.organizer,model_event_organizer,base.group_portal,1,0,0,0
+access_plat_event,event.platform,model_event_platform,base.group_portal,1,0,0,0
+access_org_event_public,event.organizer,model_event_organizer,base.group_public,1,0,0,0
+access_plat_event_public,event.platform,model_event_platform,base.group_public,1,0,0,0
+
+access_comer_manager,event.comertial,model_event_comertial,event.group_event_manager,1,1,1,1
+access_comer_user,event.comertial,model_event_comertial,event.group_event_user,1,0,0,0
+access_comer_event_public,event.comertial,model_event_comertial,base.group_public,1,0,0,0
+access_comer_event_portal,event.comertial,model_event_comertial,base.group_portal,1,0,0,0
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="view_attachment_form_watermark" model="ir.ui.view">
+            <field name="name">view.attachment.form.watermark</field>
+            <field name="model">ir.attachment</field>
+            <field name="inherit_id" ref="base.view_attachment_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="watermark"/>
+                </xpath>
+                
+            </field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,49 @@
+<odoo>
+
+    <template id="report_watermark_2">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+
+                <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+
+                <div class="header">
+                </div>
+
+                <div class="page">
+                    <p>&amp;nbsp;</p>
+                </div>
+
+                <div class="footer text-muted">
+
+                    <t t-if="docs._context.get('free_download')">
+                        <p style="width: 800px; margin: 0 auto; padding-top: 25px; padding-left: 30px; text-align: center; font-size:12px;">
+                            INTECO AUTORIZA LA DESCARGA GRATUITA DE ESTA NORMA NACIONAL.
+                            <br/>
+                            SE PROHÍBE LA REPRODUCCIÓN, COMERCIALIZACIÓN, USO O COLOCACIÓN EN OTROS SITIOS WEB DISTINTOS AL DE INTECO.
+                        </p>
+                    </t>
+
+                    <t t-if="not docs._context.get('free_download')">
+                        <p style="width: 800px; margin: 0 auto; padding-top: 25px; padding-left: 30px; text-align: center; font-size:12px; text-transform: uppercase;">
+                            INTECO AUTORIZA EL USO DE ESTE DOCUMENTO A <span t-field="doc.authorize_document"/>, <span t-field="doc.watermark_email"/>
+                            <br/>
+                            VENDIDA EN LA FECHA DEL <span t-field="doc.date_order"/>
+                            <br/>
+                            SE PROHÍBE LA REPRODUCCIÓN, COMERCIALIZACIÓN, USO O COLOCACIÓN EN OTROS SITIOS WEB DISTINTOS AL DE INTECO.
+                        </p>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="action_report_watermark_2"
+            string="Watermark"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="dfx_website_sale_digital.report_watermark_2"
+            name="dfx_website_sale_digital.report_watermark_2"
+    />
+
+</odoo>

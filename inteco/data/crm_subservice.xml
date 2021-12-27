@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo noupdate="1">
+    <!--Trainings-->
+    <record id="open_course" model="crm.subservice">
+        <field name="name">Open Course</field>
+        <field name="crm_team_id" ref="inteco.team_trainings_department"/>
+    </record>
+    <record id="course_in_company" model="crm.subservice">
+        <field name="name">Course in Company</field>
+        <field name="crm_team_id" ref="inteco.team_trainings_department"/>
+    </record>
+    <!--Standards-->
+    <record id="sale_of_standards" model="crm.subservice">
+        <field name="name">Sale of standards</field>
+        <field name="crm_team_id" ref="inteco.team_standards_department"/>
+    </record>
+    <record id="development_of_standards" model="crm.subservice">
+        <field name="name">Development of standards</field>
+        <field name="crm_team_id" ref="inteco.team_standards_department"/>
+    </record>
+    <record id="equivalence_of_standards" model="crm.subservice">
+        <field name="name">Equivalence of standards</field>
+        <field name="crm_team_id" ref="inteco.team_standards_department"/>
+    </record>
+    <record id="other_standard" model="crm.subservice">
+        <field name="name">Other</field>
+        <field name="crm_team_id" ref="inteco.team_standards_department"/>
+    </record>
+    <!--Certifications-->
+    <record id="iso_nine_thousand_one" model="crm.subservice">
+        <field name="name">ISO 9001</field>
+        <field name="crm_team_id" ref="sales_team.team_sales_department"/>
+    </record>
+    <record id="iso_fourteen_thousand_one" model="crm.subservice">
+        <field name="name">ISO 14001</field>
+        <field name="crm_team_id" ref="sales_team.team_sales_department"/>
+    </record>
+    <record id="iso_twenty_seven_thousand_one" model="crm.subservice">
+        <field name="name">ISO 27001</field>
+        <field name="crm_team_id" ref="sales_team.team_sales_department"/>
+    </record>
+    <record id="other_iso" model="crm.subservice">
+        <field name="name">Other</field>
+        <field name="crm_team_id" ref="sales_team.team_sales_department"/>
+    </record>
+    <!--General-->
+    <record id="general_subservice" model="crm.subservice">
+        <field name="name">General</field>
+        <field name="crm_team_id" ref="inteco.team_general_department"/>
+    </record>
+</odoo>

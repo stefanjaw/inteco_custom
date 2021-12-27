@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ics_form_view" model="ir.ui.view">
+        <field name="name">ics.form.view</field>
+        <field name="model">inteco.ics</field>
+        <field name="arch" type="xml">
+            <form string="Ics">
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1><field name="name"/></h1>
+                </div>
+                <group>
+                    <field name="code"/>
+                    <field name="parent_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="ics_tree_view" model="ir.ui.view">
+        <field name="name">ics.tree.view</field>
+        <field name="model">inteco.ics</field>
+        <field name="arch" type="xml">
+            <tree string="Ics">
+                <field name="complete_name" string="Code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="ics_view_filter" model="ir.ui.view">
+        <field name="name">ics.code.select</field>
+        <field name="model">inteco.ics</field>
+        <field name="arch" type="xml">
+            <search string="Search Ics">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="complete_name" string="Code" filter_domain="[('complete_name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

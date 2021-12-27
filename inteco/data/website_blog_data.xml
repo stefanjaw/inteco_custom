@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="recent_news" model="blog.blog">
+        <field name="name">Recent News</field>
+        <field name="subtitle">Keep up with the news at the moment</field>
+    </record>
+
+    <!-- TAGS -->
+    <record id="blog_tag_1" model="blog.tag">
+        <field name="name">normalizaci&#243;n</field>
+    </record>
+
+    <!-- POSTS -->
+    <record id="blog_post_1" model="blog.post">
+        <field name="name">Una norma en revisi&#243;n</field>
+        <field name="blog_id" ref="website_blog.blog_blog_1"/>
+        <field name="author_id" ref="inteco.inteco_partner_001" />
+        <field name="tag_ids" eval="[(6, 0, [ref('blog_tag_1')])]"/>
+        <field name="is_published" eval="True"/>
+        <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+<!--        <field name="website_meta_keywords">ISO, normas</field>-->
+        <field name="subtitle">Una norma en revisi&#243;n</field>
+        <field name="content"><![CDATA[
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                Una norma en revisión
+            </p><p>
+                ¿Sabías que la ISO 22000 está en revisión
+                internacional? Se trata de la norma que define los
+                requisitos de un sistema de gestión de seguridad
+                alimentaria para asegurar la inocuidad de los
+                alimentos en toda la cadena alimentaria.
+            </p><p>
+                En dicha revisión participan más de 60 países de
+                todas partes del mundo. Este proceso se inició desde
+                mayo del 2015 y su objetivo es actualizar la norma
+                que fue publicada en el año 2005. Las normas deben
+                responder las necesidades actuales y ser motores de
+                competitividad; esto mismo sucedió con ISO 9001, ISO
+                14001 y ahora es el turno de ISO 22000.
+            </p><p>
+                Otro aspecto que tal vez no sabías es que Costa Rica
+                es parte de este proceso de actualización, lo que
+                significa que somos uno de los 60 países con voz y
+                con voto, convirtiéndonos en colaboradores autores
+                de la futura norma.
+            </p><p>
+                En este momento la norma está cerca del proceso de
+                consulta pública para los miembros de la ISO, por lo
+                que te sugerimos estar atentos a nuestras informaciones
+                para conocer detalles del resultado de la votación
+                de la norma así como de sus borradores.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                Más información sobre esta norma <a href="http://www.iso.org/iso/home/standards/management-standards/iso22000.htm">aquí</a>
+                y sobre la revisión que comenté en <a href="http://www.iso.org/iso/home/standards/management-standards/iso22000/iso22000_revision.htm">este</a>
+                enlace.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+]]>
+        </field>
+    </record>
+
+    <record id="blog_post_2" model="blog.post">
+        <field name="name">La norma 27001 y su importancia en seguridad de la informaci&#243;n IT</field>
+        <field name="subtitle">Alexandra Rodr&#237;guez, directora Normalizaci&#243;n INTECO</field>
+        <field name="blog_id" ref="website_blog.blog_blog_1"/>
+        <field name="author_id" ref="inteco.inteco_partner_002" />
+        <field name="tag_ids" eval="[(6, 0, [ref('blog_tag_1')])]"/>
+        <field name="website_published" eval="True"/>
+        <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="website_meta_keywords">ISO, normas</field>
+        <field name="website_meta_description">La norma 27001 y su importancia en seguridad de la informaci&#243;n IT</field>
+        <field name="content"><![CDATA[
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                En los últimos años ha sido un objetivo de estrategia
+                empresarial el integrar la Gestión de la Calidad, el
+                medio ambiente y la seguridad y salud en el trabajo.
+                Cuando  estos objetivos se han alcanzado, entran en
+                escena otros aspectos a tratar y que se están
+                convirtiendo en puntos clave para los modelos de
+                negocio actuales.
+            </p><p>
+                Cada vez toma más importancia la gestión de riesgos
+                como base para la toma de decisiones. Entre  los
+                diferentes aspectos a considerar  está la
+                <b>información;</b> es decir, todos aquellos datos
+                que desde algún punto de vista se considera necesario
+                <b>controlar</b>, ya sea por obligación legislativa,
+                por interés de terceros o bien por ser esenciales
+                para la actividad y estrategia de la organización.
+            </p><p>
+                <b>La información es un activo valioso que puede
+                impulsar o destruir una organización.</b> La
+                defensa de este activo es una tarea esencial para
+                asegurar la continuidad y la sostenibilidad del negocio,
+                así como también es una exigencia legal (protección de
+                la propiedad intelectual, protección de datos personales,
+                servicios para la sociedad de la información), y además
+                genera confianza a los clientes y/o usuarios.
+            </p><p>
+                Esto es especialmente importante en ambientes de
+                negocio cada vez más interconectados, pues, la
+                información está ahora expuesta a un número mayor
+                y a una variedad más amplia de amenazas y
+                vulnerabilidades. Cuanto mayor es el valor de la
+                información, mayores son los riesgos asociados a
+                su pérdida, deterioro, manipulación indebida o
+                malintencionada.
+            </p><p>
+                <b>El incremento de la cantidad de incidentes de
+                seguridad de la información a nivel de las
+                organizaciones, que afectan la operación y
+                continuidad de negocio de las mismas, con
+                impacto a nivel económico, legal y de imagen;
+                hacen que sea necesario la implantación de un
+                Sistema de Gestión de la Seguridad de la
+                Información (SGSI).</b>
+            </p><p>
+                Mediante el uso de la <b>familia de normas
+                INTE/ISO/IEC 27000</b> las organizaciones pueden
+                desarrollar e implantar un marco para la gestión de
+                la seguridad de sus activos de información,
+                incluyendo información financiera, propiedad
+                intelectual y detalles de sus empleados, o
+                información confiada a la organización por sus
+                clientes o terceras partes. Estas normas también
+                pueden ser utilizadas para prepararse para una
+                evaluación independiente de sus SGSI aplicada a la
+                protección de la información.
+            </p><p>
+                Mejorar los aspectos relacionados con la seguridad
+                de la información, proveer confianza a sus clientes
+                o socios, son algunos de los motivos por los cuales
+                las organizaciones deciden adoptar normas de seguridad
+                y la implementación de un SGSI. La gestión de la
+                Seguridad de la Información ofrece la libertad para
+                crecer, innovar y ampliar la base de clientes sabiendo
+                que toda la información confidencial seguirá siéndolo.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <h3>
+                Beneficios de la norma INTE/ISO/IEC 27001 de Gestión de la Seguridad de la Información
+            </h3>
+            <ul>
+                <li>Identificar los riesgos y establecer controles para gestionarlos o eliminarlos</li>
+                <li>Confidencialidad, asegurando que sólo quienes estén autorizados puedan acceder a la información</li>
+                <li>Flexibilidad para adaptar los controles a todas las áreas de su empresa o solo a algunas seleccionadas</li>
+                <li>Conseguir que las partes interesadas y los clientes confíen en la protección de los datos</li>
+                <li>Demostrar conformidad y conseguir el estatus de proveedor preferente</li>
+                <li>Alcanzar las expectativas demostrando conformidad</li>
+             </ul>
+        </div>
+    </div>
+</div>
+</section>
+]]>
+        </field>
+    </record>
+
+    <!-- Recent News -->
+
+    <record id="news_post_1" model="blog.post">
+        <field name="name">INTECO  unific&#243;  requisitos de respuesta ante emergencias para centros de trabajo y sitios públicos</field>
+        <field name="blog_id" ref="recent_news"/>
+        <field name="author_id" ref="base.main_partner" />
+        <field name="website_published" eval="True"/>
+        <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content"><![CDATA[
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p><strong>
+                    <ul>
+                        <li>
+                            Gobierno decretó cumplimiento obligatorio de
+                            dicho documento normativo.
+                        </li>
+                        <li>
+                            CNE trabaja en divulgación para que
+                            instituciones y empresas lo conozcan y
+                            apliquen
+                        </li>
+                        <li>
+                            INS, MEP e l INDER,  entre otras,  ya lo han
+                            incorporado en sus procesos de capacitación
+                        </li>
+
+                    </ul>
+            </strong></p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                Costa Rica cuenta con un documento normativo que
+                establece los requisitos que debe contener el plan
+                de emergencia  de cualquier centro de trabajo y de
+                los sitios públicos: centros comerciales, estadios,
+                iglesias, residenciales, guarderías, etc.  Se trata
+                de la norma  CNE-NA-INTE-DN-01, elaborada por el
+                Instituto de Normas Técnicas de Costa Rica INTECO
+                a solicitud de la Comisión Nacional de Emergencias.
+            </p><p>
+                Esta norma viene a unificar los criterios del
+                Ministerio de Salud, Cuerpo de Bomberos, Consejo de
+                Salud Ocupacional y Comisión Nacional de Emergencias,
+                lo que hace menos engorroso  el trámite para las
+                organizaciones que presentan sus planes de emergencia
+                con el fin de obtener permiso de funcionamiento, y a
+                la vez, es rigurosa, pues toma en cuenta una serie de
+                aspectos que  podrían mitigar los efectos de una
+                emergencia.
+            </p><p>
+                “Lo novedoso de esta norma es que establece los
+                requisitos de un plan de preparativos y respuesta
+                ante emergencias que contempla las amenazas,
+                condiciones de vulnerabilidad y riesgo, así como los
+                recursos y capacidades del centro laboral, para poder
+                trabajar en las medidas de preparación y respuesta
+                que garanticen la seguridad humana y reduzcan las
+                pérdidas materiales y el impacto social que provocan
+                las situaciones de emergencias”, aseguró Alexandra
+                Rodríguez, directora de Normalización de INTECO.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                Además, en el Decreto Nº39502-MP del 7 de octubre del
+                2015, el Ministerio de la Presidencia estableció la
+                obligatoriedad del cumplimiento de dicha norma:
+            </p><p>
+                Artículo 5°- “El campo de aplicación de la norma es
+                a todos los centros laborales y de ocupación pública
+                tales como sitios para reuniones públicas,
+                residencial, hoteles, centros educativos, cuidado de
+                la salud, industriales, negocios, mercantil, centros
+                comerciales, almacenamiento, servicio, albergues,
+                guarderías, centros diurnos y centros de acogida,
+                detención y correccionales.
+            </p><p>
+                A partir de la publicación de esta norma, los planes
+                de preparativos y respuesta, o los planes de atención
+                de emergencias que soliciten las instituciones del
+                estado costarricense a cualquier organización,
+                deberán ajustarse al contenido normativo de este
+                documento. Por ello, todas las instituciones del
+                estado costarricense, deberán adaptar las solicitudes
+                de requisitos de los planes de preparativos y
+                respuesta, al contenido de esta norma”.
+            </p><p>
+                Fuentes de la Comisión Nacional de Emergencias
+                indicaron que están trabajando en la divulgación del
+                documento, cuyo propósito es que exista una mejor
+                preparación y respuesta ante determinado evento,
+                principalmente  a la hora de salvaguardar la vida de
+                las personas que se encuentran en centros de
+                ocupación pública. Por ahora, instituciones como el
+                INS, el MEP, el INDER,  entre otras,  ya han
+                incorporado en sus procesos de capacitación los
+                requisitos de esta Norma.
+            </p><p>
+                La norma se ubica dentro del Marco de Acción de
+                Hyogo, la Política Centroamericana de Gestión
+                Integral de Riesgos (PCGIR) y el Plan Nacional de
+                Gestión de Riesgo (PNGR). Igualmente responde al
+                cumplimiento del mandato de la Ley Nacional de
+                Emergencias y Prevención del Riesgo N°8488, la Ley
+                del Benemérito Cuerpo de Bomberos de Costa Rica N°
+                8228 y el Reglamento General para el Otorgamiento
+                de Permisos de Funcionamiento del Ministerio de
+                Salud N° 34728-S.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p><strong>
+                Para más información sírvase comunicarse con Ana
+                Cecilia Cruz o Laura Rivera a los teléfonos 2280
+                9403/8813 7466/7154 0343
+            </strong></p>
+        </div>
+    </div>
+</div>
+</section>
+]]>
+        </field>
+    </record>
+
+    <record id="news_post_2" model="blog.post">
+        <field name="name">Norma t&#233;cnica garantiza a costarricenses la protecci&#243;n de su informaci&#243;n personal contenida en bases de datos</field>
+        <field name="subtitle">En el marco del D&#237;a Internacional de la Protecci&#243;n de Datos</field>
+        <field name="blog_id" ref="recent_news"/>
+        <field name="author_id" ref="base.main_partner" />
+        <field name="website_published" eval="True"/>
+        <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content"><![CDATA[
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p><strong>
+                    <ul>
+                        <li>
+                            Organizaciones deben procurar la seguridad
+                            de la información resguardada, especialmente
+                            si contiene datos personales
+                        </li>
+                        <li>
+                            En los últimos tres años se han presentado
+                            140 denuncias por mal uso de datos personales
+                        </li>
+                        <li>
+                            Acoso telefónico y suministro de información
+                            sin consentimiento, son las infracciones más
+                            denunciadas
+                        </li>
+
+                    </ul>
+            </strong></p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                <strong>San José. 26 de enero, 2017.</strong> ¿Es
+                usted una de las personas que se ha molestado
+                porque lo llaman a ofrecer un préstamo que nunca
+                solicitó? Este es solo un ejemplo de las
+                modalidades de acoso telefónico que infringe la
+                protección de sus datos personales que se pueden
+                encontrar dentro de la información resguardada
+                por las organizaciones. Para evitar que esto siga
+                sucediendo, el Instituto de Normas Técnicas (INTECO),
+                coordinó el desarrollo de una serie de normas que
+                garanticen un manejo adecuado de su información
+                personal en las empresas e instituciones.
+            </p><p>
+                Se trata de la norma INTE/ISO/IEC 27001:2014, que
+                define los requisitos con los que deben contar las
+                organizaciones para garantizar la protección de la
+                información (incluida los datos personales), esto
+                en el marco del Día Internacional de la Protección
+                de Datos, este 28 de enero.
+            </p><p>
+                Aunque la norma va dirigida a la eficacia de los
+                Sistemas de Gestión de Seguridad de la Información,
+                puede ser utilizada a su vez como instrumento de
+                evaluación por parte de consumidores y colaboradores
+                interno, específicamente, para asegurarse de un manejo
+                adecuado de las organizaciones que manejan sus datos
+                personales dentro de sus activos.
+            </p><p>
+                INTECO coordinó la adopción de esta norma, con un
+                grupo de organizaciones y expertos con el objetivo
+                de adoptar  una serie de buenas prácticas,
+                reconocidas internacionalmente, que puedan ser
+                implementadas por empresas e instituciones
+                precisamente para garantizar la seguridad de la
+                información.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p>
+                Alexandra Rodríguez, directora de Normalización de
+                INTECO, afirmó que <em>“para nosotros es fundamental
+                brindar protección al consumidor, por esta razón
+                la norma INTE/ISO/IEC 27001  es de suma importancia
+                para hacer consciencia entre los costarricenses de
+                la importancia de facilitar su datos a organizaciones
+                que sean responsables de preservar su información
+                personal”.</em>
+            </p><p>
+                Rodríguez agregó que por ser una norma internacional,
+                se convierte en una herramienta estratégica para ser
+                más competitivos, tanto dentro como fuera del país.
+                La norma requiere que se establezca, implemente,
+                mantenga y mejore continuamente un sistema de gestión
+                de seguridad de la información. Esto se traduce en
+                confianza  para sus clientes, colaboradores y
+                proveedores.
+            </p><p>
+                Entre los requisitos que especifica la norma,
+                destacan  políticas y medidas de seguridad para
+                gestionar los riesgos que se presentan por el uso
+                de cualquier tipo de dispositivo, ya sea fijo o móvil,
+                y para proteger la información que se accede, procesa
+                o almacena en los sitios de teletrabajo.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <h3>Protección de datos en Costa Rica</h3>
+            <p>
+                Los datos personales son todas aquellas
+                características de la personalidad, dato geográfico,
+                biomédico, religioso, político, socioeconómico, voz,
+                imagen, etc.; que haga identificable a una persona.
+                Por ejemplo, información personal, datos bancarios,
+                propiedades, negocios o hasta correos electrónicos
+                intercambiados, a nivel interno y externo.
+            </p><p>
+                En Costa Rica existe la Agencia de Protección de
+                Datos de los Habitantes (Prodhab), que se encarga de
+                hacer cumplir la legislación vigente en nuestro país.
+                De acuerdo a información suministrada por esta entidad,
+                desde 2014 se han recibido 141 denuncias, de las cuales
+                29 se han declarado a favor del denunciante, 9 están
+                esperando resolución final y 8 se encuentra en trámite.
+                Solo el año anterior, Prodhab recibió 62 quejas.
+            </p><p>
+                Los delitos más denunciados son incumplimiento al
+                derecho de supresión, actualización o rectificación
+                de datos recopilados, acoso telefónico y transferencia
+                de datos sin previo consentimiento. Quienes incurren
+                en estas faltas pueden enfrenar sanciones que van
+                desde una multa económica de 1 a 30 salarios base, el
+                cierre de la base de datos e incluso generar intereses
+                por concepto de no pago.
+                </p><p>
+                Mauricio Garro, director de Prodhab afirmó que <em>“en
+                el Día Internacional  de la Protección de Datos, la
+                PRODHAB hace un especial llamado a los ciudadanos,
+                para que ahora más que nunca, frente al uso de las
+                nuevas tecnologías y sus alcances, se preocupen por
+                velar y proteger sus datos personales de todas las
+                formas posibles, especialmente en lo que respecta en
+                materia de transferencia y comercio de datos”.</em>
+            </p><p>
+                “Consciente de la legislación existente y de los
+                recursos con los que cuentan los usuarios para denunciar
+                delitos de este tipo, INTECO considera que <em>es muy
+                importante que los costarricenses estén informados  y
+                atentos de la seguridad de sus datos. La norma
+                INTE/ISO/IEC 27001 viene a respaldarlos y ayudarlos a
+                cumplir este objetivo”,</em> concluyó  Rodríguez.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="s_text_block">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 mb16 mt16">
+            <p><strong>
+                    La norma está disponible en el centro de
+                    documentación de INTECO para todas las empresas
+                    e instituciones públicas del país.
+            </strong></p>
+        </div>
+    </div>
+</div>
+</section>
+]]>
+        </field>
+    </record>
+
+    <record id="news_post_3" model="blog.post">
+        <field name="name">Nueva norma garantiza mayor seguridad en los cascos que utilizan los motociclistas y sus acompa&#241;antes</field>
+        <field name="blog_id" ref="recent_news"/>
+        <field name="author_id" ref="base.main_partner" />
+        <field name="website_published" eval="True"/>
+        <field name="published_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content"><![CDATA[
+    <section class="s_text_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mb16 mt16">
+                    <ul><strong>
+                       <li>
+                           Hasta noviembre, 2016 registra 168 muertos
+                           en accidentes de motocicletas
+                       </li>
+                       <li>
+                           Médicos alarmados por gravedad en lesiones
+                           que sufren
+                       </li>
+                       <li>
+                           Motociclistas usan cascos de mala calidad
+                           y hasta reconstruidos
+                       </li>
+                    </strong></ul>
+               </div>
+           </div>
+       </div>
+    </section>
+    <section class="s_text_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mb16 mt16">
+                   <p>
+                       Ante los congestionamientos viales, las
+                       motocicletas permiten un mayor y más rápido
+                       desplazamiento en carretera y además tienen
+                       un bajo consumo de combustible, pero
+                       desgraciadamente también  están llenando los
+                       cementerios y los hospitales.
+                   </p>
+                   <p>
+                       El Instituto de Normas Técnicas de Costa Rica
+                       (INTECO) en su calidad de Ente Nacional de
+                       Normalización desea que este vehículo continúe
+                       siendo la mejor opción para las miles de
+                       personas que lo utilizan a diario, pero, que
+                       no represente un peligro.  Por eso, y a
+                       petición del Consejo de Seguridad Vial (COSEVI),
+                       el Comité Nacional de Seguridad Vial desarrolló
+                       la norma técnica <b>INTE 43-01-01: 2016 “Cascos
+                           de seguridad para motocicletas. Requisitos.”</b>
+                   </p><p>
+                        Hoy en día los motociclistas compran su casco,
+                        basados únicamente en el color o forma de su
+                        predilección o de acuerdo a su presupuesto,
+                        pero sin tener la mínima noción de cual le
+                        podía ser más útil y hasta salvarle la vida,
+                        porque no había una guía que les indicara cual
+                        era el más seguro o el que más los protegería
+                        en caso de una eventualidad.
+                    </p><p>
+                        Esta práctica debería quedar en el pasado,
+                        pues desde  ahora  y por primera vez, Costa
+                        Rica cuenta con una norma técnica para los
+                        cascos de seguridad de los usuarios de
+                        motocicletas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s_text_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mb16 mt16">
+                    <h3>
+                        ¿Por qué es importante contar con una norma
+                        técnica de cascos de seguridad?
+                    </h3>
+                    <p>
+                        A noviembre, el 2016 registró 168 muertes por
+                        accidentes de motocicletas, según las
+                        estadísticas del Consejo de Seguridad Vial.
+                        Los expertos aseguran que en una caída o
+                        accidente, el casco puede marcar la diferencia
+                        entre sobrevivir o perecer.
+                    </p>
+                    <h4>
+                        Muertos en accidentes de tránsito en sitio
+                    </h4>
+                    <table class="table mb0">
+                      <thead>
+                        <tr>
+                          <td></td>
+                          <th>Motociclistas</th>
+                          <th>Acompañantes</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2015</td>
+                          <td>149</td>
+                          <td>12</td>
+                          <td>161</td>
+                        </tr>
+                        <tr>
+                          <td>23 de nov 2016</td>
+                          <td>153</td>
+                          <td>15</td>
+                          <td>168</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p><small><b>
+                            Fuente: COSEVI
+                    </b></small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s_text_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mb16 mt16">
+                    <p>
+                        Las motocicletas son uno de los vehículos con
+                        mayor venta en nuestro país, datos de la
+                        Cámara de Comercio Exterior CRECEX, indican
+                        que la importación de estos vehículos tuvo un
+                        repunte en el 2015 y aumentó en un 31%,
+                        pasando en el ranking de importaciones del
+                        puesto 29 al 18.
+                    </p><p>
+                        Según el jefe del Servicio de Cirugía
+                        Maxilofacial del Hospital México, Dr.
+                        Alejandro Marín, es alarmante el aumento en
+                        la cantidad de motociclistas y acompañantes
+                        que sufren graves lesiones en sus rostros.
+                        El médico asegura que en los últimos 10 años,
+                        los casos se han duplicado en cantidad y a
+                        la vez, son 80% más complejos.
+                    </p><p>
+                        “Los motociclistas  protagonizan accidentes
+                        de alto impacto, sus rostros sufren hasta 8
+                        fracturas, requieren más horas de quirófano
+                        y en la mayoría de los casos esas estructuras
+                        funcionales no tienen una recuperación total,
+                        afectando la masticación, la estética y mucho
+                        más”, indicó.
+                    </p><p>
+                        Sólo en este servicio, se atiende entre 25
+                        y 30 motociclistas y acompañantes con severas
+                        lesiones en los rostros cada mes.  El médico
+                        explicó que en algunos casos (principalmente
+                        de zonas alejadas) las personas no portan
+                        casco a la hora del accidente, pero en otros
+                        sí y los cascos quedan partidos por la mitad
+                        lo que evidencia la mala calidad.  Aseguró
+                        además  que otra práctica errónea de estos
+                        conductores es la utilización de cascos
+                        reconstruidos, ignorando así el peligro al
+                        que se exponen.
+                    </p>
+                    <h4>Total de lesionados en CR accidentes de
+                        motocicletas 2014
+                    </h4>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Lesionados graves</td>
+                          <td>Lesionados leves</td>
+                        </tr>
+                        <tr>
+                          <td>884</td>
+                          <td>5401</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>
+                        <em>“Sin duda alguna, escoger un casco seguro
+                        implica escoger uno de calidad, con esta
+                        norma técnica estamos promoviendo el
+                        bienestar de la sociedad costarricense, ya
+                        que le estamos dando herramientas a las
+                        personas para que seleccionen el mejor
+                        casco, el que les dé más seguridad y esos
+                        requisitos técnicos los hemos establecido,
+                        tanto para los implementos  de uso común
+                        como los utilizados en competencias” </em>
+                        dijo Alexandra Rodríguez, directora de
+                        Normalización de INTECO.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s_text_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 mb16 mt16">
+                    <h3>
+                        ¿Qué contiene la norma INTE 43-01-01?
+                    </h3>
+                    <p>
+                        La norma técnica INTE 43-01-01, enlista los
+                        componentes necesarios de un casco y establece
+                        los requisitos de calidad con los que éstos
+                        deben cumplir.
+                    </p>
+                    <p>
+                        Entre ellos: la carcasa o armazón exterior,
+                        el protector de mandíbula, el relleno protector,
+                        el forro interno, el sistema de retención, la
+                        visera y el visor. La calidad del casco debe
+                        ser tal, que en caso de un accidente o caída,
+                        sea esa estructura la que absorba el impacto y
+                        no los huesos de la cabeza o el rostro.
+                    </p>
+                    <h4>
+                        ¿Cuáles son los beneficios de su utilización?
+                    </h4>
+                    <p>
+                        Si las autoridades la establecen como un
+                        requisito obligatorio para los cascos que se
+                        comercializan en el país, se lograría que
+                        ingresen únicamente los cascos de motociclistas
+                        que cumplan con la normativa nacional INTE
+                        43-01-01, o normas internacionales afines, lo
+                        que permitiría al usuario de cascos de
+                        motocicleta tener la certeza que está
+                        adquiriendo un producto que cumple requisitos
+                        mínimo de calidad.
+                    </p>
+                    <p>
+                        Mientras tanto, debemos  hacer conciencia
+                        tanto en los usuarios de estos productos,
+                        como en la industria y el comercio, sobre la
+                        importancia de la utilización y la venta de
+                        cascos que evidencien cumplimiento con los
+                        requisitos mínimos que presenta esta norma
+                        técnica”, dijo Felipe Calvo,  coordinador del
+                        proyecto en INTECO.</p>
+                    <p>
+                        Esta norma INTE 43-01-01 a su vez cuenta con
+                        dos normas técnicas complementarias que
+                        también desarrolló INTECO por medio de su
+                        Comité de expertos, las cuales permiten la
+                        evaluación de los requisitos  de la calidad
+                        de los cascos:
+                    </p>
+                    <ul>
+                        <li>
+                            INTE 43-01-02, “Métodos de ensayo para
+                            evaluar el desempeño de los cascos de
+                            seguridad para motociclistas”
+                        </li>
+                        <li>
+                            INTE 43-01-03, “Horma de ensayo para
+                            cascos de seguridad para motociclistas.
+                            Características y requisitos”
+                        </li>
+                    </ul>
+                    <p>
+                        Es importante mencionar que en el desarrollo
+                        de las normas técnicas participaron en el
+                        Comité Nacional  representantes del Instituto
+                        Tecnológico de Costa Rica (ITCR), LS2 Helments,
+                        Torino del Este, la Federación Nacional de
+                        Asociaciones de Consumidores y Usuarios (FENASCO)
+                        y el Comité Cívico (Sociedad de motociclistas).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    ]]>
+        </field>
+    </record>
+
+</odoo>

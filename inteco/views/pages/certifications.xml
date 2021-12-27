@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="ccertifications" model="website.page">
+    <field name="name">Certifications</field>
+    <field name="url">/page/inteco.certifications</field>
+    <field name="website_published">True</field>
+    <field name="type">qweb</field>
+    <field name="key">inteco.certifications</field>
+    <field name="arch" type="xml">
+      <t t-name="inteco.certifications" name="certifications">
+        <t t-set="certs" t-value="True"/>
+        <t t-set="hatband_certifications" t-value="True"/>
+        <t t-call="website.layout">
+          <div id="wrap" class="oe_structure oe_empty">
+            <div class="container" style="margin-top:25px;margin-bottom:25px">
+              <section style="margin-bottom:20px">
+                <ul class="nav nav-pills nav-justified bgbeta-intc">
+                  <li class="nav-item">
+                    <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs else 'nav-link'" href="/page/inteco.certifications">¿QUÉ ES LA CERTIFICACIÓN?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_process else 'nav-link'" href="/page/inteco.certifications_process">PROCESO DE CERTIFICACIÓN</a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_people else 'nav-link'" href="/page/inteco.certifications_people">RECONOCIMIENTO IQNET</a>
+                  </li>
+                </ul>
+              </section>
+              <div class="row">
+                <div class="col-md-12">
+                  <section class="s_text_block">
+                    <div class="container">
+                      <h2 class="text-beta-intc">Certificaciones</h2>
+                      <h4>¿Qué es la certificación?</h4>
+                      <div class="row">
+                        <div class="col-md-12 mb32" style="text-align:justify">
+                          <!--<img src="/inteco/static/src/img/certificaciones_hero.jpg" class="pull-left mb16" style="width: 100%;" data-original-title="" title=""/>-->
+                          <p>Es el resultado positivo tras evaluar el grado de cumplimiento de un sistema de gestión, producto, proceso, servicio o persona, con respecto a los requisitos de una norma técnica. Constituye un instrumento eficaz para la defensa del consumidor y la competencia leal entre empresas; contribuye al crecimiento, el desarrollo de las organizaciones y su competitividad a través de un mejor posicionamiento en los mercados.</p>
+                          <h4>¿Por qué certificarse?</h4>
+                          <p>La certificación constituye un elemento diferenciador en el mercado, ya que no solo mejora la imagen de los productos, procesos o servicios ofrecidos, sino que también favorece su desarrollo y afianza su posición. Esto permite ganar cuota del mercado y acceder a mercados internacionales gracias a la confianza que genera ante los clientes y los consumidores.</p>
+                          <p>A nivel de la gestión interna de la organización, la certificación sirve como un medio para mantener y mejorar la eficacia, pone de manifiesto los puntos de mejora, aumenta la participación del personal y promueve el uso eficiente de recursos.</p>
+                          <!--
+                          <p>
+                            <a href="/page/inteco.certifications_process" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                              <span class="graph-ripple" style="height: 213px; width: 213px; top: -88.5625px; left: 65px;"/>
+                              <b data-original-title="" title="">Ver proceso de certificación</b>
+                            </a>
+                            <a href="/contactus?alias=certificaciones" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                              <span class="graph-ripple" style="height: 197px; width: 197px; top: -81.5625px; left: -56.3281px;"/>
+                              <b data-original-title="" title="">Solicitar una certificación</b>
+                            </a>
+                          </p>
+                          -->
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <section class="s_text_block bg-beta bgbeta-intc">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4 mt0 mb0">
+                    <p style="text-align: center; ">
+                      <img src="/inteco/static/src/img/normas_isotipo_blanco.png" class="center-block" style="width: 100%; transform: scaleX(0.38) scaleY(0.38);" data-original-title="" title=""/>
+                    </p>
+                  </div>
+                  <div class="col-md-8 mt32 mb32">
+                    <h3>Beneficios de la certificación con INTECO<br/></h3>
+                    <ul>
+                      <li>Evita multiplicidad de evaluaciones e inspecciones por parte de los clientes.</li>
+                      <li>Satisfacción de exigencias contractuales y legales.</li>
+                      <li>Genera un clima de motivación y participación para la mejora de la calidad y la protección del medio ambiente.</li>
+                      <li>Mantiene activo un sistema de gestión, basándose en criterios internacionalmente reconocidos.</li>
+                      <li>Constituye un efectivo instrumento de gestión de demostración fehaciente.</li>
+                      <li>Produce una rápida respuesta de los mercados.</li>
+                      <li>Reducen considerablemente sus costes de producción y reparación de errores.</li>
+                      <li>Satisfacción de los requerimientos del consumidor.</li>
+                      <li>Incrementan su calidad (incluyendo los servicios, plazos de entrega, garantía, entre otros).</li>
+                      <li>Mejoran el nivel de satisfacción de los clientes.</li>
+                      <li>Mejoramiento continuo de la empresa.</li>
+                      <li>Contar con una guía sobre empresas con capacidad evaluada para cumplir con los requerimientos de sus clientes (confianza al cliente).</li>
+                      <li>Mayor posicionamiento en los mercados.</li>
+                      <li>Mejor control de los proveedores, reducción de costos y esfuerzos para aceptar y mantener proveedores clasificados basándose en la calidad.</li>
+                      <li>Fortalece su funcionamiento, aumentan la motivación y participación del personal y mejoran la gestión de los recursos.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="s_features">
+              <div class="container">
+                <div class="row mt16 mb16">
+                  <div class="col-md-3 text-center">
+                    <a href="/page/inteco.certifications_system">
+                      <img class="img-fluid o_we_custom_image" src="/web/image/4106392/SistemasDeGestion2.png" style="width: 50%;" data-original-title="" title="" aria-describedby="tooltip598802"/>
+                      <h3 class="mb0 color-orange-intc" style="margin-top:13px">Sistemas de gestión</h3>
+                    </a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="/page/inteco.certifications_products">
+                      <img class="img-fluid o_we_custom_image" src="/web/image/4106396/Alimentos.png" style="width: 50%;"/>
+                      <h3 class="mb0 color-orange-intc" style="margin-top:13px">
+                        Sector alimentos
+                      </h3>
+                    </a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="/page/inteco.certifications_greenhouse">
+                      <img class="img-fluid o_we_custom_image" src="/web/image/4106400/Ambiente.png" data-original-title="" title="" aria-describedby="tooltip53777" style="width: 50%;"/>
+                      <h3 class="mb0 color-orange-intc">
+                        Verificación de gases de efecto invernadero
+                      </h3>
+                    </a>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <a href="/page/inteco.certifications_people">
+                      <img class="img-fluid o_we_custom_image" src="/web/image/4106402/Certificacion.png" style="width: 50%;"/>
+                      <h3 class="mb0 color-orange-intc">
+                        Certificación de procesos, productos y personas
+                      </h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+</odoo>
+

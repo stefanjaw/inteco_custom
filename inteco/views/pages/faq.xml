@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cfaq" model="website.page">
+        <field name="name">Frequently Asked Questions</field>
+        <field name="url">/page/inteco.faq</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.faq</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.faq" name="Frequently Asked Questions">
+              <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                  <section class="s_text_block">
+                    <div class="container">
+                      <h1>Preguntas Frecuentes</h1>
+                      <div class="row">
+                        <br/>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="s_faq_collapse mb32">
+                    <div class="container">
+                      <div class="panel-group" role="tablist" id="myCollapse1488913959021">
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959021" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿Qué es la Normalización?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959021" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> Es el proceso de formular y aplicar reglas con el propósito de establecer un orden en una actividad específica, para beneficio y con la cooperación de todos los interesados y, en particular, para la obtención de una economía óptima de conjunto, respetando las exigencias funcionales y de seguridad. Debe basarse en resultados ciertos, obtenidos por la ciencia, la técnica y la experiencia. Debe fijar las bases, no solamente para el presente sino también para el desarrollo futuro.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959022" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿Dónde puedo comprar una norma ISO?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959022" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> INTECO es representante de ISO en Costa Rica, desde 1994. INTECO posee la categoría máxima de "full member". De tal manera, cualquier norma ISO puede ser adquirida en nuestro Centro de Información. Ninguna otra organización en Costa Rica tiene autorización para venderlas. Comuníquese directamente a nuestro Centro de Información, teléfono: (506) 2283- 4522.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959023" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿Qué es una norma técnica?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959023" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> Solución única a un problema que se repite, lograda mediante la intervención de todos los interesados, tomando como base la ciencia, técnica y experiencia, considerando el interés general del país y el momento de su desarrollo; debe ser aprobado por un organismo con autoridad para el objeto. En Costa Rica, ese organismo es INTECO, el único con autorización para desarrollar normas técnicas nacionales, de acuerdo con la Ley Nº 8279. El departamento de Normalización de INTECO cuenta con un programa anual de proyectos para la elaboración de normas nacionales, que se desarrollan por Comités Técnicos conformados por expertos nacionales. En éstos puede participar su organización según sea el campo específico de acción.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959024" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿Qué es una especificación técnica?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959024" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> Es una solución única a un problema que se repite, lograda mediante la intervención de todos los interesados, tomando como base la ciencia, técnica y experiencia, considerando el interés general del país y el momento de su desarrollo; debe ser aprobado por un organismo con autoridad para el objeto. </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959025" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿Qué diferencia existe entre una norma técnica y una especificación técnica?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959025" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> La diferencia radica en que una norma requiere para ser aprobada el consenso de todos los interesados, y una especificación técnica la puede formular cualquiera de las partes interesadas, como el que produce, el que compra, el que controla, etc. Cabe destacar que ambas, independientemente de quien las formule, son documentos de referencia.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959026" aria-expanded="true">
+                            <h4 class="panel-title o_default_snippet_text">¿En qué escenarios se desarrollan los procesos de normalización?</h4>
+                          </div>
+                          <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959026" aria-expanded="false" style="height: 0px;">
+                            <div class="panel-body">
+                              <p class="o_default_snippet_text"> Los procesos de Normalización en Costa Rica se desarrollan en tres escenarios:</p>
+                              <h4 class="o_default_snippet_text">Ámbito Internacional:</h4>
+                              <ul class="o_default_snippet_text">
+                                <li>Miembro de ISO (1994).</li>
+                                <li>Miembro "afiliado" de IEC (2000).</li>
+                              </ul>
+                              <h4 class="o_default_snippet_text">Ámbito Regional</h4>
+                              <ul class="o_default_snippet_text">
+                                <li>Miembro de COPANT (1987).</li>
+                              </ul>
+                              <h4 class="o_default_snippet_text">Ámbito Nacional con base en:</h4>
+                              <ul class="o_default_snippet_text">
+                                <li>Ley N° 8279, de creación del Sistema Nacional para la Calidad.</li>
+                                <li>Las directivas del Código de Buenas Prácticas para la Normalización de la ISO.</li>
+                                <li>El Acuerdo sobre Obstáculos Técnicos al Comercio de la Organización Mundial de Comercio (OMC).</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </t>
+            </t>
+        </field>
+    </record>
+</odoo>

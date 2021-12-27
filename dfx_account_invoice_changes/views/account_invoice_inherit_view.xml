@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_form_inherit_inteco" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.inteco</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/header/button[@name='action_reverse']" position="attributes">
+                    <attribute name="groups">dfx_account_invoice_changes.make_nc_nd</attribute>
+                    <attribute name="string">Agregar Nota de Crédito</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='invoice_date_due']" position="after">
+                    <field name="day" string="Dia" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="mon" string="mes" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="year" string="año" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="day_num" string="dia num" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="lb_green" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="lb_yellow" invisible="1" readonly="1" force_save = "1"/>
+                    <field name="lb_red" invisible="1" readonly="1" force_save = "1"/>
+                </xpath>
+
+                <xpath expr="//group[@id='header_right_group']/div[2]" position="after">
+                    <field name="after_date_days" string="Dias Moroso" readonly="1" force_save="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <label for="name" style="color:green;font-size: 20px;float:right;border: 1px solid green;padding:5px" string="Cliente Inteco" attrs="{'invisible':['|',('state','in',('draft','open')),('lb_green','=',False)]}" groups="dfx_account_invoice_changes.CxP_group"/>
+                    <label for="name" style="color:yellow;font-size: 20px;float:right;border: 1px solid yellow;padding:5px" string="Cliente a Revisar" attrs="{'invisible':['|',('state','in',('draft','open')),('lb_yellow','=',False)]}" groups="dfx_account_invoice_changes.CxP_group"/>
+                    <label for="name" style="color:red;font-size: 20px;float:right;border: 1px solid red;padding:5px" string="Sin Crédito" attrs="{'invisible':['|',('state','in',('draft','open')),('lb_red','=',False)]}" groups="dfx_account_invoice_changes.CxP_group"/>
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page/field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+    
+                <!--  exchange_rate_test = tipo de Cambio              -->
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="exchange_rate_test" force_save="1"/>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_reference']" position="attributes">
+                    <attribute name="string">Referencia/Descripción</attribute>
+                </xpath>
+
+            </field>
+        </record>
+    
+        <record id="invoice_form_inherit_fe_inteco" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.fe</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="cr_electronic_invoice.view_move_form_electronic_invoice"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='action_debit_note']" position="attributes">
+                    <attribute name="groups">dfx_account_invoice_changes.make_nc_nd</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_date_account_inv" model="ir.ui.view">
+            <field name="name">view.date.account.inv</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='invoice_date']" position="after">
+                    <field name="after_date_days" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="dfx_view_default_categ_account" model="ir.ui.view">
+            <field name="name">dfx.view.categ.account</field>
+            <field name="model">account.analytic.default</field>
+            <field name="inherit_id" ref="account.view_account_analytic_default_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_stop']" position="after">
+                    <field name="categ_default" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        
+<!--        Ya no ese usa el boton cancelar factura-->
+<!--        <record id="cancel_button_account_inv" model="ir.ui.view">-->
+<!--            <field name="name">cancel.button.account.inv</field>-->
+<!--            <field name="model">account.invoice</field>-->
+<!--            <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">-->
+<!--                    <attribute name="attrs">{'invisible': ['|', ('state', 'in', ('draft','no_valid','paid','cancel'))]}</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

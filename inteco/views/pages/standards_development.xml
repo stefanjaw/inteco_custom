@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cstandards_development" model="website.page">
+        <field name="name">development of standards</field>
+        <field name="url">/page/inteco.standards_development</field>
+        <field name="website_published">true</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.standards_development</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.standards_development" name="Development of standards">
+                <t t-set="develop" t-value="True"/>
+                <t t-set="hatband_development" t-value="True"/>
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container" id="standards_development" style="margin-top:25px">
+                            <section style="margin-bottom:20px">
+                                <ul class="nav nav-pills nav-justified bgbeta-intc">
+                                    <li class="nav-item">
+                                        <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if develop else 'nav-link'" href="/page/inteco.standards_development">¿QUÉ ES UNA NORMA?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if dev_process else 'nav-link'" href="/page/inteco.standards_process">¿QUÉ ES LA NORMALIZACIÓN?</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="color:#ffffff" class="sub_menu_o" t-att-class="'nav-link active' if dev_public else 'nav-link'" href="/page/inteco.standards_public">NORMALIZACIÓN NACIONAL</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <section class="s_text_block">
+                                        <div class="container">
+                                            <h2>
+                                                <font class="text-beta-intc" style="">¿Qué es una norma?</font>
+                                            </h2>
+                                            <div class="row">
+                                                <div class="col-md-12 mt16 mb0" style="text-align:justify">
+                                                    <p/>
+                                                    <!--<p><img src="/inteco/static/src/img/normas_hero.jpg" class="pull-left mb16" style="width: 100%;" data-original-title="" title=""/>-->
+                                                    <p>Es un documento voluntario que establece requisitos, especificaciones, directrices, procedimientos o características que tienen como objetivo garantizar que los productos, los servicios y los sistemas sean seguros, coherentes y confiables. Brinda a las organizaciones un conjunto de herramientas con el potencial de ayudarles a tener un mejor desempeño y ser más competitivas.</p>
+                                                    <p>Las normas son desarrolladas a través del consenso de las partes interesadas (grupos de expertos de la industria, consumidores, organizaciones de investigación, gobierno, organizaciones sectoriales, entre otros).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!--
+                                                            <section class="s_three_columns">
+                                                              <div class="container">
+                                                                <div class="row">
+                                                                  <div class="col-md-4 mt0 mb16">
+                                                                    <h4 class="mt16">Plan nacional de normalización</h4>
+                                                                    <p>
+                                                                      <a href="/web/image/inteco.doc_R02_PGDN_01" target="_blank" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                                        <span class="fa fa-download fa-1x" style=""/>
+                                                                        <b>Descargar</b>
+                                                                      </a>
+                                                                      <br/>
+                                                                    </p>
+                                                                  </div>
+                                                                  <div class="col-md-4 mt0 mb16">
+                                                                    <h4 class="mt16">Nuevos Proyectos</h4>
+                                                                    <p>
+                                                                      <a href="/web/image/inteco.doc_Solicitudes_Aprobadas_Nuevos_Proyectos" target="_blank" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                                        <span class="fa fa-download fa-1x" style=""/>
+                                                                        <b>Descargar</b>
+                                                                      </a>
+                                                                      <br/>
+                                                                    </p>
+                                                                  </div>
+                                                                  <div class="col-md-4 mt0 mb16">
+                                                                    <h4 class="mt16">Normas Derogadas</h4>
+                                                                    <p>
+                                                                      <a href="/web/image/inteco.doc_Normas_Derogadas_Acumuladas" target="_blank" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                                        <span class="fa fa-download fa-1x" style=""/>
+                                                                        <b>Descargar</b>
+                                                                      </a>
+                                                                      <br/>
+                                                                    </p>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </section>
+
+
+                                                            <section class="s_text_block">
+                                                              <div class="container">
+                                                                <div class="row">
+                                                                  <div class="col-md-12 mt16 mb32">
+                                                                    <h3>¿Qué es una norma?</h3>
+                                                                    <p>Es un documento voluntario que establece requisitos, especificaciones, directrices, procedimientos o características que tienen como objetivo garantizar que los productos, los servicios y los sistemas sean seguros, coherentes y confiables. Brinda a las organizaciones un conjunto de herramientas con el potencial de ayudarles a tener un mejor desempeño y ser más competitivas.
+                                                                                                    </p>
+                                                                    <p>Las normas son desarrolladas a través del consenso de las partes interesadas (grupos de expertos de la industria, consumidores, organizaciones de investigación, gobierno, organizaciones sectoriales, entre otros).
+                                                                                                    </p>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </section>
+                                                            -->
+                                </div>
+                                <!--
+                                                      <div class="col-md-4">
+                                                          <section class="s_text_block">
+                                                              <div class="container">
+                                                                  <h3>Normas Populares</h3>
+                                                                  <div class="row">
+                                                                      <div class="col-md-12 mb16 mt16">
+                                                                          <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                                                              <div class="o_container">
+                                                                                  <a href="/shop/product/inte-iso-9001-2015-sistemas-de-gestion-de-la-calidad-requisitos-640">
+                                                                                      <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" style="max-height: 90px;"/>
+                                                                                  </a>
+                                                                              </div>
+                                                                          </div>
+                                                                          <p><b>INTE/ISO 9001:2015</b><br/>2015-09-15</p>
+                                                                          <p>Especifica los requisitos para un sistema de gestión de la calidad</p>
+                                                                      </div>
+                                                                      <div class="col-md-12 mb16 mt16">
+                                                                          <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                                                              <div class="o_container">
+                                                                                  <a href="/shop/product/inte-iso-14001-2015-sistemas-de-gestion-ambiental-requisitos-con-orientacion-para-su-uso-834">
+                                                                                      <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" style="max-height: 90px;"/>
+                                                                                  </a>
+                                                                              </div>
+                                                                          </div>
+                                                                          <p><b>INTE/ISO 14001:2015</b><br/>2015-09-15</p>
+                                                                          <p>Especifica los requisitos para un sistema de gestión ambiental</p>
+                                                                      </div>
+                                                                      <div class="col-md-12 mb16 mt16">
+                                                                          <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                                                              <div class="o_container">
+                                                                                  <a href="/shop/product/inte-12-01-06-2016-norma-para-demostrar-la-carbononeutralidad-requisitos-581">
+                                                                                      <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" style="max-height: 90px;"/>
+                                                                                  </a>
+                                                                              </div>
+                                                                              <br/>
+                                                                          </div>
+                                                                          <p><b>INTE 12-01-06:2016</b><br/>2016-05-05</p>
+                                                                          <p>Establece los requisitos que debe cumplir una organización para demostrar la Carbono Neutralidad</p>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </section>
+                                                          <section class="s_text_block">
+                                                              <div class="container">
+                                                                  <div class="row">
+                                                                      <div class="col-md-12 mb16 mt0">
+                                                                          <div class="well s_well clearfix mt32">
+                                                                              <p>La Dirección de Normalización de INTECO informa a todos sus asociados y público en general la publicación de las normas en el mes. Cualquier consulta técnica, proceso de desarrollo y ventas de normas, puede dejar un mensaje <a href="/contactus?alias=normas">aquí</a> o comunicarse al correo <a href="mailto:normas@inteco.org">normas@inteco.org</a></p>
+                                                                          </div>
+                                                                          <p>
+                                                                              <a href="/web/image/inteco.doc_Normas_Aprobadas_Mes" target="_blank" class="btn btn-primary btn-intc" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                                                                                  <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                                                                                  <span class="fa fa-download fa-1x" style=""/>
+                                                                                  <b data-original-title="" title="">Descargar todas</b>
+                                                                              </a>
+                                                                          </p>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </section>
+                                                      </div>-->
+                            </div>
+                        </div>
+                        <section class="s_text_block bg-beta bgbeta-intc">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 mb0 mt32">
+                                        <p style="text-align: center; ">
+                                            <img src="/inteco/static/src/img/normas_isotipo_blanco.png" class="center-block" style="width: 50%; transform: scaleX(0.6) scaleY(0.6);" data-original-title="" title=""/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-8 mt32 mb32">
+                                        <h3>Beneficios de las normas INTECO
+                                            <br/>
+                                        </h3>
+                                        <p/>
+                                        <ul>
+                                            <li>Las normas permiten mejorar la calidad de vida, definir características de productos y servicios, y establecer lineamientos para proteger el ambiente; así mismo, representan una herramienta para el consumidor.</li>
+                                            <li>Las organizaciones pueden utilizarlas para mejorar su desempeño, gestionar los riesgos que enfrentan e integrar las mejores prácticas en su organización, mientras operan de manera más eficiente y sostenible.</li>
+                                            <li>Son una plataforma de lanzamiento para nuevas ideas y pueden ser creadas, mejoradas o modificadas de acuerdo con el mundo cambiante.</li>
+                                            <li>Se desarrollan nuevas normas para reflejar las últimas tecnologías, innovaciones y necesidades de la sociedad.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_three_columns">
+                            <div class="container" style="margin-top:30px">
+                                <div class="row">
+                                    <div class="col-md-4 mb48 mt0">
+                                        <div class="media_iframe_video" data-oe-expression="//www.youtube.com/embed/hdEkwhtCxOQ?autoplay=0&amp;rel=0&amp;modestbranding=1">
+                                            <div class="css_editable_mode_display">&amp;nbsp;</div>
+                                            <div class="media_iframe_video_size">&amp;nbsp;</div>
+                                            <iframe src="//www.youtube.com/embed/hdEkwhtCxOQ?autoplay=0&amp;rel=0&amp;modestbranding=1" frameborder="0"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb48 mt0">
+                                        <div class="media_iframe_video" data-oe-expression="//www.youtube.com/embed/FL8jP-jBdSM?autoplay=0&amp;rel=0">
+                                            <div class="css_editable_mode_display">&amp;nbsp;</div>
+                                            <div class="media_iframe_video_size">&amp;nbsp;</div>
+                                            <iframe src="//www.youtube.com/embed/FL8jP-jBdSM?autoplay=0&amp;rel=0" frameborder="0"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb48 mt0">
+                                        <div class="media_iframe_video" data-oe-expression="//www.youtube.com/embed/OaYcZQUTZgs?autoplay=0&amp;rel=0&amp;modestbranding=1">
+                                            <div class="css_editable_mode_display">&amp;nbsp;</div>
+                                            <div class="media_iframe_video_size">&amp;nbsp;</div>
+                                            <iframe src="//www.youtube.com/embed/OaYcZQUTZgs?autoplay=0&amp;rel=0&amp;modestbranding=1" frameborder="0"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

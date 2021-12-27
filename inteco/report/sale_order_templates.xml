@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--The sale document was replaced by the template displayed through the
+    website, in order to use the same document format in both backend and frontend-->
+    <template id="report_saleorder_document_inherited" inherit_id="sale.report_saleorder_document" name="Custom Sale Document">
+        <xpath expr="//t/t" position="replace">
+            <t t-call="web.html_container">
+                <t t-set="data_report_margin_top" t-value="45"/>
+                <t t-set="data_report_header_spacing" t-value="40"/>
+                <t t-call="web.external_layout">
+                    <t t-set="o" t-value="docs[0]"/>
+                    <t t-foreach="docs" t-as="sale_order">
+                        <div class="page">
+                            <t t-call="sale.sale_order_portal_content"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

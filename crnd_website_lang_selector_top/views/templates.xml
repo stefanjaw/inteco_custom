@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="language-selector-header"
+              name="Language Selector in Header"
+              inherit_id="website.template_header_default"
+              customize_show="True">
+        <xpath expr="//div[@id='top_menu_collapse']/t[1]" position="inside">
+            <t t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1)">
+                <t t-set="languages_dict" t-value="dict((l_code, l_name.split('/').pop().strip().capitalize()) for l_code,l_code_iso, l_name, l_active, l_path in languages)"/>
+                <li class="nav-item divider"/>
+                <li class="nav-item dropdown" t-ignore="true">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                        <b>
+                            <span t-esc="languages_dict.get(request.env.lang)"/>
+                            <span class="caret"></span>
+                        </b>
+                    </a>
+                    <ul class="js_language_selector dropdown-menu" role="menu">
+                        <li t-foreach="languages_dict.items()" t-as="lg">
+                            <a class="js_change_lang dropdown-item"
+                               role="menuitem"
+                               t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lg[0])"
+                               t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website_default_lang_code else None"
+                               t-att-data-lang="lg[0]"
+                               t-esc="lg[1]"/>
+                        </li>
+                    </ul>
+                </li>
+            </t>
+        </xpath>
+    </template>
+</odoo>

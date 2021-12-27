@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dfx_inteco_events
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-12 23:03+0000\n"
+"PO-Revision-Date: 2021-04-12 23:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "(only"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "*La opción seleccionada es incorrecta"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "<i class=\"fa fa-ban mr-2\"/>Sold Out"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid ""
+"<span class=\"o_wevent_badge badge badge-success ml-3\">\n"
+"                                    <i class=\"fa fa-check mr-2\"/>Registered\n"
+"                                </span>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid ""
+"<span class=\"py-2\">Tickets</span>\n"
+"                                <span class=\"close d-none\">×</span>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "<span class=\"text-dark font-weight-bold align-middle pr-2\">Qty</span>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid ""
+"<span itemprop=\"availability\" content=\"http://schema.org/SoldOut\" class=\"text-danger\">\n"
+"                                            <i class=\"fa fa-ban mr-2\"/>Sold Out\n"
+"                                        </span>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "<strong> You ordered more tickets than available seats</strong>"
+msgstr "<strong> Ordenó más tiquetes que los disponibles actualmente</strong>"
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "<strong>Por favor responda las siguientes preguntas:</strong>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid ""
+"<strong>Seleccione otros temas de su interés para recibir "
+"información:</strong>"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/Event_changes.py:0
+#, python-format
+msgid ""
+"Alerta, un co-organizador no puede ser organizador a la vez. Favor revisar!"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__firstname
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_firstname
+msgid "Apellido 1"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Apellido 1 (*)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__lastname
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_lastname
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Apellido 2"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Asistente"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Asistente #%s"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__event_co_organizers
+msgid "Co-organizadores"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Continuar"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Correo Electrónico (*)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__create_uid
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__create_date
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Cédula Física"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "DIMEX"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_question_answer__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_res_partner_category__display_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__is_event_online
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_online_view_res_event_inherit
+msgid "En línea"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__event_google_maps
+msgid "Enlace Google Maps"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_res_partner_category__is_interest_topic
+msgid "Es Tema de interés"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_question_answer__valid_event_anw
+msgid "Es inválida"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_event_question_answer
+msgid "Event Question Answer"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_event_registration
+msgid "Event Registration"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Expired"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Extranjero"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_question_answer__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_res_partner_category__id
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__idatt
+msgid "Identificacion"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_ident
+msgid "Identificación"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Identificación (*)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid "It is forbidden to modify a sales order which is not in draft status."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_question_answer____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_res_partner_category____last_update
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en"
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__write_uid
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__write_date
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__site_logo
+msgid "Logo"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__event_location
+msgid "Lugar"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "NITE"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__org_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_platform__platform_name
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_name
+msgid "Nombre"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Nombre (*)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.actions.act_window,name:dfx_inteco_events.event_org_action
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__event_organizers
+#: model:ir.ui.menu,name:dfx_inteco_events.ID_event_org
+#: model_terms:ir.actions.act_window,help:dfx_inteco_events.event_org_action
+msgid "Organizadores"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_event_organizer
+msgid "Organizadores del eventos"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Etiquetas de empresa"
+
+#. module: dfx_inteco_events
+#: model:ir.actions.act_window,name:dfx_inteco_events.event_platform_action
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__event_platform
+#: model:ir.ui.menu,name:dfx_inteco_events.ID_event_platform
+#: model_terms:ir.actions.act_window,help:dfx_inteco_events.event_platform_action
+msgid "Plataforma"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_event_platform
+msgid "Plataformas de eventos"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__position
+msgid "Posicion"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_position
+msgid "Puesto"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Puesto (*)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Registration"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Registro"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Registro de asistentes"
+msgstr "Registro de asistentes"
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Sales end on"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Sales start on"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid ""
+"Si requiere <strong>una factura por cada</strong> participante, debe "
+"realizar los registros <strong>uno a uno</strong> de los participantes a "
+"inscribir. En caso contrario y de continuar con este formulario, se le "
+"realizará <strong>una única factura</strong> por los participantes inscritos"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_organizer__site_name
+msgid "Sitio Web"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "Sold Out"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid "Sorry, The %(ticket)s tickets for the %(event)s event are sold out."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid ""
+"Sorry, only %(remaining_seats)d seats are still available for the %(ticket)s"
+" ticket for the %(event)s event."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Teléfono"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__interest_topics
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_interest_topics
+msgid "Temas de interés"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid ""
+"The given combination does not exist therefore it cannot be added to cart."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid "The given product does not exist therefore it cannot be added to cart."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: code:addons/dfx_inteco_events/models/sale_order.py:0
+#, python-format
+msgid "The ticket doesn't match with this product."
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Ticket Type #"
+msgstr "Tipo de tiquete"
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__has_event_group
+msgid "Tiene permiso de evento?"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_event__idtype
+msgid "Tipo de Identificacion"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model.fields,field_description:dfx_inteco_events.field_event_registration__att_id_type
+msgid "Tipo de Identificación"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "Volver"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.registration_template_inherit
+msgid "available)"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model:ir.model,name:dfx_inteco_events.model_event_event
+msgid "cambios en el modulo de eventos para Inteco"
+msgstr ""
+
+#. module: dfx_inteco_events
+#: model_terms:ir.ui.view,arch_db:dfx_inteco_events.dfx_registration_attendee_template
+#: model_terms:website.page,arch_db:dfx_inteco_events.dfx_registration_attendee_page
+msgid "¡Atención!"
+msgstr ""

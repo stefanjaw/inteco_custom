@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="base.CRC" model="res.currency">
+            <field name="position">before</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="base.main_partner" model="res.partner">
+            <field name="name">INTECO</field>
+            <field name="company_type">company</field>
+            <field name="street">400 metros norte de Mu&#241;oz &#38; Nanne</field>
+            <field name="street2">Contiguo al Laboratorio de Materiales de la Universidad de Costa Rica</field>
+            <field name="city">San Pedro de Montes de Oca</field>
+<!--            <field name="state_id" eval="ref('l10n_cr.state_SJ')"/>-->
+            <field name="country_id" eval="ref('base.cr')"/>
+            <field name="phone">506 2283 45 22</field>
+            <field name="email">info@inteco.org</field>
+            <field name="website">https://www.inteco.org/</field>
+            <field name="lang">es_CR</field>
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="name">INTECO</field>
+            <field name="currency_id" ref="base.CRC"/>
+            <field name="anglo_saxon_accounting" eval="1"/>
+            <field name="logo" type="base64" file="inteco/static/src/img/logo.png"/>
+            <field name="social_instagram">https://www.instagram.com/intecocr</field>
+            <field name="social_twitter">https://twitter.com/INTECOcr</field>
+            <field name="social_facebook">https://www.facebook.com/intecocr/</field>
+            <field name="social_linkedin">https://www.linkedin.com/company/intecocr</field>
+        </record>
+
+    </data>
+    <data>
+        <function model="ir.config_parameter" name="set_param" eval="('s3.condition', '[(\'frequently\',\'=\',True)]')" />
+    </data>
+</odoo>

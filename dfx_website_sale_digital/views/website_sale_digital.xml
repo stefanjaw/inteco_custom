@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website_sale_digital.sale_order_portal_content_inherit_website_sale_digital" name="Orders Downloads Followup" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//section[@id='details']//td[@id='product_name']" position="inside">
+            <t t-if="digital_attachments" t-set="attachments" t-value="digital_attachments.get(line.product_id.id)"/>
+            <t t-if="attachments">
+                <span class="dropdown">
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" state_id="in" attrs="{'invisible': [('state_id', '=', 'out')]}">
+                        Descargar norma
+                    </button>
+                    <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <t t-foreach="attachments" t-as="a">
+                            <a role="menuitem" tabindex="-1" t-att-href="'/my/download?attachment_id=%i&amp;sale_id=%i&amp;line_id=%i' % (a['id'], (line and line.order_id) and line.order_id.id or False, line and line.id or False)" class="dropdown-item"><t t-esc="a['name']"/></a>
+                        </t>
+                    </div>
+                </span>
+            </t>
+        </xpath>
+    </template>
+
+<!--    <template id="confirmation" inherit_id="website_sale.confirmation">-->
+<!--        <xpath expr="//div[@id='wrap']/div/div[hasclass('row')]/div/div/t[2]/div/h2" position="inside">-->
+
+<!--            <a class="mr8 btn btn-primary pull-right hidden-xs" name="see_order_button"-->
+<!--               t-attf-href="/my/orders/#{order.id}" data-toggle="popover" data-placement="left"-->
+<!--               data-content="Descargue aquí la(s) norma(s) y/o vea su pedido." target="_blank">-->
+<!--                <i class="fa fa-file-text"/> See order and/or download standards</a>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+    <template id="dfx_FE_info" inherit_id="website_sale.address">
+        <xpath expr="//t/div/div/div[2]/div[2]/div/t/h2" position="after">
+
+            <div class="alert alert-info" role="alert">
+                Esta información suministrada es exclusivamente para la factura electrónica
+            </div>
+        </xpath>
+
+        <xpath expr="//t/div/div/div[2]/div[2]/div/t[2]/h2" position="after">
+
+            <div class="alert alert-info" role="alert">
+                Esta información suministrada es exclusivamente para la factura electrónica
+            </div>
+        </xpath>
+    </template>
+</odoo>

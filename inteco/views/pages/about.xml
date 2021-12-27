@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="aabout_us" model="website.page">
+    <field name="name">About Us</field>
+    <field name="url">/page/inteco.about_us</field>
+    <field name="website_published">True</field>
+    <field name="type">qweb</field>
+    <field name="key">inteco.about_us</field>
+    <field name="arch" type="xml">
+      <t t-name="inteco.about_us" name="About Us">
+        <t t-call="website.layout">
+          <style>
+            .center-li {
+            margin-top:8px
+            }
+
+            .sub_menu_o li a {
+            padding: 10px 21px;
+            }
+
+            .panel-heading {
+            cursor:pointer
+            }
+          </style>
+          <div id="wrap" class="oe_structure oe_empty">
+            <div class="container mb32">
+              <h1 class="text-beta mb32 text-beta-intc">¿Qué es INTECO?</h1>
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="nav nav-pills nav-justified sub_menu_o">
+                    <li class="col-xs-2">
+                      <a href="#inteco" class="active center-li" aria-controls="inteco" role="tab" data-toggle="tab" aria-expanded="true">¿Qué es INTECO?</a>
+                    </li>
+                    <li class="col-md-2">
+                      <a href="#mission-vision" aria-controls="mission-vision" role="tab" data-toggle="tab" aria-expanded="false">Misión, visión<br/> y política de calidad</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#objectives" class="center-li" aria-controls="objectives" role="tab" data-toggle="tab" aria-expanded="false">Objetivos</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#cd" aria-controls="cd" class="center-li" role="tab" data-toggle="tab" aria-expanded="false">Consejo directivo</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#memberships" aria-controls="memberships" class="center-li" role="tab" data-toggle="tab" aria-expanded="false">Membresías</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#affiliates" aria-controls="affiliates" class="center-li" role="tab" data-toggle="tab" aria-expanded="false">Afiliados</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#general-assembly" aria-controls="general-assembly" class="center-li" role="tab" data-toggle="tab" aria-expanded="false">Asamblea general</a>
+                    </li>
+                    <li class="col-xs-2">
+                      <a href="#faq" aria-controls="faq" class="center-li" role="tab" data-toggle="tab" aria-expanded="false">Preguntas frecuentes</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" style="text-align: justify">
+                    <div role="tabpanel" class="tab-pane active" id="inteco">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <p>INTECO es el Instituto de Normas Técnicas de Costa Rica; una asociación privada, sin fines de lucro, creada en 1987. Somos reconocidos, por la ley #8279, como el Ente Nacional de Normalización y contamos con la declaratoria de utilidad pública para los intereses del Estado.</p>
+                                <p>Somos el representante de Costa Rica ante las organizaciones internacionales y regionales de normalización ISO, IEC, COPANT.</p>
+                                <p>Somos una institución técnica, independiente, representativa e idónea para desarrollar las normas técnicas que requiere el país. INTECO entiende la calidad como un mecanismo fundamental para asegurar la transparencia, eficiencia y mejorar la competitividad en cualquier proceso.&amp;nbsp;</p>
+                                <p>Desde el 2018 y hasta el 2020, INTECO ocupa uno de los 20 puestos en el Consejo Directivo de la ISO*, lo que representa un beneficio para Costa Rica, ya que cuanto más fuerte sea su ente nacional de normalización, mayores serán las oportunidades y herramientas que las diferentes partes interesadas (consumidor, Estado, empresas, sociedad) pueden aprovechar.</p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="mission-vision">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <h4>Misión</h4>
+                                <p>Desarrollar la normalización del país con el soporte de los servicios de evaluación de la conformidad y productos relacionados a nivel nacional e internacional, con un equipo humano competente, con credibilidad e independencia.</p>
+                                <h4>Visión</h4>
+                                <p>Ser el ente que mejora constantemente la calidad de vida de la sociedad costarricense mediante la normalización y su uso práctico en la vida cotidiana.</p>
+                                <h4>Política de Calidad</h4>
+                                <p>INTECO es una asociación privada, sin fines de lucro, reconocida como el Ente Nacional de Normalización y declarada de utilidad pública para los intereses del Estado Costarricense.</p>
+                                <p>Nos comprometemos ante nuestras partes interesadas a coordinar el desarrollo de normas técnicas y promover su uso para mejorar la calidad de vida de la sociedad en general.</p>
+                                <p>Nos complementamos con los Servicios de Evaluación y Formación, los cuales están apegados a las normas y esquemas aplicables, con el objetivo de brindar un servicio que garantice la imparcialidad, integridad, credibilidad y transferencia de conocimientos que promuevan la competitividad y sostenibilidad de las organizaciones y personas.</p>
+                                <p>Todo lo anterior lo hacemos con personal altamente calificado y comprometido, cumpliendo con los requisitos aplicables, enfocándonos en la mejora continua, la eficiencia y excelencia de nuestro sistema de gestión, fomentando el desarrollo de competencias y continuos procesos de innovación.</p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="objectives">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <p>La Asociación tiene los siguientes objetivos:</p>
+                                <ul>
+                                  <li>Liderar la elaboración de normas costarricenses, asegurando que sean convenientes para el desarrollo socio-económico del país y que su preparación es conforme con las buenas prácticas de normalización internacionalmente aceptadas y que promuevan el mejoramiento de la calidad de los procesos, productos y servicios diseñados, fabricados, transformados, utilizados o vendidos en el país, sean ellos nacionales o importados.</li>
+                                  <li>Fomentar y desarrollar actividades de certificación articuladas con los procedimientos de evaluación de la conformidad.</li>
+                                  <li>Colaborar con las entidades del Sector Público a fin de alcanzar la mayor implantación y utilización de las actividades de normalización y certificación.</li>
+                                  <li>Promover la participación de Costa Rica en las organizaciones internacionales y regionales de normalización y certificación, desempeñando en las mismas la representación, en los términos que corresponda, y asumiendo los derechos y obligaciones que lleva aparejados dicha representación.</li>
+                                  <li>Llevar a cabo todas aquellas actividades que -relacionadas con la normalización y certificación- contribuyan a mejorar su conocimiento, utilización y desarrollo en la sociedad, así como a favorecer los intercambios comerciales, la cooperación internacional, y permitan la generación de resultados positivos que garanticen un desarrollo sostenible de la Asociación.</li>
+                                </ul>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="cd">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>NOMBRE</th>
+                                      <th>CARGO EN EL CONSEJO DIRECTIVO</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr><td>Javier Rodríguez Arias</td><td>Presidente</td></tr>
+                                    <tr><td>Silvia Chaves Quesada</td><td>Primera Vicepresidente</td></tr>
+                                    <tr><td>Paola Quesada Molina</td><td>Segunda Vicepresidente</td></tr>
+                                    <tr><td>Luisa Díaz Sánchez</td><td>Secretaria</td></tr>
+                                    <tr><td>Karol Fallas Estrada</td><td>Tesorera</td></tr>
+                                    <tr><td>Erick Ulate Quesada</td><td>Vicetesorero</td></tr>
+                                    <tr><td>Marco Aguilar Bogantes</td><td>Vocal Primero</td></tr>
+                                    <tr><td>Mónica Elizondo Andrade</td><td>Vocal Segundo</td></tr>
+                                    <tr><td>Kattia Chaves Matarrita</td><td>Vocal Tercero</td></tr>
+                                    <tr><td>Gerardo Porras </td><td>Vocal Cuarto</td></tr>
+                                    <tr><td>Oscar Sánchez</td><td>Vocal Quinto</td></tr>
+                                    <tr><td>Luis H. Hernández Herrera</td><td>Vocal Sexto</td></tr>
+                                    <tr><td>Marco Alvarado Peña</td><td>Vocal Séptimo</td></tr>
+                                    <tr><td>Dahianna Marín</td><td>Vocal Octavo</td></tr>
+                                    <tr><td>Erick Blanco</td><td>Vocal Noveno</td></tr>
+                                    <tr><td>Héctor Ocampo</td><td>Fiscal</td></tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="memberships">
+                      <div class="container" style="margin-top: 60px;margin-bottom: 60px;">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <a href="https://www.iso.org/home.html" target="_blank">
+                              <img src="/web/image/inteco.membership_iso" class="preserve3d center-block" style="width: 40%;"/>
+                            </a>
+                          </div>
+                          <div class="col-md-4">
+                            <a href="https://www.iqnet-certification.com/" target="_blank">
+                              <img src="/web/image/inteco.membership_iqnet" class="preserve3d center-block" style="margin-top: 10%;width: 90%;"/>
+                            </a>
+                          </div>
+                          <div class="col-md-4">
+                            <a href="http://www.copant.org/index.php/es/" target="_blank">
+                              <img src="/web/image/inteco.membership_copant" class="preserve3d center-block" style="margin-top: -6px;width: 43%;"/>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="affiliates">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <h2>Empresas</h2>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Organización</th>
+                                      <th style="min-width: 150px;">Teléfono</th>
+                                      <th>Dirección</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>ACEROS DE GUATEMALA</td>
+                                      <td>(502) 2363-3134</td>
+                                      <td>Av. Las Américas 18-81 Z.14 Edif. Columbus Center N.14.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACIÓN NACIONAL DE CONSUMIDORES LIBRES </td>
+                                      <td>(506) 6050-6460</td>
+                                      <td>De la casa Matute Gomez , 100 sur y 225 este.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ACEROS MONOLIT</td>
+                                      <td>(506) 2290-9961</td>
+                                      <td>San José. La Uruca, frente a estación de Servicio Uno y Romero Fournier.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ADS MEXICANA</td>
+                                      <td>5281-8625-4500</td>
+                                      <td>Carretera a Villa de García km 0,8 Zona Industrial Poniente Santa Catarina N.L México C.P 66370.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ARCELOR MITTAL COSTA RICA</td>
+                                      <td>(506) 2205-8900 (506) 2713-5053</td>
+                                      <td>San José, Escazú, San Rafael, de la rotonda de Escazú 50 mts al sur, Edificio Meridiano cuarto piso.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>APROIMSA. S.A.</td>
+                                      <td>(506) 2224-4216</td>
+                                      <td>Sabanilla de Montes de Oca, de la estación de Servicios la Cosecha 200mts sur y 100mts al este, edificio mano izquierda color blanco, azul Nº 312</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ADT SECURITY SERVICES, S.A.</td>
+                                      <td>(506) 2295-6500</td>
+                                      <td>San José, Pavas, frente a Sylvania.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACION CAMARA DE EXPORTARDORES DE COSTA RICA CADEXCO</td>
+                                      <td>(506) 2258-5810</td>
+                                      <td>Curridabat, Mitsubishi Veinsa 100 sur y 150 oeste última casa mano izquierda</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACIÓN CÁMARA DE COMERCIO EXTERIOR DE C.R Y DE REPRESENTANTES DE CASAS EXTRANJERAS CRECEX</td>
+                                      <td>(506) 2253-0126</td>
+                                      <td>Curridabat, San José 50 metros este y 25 sur del Archivo Nacional, frente a canchas de fútbol 5.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACIÓN CÁMARA COSTARRICENSE DE LA CONSTRUCCIÓN</td>
+                                      <td>(506) 5260-1000</td>
+                                      <td>Barrio Francisco Peralta, 150 oeste de Casa Italia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACIÓN CONSUMIDORES DE COSTA RICA</td>
+                                      <td>(506) 2248-9352</td>
+                                      <td>San José Centro, Avenida 1ª, calles 1 y 3, Edificio Cristal, Segundo piso, Oficina 209</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ALDESA SERVICIOS PSCO, S.A. (GRUPO ALDESA)</td>
+                                      <td>(506) 2207-8888</td>
+                                      <td>500m este de Antigua Galera en Curridabat, carretera vieja a Tres Rios</td>
+                                    </tr>
+                                    <tr>
+                                      <td>AROMAS Y SABORES TÉCNICOS (ASTEK)</td>
+                                      <td>(506) 2254-6479</td>
+                                      <td>San Josecito de Alajuelita detrás del Salón La Cima</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ASOCIACIÓN COSTARRICENSE DE LA INDUSTRIA PLÁSTICA (ACIPLAST)</td>
+                                      <td>(506) 2202-5612</td>
+                                      <td>San Pedro de Montes de Oca de la Fuente de la Hispanidad 300 M</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BAC INTERNATIONAL BANK INC</td>
+                                      <td>(507) 2206-2700 (506) 2502-8312</td>
+                                      <td>Panamá</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BANCO NACIONAL DE COSTA RICA</td>
+                                      <td>(506) 2212-2000</td>
+                                      <td>San José, Pavas, Oficentro la Virgen.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BALANCE AMBIENTAL</td>
+                                      <td>(506) 2460-3904</td>
+                                      <td>Ciudad Quesada, San Carlos 400 metros norte del Hogar de Ancianos.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BRIDGESTONE DE COSTA RICA, S.A.</td>
+                                      <td>(506) 209-7300</td>
+                                      <td>La Ribera de Belén, Heredia, Costa Rica.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BTICINO DE COSTA RICA, S.A.</td>
+                                      <td>(506) 2298-5600</td>
+                                      <td>Frente a Cenada, Barreal de Heredia - Comercializadora G.L.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CAJA COSTARRICENSE DE SEGURO SOCIAL (CCSS)</td>
+                                      <td>(506) 2295-2620</td>
+                                      <td>Avenida Segunda, calles 5 y 7 San José, Costa Rica</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CAJA DE ANDE</td>
+                                      <td>(506) 2523-4949</td>
+                                      <td>Calle 13, Avenida Central y Segunda</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CÁMARA DE COMERCIO DE COSTA RICA</td>
+                                      <td>(506) 2221-0005</td>
+                                      <td>Barrio Tournón, del Centro Comercial el Pueblo, 125m noroeste, Goicoechea, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CÁMARA DE INDUSTRIAS DE COSTA RICA</td>
+                                      <td>(506) 281-0006</td>
+                                      <td>350m sur de la Fuente de la Hispanidad, San Pedro.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CÁMARA NACIONAL DE PRODUCTORES DE LECHE</td>
+                                      <td>(506) 2253-5720</td>
+                                      <td>Edificio sede Lechera, 250 mts este de la Universidad Veritas carretera a Zapote.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CÁMARA COSTARRICENSE DE INDUSTRIA ALIMENTARIA (CACIA)</td>
+                                      <td>(506) 2220-3031</td>
+                                      <td>Sabana Sur, 75 sur de la Contraloría, Oficentro la Sabana, Edificio No.1, Piso No.1.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>COMPAÑÍA DE GALLETAS POZUELO DCR, S.A.</td>
+                                      <td>(506) 2299-1234</td>
+                                      <td>La Uruca, San José. De la rotonda Juan Pablo II, 200 oeste y 175 sur.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CASA PROVEEDORA PHILLIPS, S.A.</td>
+                                      <td>(506) 2437-1700</td>
+                                      <td>Barrio Monserrat, Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CENTRO DE EVALUACIÓN, MEDICIÓN Y SEGURIDAD OCUPACIONAL</td>
+                                      <td>(506) 2253-5448</td>
+                                      <td>400 mts sur, 200 este, 200 sur del Higueron San Pedro.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>COLEGIO DE INGENIEROS AGRÓNOMOS DE COSTA RICA</td>
+                                      <td>(506) 2235-6909</td>
+                                      <td>De la esquina suroeste del cementerio de Moravia, 3 cuadras al oeste, 1 cuadra al norte y dos cuadras al oeste.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>COLEGIO FEDERADO DE INGENIEROS Y ARQUITECTOS (CFIA)</td>
+                                      <td>(506) 2225-8019</td>
+                                      <td>300 este, 100 norte, 200 oeste, del cementerio de Moravia San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>COMPAÑÍA NACIONAL DE FUERZA Y LUZ, S.A.</td>
+                                      <td>(506) 2295-5940</td>
+                                      <td>San José, Avenida Quinta, entre calle cero y primera.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>COOPERATIVA DE PRODUCTORES DE LECHE DOS PINOS, R.L. DIVISIÓN COMERCIAL</td>
+                                      <td>(506) 2437-3400</td>
+                                      <td>Coyol de Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CORPORACIÓN DE DESARROLLO AGRÍCOLA DEL MONTE</td>
+                                      <td>(506) 2769-1594</td>
+                                      <td>Barrio Tournon, 200 metros este del Periódico la Republica Costa Rica, Goicoechea.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CORRUGADOS DEL GUARCO, S.A.</td>
+                                      <td>(506) 2573-7411</td>
+                                      <td>Parque Industrial Zeta, Cartago.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CORPORACION E INVERIONES CAES</td>
+                                      <td>(506) 2290-5008 (506) 2296-8289 </td>
+                                      <td>La Uruca.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CVG ALUMINIOS NACIONALES, S.A. (ALUNASA)</td>
+                                      <td>(506) 2635-5522</td>
+                                      <td>Esparza, Puntarenas.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CCL ENVASES COMERCIALES</td>
+                                      <td>(506) 2253-5455</td>
+                                      <td>500 metros oeste de la clínica Clorito Picado en Copey de Tibas.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>DELOITTE&amp;amp;TOUCHE S.A.</td>
+                                      <td>(506) 2246-5103</td>
+                                      <td>Centro Corporativo El Cafetal, Edificio B, Calle Arbolito, Heredia, Belén.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>DISEÑO INSPECCIÓN Y CONSULTORIA EN CARRETERAS Y OBRAS CIVILES</td>
+                                      <td>(506) 2261-7570</td>
+                                      <td>San Rafael de Heredia, de la esquina noroeste de la Iglesia Católica, 300 mts al este a mano derecha casa verde de dos plantas.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>EMPRESAS BETHIER EBI DE CR, S.A.</td>
+                                      <td>(506) 2232-7618</td>
+                                      <td>La Uruca, San José. De la rotonda Juan Pablo II, 200 oeste y 175 sur.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ECOLEGAL CONSULTORES, LTDA</td>
+                                      <td>(506) 2234-8886</td>
+                                      <td>San Pedro los Yoses, 300 mts al sur y 25 mts al oeste del Automercado. </td>
+                                    </tr>
+                                    <tr>
+                                      <td>ELECTRO PLAST, S.A.</td>
+                                      <td>(506) 2244-0404</td>
+                                      <td>Santa Rosa, Santo Domingo, Heredia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>EXTRUSIONES DE ALUMINIO</td>
+                                      <td>(506) 2227-1900</td>
+                                      <td>1 Km este del cruce de la Valencia, Heredia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>FENASCO</td>
+                                      <td>(506) 2222-2325</td>
+                                      <td>San José, calle 12, Avenida 14, edificio Fray Antonio Figueras, Segundo Piso n° 202.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>FORMULACIONES QUÍMICAS S.A.</td>
+                                      <td>(506) 2283-1818</td>
+                                      <td>De la esquina del Centro Comercial Plaza Mayor, 100 metros este y 150 metros norte. Contiguo a Oirsa. Rohrmoser, Pavas.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>FUNDACIÓN CENTRO DE GESTIÓN TECNOLÓGICA E INFORMÁTICA INDUSTRIAL CEGESTI</td>
+                                      <td>(506) 2280-8511</td>
+                                      <td>Avenida 9, calles 35 y 37 (de la iglesia de Santa Teresita 450 metros este, casa Nº 3362) Barrio Escalante.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>GERDAU ACOS LONGOS S.A.</td>
+                                      <td>55 313749-2392</td>
+                                      <td>Río de Janeiro.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>GRUPO FINANCIERO MERCADO DE VALORES DE COSTA RICA, S.A.</td>
+                                      <td>(506) 2201-2400</td>
+                                      <td>Plaza Roble Escazú, Edificio Los Balcones, Piso 2.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>HULERA COSTARRICENSE S.A.</td>
+                                      <td>(506) 2228-9090</td>
+                                      <td>300 metros al sur y 250 metros al este del semáforo en la esquina noroeste de la Iglesia Católica, Escazú centro San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ILUMINACIÓN TECNOLITE, S.A.</td>
+                                      <td>(506) 4031-1040</td>
+                                      <td>Parque Industrial Santa Rosa, Santo Domingo de Heredia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INSTITUTO COSTARRICENSE DE ELECTRICIDAD (ICE)</td>
+                                      <td>(506) 2220-6719</td>
+                                      <td>Sabana Norte, edificio Oficinas Centrales.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INSTITUTO DEL CAFÉ DE COSTA RICA</td>
+                                      <td>(506) 2222-6411</td>
+                                      <td>Calle Primera, Avenidas 18 y 29, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INSTITUTO NACIONAL DE APRENDIZAJE</td>
+                                      <td>(506) 2210-6295</td>
+                                      <td>La Uruca, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INSTITUTO NACIONAL DE SEGUROS</td>
+                                      <td>(506) 2287-6170 (506) 2287-6162</td>
+                                      <td>Avenidas 7 y 9, calle 9, frente al parque España.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INSTITUTO TECNOLÓGICO DE COSTA RICA</td>
+                                      <td>(506) 2550-2211</td>
+                                      <td>Cartago, de los Tribunales de Justicia de Cartago, 500 mts sur y 400 este.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>INTACO</td>
+                                      <td>(506) 2211-1717</td>
+                                      <td>300 metros este del Museo Nacional, Barrio la California, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>LABORATORIOS GUTIS</td>
+                                      <td>(506) 2256-5400</td>
+                                      <td>Zona Industrial de Pavas de las Oficinas Centrales de Pizza Hut, 200 metros al Este.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>LABORATORIOS STEIN, S.A.</td>
+                                      <td>(506) 2550-6565</td>
+                                      <td>1 Km al sur de la Intersección Carretera Interamericana, antiguo salón Los Molinos, La Lima, Cartago.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MASACA</td>
+                                      <td>(506) 2244-4044</td>
+                                      <td>Santa Rosa, Santo Domingo, Heredia. Barrio San Martín.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MAYACERO S.A.</td>
+                                      <td>(502) 2230-8070</td>
+                                      <td>Ciudad de Guatemala.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MICRO FINISH S.A.</td>
+                                      <td>(506) 2537-4401</td>
+                                      <td>Tejar del Guarco, Cartago de la entrada principal Zona Franca, 600 metros al sur frente al Hotel el Guarco.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MUEBLE INDUSTRIA DEL PLÁSTICO</td>
+                                      <td>(506) 2241-55174</td>
+                                      <td>San Vicente de Moravia, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MEXICHEM COSTA RICA S.A.</td>
+                                      <td>(506) 2209-3277</td>
+                                      <td>Alajuela carretera a Belén.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>PREFABRICADOS SAN CARLOS</td>
+                                      <td>(506) 2475-8586</td>
+                                      <td>Santa Clara, San Carlos, Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>PROGRAMA INTEGRAL MERCADEO AGROPECUARIO (PIMA)</td>
+                                      <td>(506) 2239-1233</td>
+                                      <td/>
+                                    </tr>
+                                    <tr>
+                                      <td>QUBO DIGITAL</td>
+                                      <td>(506) 2232-2965</td>
+                                      <td>250 metros al norte de la Embajada de los Estados Unidos de América, Edificio Marvera.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>RESINTECH, S.A.</td>
+                                      <td>(506) 2250-3333</td>
+                                      <td>Curridabat, San José.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SANDIX QUIMICA Y CALIDAD S.A.</td>
+                                      <td>(506) 2256-5345 (506) 2258-5250</td>
+                                      <td>Barrio Luján del Colegio Rosario 75 norte, mano derecha, casa color papaya. Primer piso, Oficina Nº1.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SARET METALMECÁNICA</td>
+                                      <td>(506) 2436-5000</td>
+                                      <td>1,5 km al este del Aeropuerto Juan Santamaria 100 metros al sur y 25 metros al este del antiguo cementerio de Río Segundo de Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SEGURIDAD Y MANUTENCIÓN (SEYMA)</td>
+                                      <td>(506) 2231-2135</td>
+                                      <td>Pavas, 80 mts oeste de la Jacks.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SOCIEDAD LATINOAMERICANA DE PROFESIONALES EN SEGURIDAD HUMANA</td>
+                                      <td>(506) 2591-9964</td>
+                                      <td>San José, Paseo Colón, 50 metros al sur de Pizza Hut, Oficentro Grano de Oro.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>TRAVEL EXCELLENCE, S.A.</td>
+                                      <td>(506) 2523-9100</td>
+                                      <td>INA, Paseo Colón 100 metros norte, 50 metros este, costado de la Universidad Braulio Carrillo.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>UNIVERSIDAD ESTATAL A DISTANCIA</td>
+                                      <td>(506) 2224-1689</td>
+                                      <td>De la Rotonda de Betania 1 Km este.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>VIDRIERA CENTROAMERICANA S.A. (VICESA)</td>
+                                      <td>(506) 2550-3200</td>
+                                      <td>500 metros noreste del Taller 3M, San Nicólas, Cartago, Costa Rica.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <h2>Personas</h2>
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Nombre</th>
+                                      <th style="min-width: 150px;">Teléfono</th>
+                                      <th>Dirección</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>ANA PATRICIA ALCÁZAR JIMÉNEZ</td>
+                                      <td>(506) 2230-4325</td>
+                                      <td>Aserrí Barrio San Bosco.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ALBERTO CAMPOS CALVO</td>
+                                      <td>(506) 2234-7082</td>
+                                      <td>Lourdes Montes de Oca.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ALBERTO NAVARRO BARAHONA</td>
+                                      <td>(506) 2275-3696</td>
+                                      <td>San Rafael debajo de Desamparados.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>BEATRIZ PANIAGUA VALVERDE</td>
+                                      <td>(506) 2439-1143</td>
+                                      <td>Alajuela la Guácima.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CRISTIÁN LEÑERO TESTART</td>
+                                      <td>(506) 2201-7060</td>
+                                      <td>Edificio Meridiano, Tercer Piso, Oficina Nº11. Guachipelín de Escazú</td>
+                                    </tr>
+                                    <tr>
+                                      <td>HÉCTOR OCAMPO MOLINA</td>
+                                      <td>(506) 8992-5656</td>
+                                      <td>Lourdes Montes de Oca.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ISAAC ALONSO BALDIZON FERNÁNDEZ</td>
+                                      <td>(506) 8316-4617</td>
+                                      <td>Santa Ana.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>JAVIER ACUÑA LACAYO</td>
+                                      <td>(506) 2292-5634</td>
+                                      <td>Vásquez de Coronado.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>KAROL CRISTINA ACUÑA VARGAS</td>
+                                      <td>(506) 2258-5795</td>
+                                      <td>Sabana Oeste.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>KATTIA MONTERO SANDOVAL</td>
+                                      <td>(506) 2266-0683</td>
+                                      <td>Barva de Heredia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>LOURDES QUESADA</td>
+                                      <td>(506) 2272-0802</td>
+                                      <td>Residencial Hacienda Vieja, Curridabat.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>LUIS GUSTAVO RUÍZ ROJAS</td>
+                                      <td>(506) 2010-1000</td>
+                                      <td>Lourdes de Monte de Oca.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>LUIS HUMBERTO HERNÁDEZ</td>
+                                      <td>(506) 2234-8306</td>
+                                      <td>Santo Domingo de Heredia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MAIKOL RAMOS MADRIGAL</td>
+                                      <td>(506) 7075-1189</td>
+                                      <td>San Pedro, Santa Martha.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MANUEL MIRANDA MATUS</td>
+                                      <td>(506) 2763-2707</td>
+                                      <td>Guápiles.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MARIO ECHANDI BACHTOLD</td>
+                                      <td>(506) 2256-2161</td>
+                                      <td>Avenida 6, calle 13, 200 metros oeste de la Corte Suprema de Justicia.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>RICARDO JIMÉNEZ VARGAS</td>
+                                      <td>(506)2229-6337</td>
+                                      <td>San Francisco de Coronado.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>VERA FARAH CALDERÓN</td>
+                                      <td>(506) 2224-0815</td>
+                                      <td>Curridabat, Urbanización Freses.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>PAOLA QUESADA MOLINA</td>
+                                      <td>(506) 8841-3258</td>
+                                      <td>Canos de Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>JAVIER RODRIGUEZ ARIAS</td>
+                                      <td>(506) 6040-0670</td>
+                                      <td>San Rafael de Alajuela.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MARVIN RODRIGUEZ DURAN</td>
+                                      <td>(506) 8384-9818</td>
+                                      <td>Coronado, San Francisco 800 metros este del Puente el Durazno.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MANUEL BALTODANO ARAYA</td>
+                                      <td>(506) 8854-4251</td>
+                                      <td>Grecia 400.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>ANA KARINA LOOR CARDENAS</td>
+                                      <td>(506) 8658-7404</td>
+                                      <td>Las Vueltas de Guácima.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="general-assembly">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <h2 class="text-beta mb16">Asamblea general</h2>
+                                <p>
+                                  <a class="btn btn-primary btn-intc" href="/web/content/5329714/INFORME%20PRESIDENCIA,%20INTECO%202020.pdf" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Presidencia 2020</a>
+                                </p>
+                                <p>
+                                  <a class="btn btn-primary btn-intc" href="/web/content/5464277/INFORME%20FISCAL,%20INTECO%202020.pdf" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Fiscalía Inteco 2020</a>
+                                </p>
+                                <p>
+                                  <a class="btn btn-primary btn-intc" href="/web/content/5329715/INFORME%20TESORERO%20INTECO%20CR%202020.pdf" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Tesorería Inteco 2020</a>
+                                </p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="faq">
+                      <section class="s_faq_collapse mb32">
+                        <div class="container" style="margin-top:25px">
+                          <div class="panel-group" role="tablist" id="myCollapse1488913959021">
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959021" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿Qué es la Normalización?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959021" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> Es el proceso de formular y aplicar reglas con el propósito de establecer un orden en una actividad específica, para beneficio y con la cooperación de todos los interesados y, en particular, para la obtención de una economía óptima de conjunto, respetando las exigencias funcionales y de seguridad. Debe basarse en resultados ciertos, obtenidos por la ciencia, la técnica y la experiencia. Debe fijar las bases, no solamente para el presente sino también para el desarrollo futuro.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959022" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿Dónde puedo comprar una norma ISO?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959022" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> INTECO es representante de ISO en Costa Rica, desde 1994. INTECO posee la categoría máxima de "full member". De tal manera, cualquier norma ISO puede ser adquirida en nuestro Centro de Información. Ninguna otra organización en Costa Rica tiene autorización para venderlas. Comuníquese directamente a nuestro Centro de Información, teléfono: (506) 2283- 4522.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959023" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿Qué es una norma técnica?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959023" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> Solución única a un problema que se repite, lograda mediante la intervención de todos los interesados, tomando como base la ciencia, técnica y experiencia, considerando el interés general del país y el momento de su desarrollo; debe ser aprobado por un organismo con autoridad para el objeto. En Costa Rica, ese organismo es INTECO, el único con autorización para desarrollar normas técnicas nacionales, de acuerdo con la Ley Nº 8279. El departamento de Normalización de INTECO cuenta con un programa anual de proyectos para la elaboración de normas nacionales, que se desarrollan por Comités Técnicos conformados por expertos nacionales. En éstos puede participar su organización según sea el campo específico de acción.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959024" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿Qué es una especificación técnica?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959024" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> Es una solución única a un problema que se repite, lograda mediante la intervención de todos los interesados, tomando como base la ciencia, técnica y experiencia, considerando el interés general del país y el momento de su desarrollo; debe ser aprobado por un organismo con autoridad para el objeto. </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959025" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿Qué diferencia existe entre una norma técnica y una especificación técnica?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959025" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> La diferencia radica en que una norma requiere para ser aprobada el consenso de todos los interesados, y una especificación técnica la puede formular cualquiera de las partes interesadas, como el que produce, el que compra, el que controla, etc. Cabe destacar que ambas, independientemente de quien las formule, son documentos de referencia.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" data-toggle="collapse" data-parent="#myCollapse1488913959021" data-target="#myCollapseTab1488913959026" aria-expanded="true">
+                                <h4 class="panel-title o_default_snippet_text">¿En qué escenarios se desarrollan los procesos de normalización?</h4>
+                              </div>
+                              <div class="panel-collapse collapse" role="tabpanel" id="myCollapseTab1488913959026" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                  <p class="o_default_snippet_text"> Los procesos de Normalización en Costa Rica se desarrollan en tres escenarios:</p>
+                                  <h4 class="o_default_snippet_text">Ámbito Internacional:</h4>
+                                  <ul class="o_default_snippet_text">
+                                    <li>Miembro de ISO (1994).</li>
+                                    <li>Miembro "afiliado" de IEC (2000).</li>
+                                  </ul>
+                                  <h4 class="o_default_snippet_text">Ámbito Regional</h4>
+                                  <ul class="o_default_snippet_text">
+                                    <li>Miembro de COPANT (1987).</li>
+                                  </ul>
+                                  <h4 class="o_default_snippet_text">Ámbito Nacional con base en:</h4>
+                                  <ul class="o_default_snippet_text">
+                                    <li>Ley N° 8279, de creación del Sistema Nacional para la Calidad.</li>
+                                    <li>Las directivas del Código de Buenas Prácticas para la Normalización de la ISO.</li>
+                                    <li>El Acuerdo sobre Obstáculos Técnicos al Comercio de la Organización Mundial de Comercio (OMC).</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <!--
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-11 mt32 mb16">
+                            <section class="s_text_block">
+                              <div class="container">
+                                <h3 class="text-beta mb16 text-beta-intc">Asamblea General de Afiliados</h3>
+                                <p>
+                                  <a href="/inteco/static/src/doc/INFORME-PRESIDENCIA-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Presidencia 2019</a>
+                                </p>
+                                <p>
+                                  <a href="/inteco/static/src/doc/INFORME-FISCAL-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Fiscalía Inteco 2019</a>
+                                </p>
+                                <p>
+                                  <a href="/inteco/static/src/doc/INFORME-TESORERO-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Tesorería Inteco 2019</a>
+                                </p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <!--
+                <div class="col-md-4">
+                  <section class="s_text_block">
+                    <div class="container">
+                      <h3 class="text-beta mb16 text-beta-intc">Asamblea General de Afiliados</h3>
+                      <p>
+                        <a href="/inteco/static/src/doc/INFORME-PRESIDENCIA-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Presidencia 2019</a>
+                      </p>
+                      <p>
+                        <a href="/inteco/static/src/doc/INFORME-FISCAL-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Fiscalía Inteco 2019</a>
+                      </p>
+                      <p>
+                        <a href="/inteco/static/src/doc/INFORME-TESORERO-INTECO-2019.pdf" target="_blank" class="mt16" data-original-title="" title="" style="position: relative; overflow: hidden;">Informe Tesorería Inteco 2019</a>
+                      </p>
+                    </div>
+                  </section>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+</odoo>

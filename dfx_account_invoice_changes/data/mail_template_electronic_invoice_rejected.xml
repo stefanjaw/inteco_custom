@@ -1,0 +1,670 @@
+<odoo>
+    <data noupdate="0">
+        <record id="template_electronic_invoice_rejected" model="mail.template">
+            <field name="name">Aviso: Factura Electrónica Rechazada</field>
+            <field name="email_from">Factura ${object.company_id.email}</field>
+            <field name="subject">Factura Electrónica Rechazada ${object.number}</field>
+            <field name="email_to">${object.user_id.email_formatted |safe}</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+
+                <p>Estimado ${object.user_id.name},</p>
+
+                <p>
+                Se le informa que la Factura Electrónica ${object.number} ha sido rechazada, por favor, proceda a cancelar y realizar nuevamente con referencia a esta factura rechazada.
+                </p>
+                                
+                % set access_url = object.get_mail_url()
+                <div style="margin: 16px 0px 16px 0px;" align="left">
+                    <a href="${access_url}" style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                        Ver documento
+                    </a>
+                </div>
+                
+
+                <p>Gracias</p>
+
+            ]]>
+            </field>
+        </record>
+
+        <record id="Confirm_invoice_email_template" model="mail.template">
+            <field name="name">Confirm Invoice Example e-mail template</field>
+            <field name="email_from">facturas@inteco.org</field>
+            <field name="subject">Factura ${object.name}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="email_cc">cobros@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>Buen dia Estimados Señores<br/></p>
+               <p>Por favor pueden confirmar la recepción de la factura electrónica y/o tiquete electrónico<br/></p>
+               <p>La Asociación Instituto de Normas Técnicas de Costa Rica se encuentra exenta del 2% de renta</p><br/>
+               <p>Muchas gracias</p>
+              <p>Saludos</p>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+        
+        <record id="Reminder20_invoice_email_template" model="mail.template">
+            <field name="name">Reminder20 Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>Buen dia Estimados Señores<br/></p>
+               <p>Recordamos que su factura y/o tiquete electrónico se encuentra pronto a vencer, por favor cancele a tiempo y evite la suspensión de su crédito.<br/></p>
+               <p>Si ya canceló hacer caso omiso al mensaje y envíe el comprobante de pago al correo cobros@inteco.org</p><br/>
+               <p>La Asociación Instituto de Normas Técnicas de Costa Rica se enceuntra exenta del 2% de renta</p><br/>
+               <p>Muchas gracias</p>
+              <p>Saludos</p>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="Reminder08_invoice_email_template" model="mail.template">
+            <field name="name">Reminder08 Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>Buen dia Estimados Señores<br/></p>
+               <p>Recordamos que su factura y/o tiquete electrónico se encuentra pronto a vencer, por favor cancele a tiempo y evite la suspensión de su crédito.<br/></p>
+               <p>Si ya canceló hacer caso omiso al mensaje y envíe el comprobante de pago al correo cobros@inteco.org</p><br/>
+               <p>La Asociación Instituto de Normas Técnicas de Costa Rica se enceuntra exenta del 2% de renta</p><br/>
+               <p>Muchas gracias</p>
+              <p>Saludos</p>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="First_Reminder_invoice_email_template" model="mail.template">
+            <field name="name">First Reminder Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="email_cc">crosales@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>San José, Costa Rica a ${(object.day)} ${(object.day_num)} de ${(object.mon)} de ${(object.year)}<br/></p>
+          <p>Señores:<br/></p>
+          <p>Depto. Contabilidad<br/></p>
+          <p>${(object.partner_id.parent_id.name)}<br/></p>
+          <p>${(object.partner_id.street)}<br/></p>
+          <p>Estimado(a) Sr.(a) ${(object.partner_id.name)}<br/></p>
+          <p>Le informamos que nuestra factura número ${object.number}, por un monto de ${object.amount_total}, con fecha ${object.date_invoice}, se encuentra pendiente de pago por parte de su representada, concretamente con ${object.after_date_days} días de atraso, ello según nuestros registros.<br/></p>
+          <p>Agradecemos se ponga en contacto con nuestro departamento contable financiero para poner la cuenta al día lo más pronto posilbe y evitar contratiempos. Los contactos son:</p><br/>
+               <p>● cobros@inteco.org (Departamento de Cobros)</p>
+               <p>● lfmiranda@inteco.org (Departamento Contable Financiero)</p><br/>
+               <p>Adjuntamos nuestras cuentas corrientes para su respectivo pago.</p><br/>
+              <p>La Asociación Instituto de Normas Técnicas de Costa Rica se encuentra exenta del 2% de renta</p>
+              <p>Le rogamos que nos indique si el pago se hará vía cheque, o por transferencia.</p><br/>
+              <p>En caso de que el pago ya se haya realizado antes de recibir esta nota, por favor hacer caso omiso de esta nota, para lo cual rogamos las disculpas del caso.</p><br/>
+              <table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <table style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- CONTENT -->
+                                            <tr>
+                                                <td style="min-width: 590px;" align="center">
+                                                    <table style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+
+                                                        <tbody><tr><td style="font-size: 13px;" valign="top">
+                                                            <div>
+                                                                <p><strong>Estado de cuenta</strong></p>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th class="text-left" style="text-align: center"><strong>Cliente</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha emisión factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Número factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha de vencimiento de factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Días de atraso de pago</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Total</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Estado FE</strong></th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        % for line in object.get_invoices():
+
+                                                                        <tr>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.partner_id.name}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_invoice}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.number}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_due}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.after_date_days}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.amount_total}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.state_tributacion}
+                                                                            </td>
+                                                                        </tr>
+                                                                        %endfor
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+              <p>Agradeciendo su gestión, muy cordialmente</p><br/>
+              <p>Natalia Porras Salas</p><br/>
+              <p>Soporte financieron</p><br/>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+
+        <record id="Second_Reminder_invoice_email_template" model="mail.template">
+            <field name="name">Second Reminder Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="email_cc">crosales@inteco.org,daguiluz@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>San José, Costa Rica a ${(object.day)} ${(object.day_num)} de ${(object.mon)} de ${(object.year)}<br/></p>
+          <p>Señores:<br/></p>
+          <p>Depto. Contabilidad<br/></p>
+          <p>${(object.partner_id.parent_id.name)}<br/></p>
+          <p>${(object.partner_id.street)}<br/></p>
+          <p>Estimado(a) Sr.(a) ${(object.partner_id.name)}<br/></p>
+          <p>Le informamos que nuestra factura número ${object.number}, por un monto de ${object.amount_total}, con fecha ${object.date_invoice}, se encuentra pendiente de pago por parte de su representada, concretamente con ${object.after_date_days} días de atraso, ello según nuestros registros.<br/></p>
+          <p>Agradecemos se ponga en contacto con nuestro departamento contable financiero para poner la cuenta al día lo más pronto posilbe y evitar contratiempos. Los contactos son:</p><br/>
+               <p>● cobros@inteco.org (Departamento de Cobros)</p>
+               <p>● lfmiranda@inteco.org (Departamento Contable Financiero)</p><br/>
+               <p>Es importante normalizar la cuenta, pues INTECO podría suspender la certificación en caso de no recibirse el pago en los próximos cinco días, ello basándose en en Instructivo de Evaluación y Decisión IGEC 05-01, que indica lo siguiente:</p><br/>
+               <p>“5.5.3. Suspensión de la certificación</p><br/>
+               <p>5.5.3.1. La suspensión temporal de la certificación o declaración consiste en interrumpir el uso del “Certificado” de la norma correspondiente o de cualquier otro tipo de documento relacionado con la certificación o declaración. Esto se aplica cuando:</p><br/>
+               <p>d) El no haber pagado las tarifas en los plazos estipulados”.</p><br/>
+               <p>Sin embargo estamos seguros que la situación se corregirá.</p><br/>
+               <p>Adjuntamos nuestras cuentas corrientes para su respectivo pago.</p><br/>
+              <p>La Asociación Instituto de Normas Técnicas de Costa Rica se encuentra exenta del 2% de renta</p>
+              <p>Le rogamos que nos indique si el pago se hará vía cheque, o por transferencia.</p><br/>
+              <p>En caso de que el pago ya se haya realizado antes de recibir esta nota, por favor hacer caso omiso de esta nota, para lo cual rogamos las disculpas del caso.</p><br/>
+              <table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <table style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- CONTENT -->
+                                            <tr>
+                                                <td style="min-width: 590px;" align="center">
+                                                    <table style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+
+                                                        <tbody><tr><td style="font-size: 13px;" valign="top">
+                                                            <div>
+                                                                <p><strong>Estado de cuenta</strong></p>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th class="text-left" style="text-align: center"><strong>Cliente</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha emisión factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Número factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha de vencimiento de factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Días de atraso de pago</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Total</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Estado FE</strong></th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        % for line in object.get_invoices():
+
+                                                                        <tr>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.partner_id.name}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_invoice}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.number}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_due}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.after_date_days}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.amount_total}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.state_tributacion}
+                                                                            </td>
+                                                                        </tr>
+                                                                        %endfor
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+              <p>Agradeciendo su gestión, muy cordialmente</p><br/>
+              <p>César Rosales</p><br/>
+              <p>Director Administrativo Financiero Contable</p><br/>
+              <p>Lic. Dennis Aguiluz</p><br/>
+              <p>Departamento Legal Inteco</p><br/>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="Third_Reminder_invoice_email_template" model="mail.template">
+            <field name="name">Third Reminder Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="email_cc">crosales@inteco.org,daguiluz@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>San José, Costa Rica a ${(object.day)} ${(object.day_num)} de ${(object.mon)} de ${(object.year)}<br/></p>
+          <p>Señores:<br/></p>
+          <p>Depto. Contabilidad<br/></p>
+          <p>${(object.partner_id.parent_id.name)}<br/></p>
+          <p>${(object.partner_id.street)}<br/></p>
+          <p>Estimado(a) Sr.(a) ${(object.partner_id.name)}<br/></p>
+          <p>Le informamos que nuestra factura número ${object.number}, por un monto de ${object.amount_total}, con fecha ${object.date_invoice}, se encuentra pendiente de pago por parte de su representada, concretamente con ${object.after_date_days} días de atraso, ello según nuestros registros.<br/></p>
+          <p>Agradecemos se ponga en contacto con nuestro departamento contable financiero para poner la cuenta al día lo más pronto posilbe y evitar contratiempos. Los contactos son:</p><br/>
+               <p>● cobros@inteco.org (Departamento de Cobros)</p>
+               <p>● lfmiranda@inteco.org (Departamento Contable Financiero)</p><br/>
+              <p>Evite la cancelación de su crédito según nuestras politicas internas MDA Comercialización Final V2</p><br/>
+              <p>Le rogamos que nos indique si el pago se hará vía cheque, o por transferencia.</p><br/>
+              <p>En caso de que el pago ya se haya realizado antes de recibir esta nota, por favor hacer caso omiso de esta nota, para lo cual rogamos las disculpas del caso.</p><br/>
+              <table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <table style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- CONTENT -->
+                                            <tr>
+                                                <td style="min-width: 590px;" align="center">
+                                                    <table style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+
+                                                        <tbody><tr><td style="font-size: 13px;" valign="top">
+                                                            <div>
+                                                                <p><strong>Estado de cuenta</strong></p>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th class="text-left" style="text-align: center"><strong>Cliente</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha emisión factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Número factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha de vencimiento de factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Días de atraso de pago</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Total</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Estado FE</strong></th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        % for line in object.get_invoices():
+
+                                                                        <tr>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.partner_id.name}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_invoice}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.number}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_due}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.after_date_days}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.amount_total}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.state_tributacion}
+                                                                            </td>
+                                                                        </tr>
+                                                                        %endfor
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+              <p>Agradeciendo su gestión, muy cordialmente</p><br/>
+              <p>César Rosales</p><br/>
+              <p>Director Administrativo Financiero Contable</p><br/>
+              <p>Lic. Dennis Aguiluz</p><br/>
+              <p>Departamento Legal Inteco</p><br/>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="Fourth_Reminder_invoice_email_template" model="mail.template">
+            <field name="name">Fourth Reminder Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="email_cc">crosales@inteco.org,daguiluz@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>San José, Costa Rica a ${(object.day)} ${(object.day_num)} de ${(object.mon)} de ${(object.year)}<br/></p>
+          <p>Señores:<br/></p>
+          <p>Depto. Contabilidad<br/></p>
+          <p>${(object.partner_id.parent_id.name)}<br/></p>
+          <p>${(object.partner_id.street)}<br/></p>
+          <p>Estimado(a) Sr.(a) ${(object.partner_id.name)}<br/></p>
+          <p>Le informamos que nuestra factura número ${object.number}, por un monto de ${object.amount_total}, con fecha ${object.date_invoice}, se encuentra pendiente de pago por parte de su representada, concretamente con ${object.after_date_days} días de atraso, ello según nuestros registros.<br/></p>
+          <p>Agradecemos se ponga en contacto con nuestro departamento contable financiero para poner la cuenta al día lo más pronto posilbe y evitar contratiempos. Los contactos son:</p><br/>
+               <p>● cobros@inteco.org (Departamento de Cobros)</p>
+               <p>● lfmiranda@inteco.org (Departamento Contable Financiero)</p><br/>
+              <p>Evite la cancelación de su crédito según nuestras politicas internas MDA Comercialización Final V2</p><br/>
+              <p>Le rogamos que nos indique si el pago se hará vía cheque, o por transferencia.</p><br/>
+              <p>En caso de que el pago ya se haya realizado antes de recibir esta nota, por favor hacer caso omiso de esta nota, para lo cual rogamos las disculpas del caso.</p><br/>
+              <table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <table style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- CONTENT -->
+                                            <tr>
+                                                <td style="min-width: 590px;" align="center">
+                                                    <table style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+
+                                                        <tbody><tr><td style="font-size: 13px;" valign="top">
+                                                            <div>
+                                                                <p><strong>Estado de cuenta</strong></p>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th class="text-left" style="text-align: center"><strong>Cliente</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha emisión factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Número factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha de vencimiento de factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Días de atraso de pago</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Total</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Estado FE</strong></th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        % for line in object.get_invoices():
+
+                                                                        <tr>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.partner_id.name}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_invoice}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.number}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_due}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.after_date_days}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.amount_total}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.state_tributacion}
+                                                                            </td>
+                                                                        </tr>
+                                                                        %endfor
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+              <p>Agradeciendo su gestión, muy cordialmente</p><br/>
+              <p>César Rosales</p><br/>
+              <p>Director Administrativo Financiero Contable</p><br/>
+              <p>Lic. Dennis Aguiluz</p><br/>
+              <p>Departamento Legal Inteco</p><br/>
+              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="CxC_State_invoice_email_template" model="mail.template">
+            <field name="name">CxC State Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <field name="email_to">nporras@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+                 <table style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center">
+                                    <table style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <!-- CONTENT -->
+                                            <tr>
+                                                <td style="min-width: 590px;" align="center">
+                                                    <table style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;" width="590" cellspacing="0" cellpadding="0" border="0">
+
+                                                        <tbody><tr><td style="font-size: 13px;" valign="top">
+                                                            <div>
+                                                                <p><strong>Estado de cuenta</strong></p>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+
+                                                                            <th class="text-left" style="text-align: center"><strong>Cliente</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha emisión factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Número factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Fecha de vencimiento de factura</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Días de atraso de pago</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Total</strong></th>
+                                                                            <th class="d-none text-left" style="text-align: center"><strong>Estado FE</strong></th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        % for line in object.get_latest_invoices():
+
+                                                                        <tr>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.partner_id.name}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_invoice}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.number}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.date_due}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.after_date_days}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.amount_total}
+                                                                            </td>
+                                                                            <td style="font-size: 13px;">
+                                                                                ${line.state_tributacion}
+                                                                            </td>
+                                                                        </tr>
+                                                                        %endfor
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+                <img src="dfx_account_invoice_changes/static/img/firma.png" style="height: 100px;">
+                <p>Correo: nporras@inteco.org | Costa Rica: +(506)2283-4522 | República Dominicana +(809)987-6115</p>
+<!--          <p>Buen dia Estimados Señores<br/></p>-->
+<!--               <p>Por favor pueden confirmar la recepción de la factura electrónica y/o tiquete electrónico<br/></p>-->
+<!--               <p>La Asociación Instituto de Normas Técnicas de Costa Rica se enceuntra exenta del 2% de renta</p><br/>-->
+<!--               <p>Muchas gracias</p>-->
+<!--              <p>Saludos</p>-->
+<!--              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>-->
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+
+        <record id="Reminder120_invoice_email_template" model="mail.template">
+            <field name="name">Reminder120 Invoice Example e-mail template</field>
+            <field name="email_from">cobros@inteco.org</field>
+            <field name="subject">Factura ${object.number}</field>
+            <!--            <field name="email_to">${object.email|safe}</field>-->
+            <field name="email_to">nporras@inteco.org</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="dfx_account_invoice_changes.model_account_move"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+                <![CDATA[
+                 % set access_action = object.get_access_action()
+                 % set access_url = object.get_mail_url()
+          <p>Se le informa que la factura No. ${object.number} perteneciente al cliente ${(object.partner_id.name)} se encuentra con</p>
+          <p>más de 120 días de atrazo por lo que se le genera una tarea de cobro.</p>
+          <img src="dfx_account_invoice_changes/static/img/firma.png" style="height: 100px;">
+          <p>Correo: nporras@inteco.org | Costa Rica: +(506)2283-4522 | República Dominicana +(809)987-6115</p>
+<!--               <p>Por favor pueden confirmar la recepción de la factura electrónica y/o tiquete electrónico<br/></p>-->
+<!--               <p>La Asociación Instituto de Normas Técnicas de Costa Rica se enceuntra exenta del 2% de renta</p><br/>-->
+<!--               <p>Muchas gracias</p>-->
+<!--              <p>Saludos</p>-->
+
+<!--              <p>Fecha de notificación: ${(object.day)} ${(object.day_num)} de ${(object.mon)} del ${(object.year)}</p>-->
+
+<!--              ${(object.company_id.name)}-->
+        ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

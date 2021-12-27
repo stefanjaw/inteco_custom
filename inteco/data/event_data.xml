@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+
+    <record id="partner_address_001" model="res.partner">
+        <field name="name">C&#225;mara de Comercio</field>
+        <field name="parent_id" ref="base.main_partner"/>
+        <field name="active">1</field>
+        <field name="type">contact</field>
+<!--        <field name="state_id" eval="ref('l10n_cr.state_SJ')"/>-->
+        <field name="country_id" ref="base.cr"/>
+    </record>
+
+    <record id="partner_address_002" model="res.partner">
+        <field name="name">Asamblea Legislativa - Sal&#243;n de Ex-Presidentes</field>
+        <field name="parent_id" ref="base.main_partner"/>
+        <field name="active">1</field>
+        <field name="type">contact</field>
+<!--        <field name="state_id" eval="ref('l10n_cr.state_SJ')"/>-->
+        <field name="country_id" ref="base.cr"/>
+    </record>
+
+    <!-- Demo Data for Event Type -->
+    <record id="event_type_0" model="event.type">
+        <field name="name">Seminar</field>
+    </record>
+
+    <record id="event_type_1" model="event.type">
+        <field name="name">Exhibition</field>
+    </record>
+
+    <record id="event_type_2" model="event.type">
+        <field name="name">Conference</field>
+    </record>
+
+    <record id="event_type_3" model="event.type">
+        <field name="name">Show</field>
+    </record>
+
+    <record id="event_type_4" model="event.type">
+        <field name="name">Training</field>
+    </record>
+
+    <!-- event.event -->
+    <record id="event_0" model="event.event">
+        <field name="name">Asamblea General 2017</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="date_tz">America/Costa_Rica</field>
+        <field eval="time.strftime('2017-03-14 18:00:00')" name="date_begin"/>
+        <field eval="time.strftime('2017-03-14 20:00:00')" name="date_end"/>
+        <field name="seats_limited">False</field>
+        <field name="address_id" ref="partner_address_001"/>
+        <field name="event_type_id" ref="event_type_0"/>
+<!--        <field name="website_published">True</field>-->
+    </record>
+    <record id="event_1" model="event.event">
+        <field name="name">Esquema Libre de Gluten</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="date_tz">America/Costa_Rica</field>
+        <field eval="time.strftime('2017-03-21 09:00:00')" name="date_begin"/>
+        <field eval="time.strftime('2017-03-21 11:00:00')" name="date_end"/>
+        <field name="seats_limited">False</field>
+        <field name="address_id" ref="partner_address_002"/>
+        <field name="event_type_id" ref="event_type_2"/>
+<!--        <field name="website_published">True</field>-->
+    </record>
+
+</odoo>

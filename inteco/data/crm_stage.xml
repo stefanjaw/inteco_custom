@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!--
+    Certifications stages
+    -->
+    <record model="crm.stage" id="crm.stage_lead1">
+<!--        <field name="probability">5</field>-->
+<!--        comentar probability!!!-->
+        <field name="sequence">10</field>
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_data_register'),
+            ref('inteco.mail_activity_seller_assignment'),
+            ref('inteco.mail_activity_initial_followup_1')])]"/>
+        <field name="template_id" ref="new_lead_received_email_template"/>
+    </record>
+    <record model="crm.stage" id="crm.stage_lead2">
+<!--        <field name="probability">10</field>-->
+        <field name="sequence">20</field>
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_information_reg')])]"/>
+    </record>
+    <record model="crm.stage" id="crm.stage_lead3">
+<!--        <field name="probability">30</field>-->
+        <field name="sequence">30</field>
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_preparation_offer')])]"/>
+    </record>
+    <record model="crm.stage" id="negotiation_stage">
+        <field name="name">Negotiation</field>
+<!--        <field name="probability">50</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">40</field>
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_signature')])]"/>
+    </record>
+    <record model="crm.stage" id="crm.stage_lead4">
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_opening')])]"/>
+    </record>
+
+    <!--
+    Trainings stages
+    -->
+    <record model="crm.stage" id="stage_trainings_new">
+        <field name="name">New</field>
+<!--        <field name="probability">5</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">10</field>
+<!--        <field name="team_id" ref="inteco.team_trainings_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_data_register'),
+            ref('inteco.mail_activity_seller_assignment'),
+            ref('inteco.mail_activity_initial_followup_1')])]"/>
+    </record>
+    <record model="crm.stage" id="stage_trainings_qualified">
+        <field name="name">Qualified</field>
+<!--        <field name="probability">30</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">20</field>
+<!--        <field name="team_id" ref="inteco.team_trainings_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_trainings_proposition">
+        <field name="name">Proposition</field>
+<!--        <field name="probability">70</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">30</field>
+<!--        <field name="team_id" ref="inteco.team_trainings_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_preparation_offer')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_trainings_negotiation">
+        <field name="name">Negotiation</field>
+<!--        <field name="probability">50</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">40</field>
+<!--        <field name="team_id" ref="inteco.team_trainings_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_signature')])]"/>
+    </record>        
+    <record model="crm.stage" id="stage_trainings_won">
+        <field name="name">Won</field>
+        <field name="fold" eval="False"/>
+<!--        <field name="probability">100</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">70</field>
+<!--        <field name="team_id" ref="inteco.team_trainings_department"/>-->
+    </record> 
+
+    <!--
+    Standards stages
+    -->
+    <record model="crm.stage" id="stage_standards_new">
+        <field name="name">New</field>
+<!--        <field name="probability">5</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">10</field>
+<!--        <field name="team_id" ref="inteco.team_standards_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_data_register'),
+            ref('inteco.mail_activity_seller_assignment'),
+            ref('inteco.mail_activity_initial_followup_1')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_standards_qualified">
+        <field name="name">Qualified</field>
+<!--        <field name="probability">30</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">20</field>
+<!--        <field name="team_id" ref="inteco.team_standards_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_standards_proposition">
+        <field name="name">Proposition</field>
+<!--        <field name="probability">70</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">30</field>
+<!--        <field name="team_id" ref="inteco.team_standards_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_preparation_offer')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_standards_negotiation">
+        <field name="name">Negotiation</field>
+<!--        <field name="probability">50</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">40</field>
+<!--        <field name="team_id" ref="inteco.team_standards_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_signature')])]"/>
+    </record>        
+    <record model="crm.stage" id="stage_standards_won">
+        <field name="name">Won</field>
+        <field name="fold" eval="False"/>
+<!--        <field name="probability">100</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">70</field>
+<!--        <field name="team_id" ref="inteco.team_standards_department"/>-->
+    </record>
+
+    <!--
+    General stages
+    -->
+    <record model="crm.stage" id="stage_general_new">
+        <field name="name">New</field>
+<!--        <field name="probability">5</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">10</field>
+<!--        <field name="team_id" ref="inteco.team_general_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_data_register'),
+            ref('inteco.mail_activity_seller_assignment'),
+            ref('inteco.mail_activity_initial_followup_1')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_general_qualified">
+        <field name="name">Qualified</field>
+<!--        <field name="probability">30</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">20</field>
+<!--        <field name="team_id" ref="inteco.team_general_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_general_proposition">
+        <field name="name">Proposition</field>
+<!--        <field name="probability">70</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">30</field>
+<!--        <field name="team_id" ref="inteco.team_general_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_preparation_offer')])]"/>            
+    </record>
+    <record model="crm.stage" id="stage_general_negotiation">
+        <field name="name">Negotiation</field>
+<!--        <field name="probability">50</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">40</field>
+<!--        <field name="team_id" ref="inteco.team_general_department"/>-->
+        <field name="default_activities_ids" eval="[(6, 0, [
+            ref('inteco.mail_activity_adjustment_amount_sale'),
+            ref('inteco.mail_activity_signature')])]"/>
+    </record>        
+    <record model="crm.stage" id="stage_general_won">
+        <field name="name">Won</field>
+        <field name="fold" eval="False"/>
+<!--        <field name="probability">100</field>-->
+<!--        <field name="on_change">1</field>-->
+        <field name="sequence">70</field>
+<!--        <field name="team_id" ref="inteco.team_general_department"/>-->
+    </record>        
+
+</odoo>

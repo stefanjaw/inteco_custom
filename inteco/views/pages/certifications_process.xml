@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="certifications_process" model="website.page">
+        <field name="name">Certifications in Process</field>
+        <field name="url">/page/inteco.certifications_process</field>
+        <field name="website_published">True</field>
+        <field name="key">inteco.certifications_process</field>
+        <field name="type">qweb</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.certifications_process" name="Certifications in Process">
+                <t t-set="certs_process" t-value="True"/>
+                <t t-set="hatband_certifications" t-value="True"/>
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <div class="container" style="margin-top:25px;margin-bottom:25px">
+                            <section class="s_text_block">
+                                <div class="container">
+                                    <section style="margin-bottom:20px">
+                                        <ul class="nav nav-pills nav-justified bgbeta-intc">
+                                            <li class="nav-item">
+                                                <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs else 'nav-link'" href="/page/inteco.certifications">¿QUÉ ES LA CERTIFICACIÓN?</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_process else 'nav-link'" href="/page/inteco.certifications_process">PROCESO DE CERTIFICACIÓN</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a style="color:#ffffff; font-size: 12px;" class="sub_menu_o" t-att-class="'nav-link active' if certs_people else 'nav-link'" href="/page/inteco.certifications_people">RECONOCIMIENTO IQNET</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </section>
+
+                            <div class="container">
+                                <h2>
+                                    <font class="text-beta-intc" style="">Proceso de certificación</font>
+                                </h2>
+                                <div class="row">
+                                    <div class="col-md-12 mb32">
+                                        <h4>¡Contáctenos!</h4>
+                                        <p>
+                                        </p>
+                                        <ol style="list-style-type:decimal;">
+                                            <li>Contacto inicial: <a style="font-weight:700" href="mailto:certificaciones@inteco.org">certificaciones@inteco.org</a></li>
+                                            <li>Solicitud del servicio</li>
+                                            <li>Oferta de servicio</li>
+                                            <li>Proceso de evaluación</li>
+                                        </ol>
+                                        <p/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="s_text_block bg-beta bgbeta-intc" style="padding-top:15px;margin-top:-38px">
+                            <div class="container">
+                                <h2>¿Por qué certificarse con INTECO?</h2>
+                                <div class="row">
+                                    <div class="col-md-8 mb16 mt16">
+                                        <p>
+                                            <ul>
+                                                <li>Trabajamos para mejorar la calidad de vida de la sociedad costarricense</li>
+                                                <li>Somos una herramienta para mejorar la competitividad del país</li>
+                                                <li>Tenemos la experiencia, la credibilidad y los contactos internacionales</li>
+                                                <li>Apoyamos la infraestructura de calidad del país</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="container" style="margin-top:30px">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Proceso de sistemas de gestión</h4>
+                                        <p style="text-align:center">
+                                            <img t-if="request.lang == 'es_CR'" src="/web/image/4106380/Sistemas%20de%20Gesti%C3%B3n.%20Infograf%C3%ADa%20Pag%20Web-01.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                            <img t-if="request.lang == 'en_US'" src="/web/image/4106404/Infografi%CC%81a%20Pag%20Web_Ingle%CC%81s-Management_Systems.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12 mb32">
+                                        <p style="text-align:center">
+                                            <a href="/inteco/static/src/doc/IT-SE-01-(V12)-Descripcion-del-proceso-de-CSG.pdf" class="btn btn-primary btn-intc" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                <span class="fa fa-download fa-1x" style=""/>
+                                                <b>Proceso de sistemas de gestión</b>
+                                            </a>
+                                        </p>
+                                        <p style="padding-top:15px">
+                                            <span style="width: 47%;margin-top: 15px;height: 7px;display: block;background-color: #00a0e3 !important;margin-left: 27.5%;"/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h4>Proceso de certificación de productos</h4>
+                                        <p style="text-align:center">
+                                            <img t-if="request.lang == 'es_CR'" src="/web/image/4106384/Producto.%20Infograf%C3%ADa%20Pag%20Web-02.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                            <img t-if="request.lang == 'en_US'" src="/web/image/4106408/Infografi%CC%81a%20Pag%20Web_Ingle%CC%81s-Product.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12 mb32">
+                                        <p style="text-align:center">
+                                            <a href="/web/content/7636966/IT-SE-08 (V08) Descripción de los tipos de certificación de producto, proceso o servicio.pdf" target="_blank" class="btn btn-primary btn-intc" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                <span class="fa fa-download fa-1x" style=""/>
+                                                <b>Proceso de certificación de productos</b>
+                                            </a>
+                                        </p>
+                                        <p style="padding-top:15px">
+                                            <span style="width: 47%;margin-top: 15px;height: 7px;display: block;background-color: #00a0e3 !important;margin-left: 27.5%;"/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h4>Proceso de certificación de personas</h4>
+                                        <p style="text-align:center">
+                                            <img t-if="request.lang == 'es_CR'" src="/web/image/4106382/Personas.%20Infograf%C3%ADa%20Pag%20Web-03.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                            <img t-if="request.lang == 'en_US'" src="/web/image/4106406/Infografi%CC%81a%20Pag%20Web_Ingle%CC%81s-People.png" class="mb16" style="width: 70%;" data-original-title="" title=""/>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-12 mb32">
+                                        <p style="text-align:center">
+                                            <a href="/inteco/static/src/doc/IT-SE-19-(V09)-Proceso-de-Certificacion-de-Personas.pdf" class="btn btn-primary btn-intc" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                <span class="fa fa-download fa-1x" style=""/>
+                                                <b>Proceso de certificación de personas</b>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <a href="http://shorturl.at/nCO12" class="" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                <b>Conozca nuestra declaración de imparcialidad</b>
+                                            </a>
+                                            y el
+                                            <a href="http://shorturl.at/jqvHN" class="" target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                                <b>procedimiento para la gestión de las apelaciones y el debido proceso de las medidas sancionatorias en Servicios de Evaluación</b>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+</odoo>

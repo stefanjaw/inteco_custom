@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.inteco</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='crm']//div[hasclass('o_settings_container')][1]" position="inside">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="crm_import_notification_enabled"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="crm_import_notification_enabled"/>
+                        <div class="text-muted" id="crm_import_notification_enabled">
+                            Allow email notifications to be sent when are made leads importation from csv files
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@data-key='crm']" position="inside">
+                <h2>Default Lead Values Created From Incoming Emails</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_email_campaign">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_email_campaign_id" string="Campaign"/>
+                            <div class="text-muted">
+                                Set the default campaign in leads created from an incoming email sent by a customer
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_email_campaign_id" class="o_light_label"/>
+                                <field name="lead_email_campaign_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_email_medium">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_email_medium_id" string="Medium"/>
+                            <div class="text-muted">
+                                Set the default medium in leads created from an incoming email sent by a customer
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_email_medium_id" class="o_light_label"/>
+                                <field name="lead_email_medium_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_email_source">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_email_source_id" string="Source"/>
+                            <div class="text-muted">
+                                Set the default source in leads created from an incoming email sent by a customer
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_email_source_id" class="o_light_label"/>
+                                <field name="lead_email_source_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Default Lead Values Created From the Website</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_website_campaign">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_website_campaign_id" string="Campaign"/>
+                            <div class="text-muted">
+                                Set the default campaign in leads created from the website's contact form
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_website_campaign_id" class="o_light_label"/>
+                                <field name="lead_website_campaign_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_website_medium">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_website_medium_id" string="Medium"/>
+                            <div class="text-muted">
+                                Set the default medium in leads created from the website's contact form
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_website_medium_id" class="o_light_label"/>
+                                <field name="lead_website_medium_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" id="crm_lead_website_source">
+                        <div class="o_setting_right_pane">
+                            <label for="lead_website_source_id" string="Source"/>
+                            <div class="text-muted">
+                                Set the default source in leads created from the website's contact form
+                            </div>
+                            <div class="mt16">
+                                <label for="lead_website_source_id" class="o_light_label"/>
+                                <field name="lead_website_source_id" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

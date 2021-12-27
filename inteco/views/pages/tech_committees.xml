@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ctech_committees" model="website.page">
+        <field name="name">Technical Committees</field>
+        <field name="url">/page/inteco.tech_committees</field>
+        <field name="website_published">True</field>
+        <field name="type">qweb</field>
+        <field name="key">inteco.tech_committees</field>
+        <field name="arch" type="xml">
+            <t t-name="inteco.tech_committees" name="Technical Committees">
+              <t t-set="dev_tech" t-value="True"/>
+              <t t-set="hatband_development" t-value="True"/>
+              <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <section class="s_text_block">
+                          <div class="container">
+                            <h2>
+                              <font class="text-beta" style="">Comites Técnicos</font>
+                            </h2>
+                            <div class="row">
+                              <div class="col-md-12 mt16 mb0">
+                                <img src="/inteco/static/src/img/normas_comite_tecnico_hero.jpg" class="pull-left mb16" style="width: 100%;" data-original-title="" title=""/>
+                                <h3>Órgano de Estudio</h3>
+                                <p>Son los organismos de INTECO encargados del desarrollo de los trabajos de normalización en un campo de actividad definido. Los Órganos de Estudio o OEs se clasifican en Comités, Sub Comités y Grupos de trabajo.</p>
+                                <p>Los diferentes OEs que INTECO coordina, están conformados por representantes de los siguientes sectores: Industria y comercio, consumidores, gobierno, aplicadores de normas, academia, institutos de investigación, asociaciones y colegios profesionales, ONG y representantes de los trabajadores. El principal objetivo de los OEs es la promoción y desarrollo de las normas técnicas nacionales.</p>
+                              </div>
+                              <div class="col-md-12 mt16 mb32">
+                                <p>
+                                  <table class="table table-condensed">
+                                    <thead>
+                                      <tr>
+                                        <th>Comite Técnico</th>
+                                        <th>Nombre</th>
+                                        <th>Normas Publicadas</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>CTN 02</td>
+                                        <td>Alimentos</td>
+                                        <td>102</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 03</td>
+                                        <td>Accesibilidad al medio físico</td>
+                                        <td>23</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 06</td>
+                                        <td>Construcción</td>
+                                        <td>231</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 07</td>
+                                        <td>Papel y Cartón</td>
+                                        <td>35</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 10</td>
+                                        <td>Dibujo Técnico</td>
+                                        <td>96</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 15</td>
+                                        <td>Envases Plásticos</td>
+                                        <td>27</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 20</td>
+                                        <td>Electrotecnia</td>
+                                        <td>102</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 21</td>
+                                        <td>Incendios</td>
+                                        <td>51</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 27</td>
+                                        <td>Tecnología de la Información</td>
+                                        <td>13</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 28</td>
+                                        <td>Eficiencia Energética</td>
+                                        <td>35</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 31</td>
+                                        <td>Salud e Higuiene Ocupacional</td>
+                                        <td>68</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 32</td>
+                                        <td>Ensayos no Destructivos</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 33</td>
+                                        <td>Física Médica</td>
+                                        <td>15</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 35</td>
+                                        <td>Responsabilida Social</td>
+                                        <td>2</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 36</td>
+                                        <td>Hidrocarburos</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 37</td>
+                                        <td>AVP+L</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 38</td>
+                                        <td>Igualda y Equidad de Genero</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 39</td>
+                                        <td>Medición de Fluidos</td>
+                                        <td>0</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 40</td>
+                                        <td>COPOLCO</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 76</td>
+                                        <td>Central Sistemas de Gestión de Calidad</td>
+                                        <td>62</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 07</td>
+                                        <td>Gestión Ambiental</td>
+                                        <td>33</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CTN 36</td>
+                                        <td>Gestión de Proyectos</td>
+                                        <td>1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CASCO</td>
+                                        <td>Evaluación de la Conformidad</td>
+                                        <td>24</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+                      <div class="col-md-4">
+                          <section class="s_text_block">
+                          <div class="container">
+                              <h3>Normas Populares</h3>
+                              <div class="row">
+                                <div class="col-md-12 mb16 mt16">
+                                  <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                    <div class="o_container">
+                                        <a href="/shop/product/inte-iso-9001-2015-sistemas-de-gestion-de-la-calidad-requisitos-640">
+                                          <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" alt="Normas Isotipo"/>
+                                        </a>
+                                    </div>
+                                  </div>
+                                  <p><b>INTE/ISO 9001:2015</b><br/>2015-09-15</p>
+                                  <p>Especifica los requisitos para un sistema de gestión de la calidad</p>
+                                </div>
+                                <div class="col-md-12 mb16 mt16">
+                                  <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                    <div class="o_container">
+                                      <a href="/shop/product/inte-iso-14001-2015-sistemas-de-gestion-ambiental-requisitos-con-orientacion-para-su-uso-834">
+                                        <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" alt="Normas Isotipo"/>
+                                      </a>
+                                    </div>
+                                  </div>
+                                  <p><b>INTE/ISO 14001:2015</b><br/>2015-09-15</p>
+                                  <p>Especifica los requisitos para un sistema de gestión ambiental</p>
+                                </div>
+                                <div class="col-md-12 mb16 mt16">
+                                  <div class="o_image_floating s_image_floating o_margin_l pull-left">
+                                    <div class="o_container">
+                                      <a href="/shop/product/inte-12-01-06-2016-norma-para-demostrar-la-carbononeutralidad-requisitos-581">
+                                        <img class="img img-rounded img-responsive" src="/inteco/static/src/img/normas_isotipo.jpg" alt="Normas Isotipo"/>
+                                      </a>
+                                    </div>
+                                    <br/>
+                                  </div>
+                                  <p><b>INTE 12-01-06:2016</b><br/>2016-05-05</p>
+                                  <p>Establece los requisitos que debe cumplir una organización para demostrar la Carbono Neutralidad</p>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section class="s_text_block">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-12 mb16 mt0">
+                                  <div class="well s_well clearfix mt32">
+                                    <p>La Dirección de Normalización de INTECO informa a todos sus asociados y público en general la publicación de las normas en el mes. Para mayor información pueden comunicarse con la Ing. Liz Paula Cordero a <a href="mailto:lcordero@inteco.org">lcordero@inteco.org</a> o para la compra de una norma comunicarse con Natalia Porras Salas a <a href="mailto:nporras@inteco.org">nporras@inteco.org</a></p>
+                                  </div>
+                                  <p>
+                                    <a href="/web/image/inteco.doc_Normas_Aprobadas_Mes" target="_blank" class="btn btn-primary" style="position: relative; overflow: hidden;" data-original-title="" title="">
+                                      <span class="graph-ripple" style="height: 137px; width: 137px; top: -43px; left: 47px;"/>
+                                      <span class="fa fa-download fa-1x" style=""/>
+                                      <b data-original-title="" title="">Descargar todas</b>
+                                    </a>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </t>
+            </t>
+        </field>
+    </record>
+</odoo>

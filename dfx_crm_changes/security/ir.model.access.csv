@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inteco_subservice_variant,inteco subservice V,inteco.model_crm_subservice,base.group_user,1,1,1,1
+access_inteco_subservice_product,inteco subservice P,inteco.model_crm_subservice,base.group_user,1,1,1,1
+access_public_inteco_subservice_product,inteco subservice P,inteco.model_crm_subservice,base.group_public,1,1,1,1
+access_dfx_crm_form,crm form,dfx_crm_changes.model_crm_forms,base.group_user,1,1,1,1
+access_public_dfx_crm_form,crm form,dfx_crm_changes.model_crm_forms,base.group_public,1,1,1,1
+access_portal_dfx_crm_form,crm form,dfx_crm_changes.model_crm_forms,base.group_portal,1,1,1,1
+access_dfx_keywords,crm keywords,dfx_crm_changes.model_crm_key_words,base.group_user,1,1,1,1
+access_public_dfx_keywords,crm keywords,dfx_crm_changes.model_crm_key_words,base.group_public,1,1,1,1
+
+access_inteco_subservice_portal,inteco subservice Portal,inteco.model_crm_subservice,base.group_portal,1,1,1,1

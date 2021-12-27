@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend">
+            <xpath expr="script[last()]" position="after">
+<!--                <script src="https://code.jquery.com/jquery-3.5.0.js"></script>-->
+                <script type="text/javascript" src="/dfx_inteco_events/static/src/js/registration_event.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

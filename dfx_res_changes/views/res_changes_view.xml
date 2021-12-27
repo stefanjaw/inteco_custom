@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_activity_type_inherit_dbr" model="ir.ui.view">
+            <field name="name">activity.type.inherit.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/group/group/field[@name='currency_id']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="mail_activity_purchase" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_partner_form_v2_inherit" model="ir.ui.view">
+            <field name="name">sale.order.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='name']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="contact_id" />
+                </xpath>
+                <xpath expr="//group/group/field[@name='vat']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="attrs">{'readonly':[(0)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

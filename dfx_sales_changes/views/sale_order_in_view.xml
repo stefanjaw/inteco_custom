@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header/button[@name='action_confirm']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('draft'))]}</attribute>
+                </xpath>
+                <xpath expr="/form/header/button[@name='action_confirm']" position="after">
+                    <button name="button_val" string="validar" type="object"
+                            attrs="{'invisible': [('state', 'in', ('sent','sale','done','cancel'))]}"/>
+                </xpath>
+                <xpath expr="/form/header/button[@name='action_confirm']" position="after">
+                    <button name="buttons_vals" string="Validar" type="object"
+                            attrs="{'invisible': [('state', 'in', ('draft'))]}"/>
+                </xpath>
+                <xpath expr="//field[@name='note']" position="after">
+                    <field name="condition" type="char" widget="html" style="text-align:justify"/>
+
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="process_type" options="{'no_create': False, 'no_create_edit':False}"/>
+                    <!--     Registro       -->
+                    <field name="sale_record" attrs="{'required': True}" readonly="1" force_save = "1"/>
+                    <!--     Número de versión    -->
+                    <field name="sale_version" attrs="{'required': True}" readonly="1" force_save = "1"/>
+                    <field name="english_type" invisible="1"/>
+                </xpath>
+<!--                <xpath expr="//field[@name='payment_term_id']" position="attributes">-->
+<!--                    <attribute name="required">1</attribute>-->
+<!--                    &lt;!&ndash;                        <attribute name="attrs">{'invisible': [('eco_cond','=',False)]}</attribute>&ndash;&gt;-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="sale_contacts" invisible="1"/>
+                    <field name="sales_contacts"/>
+                    <field name="signature_id" force_save = "1"/>
+                    <field name="signature_pos" force_save = "1"/>
+                    <field name="required_fi" invisible="1"/>
+                    <field name="serv_required_fi" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='validity_date']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="before">
+                    <field name="eco_cond"/>
+                    <field name="desc_res_eco" attrs="{'invisible': [('eco_cond','=',False)]}"/>
+                    <field name="res_eco_cond" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--                    dbr = dfx_budget_request-->
+        <record id="process_type_action_dbr" model="ir.actions.act_window">
+            <field name="name">Tipos de Procesos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">process.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Tipos de Procesos
+                </p>
+                <p>
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ID_proc_type" name="Tipos de Procesos" parent="sale.menu_sale_config"
+                  action="process_type_action_dbr" sequence="1"/>
+
+        <!--        <template id="new_report_saleorder" inherit_id="sale.report_saleorder">-->
+        <!--            <t t-call="web.html_container">-->
+        <!--                <t t-foreach="sale_orders" t-as="sale_order">-->
+        <!--                    <t t-call="sale.report_saleorder_sale_orderument" t-lang="sale_order.partner_id.lang"/>-->
+        <!--                </t>-->
+        <!--            </t>-->
+        <!--        </template>-->
+
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="sale_order_form_v2_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="inteco.sale_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='conditions']" position="attributes">
+                    <!-- Add your fields or attributes here -->
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('draft','sent','sale','done','cancel'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tax_id']" position="after">
+                    <field name="required_fi" invisible="1" readonly="0"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_date']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)],'invisible':[('required_fi','=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/label[@for='payment_date']" position="replace">
+                    <label for="payment_date" string="Fecha Estimada del proceso"/>
+                </xpath>
+
+                <!--                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group[2]/div[2]/field[@name='analytic_tag_ids']" position="attributes">-->
+                <!--                    &lt;!&ndash; Add new fields here &ndash;&gt;-->
+                <!--                    &lt;!&ndash;                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>&ndash;&gt;-->
+                <!--                    <attribute name="required">0</attribute>-->
+                <!--                </xpath>-->
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/div[2]/field[@name='qty_delivered']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/div[3]/field[@name='qty_invoiced']" position="attributes">
+                    <!-- Add new fields here -->
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="eco_cond_sale_order_inherit" model="ir.ui.view">
+            <field name="name">eco.cond.sale.order.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="res_eco_cond"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="groups_sale_order_fields_inherit" model="ir.ui.view">
+            <field name="name">groups.sale.order.fields.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sales_contacts']" position="attributes">
+                    <attribute name="attrs">{'required':[('serv_required_fi','=', True)],'invisible':[('required_fi','=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='eco_cond']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='signature_id']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('serv_required_fi','=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='signature_pos']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('serv_required_fi','=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='process_type']" position="attributes">
+                    <attribute name="attrs">{'required':[('serv_required_fi','=', True)],'invisible':[('serv_required_fi','=', False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record id="sale_order_partner_form_v2_inherit" model="ir.ui.view">-->
+        <!--            <field name="name">sale.order.partner.form.inherit</field>-->
+        <!--            <field name="model">res.partner</field>-->
+        <!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//form/sheet/group/group[2]/field[@name='name']" position="after">-->
+        <!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
+        <!--                    <field name="contact_id" />-->
+        <!--                </xpath>-->
+        <!--                <xpath expr="//group/group/field[@name='vat']" position="attributes">-->
+        <!--                    &lt;!&ndash; Add your fields or attributes here &ndash;&gt;-->
+        <!--                    <attribute name="attrs">{'readonly':[(0)]}</attribute>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--            menu Adjuntos del modulo file storage-->
+        <record id="id_file_storage_nofilter" model="ir.actions.act_window">
+            <field name="name">Adjuntos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="ID_storage_file" name="Adjuntos" parent="inteco.menu_attachment_simplified" action="id_file_storage_nofilter"/>
+
+        <template id="accept_sign_sales_order_report_inherit" inherit_id="sale.sale_order_portal_template">
+            <xpath expr="//div/div[@id='quote_content']/div[8]/div" position="replace">
+                <div style="visibility:hidden">
+
+                </div>
+            </xpath>
+        </template>
+
+        <!--                template en el qweb de previsualización de soliciutd de ventas-->
+        <template id="section_report_sales_order_request_inherit" inherit_id="sale.sale_order_portal_content" name="New Sale Orders Dfx">
+            <xpath expr="//t/div[2]/div[1]" position="after">
+                <!--            <xpath expr="//div[2]/div[@id='informations']" position="after">-->
+                <div>
+                </div>
+                <div>
+                    <div t-if="sale_order.serv_required_fi==True">
+                        <t t-if="sale_order.english_type==False"><h1 style="font-size:42px;">Objeto de la oferta</h1><br/></t>
+                        <t t-else=""><h1 style="font-size:42px;">OBJECT AND SCOPE OF THE OFFER</h1><br/></t>
+                        <t t-if="sale_order.sale_order_template_id.dse_temp != True">
+                            <td t-if="sale_order.english_type==False"><p>Esta oferta describe las condiciones técnicas y económicas de nuestro servicio
+                                de evaluación conforme a los requisitos establecidos en la seccion 4. Oferta Técnica-Económica.
+                                Incluye las condiciones y precios de cada una de las etapas del servicio, desde la apertura del
+                                servicio, las evaluaciones, la emisión de certificaciones, declaraciones o informes según corresponda
+                                y los seguimientos previos a la conclusion del ciclo del servicio pactado.</p>
+                                <br/></td>
+                            <td t-else=""><p>This offer describes the technical and economic conditions of our evaluation service in accordance with the requirements established in
+                                section Technical-Economic Offer. It includes the conditions and prices of each one of the stages of the service, from the opening of the
+                                same, the evaluations, the issuance of certifications, declarations or reports as appropriate and the follow-up prior to the conclusion of
+                                the agreed service cycle.</p><br/></td>
+                        </t>
+                        <t t-else="">
+                            <p>Esta oferta describe las condiciones técnicas y económicas de nuestro servicio
+                                de evaluación conforme a los requisitos establecidos en la seccion 4. Oferta Técnica-Económica.
+                                Incluye las condiciones y precios de cada una de las etapas del servicio, desde la apertura del
+                                servicio, las evaluaciones, la emisión de informes según corresponda
+                                y los seguimientos previos a la conclusion del ciclo del servicio pactado.</p>
+                            <br/>
+                        </t>
+                        <td t-if="sale_order.english_type==False">
+                            <p>Qué corresponde a un proceso: <span  t-field="sale_order.process_type"/></p>
+                        </td>
+                        <td t-else="">
+                            <p>Which corresponds to a: <span  t-field="sale_order.process_type"/></p>
+                        </td>
+                    </div>
+                    <div t-else="">
+
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//section[@id='details']" position="replace">
+                <!--                <t t-set="display_discount" t-value="True in [line.discount > 0 for line in sale_order.order_line]"/>-->
+                <h1 t-if="sale_order.english_type==False" class="page-header">Oferta</h1>
+                <h1 t-else="" class="page-header">Offer</h1>
+                <t t-foreach="sale_order.order_lines_layouted()" t-as="page">
+                    <table class="table table-sm" id="sales_order_table">
+                        <thead class="bg-100">
+                            <tr>
+                                <t t-if="sale_order.serv_required_fi==True">
+                                    <t t-set="colspan" t-value="6"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-set="colspan" t-value="5"/>
+                                </t>
+                                <th t-if="sale_order.english_type==False">Productos</th> <th t-else="">Products</th>
+                                <th t-if="sale_order.english_type==False">Cantidad</th> <th t-else="">Quantity</th>
+                                <t t-if="sale_order.serv_required_fi==True">
+                                    <th t-if="sale_order.english_type==False">Fecha Estimada del proceso</th> <th t-else="">Estimated Process Date</th>
+                                </t>
+                                <t t-else="">
+
+                                </t>
+                                <th t-if="sale_order.english_type==False"><span t-if="any([line.tax_id for line in sale_order.order_line])">Impuestos</span></th> <th t-else=""><span t-if="any([line.tax_id for line in sale_order.order_line])">Taxes</span></th>
+                                <!--                                <th><span t-if="True in [line.discount > 0 for line in quotation.order_line]">Descuento</span></th>-->
+                                <th class="text-right"  t-if="sale_order.english_type==False">Precio por Unidad</th> <th class="text-right" t-else="">Price by Unit</th>
+                                <th class="text-right" t-if="sale_order.english_type==False">Precio Total</th> <th class="text-right" t-else="">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <t t-if="sale_order.serv_required_fi==True">
+                                <t t-foreach="page" t-as="layout_category">
+
+                                    <t t-if="layout_category_size > 1 or page_size > 1" groups="sale.group_sale_layout">
+                                        <tr class="active">
+                                            <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;
+                                                <!--                                            <t t-esc="layout_category['name']"/>-->
+                                            </td>
+                                        </tr>
+                                    </t>
+
+                                    <!-- Lines associated  -->
+                                    <t t-foreach="layout_category['year_section']" t-as="year">
+                                        <tr style="background-color:#E0E0E0">  <!-- bgcolor="#DFDFDF" E0E0E0 gris claro  colspan="2"-->
+                                            <td colspan="6">
+                                                <div>
+                                                    <strong t-esc="year['name']"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <t t-foreach="layout_category['lines']" t-as="line">
+                                            <tr t-if="line.year_section == year['year']">
+                                                <td>
+                                                    <span t-field="line.name"/>
+                                                    <t t-if="digital_attachments" t-set="attachments" t-value="digital_attachments.get(line.product_id.id)"/>
+                                                    <t t-if="attachments">
+                                                        <t t-if="line.isdownload==False">
+                                                            <span class="dropdown">
+                                                                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" state_id="in" attrs="{'invisible': [('state_id', '=', 'out')]}">
+                                                                    Descargar norma
+                                                                </button>
+                                                                <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                                    <t t-foreach="attachments" t-as="a">
+                                                                        <a onclick="setTimeout(function(){window.location.href = '/my/orders';}, 8500)" role="menuitem" tabindex="-1" t-att-href="'/my/download?attachment_id=%i&amp;sale_id=%i&amp;line_id=%i' % (a['id'], (line and line.order_id) and line.order_id.id or False, line and line.id or False)" class="dropdown-item"><t t-esc="a['name']"/></a>
+                                                                    </t>
+                                                                </div>
+                                                            </span>
+                                                        </t>
+                                                        <t t-else="">
+
+                                                        </t>
+                                                    </t>
+                                                </td>
+                                                <td>
+                                                    <div id="quote_qty">
+                                                        <span t-field="line.product_uom_qty"/>
+                                                        <span t-field="line.product_uom"/>
+                                                    </div>
+                                                </td>
+                                                <t t-if="sale_order.serv_required_fi==True">
+                                                    <td>
+                                                        <span t-field="line.payment_date" t-options='{"format": "MM/yyyy"}'/>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+
+                                                </t>
+                                                <td>
+                                                    <div t-foreach="line.tax_id" t-as="tax">
+                                                        <t t-esc="tax.name"/>
+                                                    </div>
+                                                </td>
+                                                <!--                                            <td>-->
+                                                <!--                                                <strong t-if="line.discount" class="text-info">-->
+                                                <!--                                                    <t t-esc="((line.discount % 1) and '%s' or '%d') % line.discount"/>% discount-->
+                                                <!--                                                </strong>-->
+                                                <!--                                                <strong t-else="line.discount" class="text-info">-->
+
+                                                <!--                                                </strong>-->
+                                                <!--                                            </td>-->
+                                                <td t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                                    <div
+                                                            t-if="line.discount &gt;= 0"
+                                                            t-field="line.price_unit"
+                                                            t-att-style="line.discount and 'text-decoration: line-through' or None"
+                                                            t-att-class="(line.discount and 'text-danger' or '') + ' text-right'"
+                                                    />
+                                                    <div t-if="line.discount">
+                                                        <t t-esc="(1-line.discount / 100.0) * line.price_unit" t-options='{"widget": "float", "decimal_precision": "Product Price"}'/>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="oe_order_line_price_subtotal" t-esc="line.price_subtotal + line.price_tax" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                                    <span class="oe_order_line_price_total" t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                                </td>
+                                                <td class="text-right" groups="sale.group_show_price_total">
+                                                    <span t-field="line.price_total"
+                                                          t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td>
+                                            <td class="text-right" style="padding-bottom: 32px"><strong>Subtotal:</strong></td>
+                                            <td class="text-right" style="padding-bottom: 32px">
+                                                <t t-set="sumPrice" t-value="0"/>
+                                                <t t-foreach="layout_category['lines']" t-as="line">
+                                                    <t t-if="line.year_section == year['year']">
+                                                        <t t-set="sumPrice" t-value="sumPrice+line.price_subtotal+line.price_tax"/>
+                                                    </t>
+                                                </t>
+                                                <strong t-esc="sumPrice" t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+
+                                    <t t-if="(layout_category_size > 1  or page_size > 1) and layout_category['subtotal']" groups="sale.group_sale_layout">
+                                        <tr> <!--para mover la tabla en previsualizacion solo agregar <td></td>-->
+                                            <td></td><td></td><td></td><td></td>
+                                            <td class="text-right" style="padding-bottom: 32px"><strong>Subtotal:</strong></td>
+                                            <td class="text-right" style="padding-bottom: 32px">
+                                                <t t-set="subtotal" t-value="sum(line.price_subtotal for line in layout_category['lines'])"/>
+                                                <strong data-id="total_amount" t-esc="subtotal" t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t>
+                                    <t t-if="any([line.tax_id for line in sale_order.order_line])">
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td>
+                                            <td class="text-right"><strong>Subtotal:</strong></td>
+                                            <td class="text-right">
+                                                <strong data-id="total_amount" t-field="sale_order.amount_untaxed" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td></td><td></td><td></td><td></td>
+                                            <td class="text-right">Impuestos:</td>
+                                            <td class="text-right">
+                                                <span data-id="total_amount" t-field="sale_order.amount_tax" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td></td><td></td><td></td><td></td>
+                                        <td class="text-right"><strong>Total:</strong></td>
+                                        <td class="text-right">
+                                            <strong data-id="total_amount" t-field="sale_order.amount_total" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <t t-foreach="page" t-as="layout_category">
+
+                                    <!--                                    <t t-if="layout_category_size > 1 or page_size > 1" groups="sale.group_sale_layout">-->
+                                    <!--                                        <tr class="active">-->
+                                    <!--                                            <td colspan="7" style="font-weight: bold; border-bottom: 1px solid black;">&amp;bull;-->
+                                    <!--                                                &lt;!&ndash;                                            <t t-esc="layout_category['name']"/>&ndash;&gt;-->
+                                    <!--                                            </td>-->
+                                    <!--                                        </tr>-->
+                                    <!--                                    </t>-->
+
+                                    <!-- Lines associated  -->
+                                    <t t-foreach="layout_category['year_section']" t-as="year">
+                                        <!--                                        <tr style="background-color:#E0E0E0">  &lt;!&ndash; bgcolor="#DFDFDF" E0E0E0 gris claro  colspan="2"&ndash;&gt;-->
+                                        <!--                                            <td colspan="6">-->
+                                        <!--                                                <div>-->
+                                        <!--                                                    <strong t-esc="year['name']"/>-->
+                                        <!--                                                </div>-->
+                                        <!--                                            </td>-->
+                                        <!--                                        </tr>-->
+
+                                        <t t-foreach="layout_category['lines']" t-as="line">
+                                            <tr t-if="line.year_section == year['year']">
+                                                <td>
+                                                    <span t-field="line.name"/>
+                                                    <t t-if="digital_attachments" t-set="attachments" t-value="digital_attachments.get(line.product_id.id)"/>
+                                                    <t t-if="attachments">
+                                                        <t t-if="line.isdownload==False">
+                                                            <span class="dropdown">
+                                                                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" state_id="in" attrs="{'invisible': [('state_id', '=', 'out')]}">
+                                                                    Descargar norma
+                                                                </button>
+                                                                <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                                    <t t-foreach="attachments" t-as="a">
+                                                                        <a onclick="setTimeout(function(){window.location.href = '/my/orders';}, 8500)" role="menuitem" tabindex="-1" t-att-href="'/my/download?attachment_id=%i&amp;sale_id=%i&amp;line_id=%i' % (a['id'], (line and line.order_id) and line.order_id.id or False, line and line.id or False)" class="dropdown-item"><t t-esc="a['name']"/></a>
+                                                                    </t>
+                                                                </div>
+                                                            </span>
+                                                        </t>
+                                                        <t t-else="">
+
+                                                        </t>
+                                                    </t>
+                                                </td>
+                                                <td>
+                                                    <div id="quote_qty">
+                                                        <span t-field="line.product_uom_qty"/>
+                                                        <span t-field="line.product_uom"/>
+                                                    </div>
+                                                </td>
+                                                <t t-if="sale_order.serv_required_fi==True">
+                                                    <td>
+                                                        <span t-field="line.payment_date" t-options='{"format": "MM/yyyy"}'/>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+
+                                                </t>
+                                                <td>
+                                                    <div t-foreach="line.tax_id" t-as="tax">
+                                                        <t t-esc="tax.name"/>
+                                                    </div>
+                                                </td>
+                                                <!--                                            <td>-->
+                                                <!--                                                <strong t-if="line.discount" class="text-info">-->
+                                                <!--                                                    <t t-esc="((line.discount % 1) and '%s' or '%d') % line.discount"/>% discount-->
+                                                <!--                                                </strong>-->
+                                                <!--                                                <strong t-else="line.discount" class="text-info">-->
+
+                                                <!--                                                </strong>-->
+                                                <!--                                            </td>-->
+                                                <td t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                                    <div
+                                                            t-if="line.discount &gt;= 0"
+                                                            t-field="line.price_unit"
+                                                            t-att-style="line.discount and 'text-decoration: line-through' or None"
+                                                            t-att-class="(line.discount and 'text-danger' or '') + ' text-right'"
+                                                    />
+                                                    <div t-if="line.discount">
+                                                        <t t-esc="(1-line.discount / 100.0) * line.price_unit" t-options='{"widget": "float", "decimal_precision": "Product Price"}'/>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="oe_order_line_price_subtotal" t-esc="line.price_subtotal + line.price_tax" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                                    <span class="oe_order_line_price_total" t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                                </td>
+                                                <td class="text-right" groups="sale.group_show_price_total">
+                                                    <span t-field="line.price_total"
+                                                          t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                        <!--                                        <tr>-->
+                                        <!--                                            <td></td><td></td><td></td><td></td>-->
+                                        <!--                                            <td class="text-right" style="padding-bottom: 32px"><strong>Subtotal:</strong></td>-->
+                                        <!--                                            <td class="text-right" style="padding-bottom: 32px">-->
+                                        <!--                                                <t t-set="sumPrice" t-value="0"/>-->
+                                        <!--                                                <t t-foreach="layout_category['lines']" t-as="line">-->
+                                        <!--                                                    <t t-if="line.year_section == year['year']">-->
+                                        <!--                                                        <t t-set="sumPrice" t-value="sumPrice+line.price_subtotal+line.price_tax"/>-->
+                                        <!--                                                    </t>-->
+                                        <!--                                                </t>-->
+                                        <!--                                                <strong t-esc="sumPrice" t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>-->
+                                        <!--                                            </td>-->
+
+                                        <!--                                        </tr>-->
+                                    </t>
+
+                                    <t t-if="(layout_category_size > 1  or page_size > 1) and layout_category['subtotal']" groups="sale.group_sale_layout">
+                                        <tr> <!--para mover la tabla en previsualizacion solo agregar <td></td>-->
+                                            <td></td><td></td><td></td>
+                                            <td class="text-right" style="padding-bottom: 32px"><strong></strong></td>
+                                            <td class="text-right" style="padding-bottom: 32px">
+                                                <t t-set="subtotal" t-value="sum(line.price_subtotal for line in layout_category['lines'])"/>
+                                                Subtotal: <strong data-id="total_amount" t-esc="subtotal" t-options="{'widget': 'monetary', 'display_currency': sale_order.pricelist_id.currency_id}"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t>
+                                    <t t-if="any([line.tax_id for line in sale_order.order_line])">
+                                        <tr>
+                                            <td></td><td></td><td></td>
+                                            <td class="text-right"><strong></strong></td>
+                                            <td class="text-right">
+                                                Subtotal: <strong data-id="total_amount" t-field="sale_order.amount_untaxed" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td></td><td></td><td></td>
+                                            <td class="text-right"></td>
+                                            <td class="text-right">
+                                                Impuestos: <span data-id="total_amount" t-field="sale_order.amount_tax" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td></td><td></td><td></td>
+                                        <td class="text-right"><strong></strong></td>
+                                        <td class="text-right">
+                                            Total: <strong data-id="total_amount" t-field="sale_order.amount_total" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}'/>
+                                        </td>
+
+                                    </tr>
+                                </t>
+                            </t>
+
+                        </tbody>
+                    </table>
+                </t>
+                <t t-if="page_index &lt; page_size - 1" groups="sale.group_sale_layout">
+                    <p style="page-break-before:always;"> </p>
+                </t>
+            </xpath>
+
+            <xpath expr="//section[@id='terms']/h3" position="replace">
+                <h3 t-if="sale_order.english_type==False" class="">Terminos y Condiciones</h3>
+                <h3 t-else="" class="">Terms &amp; Conditions</h3>
+            </xpath>
+        </template>
+
+        <template id="pricing_inherited" inherit_id="sale.sale_order_portal_content" name="Inteco Custom Price">
+            <xpath expr="//section[@id='terms']" position="replace">
+                <t t-if="sale_order.serv_required_fi==True">
+                    <section id="terms" class="container" t-if="sale_order.conditions">
+                        <h2 t-if="sale_order.english_type==False" class="page-header">Aceptación de Condiciones Técnicas y Económicas</h2>
+                        <h2 t-else="" class="page-header">Acceptance of Technical and Economic Conditions</h2>
+                        <span t-field="sale_order.condition" style="text-align:justify"/>
+                    </section>
+                </t>
+                <t t-else="">
+
+                </t>
+            </xpath>
+
+            <xpath expr="//div[2]/div" position="replace">
+                <div class="" style="">
+                    <div class="mb-3">
+
+                        <div t-if="sale_order.team_id.id == 2" class="alert alert-info d-print-none" role="alert">
+                            Junto a la línea del pedido de cada documento normativo, se encuentra el botón de descarga. <strong>Considere que por seguridad, únicamente se puede descargar una vez cada documento.</strong>
+                        </div>
+
+                        <t t-if="sale_order.client_order_ref">
+                            <div class="row">
+                                <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Su referencia:</label>
+                                <div class="col-sm-6 col-md-12 mb-3">
+                                    <span t-field="sale_order.client_order_ref"/>
+                                </div>
+                            </div>
+                        </t>
+
+                        <div class="row">
+                            <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Cliente:</label>
+                            <div class="col-sm-6 col-md-12 mb-3">
+                                <div t-field="sale_order.partner_id"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-6 col-md-4 col-xs-4" style="font-weight:700">Facturar a:</label>
+                            <div class="col-sm-6 col-md-12 mb-1">
+                                <div t-field="sale_order.partner_invoice_id" t-options="{                                                           &quot;widget&quot;: &quot;contact&quot;,                                                           &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;, &quot;email&quot;]                                                           }"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Su contacto:</label>
+                        <div class="col-sm-6 col-md-12 mb-3">
+                            <div t-field="sale_order.user_id" t-options="{                                                           &quot;widget&quot;: &quot;contact&quot;,                                                           &quot;fields&quot;: [&quot;name&quot;, &quot;phone&quot;, &quot;email&quot;]                                                           }"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Fecha de presupuesto:</label>
+                        <div class="col-sm-6 col-md-12 mb-3">
+                            <span t-field="sale_order.date_order"/>
+                        </div>
+                    </div>
+
+                    <t t-if="sale_order.payment_term_id.id != 1">
+                        <div class="row">
+                            <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Plazo de pago:</label>
+                            <div class="col-sm-6 col-md-12 mb-3">
+                                <span t-field="sale_order.payment_term_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-sm-6 col-md-12 col-xs-4" style="font-weight:700">Fecha de caducidad:</label>
+                            <div class="col-sm-6 col-md-12 mb-3">
+                                <span t-field="sale_order.validity_date"/>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+
+        <!--        Vista lineas de pedido-->
+        <record id="view_user_order_sale_dbr" model="ir.ui.view">
+            <field name="name">sale.order.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/field[@name='product_id']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="required_fi" invisible="1" readonly="0"/>
+                    <!--                                        <field name="year_section" widget="selection" attrs="{'required':[('required_fi','=', True)]}" />-->
+                    <field name="year_section" widget="selection" attrs="{'required':[('required_fi','=', True)],'invisible':[('required_fi','=', False)]}" />
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="year_section" widget="selection" attrs="{'required': True}" />
+                    <field name="analytic_account_default" invisible="0" required="1"/>
+                    <field name="isdownload" invisible="0"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='tax_id']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="required_fi" invisible="1" readonly="0"/>
+                    <field name="payment_date" attrs="{'required':[('required_fi','=', True)]}" />
+                    <!--                    attrs="{'required':[('required_fi','=', True)],'invisible':[('required_fi','=', False)]}"-->
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/field[@name='product_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/form/group/group/field[@name='price_unit']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='order_line']/tree/field[@name='tax_id']" position="attributes">
+                    <!-- Add new fields here -->
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <!--        Vista Productos Opcionales-->
+        <record id="opctional_view_user_order_sale_dbr" model="ir.ui.view">
+            <field name="name">optional.sale.order.view.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_management.sale_order_form_quote"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='product_id']" position="after">
+                    <field name="sale_required_fi" invisible="1"/>
+                    <field name="required_fi" invisible="1" readonly="0"/>
+                </xpath>
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='product_id']" position="attributes">
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='name']" position="attributes">
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='quantity']" position="attributes">
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='uom_id']" position="attributes">
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//page/field[@name='sale_order_option_ids']/tree/field[@name='price_unit']" position="attributes">
+                    <!--                    <attribute name="attrs">{'required':[('required_fi','=', True)]}</attribute>-->
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <template id="sale_order_report_exback_inherit_footer" inherit_id="web.external_layout_background">
+            <!--pie de pagina-->
+            <xpath expr="//div[3]" position="replace">
+                <div class="footer o_background_footer">
+                    <div class="text-center">
+                        <ul class="list-inline">
+                            <li t-if="company.phone" class="list-inline-item">Tel: <span t-field="company.phone"/></li>
+                            <li t-if="company.email" class="list-inline-item"> <span class="fa fa-envelope-o"/> <span t-field="company.email"/></li>
+                            <li t-if="company.website" class="list-inline-item">Web: <span t-raw="company.website.replace('https://','')"/></li>
+                            <li t-if="doc_model=='sale.order'" class="list-inline-item"><t t-esc="'Registro'"/>: <span t-field="doc.sale_record"/></li>
+                            <li t-if="doc_model=='sale.order'" class="list-inline-item"><t t-esc="'Versión'"/>: <span t-field="doc.sale_version"/></li>
+                        </ul>
+                        <div t-field="company.report_footer"/>
+                        <div class="text-muted">
+                            Page:
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="sale_order_report_inherit_footer" inherit_id="web.external_layout_boxed">
+            <!--pie de pagina-->
+            <xpath expr="//div[3]" position="replace">
+                <div class="footer o_boxed_footer">
+                    <div class="text-center">
+                        <ul class="list-inline">
+                            <li t-if="company.phone" class="list-inline-item">Tel: <span t-field="company.phone"/></li>
+                            <li t-if="company.email" class="list-inline-item"> <span class="fa fa-envelope-o"/> <span t-field="company.email"/></li>
+                            <li t-if="company.website" class="list-inline-item">Web: <span t-raw="company.website.replace('https://','')"/></li>
+                            <li t-if="doc_model=='sale.order'" class="list-inline-item"><t t-esc="'Registro'"/>: <span t-field="doc.sale_record"/></li>
+                            <li t-if="doc_model=='sale.order'" class="list-inline-item"><t t-esc="'Versión'"/>: <span t-field="doc.sale_version"/></li>
+                        </ul>
+                        <div t-field="company.report_footer"/>
+                        <div>
+                            Page: <span class="page"/> / <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <!--        <template id="sale_order_report_exclean_inherit_footer" inherit_id="web.external_layout_clean">-->
+        <!--            &lt;!&ndash;pie de pagina&ndash;&gt;-->
+        <!--            <xpath expr="//div[1]" position="replace">-->
+        <!--                <div class="header o_clean_header">-->
+        <!--                    <div class="row">-->
+        <!--                        <div class="col-xs-6">-->
+        <!--                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"/>-->
+        <!--                        </div>-->
+        <!--                        <div class="col-xs-5 col-xs-offset-1" name="company_address">-->
+        <!--                            <ul class="list-unstyled">-->
+        <!--                                <strong><li t-if="company.name"><span t-field="company.name"/></li></strong>-->
+        <!--                                <li t-if="company.phone">Tel: <span t-field="company.phone"/></li>-->
+        <!--                                <li t-if="company.email"> <span class="fa fa-envelope-o"/> <span t-field="company.email"/></li>-->
+        <!--                                <li t-if="company.website">Web: <span t-raw="company.website.replace('https://','')"/></li>-->
+        <!--                                <li t-if="doc_model=='sale.order'"><t t-esc="'Registro'"/>: <span t-field="doc.sale_record"/></li>-->
+        <!--                                <li t-if="doc_model=='sale.order'"><t t-esc="'Versión'"/>: <span t-field="doc.sale_version"/></li>-->
+        <!--                            </ul>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </xpath>-->
+        <!--        </template>-->
+
+        <template id="sale_order_report_exstan_inherit_footer" inherit_id="web.external_layout_standard">
+            <!--pie de pagina-->
+            <xpath expr="//div[@t-attf-class='footer o_standard_footer o_company_#{company.id}_layout']" position="replace">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline mb4">
+                        <li t-if="company.phone">Tel: <span t-field="company.phone"/></li>
+                        <li t-if="company.email"> <span class="fa fa-envelope-o"/> <span t-field="company.email"/></li>
+                        <li t-if="company.website">Web: <span t-raw="company.website.replace('https://','')"/></li>
+                        <li t-if="doc_model=='sale.order'"><t t-esc="'Registro'"/>: <span t-field="doc.sale_record"/></li>
+                        <li t-if="doc_model=='sale.order'"><t t-esc="'Versión'"/>: <span t-field="doc.sale_version"/></li>
+                    </ul>
+
+                    <div name="financial_infos">
+                        <span t-field="company.report_footer"/>
+                    </div>
+
+                    <div class="text-muted">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_standard" inherit_id="web.external_layout_background">
+            <xpath expr="//div[@t-attf-class='o_company_#{company.id}_layout header']" position="replace">
+            </xpath>
+        </template>
+
+        <template id="external_layout">
+            <t t-if="not o and sale_order">
+                <t t-set="o" t-value="sale_order"/>
+            </t>
+
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+
+            <t t-call="inteco.external_layout_background"><t t-raw="0"/></t>
+        </template>
+
+        <record id="check_english_template_dbr" model="ir.ui.view">
+            <field name="name">check.eng.template.view.form</field>
+            <field name="model">sale.order.template</field>
+            <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/div[@id='number_of_days']" position="after">
+                    <!-- Add new fields here -->
+                    <field name="en_temp"/>
+                    <field name="dse_temp"/>
+                    <field name="sale_rec"/>
+                    <field name="sale_ver"/>
+                    <field name="categ_template"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <template id="dsc_products_item" inherit_id="website_sale.products_item" name="Products Item">-->
+        <!--            <xpath expr="//form/div/div[2]" position="replace">-->
+        <!--                <div class="col-md-3 mt16 nopadding">-->
+        <!--                    <t t-foreach="product.product_variant_ids" t-as="variant">-->
+        <!--                        <a t-att-href="'/shop/product/%s?variant=%s' % (slug(product), variant.id)"><small class="mt8" t-esc="variant.default_code"/></a><br />-->
+        <!--                        &lt;!&ndash;<t t-foreach="product.product_variant_id" t-as="id_variant"></t>&ndash;&gt;-->
+        <!--                    </t>-->
+        <!--                </div>-->
+        <!--            </xpath>-->
+        <!--        </template>-->
+        <!--t-if="variant.state=='C' or variant.state=='R'"-->
+        <!--        expr="//div[@id='products_grid_before']"-->
+        <!--        <template id="products_custom_search" inherit_id="inteco.products_custom_search" active="True" customize_show="True" name="Custom Inteco Search Filter">-->
+        <!--            <xpath expr="//form/ul/li[5]" position="after">-->
+        <!--                <t t-set="Keyword" t-value="env['prod.key.words'].sudo().search([]).sorted('key_word')"/>-->
+        <!--                <form class="js_attributes" method="get">-->
+        <!--                    <li>-->
+        <!--                        <div>Palabras Clave</div>-->
+        <!--                        <select class="form-control" name="KeyWords">-->
+        <!--                            <option value="" />-->
+        <!--                            <t t-foreach="Keyword" t-as="KeyWords">-->
+        <!--                                <option t-att-value="'%s' % (KeyWords.id)" t-esc="KeyWords.key_word" t-att-selected="KeyWords_set and KeyWords.id == int(KeyWords_set)"/>-->
+        <!--                            </t>-->
+        <!--                        </select>-->
+        <!--                    </li>-->
+        <!--                </form>-->
+        <!--            </xpath>-->
+        <!--        </template>-->
+    </data>
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="address" inherit_id="website_sale.address" >
+        <xpath expr="//div[@id='wrap']//div[hasclass('oe_cart')]/div[1]" position="attributes">
+            <attribute name="t-if" add="not user_id._is_public()" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='wrap']//div[hasclass('oe_cart')]/div[1]" position="before">
+            <t t-if="user_id._is_public()">
+                <t t-set="signup_enabled" t-value="request.env['ir.config_parameter'].sudo().get_param('auth_signup.allow_uninvited') == 'True'"/>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="js_inteco_user_required">
+                            <div class="head">
+                                <h3>Only registered users can continue.</h3>
+                                <div class="alert alert-info" role="alert">
+                                    La cuenta de usuario que usted cree o inicie sesión corresponde al envío de la norma y documentos técnicos
+                                </div>
+                                <hr class="mb0"/>
+                                <span t-if="signup_enabled">You can
+                                    <a href="#" class="btn-link btn-primary" data-action="js_signup_wrap">Sign up</a>
+                                    or <a href="#" class="btn-link btn-primary" data-action="js_login_wrap">Log In</a>
+                                    if already have an account.
+                                </span>
+                                <span t-else="">You can login below to continue your order.
+                                </span>
+                            </div>
+                            <div class="row pt16">
+                                <div class="col-sm-6 col-md-8">
+                                    <h4 class="mt8">Iniciar sesión</h4>
+                                    <div class="mt8">
+                                        <t t-call="inteco.login"/>
+                                    </div>
+                                </div>
+                                <div class="hidden col-sm-6 col-md-8">
+                                    <div class="mt24">
+                                        <t t-call="inteco.signup"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+    
+    <template id="confirmation" inherit_id="website_sale.confirmation" active="True" customize_show="True" name="confirmation custom">
+        <!--TODO para borrar despues de -->
+        <!--        <xpath expr="//div[@id='wrap']/div/div[hasclass('row')]/div/div/t[2]/div/h2" position="inside">-->
+        <!--            <a class="mr8 btn btn-primary pull-right hidden-xs" t-attf-href="/my/orders/#{order.id}" target="_blank"><i class="fa fa-file-text"></i> See order</a>-->
+        <!--        </xpath>-->
+        
+        <xpath expr="//div[@id='wrap']/div/div/div/div/t[2]" position="replace">
+            <t t-if="payment_tx_id.state in ['pending','done']">
+                <div class="thanks_msg row">
+                    <h2 class="col-md-6 col-sm-6">Thank you for your order.</h2>
+                    <div class="col-md-6 col-sm-6">
+                        <t t-if="payment_tx_id.state == 'done'">
+                            <a class="btn btn-primary btn-lg" name="see_order_button" t-attf-href="/my/orders/#{order.id}" data-toggle="popover" data-placement="left" data-content="Descargue aquí la(s) norma(s) y/o vea su pedido.">
+                                <i class="fa fa-file-text"/> See order and/or download standards</a>
+                        </t>
+                        <t t-if="payment_tx_id.state == 'pending'">
+                            <a class="mr8 btn btn-primary btn-lg" t-attf-href="/my/orders/#{order.id}">
+                                <i class="fa fa-file-text"/> See order</a>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

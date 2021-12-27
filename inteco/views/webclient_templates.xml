@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inteco_layout" inherit_id="web.layout" name="Inteco Layout">
+        <xpath expr="//link" position="replace">
+            <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/static/src/img/favicon.ico'"/>
+        </xpath>
+    </template>
+</odoo>

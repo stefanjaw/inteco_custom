@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inteco_menu" inherit_id="website.submenu" name="Submenu">
+        <xpath expr="//li[1]/a/span" position="attributes">
+            <attribute name="t-att-style">'display: %s' % ((website.menu_id.child_id[0] == submenu) and 'none' or 'block')</attribute>
+        </xpath>
+    </template>
+</odoo>

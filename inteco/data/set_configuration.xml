@@ -1,0 +1,28 @@
+<function>
+<!--Sales-->
+  !record {model: res.config.settings, id: inteco_default_sale_properties}:
+    {
+    'sale_pricelist_setting': 'formula',
+    'group_sale_pricelist': 1,
+    'group_pricelist_item': 1,
+    'group_product_variant': 1,
+    'group_use_lead': 1,
+    'group_uom': 1,
+    'automatic_invoice': 1,
+    }
+
+  !python {model: res.config.settings}: |
+    self.browse(ref('inteco_default_sale_properties')).execute()
+
+<!-- CRM-->
+
+  !record {model: res.config.settings, id: inteco_default_crm_properties}:
+    {
+    'crm_import_notification_enabled': 1,
+    }
+
+  !python {model: res.config.settings}: |
+    self.browse(ref('inteco_default_sale_properties')).execute()
+</function>
+
+

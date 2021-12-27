@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record model="product.attribute" id="modifier_attribute">
+        <field name="name">Modifier</field>
+    </record>
+    <record model="product.attribute" id="modifier_number_attribute">
+        <field name="name">Modifier Number</field>
+    </record>
+    <record model="product.attribute" id="modifier_year_attribute">
+        <field name="name">Modifier Year</field>
+    </record>
+    <record model="product.attribute.value" id="attribute_modifier_cor">
+        <field name="name">Cor</field>
+        <field name="attribute_id" ref="inteco.modifier_attribute"/>
+    </record>
+    <record model="product.attribute.value" id="attribute_modifier_enm">
+        <field name="name">Emm</field>
+        <field name="attribute_id" ref="inteco.modifier_attribute"/>
+    </record>
+    <record model="product.attribute.value" id="attribute_modifiernumber_1">
+        <field name="name">1</field>
+        <field name="attribute_id" ref="inteco.modifier_number_attribute"/>
+    </record>
+    <record model="product.attribute.value" id="attribute_modifiernumber_2">
+        <field name="name">2</field>
+        <field name="attribute_id" ref="inteco.modifier_number_attribute"/>
+    </record>
+    <record model="product.attribute.value" id="attribute_modifiernumber_3">
+        <field name="name">3</field>
+        <field name="attribute_id" ref="inteco.modifier_number_attribute"/>
+    </record>
+</odoo>

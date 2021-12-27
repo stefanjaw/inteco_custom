@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="complaints_procedure" inherit_id="website_helpdesk_form.team_form_2" >
+        <!--    <template id="complaints_procedure" inherit_id="website_helpdesk_form.ticket_submit_form" name="Complaints Procedure">-->
+        <xpath expr="//section[@id='forms']/div/form/div/div[2]" position="after">
+            
+            <div class="form-group col-12 s_website_form_field s_website_form_model_required"  data-name="ticket_type_id">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="ticket_type_id">
+                        <span class="s_website_form_label_content">Type</span>
+                        <span class="s_website_form_mark"> *</span>
+                    </label>
+                    <div class="col-sm col-xs-12">
+                        <t t-set="ticket_types" t-value="env['helpdesk.ticket.type'].sudo().search([('enabled', '!=', False)]).sorted('name')"/>
+                        <select class="form-group form-control o_website_form_input" id="ticket_type_id" name="ticket_type_id" required="">
+                            <option/>
+                            <t t-foreach="ticket_types" t-as="type">
+                                <option t-att-value="type.id"><t t-esc="type.name"/></option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        
+        <xpath expr="//textarea[@name='description']" position="attributes">
+            <attribute name="required">1</attribute>
+        </xpath>
+        
+        <xpath expr="//section/div/form/div/div[6]" position="after">
+            <div class="form-group col-12 s_website_form_field s_website_form_model_required d-none"  data-name="complaint_text">
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="complaint_text">
+                        <span class="s_website_form_label_content">What actions do you consider pertinent on the part of INTECO?</span>
+                    </label>
+                    <div class="col-sm col-xs-12">
+                        <textarea class="form-control o_website_form_input" id="complaint_text" name="complaint_text"/>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group col-12 s_website_form_field s_website_form_model_required"  >
+                <div class="row s_col_no_resize s_col_no_bgcolor">
+                    <div id="info" class="form-group form-field">
+                        <div class="col-md-7 col-sm-8">
+                            <label class="control-label"/>
+                        </div>
+                        <div class="col-sm col-xs-12">
+                            <p>En el siguiente enlace se encuentra el
+                                <a href="/inteco/static/src/doc/PG-GS-02-(V01).pdf"
+                                   target="_blank" data-original-title="" title="" style="position: relative; overflow: hidden;">
+                                    PG-GS-02-(V01) "Procedimiento para el trámite de quejas, apelaciones y sugerencias"</a>,
+                                donde se detalla los lineamientos a seguir para presentar una queja, una apelación o
+                                sugerencia a los servicios de certificación de sistemas y de producto, de procesos y
+                                de servicios ofrecido por INTECO.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

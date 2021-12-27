@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* message_edit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-10 09:50+0000\n"
+"PO-Revision-Date: 2018-01-10 09:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_body
+msgid "Body"
+msgstr "Текст"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_mail_compose_message_changed
+#: model:ir.model.fields,field_description:message_edit.field_mail_mail_changed
+#: model:ir.model.fields,field_description:message_edit.field_mail_message_changed
+msgid "Changed"
+msgstr "Изменено"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_create_date
+msgid "Created on"
+msgstr "Создано"
+
+#. module: message_edit
+#. openerp-web
+#: code:addons/message_edit/static/src/xml/message_edit.xml:9
+#, python-format
+msgid "Edit this message"
+msgstr "Отредактировать сообщение"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_mail_compose_message_history_ids
+#: model:ir.model.fields,field_description:message_edit.field_mail_mail_history_ids
+#: model:ir.model.fields,field_description:message_edit.field_mail_message_history_ids
+#: model:ir.ui.view,arch_db:message_edit.mail_message_edit_view_form
+msgid "History"
+msgstr "История"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_id
+msgid "ID"
+msgstr "ID"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_write_uid
+msgid "Last Updated by"
+msgstr "Последнее обновление"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_write_date
+msgid "Last Updated on"
+msgstr "Последнее обновление"
+
+#. module: message_edit
+#: model:ir.model,name:message_edit.model_message_edit_history
+msgid "Mail Message Edit History"
+msgstr "История изменений сообщения"
+
+#. module: message_edit
+#: model:ir.model,name:message_edit.model_mail_message
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_message_id
+#: model:ir.ui.view,arch_db:message_edit.mail_message_edit_view_form
+msgid "Message"
+msgstr "Сообщение"
+
+#. module: message_edit
+#: model:ir.actions.act_window,name:message_edit.message_edit_action
+msgid "Edit Message"
+msgstr "Отредактированное сообщение"
+
+#. module: message_edit
+#: code:addons/message_edit/models/mail_message.py:33
+#, python-format
+msgid "Only author of message can edit it."
+msgstr "Только автор сообщения может его редактировать."
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_name
+msgid "Subject"
+msgstr "Тема"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_update_date
+msgid "Update Date"
+msgstr "Дата изменения"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history_display_name
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#. module: message_edit
+#: model:ir.model.fields,field_description:message_edit.field_message_edit_history___last_update
+msgid "Last Modified on"
+msgstr "Последний раз редактировалось"
