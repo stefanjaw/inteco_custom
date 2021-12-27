@@ -147,7 +147,7 @@
         # "views/payment_link_terms.xml",
         'views/templates.xml',
         'views/webclient_templates.xml',
-        'views/website_helpdesk_form_views.xml',
+        #'views/website_helpdesk_form_views.xml', #NO SE ENCUENTRA LA VISTA inherit_id="website_helpdesk_form.team_form_2"
         'views/website_quote_templates.xml',
         'views/website_sale.xml',
         'data/website_menu_data.xml',
