@@ -18,6 +18,7 @@
 		'sale',
 		'inteco',
 		'dfx_product_changes',
+		'dfx_website_sale_digital',
 
 	],
 	'data': [
