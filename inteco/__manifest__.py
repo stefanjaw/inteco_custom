@@ -67,7 +67,7 @@
         #     # Data
         #"data/res_company_data.xml",
         "data/sector.xml",
-        #"data/res_partner_data.xml",
+        #"data/res_partner_data.xml", #Dupplicated Line
         "data/event_data.xml",
         "data/product_category_data.xml",
         "data/prefix.xml",
@@ -78,7 +78,7 @@
         "data/base_automation.xml",
         # "data/organism.xml",
         # "data/sales_team.xml",
-        "data/res_partner_data.xml",
+        #"data/res_partner_data.xml",
         "data/product_data.xml",
         "data/mail_activity.xml",
         "data/mail_template.xml",
