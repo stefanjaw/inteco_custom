@@ -78,7 +78,7 @@
         "data/base_automation.xml",
         # "data/organism.xml",
         # "data/sales_team.xml",
-        #"data/res_partner_data.xml",
+        "data/res_partner_data.xml",
         "data/product_data.xml",
         "data/mail_activity.xml",
         "data/mail_template.xml",
