@@ -65,9 +65,9 @@
         "security/ir.model.access.csv",
 
         #     # Data
-        "data/res_company_data.xml",
+        #"data/res_company_data.xml",
         "data/sector.xml",
-        "data/res_partner_data.xml",
+        #"data/res_partner_data.xml",
         "data/event_data.xml",
         "data/product_category_data.xml",
         "data/prefix.xml",
