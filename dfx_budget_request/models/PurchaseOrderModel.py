@@ -794,6 +794,10 @@ class PurchaseOrderInherit(models.Model):
                         email_template.send_mail(record.id, raise_exception=False, force_send=True)
                     else:
                         if today <= record.del_invoice:
+                            activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente subir facturas')])
+                            if not activity_type_id:
+                                msg = "Error: No se encuentra la actividad: Pendiente subir facturas\nAgregar en Ajustes/Tipos de Actividad"
+                                raise ValidationError( _(msg) )
                             # user_part_id = self.env['res.users'].search([('partner_id', '=', record.employees_name.id)])
                             id_pur_model = self.env['ir.model'].search([('model', '=', 'purchase.order')])
                             self.env['mail.activity'].create({
@@ -801,7 +805,7 @@ class PurchaseOrderInherit(models.Model):
                                 'res_model_id': id_pur_model.id,
                                 'note': 'Monto:',
                                 'date_deadline': cal.cal_bussines_date(record.del_invoice, 48),
-                                'activity_type_id': 24,
+                                'activity_type_id': activity_type_id.id, #24 Pendiente subir facturas,
                                 'recommended_activity_type_id': False,
                                 'res_id': record.id,
                                 'summary': 'Recordatorio de subir facturas'})
