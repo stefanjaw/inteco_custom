@@ -353,12 +353,16 @@ class PurchaseOrderInherit(models.Model):
                     email_template.email_to = self.employee_name_mail
                     email_template.send_mail(self.id, raise_exception=False, force_send=True)
                     if user_part_id:
+                        activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente documentos de liquidación')])
+                        if not activity_type_id:
+                            msg = "Error: No se encuentra la actividad: Pendiente documentos de liquidación\nAgregar en Ajustes/Tipos de Actividad"
+                            raise ValidationError( _(msg) )
                         self.env['mail.activity'].create({
                             'user_id': user_part_id.id,
                             'res_model_id': id_pur_model.id,
                             'note': 'Pendiente documentos de provisión:',
                             'date_deadline': self.end_datetime,
-                            'activity_type_id': 25,
+                            'activity_type_id': activity_type_id.id, #25 Pendiente documentos de liquidación,
                             'recommended_activity_type_id': False,
                             'res_id': self.id,
                             'summary': 'Pendiente documentos de provisión'})
@@ -497,12 +501,16 @@ class PurchaseOrderInherit(models.Model):
                 cal = self.env['time.calc.funtions']
                 id_pur_model = self.env['ir.model'].search([('model', '=', 'purchase.order')])
                 if user_part_id:
+                    activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente documentos de liquidación')])
+                    if not activity_type_id:
+                        msg = "Error: No se encuentra la actividad: Pendiente documentos de liquidación\nAgregar en Ajustes/Tipos de Actividad"
+                        raise ValidationError( _(msg) )
                     self.env['mail.activity'].create({
                         'user_id': user_part_id.id,
                         'res_model_id': id_pur_model.id,
                         'note': 'Pendiente documentos de provisión:',
                         'date_deadline': cal.cal_bussines_date(self.end_datetime, 120),
-                        'activity_type_id': 25,
+                        'activity_type_id': activity_type_id.id, #25 Pendiente documentos de liquidación,
                         'recommended_activity_type_id': False,
                         'res_id': self.id,
                         'summary': 'Pendiente documentos de provisión'})
@@ -524,12 +532,16 @@ class PurchaseOrderInherit(models.Model):
                     cal = self.env['time.calc.funtions']
                     id_pur_model = self.env['ir.model'].search([('model', '=', 'purchase.order')])
                     if user_part_id:
+                        activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente anticipo')])
+                        if not activity_type_id:
+                            msg = "Error: No se encuentra la actividad: Pendiente anticipo\nAgregar en Ajustes/Tipos de Actividad"
+                            raise ValidationError( _(msg) )
                         self.env['mail.activity'].create({
                             'user_id': user_part_id.id,
                             'res_model_id': id_pur_model.id,
                             'note': 'Pendiente anticipo:',
                             'date_deadline': cal.cal_bussines_date(self.end_datetime, 120),
-                            'activity_type_id': 26,
+                            'activity_type_id': activity_type_id.id, #26 Pendiente anticipo,
                             'recommended_activity_type_id': False,
                             'res_id': self.id,
                             'summary': 'Pendiente anticipo'})
@@ -584,12 +596,16 @@ class PurchaseOrderInherit(models.Model):
                     cal = self.env['time.calc.funtions']
                     id_pur_model = self.env['ir.model'].search([('model','=','purchase.order')])
                     if user_part_id:
+                        activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente documentos de liquidación')])
+                        if not activity_type_id:
+                            msg = "Error: No se encuentra la actividad: Pendiente documentos de liquidación\nAgregar en Ajustes/Tipos de Actividad"
+                            raise ValidationError( _(msg) )
                         self.env['mail.activity'].create({
                             'user_id': user_part_id.id,
                             'res_model_id': id_pur_model.id,
                             'note': 'Pendiente documentos de provisión:',
                             'date_deadline': cal.cal_bussines_date(self.end_datetime, 120),
-                            'activity_type_id': 25,
+                            'activity_type_id': activity_type_id.id, # 25 Pendiente documentos de liquidación,
                             'recommended_activity_type_id': False,
                             'res_id': self.id,
                             'summary': 'Pendiente documentos de provisión'})
@@ -614,12 +630,16 @@ class PurchaseOrderInherit(models.Model):
                         cal = self.env['time.calc.funtions']
                         id_pur_model = self.env['ir.model'].search([('model','=','purchase.order')])
                         if user_part_id:
+                            activity_type_id = self.env['mail.activity.type'].search([('name','=','Pendiente anticipo')])
+                            if not activity_type_id:
+                                msg = "Error: No se encuentra la actividad: Pendiente anticipo\nAgregar en Ajustes/Tipos de Actividad"
+                                raise ValidationError( _(msg) )
                             self.env['mail.activity'].create({
                                 'user_id': user_part_id.id,
                                 'res_model_id': id_pur_model.id,
                                 'note': 'Pendiente anticipo:',
                                 'date_deadline': cal.cal_bussines_date(self.end_datetime, 120),
-                                'activity_type_id': 26,
+                                'activity_type_id': activity_type_id.id, #26 Pendiente anticipo,
                                 'recommended_activity_type_id': False,
                                 'res_id': self.id,
                                 'summary': 'Pendiente anticipo'})
