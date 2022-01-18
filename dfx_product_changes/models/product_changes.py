@@ -68,6 +68,10 @@ class ProductInternCatInherit(models.Model):
             ('company_id.id','=', company_id.id)
         ])
         
+        if not property_account_income_id:
+            msg = "No está creada cuenta contable: Nacionales"
+            raise ValidationError( _( msg ) )
+        
         if self.categ_id:
             if self.categ_id.name == "Normas":   #3 - Normas
                 self.is_enm = True
