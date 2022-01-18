@@ -53,20 +53,31 @@ class ProductInternCatInherit(models.Model):
         if 'name' not in default:
             default['name'] = self.name
         return super(ProductInternCatInherit, self).copy(default=default)
-    '''
+    
     @api.onchange('categ_id')
     def field_def_exp(self):
+        uom_id = self.env['uom.uom'].search_read([('name', '=', 'Otro tipo de servicios')])
+        if not uom_id:
+            msg = "No está creada la unidad de medida Otro tipo de servicios"
+            raise ValidationError( _( msg ) )
+
+        company_id = self.env.company
+        
+        property_account_income_id = self.env['account.account'].search_read([
+            ('name','=','Nacionales'),
+            ('company_id.id','=', company_id.id)
+        ])
+        
         if self.categ_id:
-            if self.categ_id.id == 3:
+            if self.categ_id.name == "Normas":   #3 - Normas
                 self.is_enm = True
                 self.type = 'service'
-                self.uom_id = 2021
-                self.property_account_income_id = 1998
-                self.cabys_code = '8439900000000'
+                self.uom_id = uom_id.id # 2021 - 	Otro tipo de servicios
+                self.property_account_income_id = property_account_income_id.id # 1998 - Nacionales
+                #self.cabys_code = '8439900000000'
             else:
                 self.is_enm = False
-    '''
-    
+
     @api.onchange('company_id')
     def field_ed_exp(self):
         if self.edition:
