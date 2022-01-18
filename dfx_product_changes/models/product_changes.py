@@ -58,19 +58,19 @@ class ProductInternCatInherit(models.Model):
     
     @api.onchange('categ_id')
     def field_def_exp(self):
-        uom_id = self.env['uom.uom'].search_read([('name', '=', 'Otro tipo de servicios')])
-        if not uom_id or len(uom_id) != 1:
+        uom_id = self.env['uom.uom'].search([('name', '=', 'Otro tipo de servicios')])
+        if not uom_id:
             msg = "No está creada la unidad de medida Otro tipo de servicios"
             raise ValidationError( _( msg ) )
 
         company_id = self.env.company
         
-        property_account_income_id = self.env['account.account'].search_read([
+        property_account_income_id = self.env['account.account'].search([
             ('name','=','Nacionales'),
             ('company_id.id','=', company_id.id)
         ])
         
-        if not property_account_income_id or len( property_account_income_id ) != 1:
+        if not property_account_income_id:
             msg = "No está creada cuenta contable: Nacionales"
             raise ValidationError( _( msg ) )
         
@@ -78,8 +78,8 @@ class ProductInternCatInherit(models.Model):
             if self.categ_id.name == "Normas":   #3 - Normas
                 self.is_enm = True
                 self.type = 'service'
-                self.uom_id = uom_id[0].id # 2021 - 	Otro tipo de servicios
-                self.property_account_income_id = property_account_income_id[0].id # 1998 - Nacionales
+                self.uom_id = uom_id.id # 2021 - 	Otro tipo de servicios
+                self.property_account_income_id = property_account_income_id.id # 1998 - Nacionales
                 #self.cabys_code = '8439900000000'
             else:
                 self.is_enm = False
