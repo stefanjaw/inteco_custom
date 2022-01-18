@@ -5,6 +5,8 @@ from itertools import groupby
 DOMAIN = []
 import logging
 
+from odoo.exceptions import ValidationError
+
 log = logging.getLogger(__name__)
 
 class ProductInternCatInherit(models.Model):
