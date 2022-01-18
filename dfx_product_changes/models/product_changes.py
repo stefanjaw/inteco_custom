@@ -53,7 +53,7 @@ class ProductInternCatInherit(models.Model):
         if 'name' not in default:
             default['name'] = self.name
         return super(ProductInternCatInherit, self).copy(default=default)
-
+    '''
     @api.onchange('categ_id')
     def field_def_exp(self):
         if self.categ_id:
@@ -65,7 +65,8 @@ class ProductInternCatInherit(models.Model):
                 self.cabys_code = '8439900000000'
             else:
                 self.is_enm = False
-
+    '''
+    
     @api.onchange('company_id')
     def field_ed_exp(self):
         if self.edition:
