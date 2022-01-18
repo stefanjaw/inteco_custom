@@ -20,7 +20,7 @@ class ProductInternCatInherit(models.Model):
     attribute_value_ids = fields.Many2many(
         'product.attribute.value', string='Attribute Values', ondelete='restrict')
     categ_id = fields.Many2one(comodel_name="product.category", string="Categoría Interna", required=False)
-    categ_id_name = fields.Char(related="categ_id.name", invisible=True)
+    categ_id_name = fields.Char(related="categ_id.name", string="Nombre de la Categoría" invisible=True)
     new_replaced_by = fields.Many2one(comodel_name="product.template", string="Nuevo Sustituido por", required=False)
     key_words = fields.Many2many(comodel_name="prod.key.words", string='Palabras Clave')
     course_duration = fields.Integer(string='Duración del Curso')
