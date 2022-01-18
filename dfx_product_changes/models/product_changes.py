@@ -74,7 +74,7 @@ class ProductInternCatInherit(models.Model):
             msg = "No está creada cuenta contable: Nacionales"
             raise ValidationError( _( msg ) )
         
-        if self.categ_id:
+        if self.categ_id.id:
             if self.categ_id.name == "Normas":   #3 - Normas
                 self.is_enm = True
                 self.type = 'service'
@@ -83,7 +83,8 @@ class ProductInternCatInherit(models.Model):
                 #self.cabys_code = '8439900000000'
             else:
                 self.is_enm = False
-
+        else:
+            self.is_enm = False
     @api.onchange('company_id')
     def field_ed_exp(self):
         if self.edition:
