@@ -231,18 +231,41 @@ class ProductInternCatInherit(models.Model):
         cont = 0
         list = []
         if self.user_has_groups('dfx_product_changes.idl_group'):
-            list.append(12)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'I+D+I')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: I+D+I") )
+                return
+            list.append( prod_cat_id.id ) #12 I+D+I
         if self.user_has_groups('dfx_product_changes.formac_group'):
-            list.append(6)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Formación')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Formación") )
+            list.append( prod_cat_id.id ) #6 Formación
         if self.user_has_groups('dfx_product_changes.event_group'):
-            list.append(11)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Comunicación')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Comunicación") )
+            list.append( prod_cat_id.id ) #11 Comunicación
         if self.user_has_groups('dfx_product_changes.afil_group'):
-            list.append(13)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Normalización')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Normalización") )
+            list.append( prod_cat_id.id ) #13 Normalización
         if self.user_has_groups('dfx_product_changes.serv_evac_group'):
-            list.append(4)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Certificación')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Certificación") )
+            list.append( prod_cat_id.id ) #4 Certificación
         if self.user_has_groups('dfx_product_changes.norm_group'):
-            list.append(3)
-            list.append(5)
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Normas')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Normas") )
+            list.append( prod_cat_id.id ) #3 Normas
+            prod_cat_id = self.env['product.category'].search( [('name', '=', 'Gastos')] )
+            if not prod_cat_id.id:
+                raise ValidationError( _("Falta Agregar la categoría de producto: Gastos") )
+            list.append( prod_cat_id.id ) #5 Gastos* o Standardization, mal escrito
+            
         res = {'domain':
                    {'categ_id': [('id', 'in', list)]}
                }
