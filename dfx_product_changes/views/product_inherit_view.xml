@@ -70,7 +70,7 @@
                     <attribute name="force_save">1</attribute>
                 </xpath>
                 <xpath expr="//page[@name='general_information']/group[2]/group" position="after">
-                    <group attrs="{'invisible': [('categ_id','!=', 3)]}">
+                    <group attrs="{'invisible': [('categ_id_name','!=', 'Normas')]}">
                         <field name="priority" widget="priority" string="Prioridad"/>
                         <field name="state" string="Estado"/>
                         <field name="pages"/>
@@ -133,8 +133,8 @@
                 </xpath>
                 <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='barcode']" position="after">
                     <!-- Add new fields here -->
-                    <field name="course_duration" string="Duración del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
-                    <field name="course_req" string="Requisitos del Curso" attrs="{'invisible':[('categ_id','!=', 6)]}"/>
+                    <field name="course_duration" string="Duración del Curso" attrs="{'invisible':[('categ_id_name','!=', 'Formación')]}"/>
+                    <field name="course_req" string="Requisitos del Curso" attrs="{'invisible':[('categ_id_name','!=', 'Formación')]}"/>
                 </xpath>
                 <xpath expr="//notebook/page[@name='general_information']/group/group/field[@name='edition']" position="attributes">
                     <!-- Add new fields here -->
