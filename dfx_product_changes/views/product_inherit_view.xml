@@ -11,6 +11,7 @@
                 <!--                    <field name="type"/>-->
                 <!--                </xpath>-->
                 <xpath expr="//header/button" position="before">
+                    <field name="categ_id_name" invisibie="1"/>
                     <button string="crear cor" type="object" name="new_action_product_use_variant_wizard"
                             class="oe_highlight" context="{'modifier': %(inteco.attribute_modifier_cor)d}"
                             attrs="{'invisible': [('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
@@ -69,7 +70,6 @@
                     <attribute name="force_save">1</attribute>
                 </xpath>
                 <xpath expr="//page[@name='general_information']/group[2]/group" position="after">
-                    <field name="categ_id_name" invisibie="1"/>
                     <group attrs="{'invisible': [('categ_id','!=', 3)]}">
                         <field name="priority" widget="priority" string="Prioridad"/>
                         <field name="state" string="Estado"/>
