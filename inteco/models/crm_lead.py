@@ -226,6 +226,7 @@ class Lead(models.Model):
 
     @api.constrains('email_from')
     def _check_email(self):
+        return
         """Even when the email field is validated using the email_validator
         widget in the front-end it is convenient also to add a constraint for
         those cases when the information is not entered directly from the
@@ -439,6 +440,7 @@ class Lead(models.Model):
 
     @api.constrains('contact_name')
     def _check_contact_name(self):
+        return
         if not self.env['res.partner'].is_valid_name(self.contact_name or ''):
             raise ValidationError(_(
                 "Contact's name may not contain numbers. Please, try again."))
