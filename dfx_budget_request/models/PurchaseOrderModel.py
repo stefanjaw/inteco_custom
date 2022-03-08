@@ -145,6 +145,8 @@ class PurchaseOrderInherit(models.Model):
                 self.liq_current_user = True
             else:
                 self.liq_current_user = False
+        else:
+            self.liq_current_user = False
 
     # metodo para ocultar campos cuando el usuario logeado es igual al usuario solicitador o el aprobador 2
     def _1current_user(self):
