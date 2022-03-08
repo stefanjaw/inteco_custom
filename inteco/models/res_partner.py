@@ -42,7 +42,7 @@ class ResPartner(models.Model):
             self.mobile = self.phone_format(self.mobile, raise_exception=True)
 
     def _check_email_duplicated(self):
-	return
+        return
         """Ensures that the email address is unique for each contact. We
         decided to use an onchange instead of a constraint due to there are
         a lot of previously registered emails."""
@@ -65,7 +65,7 @@ class ResPartner(models.Model):
 
     @api.constrains('email')
     def _check_email(self):
-		return
+        return
         """Even when the email field is validated using the email_validator
         widget in the front-end it is convenient also to add a constraint for
         those cases when the information is not entered directly from the
