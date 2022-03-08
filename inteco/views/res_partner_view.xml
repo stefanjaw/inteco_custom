@@ -19,10 +19,12 @@
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="legal_name" attrs="{'invisible': [('company_type', '!=', 'company')]}"/>
             </xpath>
+            <!-- 
             <xpath expr="//field[@name='email']" position="attributes">
                 <attribute name="widget">email_validator</attribute>
                 <attribute name="attrs">{'required': ['|', ('user_ids', '!=', []), ('company_type', '=', 'person')]}</attribute>
             </xpath>
+            -->
         </field>
     </record>
 
