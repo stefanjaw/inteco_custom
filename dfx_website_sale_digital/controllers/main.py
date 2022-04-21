@@ -30,6 +30,10 @@ class WebsiteSaleWatermark(WebsiteSale):
 	def checkout(self, **post):
 		if 'express' in post:
 			order = request.website.sale_get_order()
+			
+			if order.validity_date == False:
+				order.validity_date = order.date_order
+
 			if 'watermark' not in post and order.amount_total != 0:
 				values = {
 					'website_sale_order': order,
