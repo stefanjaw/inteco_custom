@@ -1333,6 +1333,7 @@ class Purchase_Order_Attachment_Inherit(models.Model):
     _inherit = "ir.attachment"
     _description = 'añadir campos al tree order line'
 
+    '''
     # @api.model
     def create(self, values):
         today = datetime.now().strftime('%Y-%m-%d')
@@ -1346,3 +1347,4 @@ class Purchase_Order_Attachment_Inherit(models.Model):
             self.env[res.res_model].browse(res.res_id).message_post(body="Adjunto Agregado:"+" "+last_id.name+"<br/>"+"Fecha de creación:"+" "+today+"<br/>")
             # self.env[res.res_model].browse(res.res_id).message_post(body="Adjunto Agregado:"+" "+last_id.name+"<br/>"+"Fecha de creación:"+" "+today+"<br/>"+"Hora de creación:"+" "+str(date_time))
         return res
+    '''
