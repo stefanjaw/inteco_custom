@@ -49,6 +49,7 @@
             </xpath>
         </field>
     </record>
+    <!-- Da un error en V14
     <record id="product_product_form_view_inherit" model="ir.ui.view">
         <field name="name">product.product.form.view.inherit</field>
         <field name="model">product.product</field>
@@ -94,6 +95,7 @@
             </xpath>
         </field>
     </record>
+    -->
     <record id="product_product_kanban_view_inherit" model="ir.ui.view">
         <field name="name">product.product.kanban.view.inherit</field>
         <field name="model">product.product</field>

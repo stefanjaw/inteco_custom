@@ -49,17 +49,16 @@
             </xpath>
         </field>
     </record>
+    <!-- Da un error en V14
     <record id="product_product_form_view_inherit" model="ir.ui.view">
         <field name="name">product.product.form.view.inherit</field>
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
-            <!--
             <xpath expr="//field[@name='default_code']" position="attributes">
                 <attribute name="readonly">False</attribute>
                 <attribute name="attrs">{'readonly': [('categ_id','==', %(inteco.product_category_1_1)d)]}</attribute>
             </xpath>
-            -->
             <xpath expr="//field[@name='default_code']" position="after">
                 <field name="attribute_value_ids" invisible="1"/>
             </xpath>
@@ -94,9 +93,9 @@
             <xpath expr="//field[@name='approval']" position="attributes">
                 <attribute name="attrs">{'readonly': [('attribute_value_ids','!=', [])]}</attribute>
             </xpath>
-            
         </field>
     </record>
+    -->
     <record id="product_product_kanban_view_inherit" model="ir.ui.view">
         <field name="name">product.product.kanban.view.inherit</field>
         <field name="model">product.product</field>
