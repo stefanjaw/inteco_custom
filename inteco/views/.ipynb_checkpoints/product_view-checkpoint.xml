@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_only_form_view_inherit" model="ir.ui.view">
+        <field name="name"> product.template.only.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="attrs">{'readonly': [('categ_id','==', %(inteco.product_category_1_1)d)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="subservice_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.view.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']/group" position="after">
+                <group>
+                    <group string="Standards" attrs="{'invisible': [('categ_id','!=', %(inteco.product_category_1_1)d)]}">
+                        <field name="sector_id" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="committee_id" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="prefix_id" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="short_code" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="process" widget="radio"/>
+                        <field name="part_one"/>
+                        <field name="part_two"/>
+                        <field name="part_three"/>
+                        <field name="ics_ids" widget="many2many_tags"/>
+                        <field name="organism_ids" widget="many2many_tags"/>
+                        <field name="correspondence_ids" widget="many2many_tags"/>
+                        <field name="edition" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="year" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                        <field name="approval" string="Approval Date" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page string="Object and field of application" name="application_field">
+                    <group>
+                        <group string="Description">
+                            <field name="application_field" nolabel="1" placeholder="Descriptive text about the scope of the standard."/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_product_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.product.form.view.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <!--
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="readonly">False</attribute>
+                <attribute name="attrs">{'readonly': [('categ_id','==', %(inteco.product_category_1_1)d)]}</attribute>
+            </xpath>
+            -->
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="attribute_value_ids" invisible="1"/>
+            </xpath>
+            <xpath expr="//header/button" position="before">
+                <button string="create cor" type="action" name="%(action_product_use_variant_wizard)d"
+                    class="oe_highlight" context="{'modifier': %(inteco.attribute_modifier_cor)d}"
+                    attrs="{'invisible': ['|', ('attribute_value_ids', '!=', []), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                <button string="create em" type="action" name="%(action_product_use_variant_wizard)d"
+                    class="oe_highlight" context="{'modifier': %(inteco.attribute_modifier_enm)d}"
+                    attrs="{'invisible': ['|', ('attribute_value_ids', '!=', []), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                <button string="new edition" type="action" name="%(action_product_new_edition_wizard)d"
+                    class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'C'), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+                <button string="confirm" type="action" name="%(action_product_confirm_wizard)d"
+                    class="oe_highlight" attrs="{'invisible': ['|', ('confirmation_date', '!=', False), ('categ_id','!=', %(inteco.product_category_1_1)d)]}"/>
+            </xpath>
+            <xpath expr="//page[@name='general_information']/group[2]/group" position="after">
+                <group attrs="{'invisible': [('categ_id','!=', %(inteco.product_category_1_1)d)]}">
+                    <field name="priority" widget="priority"/>
+                    <field name="state" attrs="{'required': [('categ_id','=', %(inteco.product_category_1_1)d)]}"/>
+                    <field name="pages"/>
+                    <field name="previous_code"/>
+                    <field name="replaced_by"/>
+                    <field name="standards_ref"/>
+                    <field name="modifier_date" attrs="{'invisible': [('attribute_value_ids', '=', [])]}"/>
+                    <field name="confirmation_date" attrs="{'invisible': [('confirmation_date', '=', False)]}"/>
+                    <field name="latest_date" attrs="{'invisible': [('latest_date', '=', False)]}"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="subservice_id"/>
+            </xpath>
+            <xpath expr="//field[@name='approval']" position="attributes">
+                <attribute name="attrs">{'readonly': [('attribute_value_ids','!=', [])]}</attribute>
+            </xpath>
+            
+        </field>
+    </record>
+    <record id="product_product_kanban_view_inherit" model="ir.ui.view">
+        <field name="name">product.product.kanban.view.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <small t-if="record.default_code.value">[<field name="default_code"/>]</small>
+            </xpath>
+        </field>
+    </record>
+    <record id="sale.menu_product_template_action" model="ir.ui.menu">
+        <field name="name">Product Templates</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    </record>
+    <record id="sale.menu_products" model="ir.ui.menu">
+        <field name="name">Products</field>
+    </record>
+    <record id="product.product_normal_action_sell" model="ir.actions.act_window">
+        <field name="view_id" ref="product.product_kanban_view"/>
+    </record>
+</odoo>
