@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "payment_credomatic",
+    'name': "payment_credomatic NOT USED",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        USED ONLY FOR DEPENDENCIES OF OTHER MODULES,
+        THERE'S NO CONTENT""",
 
     'description': """
         Long description of module's purpose
